@@ -24,8 +24,8 @@ start_time = time.time()
         Special case: If all samples for a feature are negative, then both
                       thresholds remain at 0 with gini = infinity
         2880 iterations Adaboosting loop took 3 hours and 12 minutes
-        
-    Current Progress:
+
+    Progress Report:
         Normalization of input images done
         Integral Image generation of input images done
         Building Haar-like Features done
@@ -340,16 +340,16 @@ class ViolaJones:
                     positive_index_after_sort = list(
                         map(lambda ii: sorted_index.index(ii), pos_stat[i][1]))
             add_value_labels(ax, positive_index_after_sort, 5, 'vertical')
-            plt.savefig('figures_3/feature_' +
+            plt.savefig('feature_graphs/feature_' +
                         str(index) + '_graph.pdf', bbox_inches='tight')
-            pdfs.append('figures_3/feature_' + str(index) + '_graph.pdf')
+            pdfs.append('feature_graphs/feature_' + str(index) + '_graph.pdf')
             # plt.show()
             plt.close()
             counter += 1
         merger = p.PdfFileMerger()
         for pdf in pdfs:
             merger.append(pdf)
-        merger.write("figures_3/Combined.pdf")
+        merger.write("feature_graphs/Combined.pdf")
         merger.close()
 
     def build_features(self, image_shape, minmax):
@@ -1154,7 +1154,7 @@ def print_score(dataframe_collectioon):
 # ViolaJones().train("database0/training_set/eye_table.bin", ii_list)
 try:
     os.makedirs("/output")  # Making Folder if not exists
-    # os.makedirs("/figures_3")
+    # os.makedirs("/feature_graphs")
     # print("Succeeded!")
 except FileExistsError as e:
     print(e)
