@@ -1217,8 +1217,9 @@ for index, index_label in enumerate(clf_indexes):
     xtics += '"' + index_label + '" ' + str(index)
     if index != (len(clf_indexes) - 1):
         xtics += ','
-xtics += ')'
+xtics += ') rotate'
 gp.c(xtics)
+gp.c('save "output/alpha_beta.dat" ')
 
 
 # X_list = []
