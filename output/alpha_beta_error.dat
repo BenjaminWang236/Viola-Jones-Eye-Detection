@@ -114,7 +114,7 @@ set cbtics  norangelimit autofreq
 set rtics axis in scale 1,0.5 nomirror norotate  autojustify
 set rtics  norangelimit autofreq 
 unset ttics
-set title "Alpha-Beta Graph (Linespoints)" 
+set title "Alpha-Beta-Error Graph (Linespoints)" 
 set title  font "" textcolor lt -1 norotate
 set timestamp bottom 
 set timestamp "" 
@@ -165,6 +165,6 @@ set fontpath
 set psdir
 set fit brief errorvariables nocovariancevariables errorscaling prescale nowrap v5
 GNUTERM = "wxt"
-## Last datafile plotted: "output/normalized_betas.txt"
-plot     "output/normalized_alphas.txt" title "alpha" with linespoints,     "output/normalized_betas.txt" title "beta" with linespoints
+## Last datafile plotted: "output/normalized_errs.txt"
+plot     "output/normalized_alphas.txt" title "alpha" with linespoints,     "output/normalized_betas.txt" title "beta" with linespoints,     "output/normalized_errs.txt" title "error" with linespoints
 #    EOF

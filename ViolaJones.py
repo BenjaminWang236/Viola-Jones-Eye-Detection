@@ -1184,42 +1184,63 @@ except FileExistsError as e:
 #     for index, item in indexed_feature_table:
 #         f.write("Index %i->%s\n" % (index, item))
 
-# gp.c('set terminal pdf')
-# gp.c('set output "alpha_error_graph.pdf" ')
-alphas = [float(line.rstrip('\n')) for line in open("output/alphas.txt")]
-errors = [float(line.rstrip('\n')) for line in open("output/errs.txt")]
-sum_alphas, sum_errors = sum(alphas), sum(errors)
-# min_alphas, max_alphas, min_errors, max_errors = min(
-#     alphas), max(alphas), min(errors), max(errors)
-print(sum_alphas, sum_errors)
-normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
-normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
-# normalized_alphas = list(
-#     map(lambda ii: (ii - min_alphas)/(max_alphas - min_alphas), alphas))
-# normalized_errors = list(
-#     map(lambda ii: (ii - min_errors)/(max_errors - min_errors), errors))
-with open("output/normalized_alphas.txt", "w") as f:
-    for item in normalized_alphas:
-        f.write("%s\n" % item)
-with open("output/normalized_errs.txt", "w") as f:
-    for item in normalized_errors:
-        f.write("%s\n" % item)
-gp.c('plot \
-    "output/normalized_alphas.txt" title "alpha" with linespoints, \
-    "output/normalized_errs.txt" title "error" with linespoints')
-gp.c('set title "Alpha-Error Graph (Linespoints)" ')
-gp.c('set xlabel "Image Index" ')
-gp.c('set ylabel "Feature Value" ')
-clf_indexes = [line.rstrip('\n')
-               for line in open("output/final_clf_indexes.txt")]
-xtics = 'set xtics add ('
-for index, index_label in enumerate(clf_indexes):
-    xtics += '"' + index_label + '" ' + str(index)
-    if index != (len(clf_indexes) - 1):
-        xtics += ','
-xtics += ') rotate'
-gp.c(xtics)
-gp.c('save "output/alpha_beta.dat" ')
+""" Generate Alpha-Error Graph """
+# # gp.c('set terminal pdf')
+# # gp.c('set output "alpha_error_graph.pdf" ')
+# alphas = [float(line.rstrip('\n')) for line in open("output/alphas.txt")]
+# errors = [float(line.rstrip('\n')) for line in open("output/errs.txt")]
+# betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
+# sum_alphas, sum_betas, sum_errors = sum(alphas), sum(betas), sum(errors)
+# # min_alphas, max_alphas, min_errors, max_errors = min(
+# #     alphas), max(alphas), min(errors), max(errors)
+# print(sum_alphas, sum_betas, sum_errors)
+# normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
+# normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
+# normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
+# # normalized_alphas = list(
+# #     map(lambda ii: (ii - min_alphas)/(max_alphas - min_alphas), alphas))
+# # normalized_errors = list(
+# #     map(lambda ii: (ii - min_errors)/(max_errors - min_errors), errors))
+# with open("output/normalized_alphas.txt", "w") as f:
+#     for item in normalized_alphas:
+#         f.write("%s\n" % item)
+# with open("output/normalized_betas.txt", "w") as f:
+#     for item in normalized_betas:
+#         f.write("%s\n" % item)
+# with open("output/normalized_errs.txt", "w") as f:
+#     for item in normalized_errors:
+#         f.write("%s\n" % item)
+# # gp.c('plot \
+# #     "output/normalized_alphas.txt" title "alpha" with linespoints, \
+# #     "output/normalized_errs.txt" title "error" with linespoints')
+# # gp.c('set title "Alpha-Error Graph (Linespoints)" ')
+# # gp.c('plot \
+# #     "output/normalized_alphas.txt" title "alpha" with linespoints, \
+# #     "output/normalized_betas.txt" title "beta" with linespoints')
+# # gp.c('set title "Alpha-Beta Graph (Linespoints)" ')
+# gp.c('plot \
+#     "output/normalized_alphas.txt" title "alpha" with linespoints, \
+#     "output/normalized_betas.txt" title "beta" with linespoints, \
+#     "output/normalized_errs.txt" title "error" with linespoints ')
+# gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
+# gp.c('set xlabel "Image Index" ')
+# gp.c('set ylabel "Feature Value" ')
+# clf_indexes = [line.rstrip('\n')
+#                for line in open("output/final_clf_indexes.txt")]
+# xtics = 'set xtics add ('
+# for index, index_label in enumerate(clf_indexes):
+#     xtics += '"' + index_label + '" ' + str(index)
+#     if index != (len(clf_indexes) - 1):
+#         xtics += ','
+# xtics += ') rotate'
+# gp.c(xtics)
+# # gp.c('save "output/alpha_error.dat" ')
+# # gp.c('save "output/alpha_beta.dat" ')
+# gp.c('save "output/alpha_beta_error.dat" ')
+""" Since alpha-error-graph already generated and saved, just load again """
+# gp.c('load "output/alpha_error.dat" ')
+# gp.c('load "output/alpha_beta.dat" ')
+gp.c('load "output/alpha_beta_error.dat" ')
 
 
 # X_list = []
