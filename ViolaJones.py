@@ -785,7 +785,7 @@ class ViolaJones:
         #                 (str(item), math.ceil(item[1]*num_useful_features)))
         return clf_errors, useful_clf_errors, best_error_index, best_error, best_accuracy
 
-    def update_weights(self, weights, best_error_index, best_error, best_accuracy):
+    def update_weights(self, final_clf_indexes, weights, best_error_index, best_error, best_accuracy):
         """ Update the weight at the end of current round/iteration as described in step 4 of the original paper """
         best_weights, beta = weights[best_error_index][1], 0
         if best_error > 1:
@@ -804,62 +804,12 @@ class ViolaJones:
         # print("Updated weight is", weights[best_error_index][1])
         return weights
 
-    def train(self, image_path, metadata_path):
-        """ Doing the actual training procedure here """
-        """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
-        print("0.) Starting Prep")
-        minmax = min_max_eye(metadata_path)
-        # print(minmax)
-        correct = read_metadata(metadata_path)
-        image_list = import_image(image_path)
-        normalized_list = max_normalize(image_list)
-        # for i in range(len(normalized_list)):
-        #     # Refactor the data back to before it was multiplied by 2^16
-        #     normalized_list[i] /= pow(2, 16)
-        ii_list = integral_image(normalized_list)
-        features = self.build_features(ii_list[0].shape, minmax)
-        with open("output/feature_table.txt", "w") as f:
-            for item in features:
-                f.write("%s\n" % item)
+    # def train(self, image_path: str, metadata_path: str) -> Tuple[List, List, List, List]:
+    def train(self, weights, sorted_X_list, y_list, pos_stat, neg_stat, features):
+        """ 
+        Doing the actual training procedure here
 
-        im_feature_label, feature_stat, y_list, pos_stat, neg_stat = self.label_features(
-            features, correct)
-        with open("output/feature_stat.txt", "w") as f:
-            for row in feature_stat:
-                f.write("%s\n" % row)
-
-        # useful_features as [feature_index, feature]
-        # useful_features = self.discard_useless_features(
-        #     features, feature_stat, len(ii_list))
-        # num_useful_feature = len(useful_features)
-        # with open("output/useful_features.txt", "w") as f:
-        #     for row in useful_features:
-        #         f.write("%s\n" % row)
-
-        # weights = np.zeros(len(useful_features))    # 865
-        # Initializing weights to 1/(Total number of useful features = 865)
-        # Weights = [[feature_index, feature_weight], ["], ["], etc]
-        # weights = [[row[0], 1/num_useful_feature] for row in useful_features]
-        # with open("output/weights.txt", "w") as f:
-        #     for item in weights:
-        #         f.write("%s\n" % item)
-
-        X_list, sorted_X_list = self.apply_features(
-            features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-        with open("output/X_list.txt", "w") as f:
-            for item in X_list:
-                f.write("%s\n" % item)
-        with open("output/sorted_X_list.txt", "w") as f:
-            for item in sorted_X_list:
-                f.write("%s\n" % item)
-
-        weights = self.initialize_weights(feature_stat, y_list)
-        with open("output/weights.txt", "w") as f:
-            for item in weights:
-                f.write("%s\n" % item)
-        print("Prep Done\n")
-        print("Number of iterations to run is %i" % self.T)
-
+        """
         updated_weights = []
         for t in range(self.T):
             if t != 0:
@@ -966,20 +916,7 @@ class ViolaJones:
         print("alpha list:", self.alphas)
         print("WeakClassifier list:", "\n\t".join(str(classifier)
                                                   for classifier in self.clfs))
-
-        # Sorted by the error value of the feature/weak-classifier
-        # sorted_clf_errors = self.apply_classifiers(
-        #     sorted_X_list, y_list, classifiers, useful_features)
-        # print("Length of sorted clf-errors returned %i" %
-        #       len(sorted_clf_errors))
-        # reversed_clf_errors = sorted(
-        #     sorted_clf_errors, key=lambda ii: ii[1], reverse=True)
-        # # print(reversed_clf_errors)
-        # alphas = list(
-        #     map(lambda ii: [ii[0], math.log((1-ii[1])/ii[1])], sorted_clf_errors))
-        # with open("output/alphas.txt", "w") as f:
-        #     for item in alphas:
-        #         f.write("%s\n" % item)
+        return self.clf_indexes, self.alphas, self.errs, self.clfs
 
         # print(len(classifiers))
         # for i, item in enumerate(classifiers):
@@ -990,32 +927,53 @@ class ViolaJones:
         # Takes about 50 minutes to fun
         # self.plot_graphs(sorted_X_list, pos_stat)
 
-    def select_best(self, classifiers, weights, training_data):
-        """     Out of all the weak_classifiers/features select the best one, accuracy for that feature only across all samples """
-        i = 0
-        feature_index, best_clf, best_error, best_accuracy = None, None, float(
-            'inf'), None
-        # accuracy is of the feature when applied to each sample images
-        for clf in classifiers:  # For each of the 2880 weak classifiers
-            error, accuracy = 0, []
-            # For each sample feature was applied to:
-            for data, w, in zip(training_data[i], weights[i]):
-                # Classification of feature minus the actual correctness of feature
-                correctness = abs(clf.classify(data[0]) - data[1])
-                accuracy.append(correctness)
-                error += w*correctness
-            error /= len(training_data[i])
-            if error < best_error:
-                feature_index, best_clf, best_error, best_accuracy = i, clf, error, accuracy
-            i += 1
-        # print("len of best accuracy", len(best_accuracy))
-        return feature_index, best_clf, best_error, best_accuracy
+    # def select_best(self, classifiers, weights, training_data):
+    #     """     Out of all the weak_classifiers/features select the best one, accuracy for that feature only across all samples """
+    #     i = 0
+    #     feature_index, best_clf, best_error, best_accuracy = None, None, float(
+    #         'inf'), None
+    #     # accuracy is of the feature when applied to each sample images
+    #     for clf in classifiers:  # For each of the 2880 weak classifiers
+    #         error, accuracy = 0, []
+    #         # For each sample feature was applied to:
+    #         for data, w, in zip(training_data[i], weights[i]):
+    #             # Classification of feature minus the actual correctness of feature
+    #             correctness = abs(clf.classify(data[0]) - data[1])
+    #             accuracy.append(correctness)
+    #             error += w*correctness
+    #         error /= len(training_data[i])
+    #         if error < best_error:
+    #             feature_index, best_clf, best_error, best_accuracy = i, clf, error, accuracy
+    #         i += 1
+    #     # print("len of best accuracy", len(best_accuracy))
+    #     return feature_index, best_clf, best_error, best_accuracy
 
     def classify(self, integral_image):
         total = 0
         for alpha, clf in zip(self.alphas, self.clfs):
             total += alpha * clf.classify(integral_image)
         return 1 if total >= 0.5 * sum(self.alphas) else 0
+
+    """ Save and Load functions copypasta'd from parandea17/FaceDetection github repo """
+
+    def save(self, filename):
+        """
+        Saves the classifier to a pickle
+          Args:
+            filename: The name of the file (no file extension necessary)
+        """
+        with open(filename+".pkl", 'wb') as f:
+            pickle.dump(self, f)
+
+    @staticmethod
+    def load(filename):
+        """
+        A static method which loads the classifier from a pickle
+          Args:
+            filename: The name of the file (no file extension necessary)
+        """
+        with open(filename+".pkl", 'rb') as f:
+            return pickle.load(f)
 
 
 class WeakClassifier:
@@ -1159,8 +1117,48 @@ try:
 except FileExistsError as e:
     print(e)
     pass
-# ViolaJones(2880).train('database0/training_set/*.bmp',
-#                        'database0/training_set/eye_table.bin')
+image_path, metadata_path = 'data/database0/training_set/*.bmp', 'data/database0/training_set/eye_table.bin'
+strong_classifier = ViolaJones(2880)
+""" Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
+print("0.) Starting Prep")
+minmax = min_max_eye(metadata_path)
+correct = read_metadata(metadata_path)
+image_list = import_image(image_path)
+normalized_list = max_normalize(image_list)
+# for i in range(len(normalized_list)):
+#     # Refactor the data back to before it was multiplied by 2^16
+#     normalized_list[i] /= pow(2, 16)
+ii_list = integral_image(normalized_list)
+features = strong_classifier.build_features(ii_list[0].shape, minmax)
+with open("output/feature_table.txt", "w") as f:
+    for item in features:
+        f.write("%s\n" % item)
+im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+    features, correct)
+with open("output/feature_stat.txt", "w") as f:
+    for row in feature_stat:
+        f.write("%s\n" % row)
+X_list, sorted_X_list = strong_classifier.apply_features(
+    features, ii_list)   # X_list is already positive_X list because only useful features were passed in
+with open("output/X_list.txt", "w") as f:
+    for item in X_list:
+        f.write("%s\n" % item)
+with open("output/sorted_X_list.txt", "w") as f:
+    for item in sorted_X_list:
+        f.write("%s\n" % item)
+
+weights = strong_classifier.initialize_weights(feature_stat, y_list)
+with open("output/weights.txt", "w") as f:
+    for item in weights:
+        f.write("%s\n" % item)
+print("Prep Done\n")
+print("Number of iterations to run is %i" % strong_classifier.T)
+""" Since I already ran it once and has the indexes of the final weak classifiers ordered by best errors... """
+clf_indexes = [line.rstrip('\n')
+               for line in open("output/final_clf_indexes.txt")]
+strong_classifier.train()
+strong_classifier.save("output/strong_classifier")
+strong_classifier_copy = strong_classifier.load("output/strong_classifier")
 
 # correct = read_metadata('database0/training_set/eye_table.bin')
 # with open("output/correct.txt", "w") as f:
@@ -1240,7 +1238,7 @@ except FileExistsError as e:
 """ Since alpha-error-graph already generated and saved, just load again """
 # gp.c('load "output/alpha_error.dat" ')
 # gp.c('load "output/alpha_beta.dat" ')
-gp.c('load "output/alpha_beta_error.dat" ')
+# gp.c('load "output/alpha_beta_error.dat" ')
 
 
 # X_list = []
