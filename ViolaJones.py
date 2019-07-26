@@ -16,12 +16,27 @@ import sys
 import PyGnuplot as gp
 start_time = time.time()
 
-""" Note: First dataframe collection 3d done, next threshold (READ) then using thresholding
-      reprocess data to get no_hit_rate: Desired=probability of no-eye detected,
-      After 3rd done, we can do weighting with adaboosting
-      Without adaboosting, 1 - E_+^2 - E_-^2 as large as possible is desired aka
-      (E_+^2 + E_-^2) as small as possible
-      viola_jones_1.pdf contains the not-adaboost method """
+""" Note:  
+        Dataframe collection is in 3D, accessor codes commented out for now
+        Using notation 1 = Positive (Yes-eye), 0 = Negative (No-eye)
+        Thresholding condition (Positive): feature-value <= Lower Threshold
+                                           feature-value >= Upper Threshold
+        Special case: If all samples for a feature are negative, then both
+                      thresholds remain at 0 with gini = infinity
+                                
+    Current Progress:
+        Normalization of input images done
+        Integral Image generation of input images done
+        Building Haar-like Features done
+        Apply Features done
+        Labeling Features by pre-defined correct metadata done (Training)
+        Upper and Lower Thresholds for feature values above and below zero
+            computed using minimum gini-value as gini = positive-error^2 +
+            negative-error^2 where positive-error = false-negative / 
+            number of true-positives and negative-error = false-positive /
+            number of true-negatives starting at zero for both thresholds
+            and explored outward until minimum ginis found done.
+"""
 
 
 def read_metadata(path):
