@@ -23,7 +23,8 @@ start_time = time.time()
                                            feature-value >= Upper Threshold
         Special case: If all samples for a feature are negative, then both
                       thresholds remain at 0 with gini = infinity
-                                
+        2880 iterations Adaboosting loop took 3 hours and 12 minutes
+        
     Current Progress:
         Normalization of input images done
         Integral Image generation of input images done
@@ -35,7 +36,13 @@ start_time = time.time()
             negative-error^2 where positive-error = false-negative / 
             number of true-positives and negative-error = false-positive /
             number of true-negatives starting at zero for both thresholds
-            and explored outward until minimum ginis found done.
+            and explored outward until minimum ginis found done
+        Weight initialization done (Training)
+        Adaboosting loops done (Training)
+        Strong Classifier's collection of weak classifiers found through
+        each iteration of Adaboosting (WORK-IN-PROGRESS)
+            ->Need to change the string representation of classifiers
+              saved during Adaboosting back to actual classifier type 
 """
 
 
