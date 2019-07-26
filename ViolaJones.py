@@ -1182,9 +1182,8 @@ print("Number of iterations to run is %i" % strong_classifier.T)
 # strong_classifier.save(foldername+"/strong_classifier")
 # strong_classifier_copy = strong_classifier.load(
 #     foldername+"/strong_classifier")
+
 # Since I already ran it once and has the indexes of the final weak classifiers ordered by best errors...
-
-
 # final_clf_indexes = [line.rstrip('\n')
 #                      for line in open("output_old/final_clf_indexes.txt")]
 # counter, x = 0, 0
