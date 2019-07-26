@@ -51,10 +51,10 @@ def read_metadata(path):
     with open(path, "rb") as f:
         fileContent = np.fromfile(f, dtype=np.uint8)
     reorganized = []
-    # Metadata stored in BIP format so re-organizing here into [y, x, y-size, x-size]
-    for i in range(0, int(len(fileContent)/4)):
-        reorganized.append([fileContent[i], fileContent[i+50],
-                            fileContent[i+100], fileContent[i+150]])
+    # Metadata stored in BIP format so re-organizing here into [y, x, width, height]
+    for x in range(0, int(len(fileContent)/4)):
+        reorganized.append([fileContent[x], fileContent[x+50],
+                            fileContent[x+100], fileContent[x+150]])
     return reorganized
 
 
@@ -65,12 +65,13 @@ def min_max_eye(path):
     with open(path, "rb") as f:
         fileContent = np.fromfile(f, dtype=np.uint8)
     # Currently in BIP format, which is useful for extracing min-max as below:
+    """ Actually in [horizontal-X*50], [vertical-Y*50], [width*50], [height*50] """
     ret = []
-    for i in range(0, 200, 50):
-        ret.append(fileContent[i:i+50].min())
-        ret.append(fileContent[i:i+50].max())
+    for x in range(0, 200, 50):
+        ret.append(fileContent[x:x+50].min())
+        ret.append(fileContent[x:x+50].max())
     # print(ret)
-    # print(y_min, y_max, x_min, x_max, y_size_min, y_size_max, x_size_min, x_size_max)
+    # print(x_min, x_max, y_min, y_max, width_min, width_max, height_min, height_max)
     return ret
 
 # Import images
@@ -113,19 +114,19 @@ def integral_image(image_list):
     for image in image_list:
         ii = np.zeros(image.shape)
         s = np.zeros(image.shape)
-        for y in range(len(image)):
-            for x in range(len(image[y])):
-                s[y][x] = s[y-1][x] + \
-                    image[y][x] if (y-1 >= 0) else image[y][x]
-                ii[y][x] = ii[y][x-1] + s[y][x] if (x-1 >= 0) else s[y][x]
-                # if (y-1 >= 0):
-                #     s[y][x] = s[y-1][x] + image[y][x]
-                # else:
-                #     s[y][x] = image[y][x]
+        for x in range(len(image)):
+            for y in range(len(image[x])):
+                s[x][y] = s[x-1][y] + \
+                    image[x][y] if (x-1 >= 0) else image[x][y]
+                ii[x][y] = ii[x][y-1] + s[x][y] if (y-1 >= 0) else s[x][y]
                 # if (x-1 >= 0):
-                #     ii[y][x] = ii[y][x-1] + s[y][x]
+                #     s[x][y] = s[x-1][y] + image[x][y]
                 # else:
-                #     ii[y][x] = s[y][x]
+                #     s[x][y] = image[x][y]
+                # if (y-1 >= 0):
+                #     ii[x][y] = ii[x][y-1] + s[x][y]
+                # else:
+                #     ii[x][y] = s[x][y]
         ii_list.append(ii)
         filename = "integral_image/integral_" + str(count) + ".txt"
         np.savetxt(filename, ii)
@@ -134,20 +135,20 @@ def integral_image(image_list):
 
 
 class RectangleRegion:
-    """ Rectangle that makes up the Haar-features, (y, x) coordinate format where y is horizontal """
+    """ Rectangle that makes up the Haar-features, (x, y) coordinate format where x is horizontal """
 
-    def __init__(self, y, x, width, height):
-        self.y = y
+    def __init__(self, x, y, width, height):
         self.x = x
+        self.y = y
         self.width = width
         self.height = height
 
     def compute_feature(self, ii):
         """ D + A - (C + B) """
-        a = ii[self.x][self.y]  # Row then column
-        b = ii[self.x][self.y+self.width]
-        c = ii[self.x+self.height][self.y]
-        d = ii[self.x+self.height][self.y+self.width]
+        a = ii[self.y][self.x]  # Row then column
+        b = ii[self.y][self.x+self.width]
+        c = ii[self.y+self.height][self.x]
+        d = ii[self.y+self.height][self.x+self.width]
         val = d + a - (c + b)
         return val
 
@@ -165,27 +166,27 @@ class Feature:
     def __repr__(self):
         tup = tuple()
         if(self.feature_type == 0):
-            tup = (self.feature_type, self.haar_neg[0].y,
-                   self.haar_neg[0].x, self.haar_pos[0].y +
+            tup = (self.feature_type, self.haar_neg[0].x,
+                   self.haar_neg[0].y, self.haar_pos[0].x +
                    self.haar_pos[0].width,
-                   self.haar_pos[0].x+self.haar_pos[0].height, self.pos_neg)
+                   self.haar_pos[0].y+self.haar_pos[0].height, self.pos_neg)
         elif (self.feature_type == 1):
-            tup = (self.feature_type, self.haar_pos[0].y,
-                   self.haar_pos[0].x, self.haar_neg[0].y +
+            tup = (self.feature_type, self.haar_pos[0].x,
+                   self.haar_pos[0].y, self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].x+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
         elif (self.feature_type == 2):
-            tup = (self.feature_type, self.haar_neg[1].y,
-                   self.haar_neg[1].x,
-                   self.haar_neg[0].y +
+            tup = (self.feature_type, self.haar_neg[1].x,
+                   self.haar_neg[1].y,
+                   self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].x+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
         elif (self.feature_type == 3):
-            tup = (self.feature_type, self.haar_neg[0].y,
-                   self.haar_neg[0].x,
-                   self.haar_neg[1].y +
+            tup = (self.feature_type, self.haar_neg[0].x,
+                   self.haar_neg[0].y,
+                   self.haar_neg[1].x +
                    self.haar_neg[1].width,
-                   self.haar_neg[1].x+self.haar_neg[1].height, self.pos_neg)
+                   self.haar_neg[1].y+self.haar_neg[1].height, self.pos_neg)
         else:
             return "ERROR: feature should never be of a type not a/b/c/d"
         return "<Feature of type %s starts(%s, %s) ends(%s, %s) is %s>" % tup
@@ -193,57 +194,57 @@ class Feature:
     def __str__(self):
         tup = tuple()
         if(self.feature_type == 0):
-            tup = (self.feature_type, self.haar_neg[0].y,
-                   self.haar_neg[0].x, self.haar_pos[0].y +
+            tup = (self.feature_type, self.haar_neg[0].x,
+                   self.haar_neg[0].y, self.haar_pos[0].x +
                    self.haar_pos[0].width,
-                   self.haar_pos[0].x+self.haar_pos[0].height, self.pos_neg)
+                   self.haar_pos[0].y+self.haar_pos[0].height, self.pos_neg)
         elif (self.feature_type == 1):
-            tup = (self.feature_type, self.haar_pos[0].y,
-                   self.haar_pos[0].x, self.haar_neg[0].y +
+            tup = (self.feature_type, self.haar_pos[0].x,
+                   self.haar_pos[0].y, self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].x+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
         elif (self.feature_type == 2):
-            tup = (self.feature_type, self.haar_neg[1].y,
-                   self.haar_neg[1].x,
-                   self.haar_neg[0].y +
+            tup = (self.feature_type, self.haar_neg[1].x,
+                   self.haar_neg[1].y,
+                   self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].x+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
         elif (self.feature_type == 3):
-            tup = (self.feature_type, self.haar_neg[0].y,
-                   self.haar_neg[0].x,
-                   self.haar_neg[1].y +
+            tup = (self.feature_type, self.haar_neg[0].x,
+                   self.haar_neg[0].y,
+                   self.haar_neg[1].x +
                    self.haar_neg[1].width,
-                   self.haar_neg[1].x+self.haar_neg[1].height, self.pos_neg)
+                   self.haar_neg[1].y+self.haar_neg[1].height, self.pos_neg)
         else:
             return "ERROR: feature should never be of a type not a/b/c/d"
         return "Feature of type %s starts(%s, %s) ends(%s, %s) is %s\n" % tup
 
     def get_size(self):
-        """ Return the starting point and end point in (y, x) """
+        """ Return the starting point and end point in (x, y) """
         # print("Feature.get_size() type is %s" % self.feature_type)
         start_end = []
         if(self.feature_type == 0):
-            start_end = (self.haar_neg[0].y,
-                         self.haar_neg[0].x, self.haar_pos[0].y +
+            start_end = (self.haar_neg[0].x,
+                         self.haar_neg[0].y, self.haar_pos[0].x +
                          self.haar_pos[0].width,
-                         self.haar_pos[0].x+self.haar_pos[0].height)
+                         self.haar_pos[0].y+self.haar_pos[0].height)
         elif (self.feature_type == 1):
-            start_end = (self.haar_pos[0].y,
-                         self.haar_pos[0].x, self.haar_neg[0].y +
+            start_end = (self.haar_pos[0].x,
+                         self.haar_pos[0].y, self.haar_neg[0].x +
                          self.haar_neg[0].width,
-                         self.haar_neg[0].x+self.haar_neg[0].height)
+                         self.haar_neg[0].y+self.haar_neg[0].height)
         elif (self.feature_type == 2):
-            start_end = (self.haar_neg[1].y,
-                         self.haar_neg[1].x,
-                         self.haar_neg[0].y +
+            start_end = (self.haar_neg[1].x,
+                         self.haar_neg[1].y,
+                         self.haar_neg[0].x +
                          self.haar_neg[0].width,
-                         self.haar_neg[0].x+self.haar_neg[0].height)
+                         self.haar_neg[0].y+self.haar_neg[0].height)
         elif (self.feature_type == 3):
-            start_end = (self.haar_neg[0].y,
-                         self.haar_neg[0].x,
-                         self.haar_neg[1].y +
+            start_end = (self.haar_neg[0].x,
+                         self.haar_neg[0].y,
+                         self.haar_neg[1].x +
                          self.haar_neg[1].width,
-                         self.haar_neg[1].x+self.haar_neg[1].height)
+                         self.haar_neg[1].y+self.haar_neg[1].height)
         else:
             # Must be feature type of -1 default parameter then
             print("ERROR: feature should never be of a type not a/b/c/d")
@@ -261,9 +262,9 @@ def add_value_labels(ax, special, fsize=5, rotate=60, spacing=5):
         spacing (int): The distance between the labels and the bars.
     """
     # For each bar: Place a label
-    i = 0
+    x = 0
     for rect in ax.patches:
-        if i in special:
+        if x in special:
             rect.set_facecolor('r')
         else:
             rect.set_facecolor('b')
@@ -292,7 +293,7 @@ def add_value_labels(ax, special, fsize=5, rotate=60, spacing=5):
             rotation=rotate,              # Rotate counterclockwise
             fontsize=fsize,
             va=va)                      # Vertically align label differently for positive and negative values.
-        i += 1
+        x += 1
 
 
 class ViolaJones:
@@ -305,62 +306,78 @@ class ViolaJones:
         self.clf_indexes = []
         self.clfs = []
 
-    def plot_graphs(self, sorted_X_list, pos_stat):
+    def plot_graphs(self, foldername, X_list, pos_stat):
         """
         Plotting the not-eye and eye bar graphs and save to folder
         Note: Bar plot parameters must be same shape/dimensions!!!
         Vertical axis: the X values (applied feature value)
         Horizontal axis: the image that feature corresponds to! (Which is not in order, unless miracle)
+        X-list might or might not be sorted by its feature value
         """
         pdfs, counter = [], 0
         pos_indexes = list(map(lambda ii: ii[0], pos_stat))
-        for index, sorted_list in sorted_X_list:
+        # If sorted:
+        # for index, sorted_list in X_list:
+        # If NOT sorted:
+        for index, sorted_list in X_list:
             print(counter, "Feature Index:\t", index)
             # indexed_X = list(pair for pair in enumerate(X_list[f[0]]))
             # sorted_indexed_X = sorted(
-            #     indexed_X, key=lambda x: x[1])    # Sort by value, now already sorted
-            sorted_index = list(map(lambda x: x[0], sorted_list))
-            sorted_value = list(map(lambda x: x[1], sorted_list))
-            ind = np.arange(len(sorted_index))
+            #     indexed_X, key=lambda y: y[1])    # Sort by value, now already sorted
+            # sorted_index = list(map(lambda y: y[0], sorted_list))
+            # sorted_value = list(map(lambda y: y[1], sorted_list))
+            # ind = np.arange(len(sorted_index))
+            ind = np.arange(len(sorted_list))
             fig, ax = plt.subplots()
-            ax.bar(ind, sorted_value)
+            # ax.bar(ind, sorted_value)
+            ax.bar(ind, sorted_list)
             ax.set_title('Feature [' + str(index) + ']')
             ax.set_xlabel('Image Index')
             ax.set_ylabel('Feature Value')
-            ax.set_xticks(ind)  # x-location of each tick!!!
-            ax.set_xticklabels(sorted_index, fontsize=5, rotation=45)
+            ax.set_xticks(ind)  # y-location of each tick!!!
+            ax.set_xticklabels(ind, fontsize=5, rotation=45)
 
             positive_index_after_sort = []
-            for i in range(len(pos_indexes)):
-                pos_index = pos_indexes[i]
+            for x in range(len(pos_indexes)):
+                pos_index = pos_indexes[x]
                 if pos_index > index:
                     break
                 if pos_index == index:
                     # Find out the new index of the positive indexes after sorting above
-                    positive_index_after_sort = list(
-                        map(lambda ii: sorted_index.index(ii), pos_stat[i][1]))
+                    # positive_index_after_sort = list(
+                    #     map(lambda ii: ind.index(ii), pos_stat[x][1]))
+                    positive_index_after_sort = pos_stat[x][1]
             add_value_labels(ax, positive_index_after_sort, 5, 'vertical')
-            plt.savefig('feature_graphs/feature_' +
+            plt.savefig(foldername+'/feature_' +
                         str(index) + '_graph.pdf', bbox_inches='tight')
-            pdfs.append('feature_graphs/feature_' + str(index) + '_graph.pdf')
+            pdfs.append(foldername+'/feature_' + str(index) + '_graph.pdf')
             # plt.show()
             plt.close()
             counter += 1
         merger = p.PdfFileMerger()
         for pdf in pdfs:
             merger.append(pdf)
-        merger.write("feature_graphs/Combined.pdf")
+        merger.write(foldername+"/Combined.pdf")
         merger.close()
 
     def build_features(self, image_shape, minmax):
         height, width = image_shape
         features = []
-        # minmax format = [min_y, max_y, min_x, max_x, min_y_size, max_y_size, min_x_size, max_x_size]
-        for i in range(minmax[0], minmax[1]+1):
-            for j in range(minmax[2], minmax[3]+1):
-                for w in range(minmax[4], minmax[5]+1):
-                    for h in range(minmax[6], minmax[7]+1):
-                        # print('i/j/w/h\t', i, j, w, h)
+        # minmax format = [min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height]
+        min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height = minmax
+        # Row
+        # for y in range(minmax[0], minmax[1]+1):
+        for y in range(min_y, max_y):
+            # Col
+            # for x in range(minmax[2], minmax[3]+1):
+            for x in range(min_x, max_x):
+                # Width
+                # for w in range(minmax[4], minmax[5]+1):
+                for w in range(min_width, max_width):
+                    # Height
+                    # for h in range(minmax[6], minmax[7]+1):
+                    for h in range(min_height, max_height):
+                        # print('x/y/w/h\t', x, y, w, h)
                         half_width = math.floor(w/2)
                         third_width = math.floor(w/3)
                         half_height = math.floor(h/2)
@@ -370,47 +387,47 @@ class ViolaJones:
                             (2*half_width), h - \
                             (2*half_height), w - (3*third_width)
 
-                        # print("i %s, j %s, w %s, h %s" % (i, j, w, h))
+                        # print("x %s, y %s, w %s, h %s" % (x, y, w, h))
                         # print("half_width: %s, 3rd_width %s, half_height %s" % (half_width, third_width, half_height))
                         # # Rectangles: Note that format is [positive], [negative]
                         extra_w, extra_h = 0, 0
-                        if(i+w >= width):
-                            extra_w = (i+w) - width + 1
-                        if(j+h >= height):
-                            extra_h = (j+h) - height + 1
+                        if(x+w >= width):
+                            extra_w = (x+w) - width + 1
+                        if(y+h >= height):
+                            extra_h = (y+h) - height + 1
                         # Feature A:
                         if(half_width >= 1):
                             # print("\nhalf_width", half_width, "width", w)
-                            # print("start point", i, j, "end point", i +
-                            #       half_width+half_width-extra_w, j+h-extra_h)
+                            # print("start point", x, y, "end point", x +
+                            #       half_width+half_width-extra_w, y+h-extra_h)
                             # print("extra w, h", extra_w, extra_h)
                             immediate = RectangleRegion(
-                                i, j, half_width, h - extra_h)
+                                x, y, half_width, h - extra_h)
                             right = RectangleRegion(
-                                i+half_width, j, half_width + make_up_half_w - extra_w, h - extra_h)
+                                x+half_width, y, half_width + make_up_half_w - extra_w, h - extra_h)
                             a = Feature([right], [immediate], 0, 0)
                             features.append(a)
                         # print(a)
                         # Feature B:
                         if(half_height >= 1):
                             # if(half_height + make_up_half_h - extra_h) > minmax[7]:
-                            #     print(j, "B's height", half_height + make_up_half_h - extra_h)
+                            #     print(y, "B's height", half_height + make_up_half_h - extra_h)
                             #     print("h", h, "half h", half_height, "makeup", make_up_half_h, "extra h", extra_h)
                             immediate_2 = RectangleRegion(
-                                i, j, w-extra_w, half_height)
+                                x, y, w-extra_w, half_height)
                             bottom = RectangleRegion(
-                                i, j+half_height, w-extra_w, half_height + make_up_half_h - extra_h)
+                                x, y+half_height, w-extra_w, half_height + make_up_half_h - extra_h)
                             b = Feature([immediate_2], [bottom], 0, 1)
                             features.append(b)
                         # print(b)
                         # Feature C:
                         if(third_width >= 1):
                             immediate_3rd = RectangleRegion(
-                                i, j, third_width, h - extra_h)
+                                x, y, third_width, h - extra_h)
                             center_3rd = RectangleRegion(
-                                i+third_width, j, third_width, h - extra_h)
+                                x+third_width, y, third_width, h - extra_h)
                             right_3rd = RectangleRegion(
-                                i+third_width*2, j, third_width + make_up_third_w - extra_w, h - extra_h)
+                                x+third_width*2, y, third_width + make_up_third_w - extra_w, h - extra_h)
                             c = Feature([center_3rd], [
                                         right_3rd, immediate_3rd], 0, 2)
                             features.append(c)
@@ -418,13 +435,13 @@ class ViolaJones:
                         # Feature D:
                         if(half_width >= 1 and half_height >= 1):
                             top = RectangleRegion(
-                                i, j, half_width, half_height)
+                                x, y, half_width, half_height)
                             right = RectangleRegion(
-                                i+half_width, j, half_width + make_up_half_w - extra_w, half_height)
+                                x+half_width, y, half_width + make_up_half_w - extra_w, half_height)
                             bottom = RectangleRegion(
-                                i, j+half_height, half_width, half_height + make_up_half_h - extra_h)
+                                x, y+half_height, half_width, half_height + make_up_half_h - extra_h)
                             bottom_right = RectangleRegion(
-                                i+half_width, j+half_height,  half_width + make_up_half_w - extra_w, half_height + make_up_half_h - extra_h)
+                                x+half_width, y+half_height,  half_width + make_up_half_w - extra_w, half_height + make_up_half_h - extra_h)
                             d = Feature([right, bottom], [
                                         top, bottom_right], 0, 3)
                             features.append(d)
@@ -441,35 +458,35 @@ class ViolaJones:
     def label_features(self, feature, correct_list):
         """ For each feature compare it to each sample image provided and the correct bounding box and label """
         features = []   # Feature is only build once, so duplicate for each of the images
-        for i in range(len(correct_list)):
+        for x in range(len(correct_list)):
             features.append(feature)
         stat = []    # For each feature its total stat
         pos_stat = []   # For each feature-> indexes of score corresponding to positive sample
         neg_stat = []   # For each feature-> indexes of score corresponding ot negative samples
         y_list = []  # For each feature, then for each sample
         pos_y_list = []
-        for i in range(len(feature)):
+        for x in range(len(feature)):
             neg, pos = 0, 0
-            start_end = feature[i].get_size()
-            # print(i, start_end)
+            start_end = feature[x].get_size()
+            # print(x, start_end)
             temp_y, temp_pos_y, temp_pos, temp_neg = [], [], [], []
-            for j in range(len(correct_list)):
-                if(self.bigger_box(start_end, correct_list[j])):    # Positive
+            for y in range(len(correct_list)):
+                if(self.bigger_box(start_end, correct_list[y])):    # Positive
                     pos += 1
-                    features[j][i].pos_neg = 1
+                    features[y][x].pos_neg = 1
                     temp_y.append(1)
-                    temp_pos.append(j)
+                    temp_pos.append(y)
                 else:
                     neg += 1
-                    features[j][i].pos_neg = 0
+                    features[y][x].pos_neg = 0
                     temp_y.append(0)
-                    temp_neg.append(j)
+                    temp_neg.append(y)
             y_list.append(temp_y)
             stat.append([pos, neg])
             if temp_pos:    # If not empty
-                pos_stat.append([i, temp_pos])
+                pos_stat.append([x, temp_pos])
             if temp_neg:    # If not empty
-                neg_stat.append([i, temp_neg])
+                neg_stat.append([x, temp_neg])
         with open("output/all_features.txt", "w") as f:
             for item in features:
                 f.write("%s\n" % item)
@@ -487,10 +504,10 @@ class ViolaJones:
     def discard_useless_features(self, features, feature_stat, num_samples):
         """ Features that is completely correct or completely incorrect provides no relevant information, thus discarded """
         useful_features = []
-        for i, f in enumerate(features):
-            # print(i, "f:", f)
-            if(num_samples not in feature_stat[i]):
-                useful_features.append([i, f])
+        for x, f in enumerate(features):
+            # print(x, "f:", f)
+            if(num_samples not in feature_stat[x]):
+                useful_features.append([x, f])
                 # print("useful_f_haar_pos", f.haar_pos)
         return useful_features
 
@@ -518,8 +535,8 @@ class ViolaJones:
         and less than or equal to threshold as 0 for yes-eye
 
         Toggle: 1 for no-eye (Negative), 0 for yes-eye (Positive)
-        Accuracy (Guessed right) is determined as absolute value e(x) = |h(x) - y(x)| where h(x) is the thresholding
-        function and y(x) is the actual correctness. All four cases:
+        Accuracy (Guessed right) is determined as absolute value e(y) = |h(y) - x(y)| where h(y) is the thresholding
+        function and x(y) is the actual correctness. All four cases:
         |1 - 1| = 0     True-Negative
         |1 - 0| = 1     False-Positive
         |0 - 1| = 1     False-Negative
@@ -527,7 +544,7 @@ class ViolaJones:
         When 1 is positive, 0 is negative
         """
         best_thresholds, classifiers = [], []  # One for each feature
-        # i = 0
+        # x = 0
         # For each feature, sorted_list is [[img_index, feature_value], [],...]
         for index, sorted_list in (sorted_indexed_X):
             """ Splice feature values in half by 0.0, both thresholds start searching at 0+-, feature score does reach 0 quite often """
@@ -556,7 +573,7 @@ class ViolaJones:
                     for ind in above_indexes:
                         if ind in negative_sample_indexes:
                             above_negatives += 1
-            # print("\nIndex %i\nAbove pos-neg:\t%i-%i\nBelow pos-neg:\t%i-%i" %
+            # print("\nIndex %x\nAbove pos-neg:\t%x-%x\nBelow pos-neg:\t%x-%x" %
             #       (index, above_positives, above_negatives, below_positives, below_negatives))
 
             """ Now we have all the metadata we need on each feature to start searchingfor both thresholds through gini """
@@ -654,8 +671,8 @@ class ViolaJones:
             # min_gini = min(gini_at_threshold, key=lambda ii: ii[2])
             # best_thresholds.append(min_gini)
             # classifiers.append([index, WeakClassifier(
-            #     useful_features[i], min_gini[1], min_gini[3][0], min_gini[3][1], min_gini[3][2], min_gini[3][3])])
-            # i += 1
+            #     useful_features[x], min_gini[1], min_gini[3][0], min_gini[3][1], min_gini[3][2], min_gini[3][3])])
+            # x += 1
         return best_thresholds, classifiers
 
     def initialize_weights(self, feature_stat, y_list):
@@ -693,14 +710,14 @@ class ViolaJones:
         #     list(map(lambda ii: sum(ii[1]), normalized_weights)))
         """ Using nested-for loops is faster by 1.3 seconds with size of 20 """
         normalized_weights, total_normalized_weights, max_normalized_weights = [], 0, 0
-        for i in range(len(weights)):
-            # index, weight_row = weights[i][0], weights[i][1]
+        for x in range(len(weights)):
+            # index, weight_row = weights[x][0], weights[x][1]
             temp_row, row_sum = [], 0
-            for j in range(len(weights[i][1])):
-                # weights[i][1][j] = weights[i][1][j] / total_weights
-                temp_row.append(weights[i][1][j] / total_weights)
-                row_sum += weights[i][1][j] / total_weights
-            normalized_weights.append([weights[i][0], temp_row])
+            for y in range(len(weights[x][1])):
+                # weights[x][1][y] = weights[x][1][y] / total_weights
+                temp_row.append(weights[x][1][y] / total_weights)
+                row_sum += weights[x][1][y] / total_weights
+            normalized_weights.append([weights[x][0], temp_row])
             total_normalized_weights += row_sum
             if row_sum > max_normalized_weights:
                 max_normalized_weights = row_sum
@@ -715,7 +732,7 @@ class ViolaJones:
         for clf in classifiers:
             error, accuracy = 0, []
             if clf.index != sorted_X_list[clf.index][0]:
-                print("ERROR: Classifier index and X_list index mismatched at %i->%i" %
+                print("ERROR: Classifier index and X_list index mismatched at %x->%x" %
                       (clf.index, sorted_X_list[clf.index][0]))
             for sample_index, sample_value in sorted_X_list[clf.index][1]:
                 # Less than threshold = Guess Negative (Guess No-Eye) 0, Keeping consistency with find_gini_threshold
@@ -741,19 +758,19 @@ class ViolaJones:
 
         # """ At each threshold, compare to each feature value and find min error """
         # clf_errors, zero_list, counter = [], [], 0
-        # for i, clf in classifiers:
+        # for x, clf in classifiers:
         #     error = 0
-        #     for j, val in sorted_X_list[counter][1]:
+        #     for y, val in sorted_X_list[counter][1]:
         #         # Less than threshold = Guess Negative (Guess No-Eye) 0, Keeping consistency with find_gini_threshold
         #         guess = 1 if val > clf.threshold[1] else 0
         #         # correctness = 0 if guessed Correctly, 1 if guessed Incorrectly, If matches 0, else absolute value to +1
-        #         correctness = abs(guess - y_list[i][j])
+        #         correctness = abs(guess - y_list[x][y])
         #         if correctness == 1:    # Either False Negative or False Positive
         #             # error += 1 * weights[counter][1]
         #             error += 1
-        #     clf_errors.append([i, error])
+        #     clf_errors.append([x, error])
         #     if error == 0:
-        #         zero_list.append(i)
+        #         zero_list.append(x)
         #     counter += 1
         # with open("output/clf_error.txt", "w") as f:
         #     for item in clf_errors:
@@ -763,7 +780,7 @@ class ViolaJones:
         # sorted_clf_errors = sorted(clf_errors, key=lambda ii: ii[1])
         # to_prune = list(
         #     filter(lambda ii: ii[1] == 0, sorted_clf_errors))   # 2204, 2684
-        # # print("len-weights %i len-to-prune %i" % (len(weights), len(to_prune)))
+        # # print("len-weights %x len-to-prune %x" % (len(weights), len(to_prune)))
         # num_useful_features = int(len(useful_features) - len(to_prune))
         # # weights = [[row[0], 1/num_useful_features]
         # #            for row in useful_features if row[0] not in zero_list]
@@ -796,9 +813,9 @@ class ViolaJones:
         else:
             beta = best_error / (1 - best_error)
         print("Beta is %s" % beta)
-        for i in range(len(best_weights)):
-            best_weights[i] = best_weights[i] * \
-                pow(beta, (1 - best_accuracy[i]))
+        for x in range(len(best_weights)):
+            best_weights[x] = best_weights[x] * \
+                pow(beta, (1 - best_accuracy[x]))
         weights[best_error_index][1] = best_weights
         # print("best weights is", best_weights)
         # print("Updated weight is", weights[best_error_index][1])
@@ -813,14 +830,14 @@ class ViolaJones:
         for t in range(self.T):
             if t != 0:
                 weights = updated_weights
-            print("\nROUND %i" % t)
+            print("\nROUND %x" % t)
             """ Step 1, Normalize the weights """
             # print("1.) Starting normalizing")
             normalized_weights, total_normalized_weights, max_normalized_weights = self.normalize_weights(
                 weights)
             print("Max normalized weight is now %s" % max_normalized_weights)
             print("Total normalized weights is now %s" %
-                total_normalized_weights)
+                  total_normalized_weights)
             print("Normalizing Finished")
 
             """ Step 2 & 3, finding best classifier: """
@@ -831,8 +848,8 @@ class ViolaJones:
             # Apply the classifier to find its error (epsilon) as min-error of all errors from all samples applied to
             clf_errors, useful_clf_errors, best_error_index, best_error, best_accuracy = self.apply_classifiers(
                 sorted_X_list, y_list, classifiers, normalized_weights, max_normalized_weights)
-            print("Best error of this round found at index %i with value %s" %
-                (best_error_index, best_error))
+            print("Best error of this round found at index %x with value %s" %
+                  (best_error_index, best_error))
             # print("With accuracy of %s" % best_accuracy)
             sorted_clf_errors = sorted(clf_errors, key=lambda ii: ii[1])
             sorted_useful_clf_errors = sorted(
@@ -854,11 +871,11 @@ class ViolaJones:
             alpha = 0
             if best_error > 1:
                 print("ERROR: best error shouldn't even approach 1: %s" %
-                    best_error)
+                      best_error)
                 alpha = math.log(1/big_number)
             elif best_error < 0:
                 print("ERROR: best error should never drop below 0: %s" %
-                    best_error)
+                      best_error)
                 alpha = math.log(big_number)
             elif best_error == 1:
                 # alpha = float('-inf')
@@ -914,36 +931,36 @@ class ViolaJones:
                 print("DATA SAVED")
             print("alpha list:", self.alphas)
             print("WeakClassifier list:", "\n\t".join(str(classifier)
-                                                    for classifier in self.clfs))
+                                                      for classifier in self.clfs))
         return self.clf_indexes, self.alphas, self.errs, self.clfs
 
         # print(len(classifiers))
-        # for i, item in enumerate(classifiers):
-        #     print("%i\t%s" % (i, item))
+        # for x, item in enumerate(classifiers):
+        #     print("%x\t%s" % (x, item))
         # with open("output/classifiers.pkl", "wb") as f:
         #     pickle.dump(classifiers, f)
 
         # Takes about 50 minutes to fun
-        # self.plot_graphs(sorted_X_list, pos_stat)
+        # self.plot_graphs("feature_graphs", sorted_X_list, pos_stat)
 
     # def select_best(self, classifiers, weights, training_data):
     #     """     Out of all the weak_classifiers/features select the best one, accuracy for that feature only across all samples """
-    #     i = 0
+    #     x = 0
     #     feature_index, best_clf, best_error, best_accuracy = None, None, float(
     #         'inf'), None
     #     # accuracy is of the feature when applied to each sample images
     #     for clf in classifiers:  # For each of the 2880 weak classifiers
     #         error, accuracy = 0, []
     #         # For each sample feature was applied to:
-    #         for data, w, in zip(training_data[i], weights[i]):
+    #         for data, w, in zip(training_data[x], weights[x]):
     #             # Classification of feature minus the actual correctness of feature
     #             correctness = abs(clf.classify(data[0]) - data[1])
     #             accuracy.append(correctness)
     #             error += w*correctness
-    #         error /= len(training_data[i])
+    #         error /= len(training_data[x])
     #         if error < best_error:
-    #             feature_index, best_clf, best_error, best_accuracy = i, clf, error, accuracy
-    #         i += 1
+    #             feature_index, best_clf, best_error, best_accuracy = x, clf, error, accuracy
+    #         x += 1
     #     # print("len of best accuracy", len(best_accuracy))
     #     return feature_index, best_clf, best_error, best_accuracy
 
@@ -985,10 +1002,10 @@ class WeakClassifier:
         self.upper_threshold_value = upper_threshold_value
 
     def __repr__(self):
-        return "WeakClassifier %i:\n\tLower Threshold @ index %i is %s\n\tUpper Threshold @ index %i is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
+        return "WeakClassifier %x:\n\tLower Threshold @ index %x is %s\n\tUpper Threshold @ index %x is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
     def __str__(self):
-        return "WeakClassifier %i:\n\tLower Threshold @ index %i is %s\n\tUpper Threshold @ index %i is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
+        return "WeakClassifier %x:\n\tLower Threshold @ index %x is %s\n\tUpper Threshold @ index %x is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
 # class WeakClassifier:
 #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
@@ -1008,11 +1025,11 @@ class WeakClassifier:
     # def __str__(self):
     #     return "WeakClassifier: Threshold: %s True_Negative: %s" % (self.threshold, self.true_negative)
 
-    # This is the h(x, f, p, theta) function being calculated
-    # def classify(self, x):
+    # This is the h(y, f, p, theta) function being calculated
+    # def classify(self, y):
     #     def feature(ii): return sum([pos.compute_feature(ii) for pos in self.feature.haar_pos]) - sum(
     #         [neg.compute_feature(ii) for neg in self.feature.haar_neg])
-    #     return 1 if (self.polarity * feature(x) < self.polarity * self.threshold) else 0
+    #     return 1 if (self.polarity * feature(y) < self.polarity * self.threshold) else 0
 
 # Create the tables:
 # 1.) 3D table via dictionary holding 2D dataframes: one dataframe for each 50 images/ 2880 features total/ start point, end point, feature type, calculated value
@@ -1025,8 +1042,8 @@ def create_metadata_table(size):
     dataframe_collectioon = {}
     column_list = ["start_Y", "start_X", "end_Y",
                    "end_X", "feature_type", "value", "actual"]
-    for i in range(0, size):  # 0 to 49th, since we have 50 images in training-set
-        framename = "image_" + str(i) + "_data"
+    for x in range(0, size):  # 0 to 49th, since we have 50 images in training-set
+        framename = "image_" + str(x) + "_data"
         dataframe_collectioon[framename] = pd.DataFrame(columns=column_list)
     # 2.)
     threshold_df = pd.DataFrame(
@@ -1042,18 +1059,18 @@ def score_keeping(dataframe_collectioon, X_list, im_feature_label):
     # feature_combined = features[0]+features[1]+features[2]+features[3]
     c = 0
     for key in dataframe_collectioon.keys():
-        for i in range(0, len(X_list)):
+        for x in range(0, len(X_list)):
             row = []
-            if (im_feature_label[c][i].feature_type in [0, 1, 2, 3]):
-                data = im_feature_label[c][i].get_size() + \
-                    [im_feature_label[c][i].feature_type, X_list[i][c],
-                     im_feature_label[c][i].pos_neg]
+            if (im_feature_label[c][x].feature_type in [0, 1, 2, 3]):
+                data = im_feature_label[c][x].get_size() + \
+                    [im_feature_label[c][x].feature_type, X_list[x][c],
+                     im_feature_label[c][x].pos_neg]
                 row = [
                     pd.Series(data, index=dataframe_collectioon.get(key).columns)]
             else:
                 # This should never be reached since each feature was initialize as a/b/c/d type
                 print("ERROR: There shouldn't be a feature with type not a/b/c/d\t",
-                      im_feature_label[c][i].feature_type)
+                      im_feature_label[c][x].feature_type)
             dataframe_collectioon[key] = dataframe_collectioon[key].append(
                 row, ignore_index=True)
         dataframe_collectioon[key].to_csv('applied/df_' + str(c) + '.csv',
@@ -1082,16 +1099,16 @@ def print_score(dataframe_collectioon):
 # # num_image = len(image_list)
 # normalized_list = max_normalize(image_list)
 # # Refactor the data back to before it was multiplied by 2^8
-# # for i in range(len(normalized_list)):
-# #     # assert np.all(n_list[i] == ret[i]), "Normalized image read not matching with original normalized!"
+# # for x in range(len(normalized_list)):
+# #     # assert np.all(n_list[x] == ret[x]), "Normalized image read not matching with original normalized!"
 # #     # Convert back from the multiplication of 2^16
-# #     normalized_list[i] /= pow(2, 16)
+# #     normalized_list[x] /= pow(2, 16)
 # ii_list = integral_image(normalized_list)
 # # Only needs to be done once since all images have same dimensions
 # features = ViolaJones().build_features(ii_list[0].shape, minmax)
 # feature_combined = features[0]+features[1]+features[2]+features[3]
 # im_feature = []
-# for i in range(50):
+# for x in range(50):
 #     im_feature.append(feature_combined)
 # print('Each feature type has:\t', len(features[0]), len(features[1]), len(features[2]), len(features[3]))
 # print('For total of\t', len(features[0])+ len(features[1])+ len(features[2])+ len(features[3]))
@@ -1100,9 +1117,9 @@ def print_score(dataframe_collectioon):
 # im_feature_label = []
 # total_pos = 0
 # total_neg = 0
-# for i in range(50):
-#     print("image ", i)
-#     temp = ViolaJones().label_neg_pos_features(features, correct[i])
+# for x in range(50):
+#     print("image ", x)
+#     temp = ViolaJones().label_neg_pos_features(features, correct[x])
 #     total_pos += temp[2]
 #     total_neg += temp[1]
 #     im_feature_label.append(temp)   #[2880 features, #neg, #pos] for each image
@@ -1124,9 +1141,9 @@ minmax = min_max_eye(metadata_path)
 correct = read_metadata(metadata_path)
 image_list = import_image(image_path)
 normalized_list = max_normalize(image_list)
-# for i in range(len(normalized_list)):
+# for x in range(len(normalized_list)):
 #     # Refactor the data back to before it was multiplied by 2^16
-#     normalized_list[i] /= pow(2, 16)
+#     normalized_list[x] /= pow(2, 16)
 ii_list = integral_image(normalized_list)
 features = strong_classifier.build_features(ii_list[0].shape, minmax)
 with open(foldername+"/feature_table.txt", "w") as f:
@@ -1146,6 +1163,12 @@ with open(foldername+"/sorted_X_list.txt", "w") as f:
     for item in sorted_X_list:
         f.write("%s\n" % item)
 
+""" Plot the not-sorted feature graphs for verification """
+# strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+# temp_list = []
+# temp_list.append(X_list[0])
+# strong_classifier.plot_graphs("verify", temp_list, pos_stat)
+
 weights = strong_classifier.initialize_weights(feature_stat, y_list)
 with open(foldername+"/weights.txt", "w") as f:
     for item in weights:
@@ -1153,16 +1176,31 @@ with open(foldername+"/weights.txt", "w") as f:
 print("Prep Done")
 print("Number of iterations to run is %i" % strong_classifier.T)
 # Actually training below, which took 3 hours and 12 minutes
+# format = indexes, alphas, errors, weak_classifiers
 # weak_classifier_list = strong_classifier.train(
 #     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
 # strong_classifier.save(foldername+"/strong_classifier")
 # strong_classifier_copy = strong_classifier.load(
 #     foldername+"/strong_classifier")
 # Since I already ran it once and has the indexes of the final weak classifiers ordered by best errors...
-final_clf_indexes = [line.rstrip('\n')
-                     for line in open("output_old/final_clf_indexes.txt")]
-# indexes, alphas, errors, weak_classifiers
 
+
+# final_clf_indexes = [line.rstrip('\n')
+#                      for line in open("output_old/final_clf_indexes.txt")]
+# counter, x = 0, 0
+# lower_t, upper_t = [], []
+# for index, line in enumerate(open("output_old/final_clfs.txt")):
+#     if counter > 2:
+#         three = 0
+#     line = line.rstrip('\n')
+#     if counter == 0:
+#         if str(final_clf_indexes[x]) not in line:
+#             print("ERROR: final_clf.txt's index not matching ")
+#         x += 1
+#     elif counter == 1:
+#         print()
+
+#     counter += 1
 
 
 # correct = read_metadata('database0/training_set/eye_table.bin')
@@ -1185,7 +1223,7 @@ final_clf_indexes = [line.rstrip('\n')
 # indexed_feature_table = list(enumerate(feature_table))
 # with open("output/indexed_feature_table.txt", "w") as f:
 #     for index, item in indexed_feature_table:
-#         f.write("Index %i->%s\n" % (index, item))
+#         f.write("Index %x->%s\n" % (index, item))
 
 """ Generate Alpha-Error Graph """
 # # gp.c('set terminal pdf')
@@ -1247,12 +1285,12 @@ final_clf_indexes = [line.rstrip('\n')
 
 
 # X_list = []
-# for i in range(len(features)):  # 4, one for each feature type
-#     X, y = ViolaJones().apply_features(features[i], ii_list)     # Applying feature A/B/C/D to integral images
-#     print('Total applied feature score:\t', X.shape)  # 2340 x 50, 2340 for each image since there's 2340 feature A
-#     np.savetxt("applied/X" + str(i) + ".txt", X)
+# for x in range(len(features)):  # 4, one for each feature type
+#     X, x = ViolaJones().apply_features(features[x], ii_list)     # Applying feature A/B/C/D to integral images
+#     print('Total applied feature score:\t', X.shape)  # 2340 y 50, 2340 for each image since there's 2340 feature A
+#     np.savetxt("applied/X" + str(x) + ".txt", X)
 #     X_list = X_list + (X.tolist())
-# X_list, y = ViolaJones().apply_features(features, ii_list)
+# X_list, x = ViolaJones().apply_features(features, ii_list)
 # print(X_list.shape)
 # dataframe_collectioon, hit_rate_df, threshold_df = create_metadata_table(num_image)
 # dataframe_collectioon = score_keeping(dataframe_collectioon, X_list, im_feature_label)

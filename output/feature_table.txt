@@ -14,14 +14,6 @@ Feature of type 2 starts(3, 5) ends(22, 10) is 0
 
 Feature of type 3 starts(3, 5) ends(22, 10) is 0
 
-Feature of type 0 starts(3, 5) ends(22, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(22, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(22, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(22, 11) is 0
-
 Feature of type 0 starts(3, 5) ends(23, 9) is 0
 
 Feature of type 1 starts(3, 5) ends(23, 9) is 0
@@ -37,14 +29,6 @@ Feature of type 1 starts(3, 5) ends(23, 10) is 0
 Feature of type 2 starts(3, 5) ends(23, 10) is 0
 
 Feature of type 3 starts(3, 5) ends(23, 10) is 0
-
-Feature of type 0 starts(3, 5) ends(23, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(23, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(23, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(23, 11) is 0
 
 Feature of type 0 starts(3, 5) ends(24, 9) is 0
 
@@ -62,14 +46,6 @@ Feature of type 2 starts(3, 5) ends(24, 10) is 0
 
 Feature of type 3 starts(3, 5) ends(24, 10) is 0
 
-Feature of type 0 starts(3, 5) ends(24, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(24, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(24, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(24, 11) is 0
-
 Feature of type 0 starts(3, 5) ends(25, 9) is 0
 
 Feature of type 1 starts(3, 5) ends(25, 9) is 0
@@ -85,14 +61,6 @@ Feature of type 1 starts(3, 5) ends(25, 10) is 0
 Feature of type 2 starts(3, 5) ends(25, 10) is 0
 
 Feature of type 3 starts(3, 5) ends(25, 10) is 0
-
-Feature of type 0 starts(3, 5) ends(25, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(25, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(25, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(25, 11) is 0
 
 Feature of type 0 starts(3, 5) ends(26, 9) is 0
 
@@ -110,14 +78,6 @@ Feature of type 2 starts(3, 5) ends(26, 10) is 0
 
 Feature of type 3 starts(3, 5) ends(26, 10) is 0
 
-Feature of type 0 starts(3, 5) ends(26, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(26, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(26, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(26, 11) is 0
-
 Feature of type 0 starts(3, 5) ends(27, 9) is 0
 
 Feature of type 1 starts(3, 5) ends(27, 9) is 0
@@ -133,14 +93,6 @@ Feature of type 1 starts(3, 5) ends(27, 10) is 0
 Feature of type 2 starts(3, 5) ends(27, 10) is 0
 
 Feature of type 3 starts(3, 5) ends(27, 10) is 0
-
-Feature of type 0 starts(3, 5) ends(27, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(27, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(27, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(27, 11) is 0
 
 Feature of type 0 starts(3, 5) ends(28, 9) is 0
 
@@ -158,806 +110,6 @@ Feature of type 2 starts(3, 5) ends(28, 10) is 0
 
 Feature of type 3 starts(3, 5) ends(28, 10) is 0
 
-Feature of type 0 starts(3, 5) ends(28, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(28, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(28, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(28, 11) is 0
-
-Feature of type 0 starts(3, 5) ends(29, 9) is 0
-
-Feature of type 1 starts(3, 5) ends(29, 9) is 0
-
-Feature of type 2 starts(3, 5) ends(29, 9) is 0
-
-Feature of type 3 starts(3, 5) ends(29, 9) is 0
-
-Feature of type 0 starts(3, 5) ends(29, 10) is 0
-
-Feature of type 1 starts(3, 5) ends(29, 10) is 0
-
-Feature of type 2 starts(3, 5) ends(29, 10) is 0
-
-Feature of type 3 starts(3, 5) ends(29, 10) is 0
-
-Feature of type 0 starts(3, 5) ends(29, 11) is 0
-
-Feature of type 1 starts(3, 5) ends(29, 11) is 0
-
-Feature of type 2 starts(3, 5) ends(29, 11) is 0
-
-Feature of type 3 starts(3, 5) ends(29, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(22, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(22, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(22, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(22, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(22, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(22, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(22, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(22, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(22, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(22, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(22, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(22, 12) is 0
-
-Feature of type 0 starts(3, 6) ends(23, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(23, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(23, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(23, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(23, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(23, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(23, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(23, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(23, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(23, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(23, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(23, 12) is 0
-
-Feature of type 0 starts(3, 6) ends(24, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(24, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(24, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(24, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(24, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(24, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(24, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(24, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(24, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(24, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(24, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(24, 12) is 0
-
-Feature of type 0 starts(3, 6) ends(25, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(25, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(25, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(25, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(25, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(25, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(25, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(25, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(25, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(25, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(25, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(25, 12) is 0
-
-Feature of type 0 starts(3, 6) ends(26, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(26, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(26, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(26, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(26, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(26, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(26, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(26, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(26, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(26, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(26, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(26, 12) is 0
-
-Feature of type 0 starts(3, 6) ends(27, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(27, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(27, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(27, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(27, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(27, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(27, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(27, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(27, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(27, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(27, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(27, 12) is 0
-
-Feature of type 0 starts(3, 6) ends(28, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(28, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(28, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(28, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(28, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(28, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(28, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(28, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(28, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(28, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(28, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(28, 12) is 0
-
-Feature of type 0 starts(3, 6) ends(29, 10) is 0
-
-Feature of type 1 starts(3, 6) ends(29, 10) is 0
-
-Feature of type 2 starts(3, 6) ends(29, 10) is 0
-
-Feature of type 3 starts(3, 6) ends(29, 10) is 0
-
-Feature of type 0 starts(3, 6) ends(29, 11) is 0
-
-Feature of type 1 starts(3, 6) ends(29, 11) is 0
-
-Feature of type 2 starts(3, 6) ends(29, 11) is 0
-
-Feature of type 3 starts(3, 6) ends(29, 11) is 0
-
-Feature of type 0 starts(3, 6) ends(29, 12) is 0
-
-Feature of type 1 starts(3, 6) ends(29, 12) is 0
-
-Feature of type 2 starts(3, 6) ends(29, 12) is 0
-
-Feature of type 3 starts(3, 6) ends(29, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(22, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(22, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(22, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(22, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(22, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(22, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(22, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(22, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(22, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(22, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(22, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(22, 13) is 0
-
-Feature of type 0 starts(3, 7) ends(23, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(23, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(23, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(23, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(23, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(23, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(23, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(23, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(23, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(23, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(23, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(23, 13) is 0
-
-Feature of type 0 starts(3, 7) ends(24, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(24, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(24, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(24, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(24, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(24, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(24, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(24, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(24, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(24, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(24, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(24, 13) is 0
-
-Feature of type 0 starts(3, 7) ends(25, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(25, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(25, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(25, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(25, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(25, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(25, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(25, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(25, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(25, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(25, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(25, 13) is 0
-
-Feature of type 0 starts(3, 7) ends(26, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(26, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(26, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(26, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(26, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(26, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(26, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(26, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(26, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(26, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(26, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(26, 13) is 0
-
-Feature of type 0 starts(3, 7) ends(27, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(27, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(27, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(27, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(27, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(27, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(27, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(27, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(27, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(27, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(27, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(27, 13) is 0
-
-Feature of type 0 starts(3, 7) ends(28, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(28, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(28, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(28, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(28, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(28, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(28, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(28, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(28, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(28, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(28, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(28, 13) is 0
-
-Feature of type 0 starts(3, 7) ends(29, 11) is 0
-
-Feature of type 1 starts(3, 7) ends(29, 11) is 0
-
-Feature of type 2 starts(3, 7) ends(29, 11) is 0
-
-Feature of type 3 starts(3, 7) ends(29, 11) is 0
-
-Feature of type 0 starts(3, 7) ends(29, 12) is 0
-
-Feature of type 1 starts(3, 7) ends(29, 12) is 0
-
-Feature of type 2 starts(3, 7) ends(29, 12) is 0
-
-Feature of type 3 starts(3, 7) ends(29, 12) is 0
-
-Feature of type 0 starts(3, 7) ends(29, 13) is 0
-
-Feature of type 1 starts(3, 7) ends(29, 13) is 0
-
-Feature of type 2 starts(3, 7) ends(29, 13) is 0
-
-Feature of type 3 starts(3, 7) ends(29, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(22, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(22, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(22, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(22, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(22, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(22, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(22, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(22, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(22, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(22, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(22, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(22, 14) is 0
-
-Feature of type 0 starts(3, 8) ends(23, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(23, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(23, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(23, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(23, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(23, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(23, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(23, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(23, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(23, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(23, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(23, 14) is 0
-
-Feature of type 0 starts(3, 8) ends(24, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(24, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(24, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(24, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(24, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(24, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(24, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(24, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(24, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(24, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(24, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(24, 14) is 0
-
-Feature of type 0 starts(3, 8) ends(25, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(25, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(25, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(25, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(25, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(25, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(25, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(25, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(25, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(25, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(25, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(25, 14) is 0
-
-Feature of type 0 starts(3, 8) ends(26, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(26, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(26, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(26, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(26, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(26, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(26, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(26, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(26, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(26, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(26, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(26, 14) is 0
-
-Feature of type 0 starts(3, 8) ends(27, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(27, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(27, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(27, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(27, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(27, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(27, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(27, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(27, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(27, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(27, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(27, 14) is 0
-
-Feature of type 0 starts(3, 8) ends(28, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(28, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(28, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(28, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(28, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(28, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(28, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(28, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(28, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(28, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(28, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(28, 14) is 0
-
-Feature of type 0 starts(3, 8) ends(29, 12) is 0
-
-Feature of type 1 starts(3, 8) ends(29, 12) is 0
-
-Feature of type 2 starts(3, 8) ends(29, 12) is 0
-
-Feature of type 3 starts(3, 8) ends(29, 12) is 0
-
-Feature of type 0 starts(3, 8) ends(29, 13) is 0
-
-Feature of type 1 starts(3, 8) ends(29, 13) is 0
-
-Feature of type 2 starts(3, 8) ends(29, 13) is 0
-
-Feature of type 3 starts(3, 8) ends(29, 13) is 0
-
-Feature of type 0 starts(3, 8) ends(29, 14) is 0
-
-Feature of type 1 starts(3, 8) ends(29, 14) is 0
-
-Feature of type 2 starts(3, 8) ends(29, 14) is 0
-
-Feature of type 3 starts(3, 8) ends(29, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(22, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(22, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(22, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(22, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(22, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(22, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(22, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(22, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(22, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(22, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(22, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(22, 15) is 0
-
-Feature of type 0 starts(3, 9) ends(23, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(23, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(23, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(23, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(23, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(23, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(23, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(23, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(23, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(23, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(23, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(23, 15) is 0
-
-Feature of type 0 starts(3, 9) ends(24, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(24, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(24, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(24, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(24, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(24, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(24, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(24, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(24, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(24, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(24, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(24, 15) is 0
-
-Feature of type 0 starts(3, 9) ends(25, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(25, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(25, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(25, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(25, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(25, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(25, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(25, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(25, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(25, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(25, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(25, 15) is 0
-
-Feature of type 0 starts(3, 9) ends(26, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(26, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(26, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(26, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(26, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(26, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(26, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(26, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(26, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(26, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(26, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(26, 15) is 0
-
-Feature of type 0 starts(3, 9) ends(27, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(27, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(27, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(27, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(27, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(27, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(27, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(27, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(27, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(27, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(27, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(27, 15) is 0
-
-Feature of type 0 starts(3, 9) ends(28, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(28, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(28, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(28, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(28, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(28, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(28, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(28, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(28, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(28, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(28, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(28, 15) is 0
-
-Feature of type 0 starts(3, 9) ends(29, 13) is 0
-
-Feature of type 1 starts(3, 9) ends(29, 13) is 0
-
-Feature of type 2 starts(3, 9) ends(29, 13) is 0
-
-Feature of type 3 starts(3, 9) ends(29, 13) is 0
-
-Feature of type 0 starts(3, 9) ends(29, 14) is 0
-
-Feature of type 1 starts(3, 9) ends(29, 14) is 0
-
-Feature of type 2 starts(3, 9) ends(29, 14) is 0
-
-Feature of type 3 starts(3, 9) ends(29, 14) is 0
-
-Feature of type 0 starts(3, 9) ends(29, 15) is 0
-
-Feature of type 1 starts(3, 9) ends(29, 15) is 0
-
-Feature of type 2 starts(3, 9) ends(29, 15) is 0
-
-Feature of type 3 starts(3, 9) ends(29, 15) is 0
-
 Feature of type 0 starts(4, 5) ends(23, 9) is 0
 
 Feature of type 1 starts(4, 5) ends(23, 9) is 0
@@ -973,14 +125,6 @@ Feature of type 1 starts(4, 5) ends(23, 10) is 0
 Feature of type 2 starts(4, 5) ends(23, 10) is 0
 
 Feature of type 3 starts(4, 5) ends(23, 10) is 0
-
-Feature of type 0 starts(4, 5) ends(23, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(23, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(23, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(23, 11) is 0
 
 Feature of type 0 starts(4, 5) ends(24, 9) is 0
 
@@ -998,14 +142,6 @@ Feature of type 2 starts(4, 5) ends(24, 10) is 0
 
 Feature of type 3 starts(4, 5) ends(24, 10) is 0
 
-Feature of type 0 starts(4, 5) ends(24, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(24, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(24, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(24, 11) is 0
-
 Feature of type 0 starts(4, 5) ends(25, 9) is 0
 
 Feature of type 1 starts(4, 5) ends(25, 9) is 0
@@ -1021,14 +157,6 @@ Feature of type 1 starts(4, 5) ends(25, 10) is 0
 Feature of type 2 starts(4, 5) ends(25, 10) is 0
 
 Feature of type 3 starts(4, 5) ends(25, 10) is 0
-
-Feature of type 0 starts(4, 5) ends(25, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(25, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(25, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(25, 11) is 0
 
 Feature of type 0 starts(4, 5) ends(26, 9) is 0
 
@@ -1046,14 +174,6 @@ Feature of type 2 starts(4, 5) ends(26, 10) is 0
 
 Feature of type 3 starts(4, 5) ends(26, 10) is 0
 
-Feature of type 0 starts(4, 5) ends(26, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(26, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(26, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(26, 11) is 0
-
 Feature of type 0 starts(4, 5) ends(27, 9) is 0
 
 Feature of type 1 starts(4, 5) ends(27, 9) is 0
@@ -1069,14 +189,6 @@ Feature of type 1 starts(4, 5) ends(27, 10) is 0
 Feature of type 2 starts(4, 5) ends(27, 10) is 0
 
 Feature of type 3 starts(4, 5) ends(27, 10) is 0
-
-Feature of type 0 starts(4, 5) ends(27, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(27, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(27, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(27, 11) is 0
 
 Feature of type 0 starts(4, 5) ends(28, 9) is 0
 
@@ -1094,14 +206,6 @@ Feature of type 2 starts(4, 5) ends(28, 10) is 0
 
 Feature of type 3 starts(4, 5) ends(28, 10) is 0
 
-Feature of type 0 starts(4, 5) ends(28, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(28, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(28, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(28, 11) is 0
-
 Feature of type 0 starts(4, 5) ends(29, 9) is 0
 
 Feature of type 1 starts(4, 5) ends(29, 9) is 0
@@ -1117,806 +221,6 @@ Feature of type 1 starts(4, 5) ends(29, 10) is 0
 Feature of type 2 starts(4, 5) ends(29, 10) is 0
 
 Feature of type 3 starts(4, 5) ends(29, 10) is 0
-
-Feature of type 0 starts(4, 5) ends(29, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(29, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(29, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(29, 11) is 0
-
-Feature of type 0 starts(4, 5) ends(30, 9) is 0
-
-Feature of type 1 starts(4, 5) ends(30, 9) is 0
-
-Feature of type 2 starts(4, 5) ends(30, 9) is 0
-
-Feature of type 3 starts(4, 5) ends(30, 9) is 0
-
-Feature of type 0 starts(4, 5) ends(30, 10) is 0
-
-Feature of type 1 starts(4, 5) ends(30, 10) is 0
-
-Feature of type 2 starts(4, 5) ends(30, 10) is 0
-
-Feature of type 3 starts(4, 5) ends(30, 10) is 0
-
-Feature of type 0 starts(4, 5) ends(30, 11) is 0
-
-Feature of type 1 starts(4, 5) ends(30, 11) is 0
-
-Feature of type 2 starts(4, 5) ends(30, 11) is 0
-
-Feature of type 3 starts(4, 5) ends(30, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(23, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(23, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(23, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(23, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(23, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(23, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(23, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(23, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(23, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(23, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(23, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(23, 12) is 0
-
-Feature of type 0 starts(4, 6) ends(24, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(24, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(24, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(24, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(24, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(24, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(24, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(24, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(24, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(24, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(24, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(24, 12) is 0
-
-Feature of type 0 starts(4, 6) ends(25, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(25, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(25, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(25, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(25, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(25, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(25, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(25, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(25, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(25, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(25, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(25, 12) is 0
-
-Feature of type 0 starts(4, 6) ends(26, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(26, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(26, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(26, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(26, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(26, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(26, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(26, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(26, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(26, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(26, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(26, 12) is 0
-
-Feature of type 0 starts(4, 6) ends(27, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(27, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(27, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(27, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(27, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(27, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(27, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(27, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(27, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(27, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(27, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(27, 12) is 0
-
-Feature of type 0 starts(4, 6) ends(28, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(28, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(28, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(28, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(28, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(28, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(28, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(28, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(28, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(28, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(28, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(28, 12) is 0
-
-Feature of type 0 starts(4, 6) ends(29, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(29, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(29, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(29, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(29, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(29, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(29, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(29, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(29, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(29, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(29, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(29, 12) is 0
-
-Feature of type 0 starts(4, 6) ends(30, 10) is 0
-
-Feature of type 1 starts(4, 6) ends(30, 10) is 0
-
-Feature of type 2 starts(4, 6) ends(30, 10) is 0
-
-Feature of type 3 starts(4, 6) ends(30, 10) is 0
-
-Feature of type 0 starts(4, 6) ends(30, 11) is 0
-
-Feature of type 1 starts(4, 6) ends(30, 11) is 0
-
-Feature of type 2 starts(4, 6) ends(30, 11) is 0
-
-Feature of type 3 starts(4, 6) ends(30, 11) is 0
-
-Feature of type 0 starts(4, 6) ends(30, 12) is 0
-
-Feature of type 1 starts(4, 6) ends(30, 12) is 0
-
-Feature of type 2 starts(4, 6) ends(30, 12) is 0
-
-Feature of type 3 starts(4, 6) ends(30, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(23, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(23, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(23, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(23, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(23, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(23, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(23, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(23, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(23, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(23, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(23, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(23, 13) is 0
-
-Feature of type 0 starts(4, 7) ends(24, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(24, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(24, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(24, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(24, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(24, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(24, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(24, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(24, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(24, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(24, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(24, 13) is 0
-
-Feature of type 0 starts(4, 7) ends(25, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(25, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(25, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(25, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(25, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(25, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(25, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(25, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(25, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(25, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(25, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(25, 13) is 0
-
-Feature of type 0 starts(4, 7) ends(26, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(26, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(26, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(26, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(26, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(26, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(26, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(26, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(26, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(26, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(26, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(26, 13) is 0
-
-Feature of type 0 starts(4, 7) ends(27, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(27, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(27, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(27, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(27, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(27, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(27, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(27, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(27, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(27, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(27, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(27, 13) is 0
-
-Feature of type 0 starts(4, 7) ends(28, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(28, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(28, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(28, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(28, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(28, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(28, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(28, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(28, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(28, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(28, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(28, 13) is 0
-
-Feature of type 0 starts(4, 7) ends(29, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(29, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(29, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(29, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(29, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(29, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(29, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(29, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(29, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(29, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(29, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(29, 13) is 0
-
-Feature of type 0 starts(4, 7) ends(30, 11) is 0
-
-Feature of type 1 starts(4, 7) ends(30, 11) is 0
-
-Feature of type 2 starts(4, 7) ends(30, 11) is 0
-
-Feature of type 3 starts(4, 7) ends(30, 11) is 0
-
-Feature of type 0 starts(4, 7) ends(30, 12) is 0
-
-Feature of type 1 starts(4, 7) ends(30, 12) is 0
-
-Feature of type 2 starts(4, 7) ends(30, 12) is 0
-
-Feature of type 3 starts(4, 7) ends(30, 12) is 0
-
-Feature of type 0 starts(4, 7) ends(30, 13) is 0
-
-Feature of type 1 starts(4, 7) ends(30, 13) is 0
-
-Feature of type 2 starts(4, 7) ends(30, 13) is 0
-
-Feature of type 3 starts(4, 7) ends(30, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(23, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(23, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(23, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(23, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(23, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(23, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(23, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(23, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(23, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(23, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(23, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(23, 14) is 0
-
-Feature of type 0 starts(4, 8) ends(24, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(24, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(24, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(24, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(24, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(24, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(24, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(24, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(24, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(24, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(24, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(24, 14) is 0
-
-Feature of type 0 starts(4, 8) ends(25, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(25, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(25, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(25, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(25, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(25, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(25, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(25, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(25, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(25, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(25, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(25, 14) is 0
-
-Feature of type 0 starts(4, 8) ends(26, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(26, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(26, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(26, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(26, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(26, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(26, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(26, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(26, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(26, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(26, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(26, 14) is 0
-
-Feature of type 0 starts(4, 8) ends(27, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(27, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(27, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(27, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(27, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(27, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(27, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(27, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(27, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(27, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(27, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(27, 14) is 0
-
-Feature of type 0 starts(4, 8) ends(28, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(28, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(28, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(28, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(28, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(28, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(28, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(28, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(28, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(28, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(28, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(28, 14) is 0
-
-Feature of type 0 starts(4, 8) ends(29, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(29, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(29, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(29, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(29, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(29, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(29, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(29, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(29, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(29, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(29, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(29, 14) is 0
-
-Feature of type 0 starts(4, 8) ends(30, 12) is 0
-
-Feature of type 1 starts(4, 8) ends(30, 12) is 0
-
-Feature of type 2 starts(4, 8) ends(30, 12) is 0
-
-Feature of type 3 starts(4, 8) ends(30, 12) is 0
-
-Feature of type 0 starts(4, 8) ends(30, 13) is 0
-
-Feature of type 1 starts(4, 8) ends(30, 13) is 0
-
-Feature of type 2 starts(4, 8) ends(30, 13) is 0
-
-Feature of type 3 starts(4, 8) ends(30, 13) is 0
-
-Feature of type 0 starts(4, 8) ends(30, 14) is 0
-
-Feature of type 1 starts(4, 8) ends(30, 14) is 0
-
-Feature of type 2 starts(4, 8) ends(30, 14) is 0
-
-Feature of type 3 starts(4, 8) ends(30, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(23, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(23, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(23, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(23, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(23, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(23, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(23, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(23, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(23, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(23, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(23, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(23, 15) is 0
-
-Feature of type 0 starts(4, 9) ends(24, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(24, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(24, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(24, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(24, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(24, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(24, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(24, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(24, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(24, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(24, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(24, 15) is 0
-
-Feature of type 0 starts(4, 9) ends(25, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(25, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(25, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(25, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(25, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(25, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(25, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(25, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(25, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(25, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(25, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(25, 15) is 0
-
-Feature of type 0 starts(4, 9) ends(26, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(26, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(26, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(26, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(26, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(26, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(26, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(26, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(26, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(26, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(26, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(26, 15) is 0
-
-Feature of type 0 starts(4, 9) ends(27, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(27, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(27, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(27, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(27, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(27, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(27, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(27, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(27, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(27, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(27, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(27, 15) is 0
-
-Feature of type 0 starts(4, 9) ends(28, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(28, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(28, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(28, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(28, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(28, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(28, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(28, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(28, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(28, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(28, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(28, 15) is 0
-
-Feature of type 0 starts(4, 9) ends(29, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(29, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(29, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(29, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(29, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(29, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(29, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(29, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(29, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(29, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(29, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(29, 15) is 0
-
-Feature of type 0 starts(4, 9) ends(30, 13) is 0
-
-Feature of type 1 starts(4, 9) ends(30, 13) is 0
-
-Feature of type 2 starts(4, 9) ends(30, 13) is 0
-
-Feature of type 3 starts(4, 9) ends(30, 13) is 0
-
-Feature of type 0 starts(4, 9) ends(30, 14) is 0
-
-Feature of type 1 starts(4, 9) ends(30, 14) is 0
-
-Feature of type 2 starts(4, 9) ends(30, 14) is 0
-
-Feature of type 3 starts(4, 9) ends(30, 14) is 0
-
-Feature of type 0 starts(4, 9) ends(30, 15) is 0
-
-Feature of type 1 starts(4, 9) ends(30, 15) is 0
-
-Feature of type 2 starts(4, 9) ends(30, 15) is 0
-
-Feature of type 3 starts(4, 9) ends(30, 15) is 0
 
 Feature of type 0 starts(5, 5) ends(24, 9) is 0
 
@@ -1934,14 +238,6 @@ Feature of type 2 starts(5, 5) ends(24, 10) is 0
 
 Feature of type 3 starts(5, 5) ends(24, 10) is 0
 
-Feature of type 0 starts(5, 5) ends(24, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(24, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(24, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(24, 11) is 0
-
 Feature of type 0 starts(5, 5) ends(25, 9) is 0
 
 Feature of type 1 starts(5, 5) ends(25, 9) is 0
@@ -1957,14 +253,6 @@ Feature of type 1 starts(5, 5) ends(25, 10) is 0
 Feature of type 2 starts(5, 5) ends(25, 10) is 0
 
 Feature of type 3 starts(5, 5) ends(25, 10) is 0
-
-Feature of type 0 starts(5, 5) ends(25, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(25, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(25, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(25, 11) is 0
 
 Feature of type 0 starts(5, 5) ends(26, 9) is 0
 
@@ -1982,14 +270,6 @@ Feature of type 2 starts(5, 5) ends(26, 10) is 0
 
 Feature of type 3 starts(5, 5) ends(26, 10) is 0
 
-Feature of type 0 starts(5, 5) ends(26, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(26, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(26, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(26, 11) is 0
-
 Feature of type 0 starts(5, 5) ends(27, 9) is 0
 
 Feature of type 1 starts(5, 5) ends(27, 9) is 0
@@ -2005,14 +285,6 @@ Feature of type 1 starts(5, 5) ends(27, 10) is 0
 Feature of type 2 starts(5, 5) ends(27, 10) is 0
 
 Feature of type 3 starts(5, 5) ends(27, 10) is 0
-
-Feature of type 0 starts(5, 5) ends(27, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(27, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(27, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(27, 11) is 0
 
 Feature of type 0 starts(5, 5) ends(28, 9) is 0
 
@@ -2030,14 +302,6 @@ Feature of type 2 starts(5, 5) ends(28, 10) is 0
 
 Feature of type 3 starts(5, 5) ends(28, 10) is 0
 
-Feature of type 0 starts(5, 5) ends(28, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(28, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(28, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(28, 11) is 0
-
 Feature of type 0 starts(5, 5) ends(29, 9) is 0
 
 Feature of type 1 starts(5, 5) ends(29, 9) is 0
@@ -2053,14 +317,6 @@ Feature of type 1 starts(5, 5) ends(29, 10) is 0
 Feature of type 2 starts(5, 5) ends(29, 10) is 0
 
 Feature of type 3 starts(5, 5) ends(29, 10) is 0
-
-Feature of type 0 starts(5, 5) ends(29, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(29, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(29, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(29, 11) is 0
 
 Feature of type 0 starts(5, 5) ends(30, 9) is 0
 
@@ -2078,806 +334,6 @@ Feature of type 2 starts(5, 5) ends(30, 10) is 0
 
 Feature of type 3 starts(5, 5) ends(30, 10) is 0
 
-Feature of type 0 starts(5, 5) ends(30, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(30, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(30, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(30, 11) is 0
-
-Feature of type 0 starts(5, 5) ends(31, 9) is 0
-
-Feature of type 1 starts(5, 5) ends(31, 9) is 0
-
-Feature of type 2 starts(5, 5) ends(31, 9) is 0
-
-Feature of type 3 starts(5, 5) ends(31, 9) is 0
-
-Feature of type 0 starts(5, 5) ends(31, 10) is 0
-
-Feature of type 1 starts(5, 5) ends(31, 10) is 0
-
-Feature of type 2 starts(5, 5) ends(31, 10) is 0
-
-Feature of type 3 starts(5, 5) ends(31, 10) is 0
-
-Feature of type 0 starts(5, 5) ends(31, 11) is 0
-
-Feature of type 1 starts(5, 5) ends(31, 11) is 0
-
-Feature of type 2 starts(5, 5) ends(31, 11) is 0
-
-Feature of type 3 starts(5, 5) ends(31, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(24, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(24, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(24, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(24, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(24, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(24, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(24, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(24, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(24, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(24, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(24, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(24, 12) is 0
-
-Feature of type 0 starts(5, 6) ends(25, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(25, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(25, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(25, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(25, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(25, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(25, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(25, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(25, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(25, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(25, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(25, 12) is 0
-
-Feature of type 0 starts(5, 6) ends(26, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(26, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(26, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(26, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(26, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(26, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(26, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(26, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(26, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(26, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(26, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(26, 12) is 0
-
-Feature of type 0 starts(5, 6) ends(27, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(27, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(27, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(27, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(27, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(27, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(27, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(27, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(27, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(27, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(27, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(27, 12) is 0
-
-Feature of type 0 starts(5, 6) ends(28, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(28, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(28, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(28, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(28, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(28, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(28, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(28, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(28, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(28, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(28, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(28, 12) is 0
-
-Feature of type 0 starts(5, 6) ends(29, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(29, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(29, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(29, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(29, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(29, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(29, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(29, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(29, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(29, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(29, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(29, 12) is 0
-
-Feature of type 0 starts(5, 6) ends(30, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(30, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(30, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(30, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(30, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(30, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(30, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(30, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(30, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(30, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(30, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(30, 12) is 0
-
-Feature of type 0 starts(5, 6) ends(31, 10) is 0
-
-Feature of type 1 starts(5, 6) ends(31, 10) is 0
-
-Feature of type 2 starts(5, 6) ends(31, 10) is 0
-
-Feature of type 3 starts(5, 6) ends(31, 10) is 0
-
-Feature of type 0 starts(5, 6) ends(31, 11) is 0
-
-Feature of type 1 starts(5, 6) ends(31, 11) is 0
-
-Feature of type 2 starts(5, 6) ends(31, 11) is 0
-
-Feature of type 3 starts(5, 6) ends(31, 11) is 0
-
-Feature of type 0 starts(5, 6) ends(31, 12) is 0
-
-Feature of type 1 starts(5, 6) ends(31, 12) is 0
-
-Feature of type 2 starts(5, 6) ends(31, 12) is 0
-
-Feature of type 3 starts(5, 6) ends(31, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(24, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(24, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(24, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(24, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(24, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(24, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(24, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(24, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(24, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(24, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(24, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(24, 13) is 0
-
-Feature of type 0 starts(5, 7) ends(25, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(25, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(25, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(25, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(25, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(25, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(25, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(25, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(25, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(25, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(25, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(25, 13) is 0
-
-Feature of type 0 starts(5, 7) ends(26, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(26, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(26, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(26, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(26, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(26, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(26, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(26, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(26, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(26, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(26, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(26, 13) is 0
-
-Feature of type 0 starts(5, 7) ends(27, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(27, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(27, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(27, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(27, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(27, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(27, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(27, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(27, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(27, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(27, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(27, 13) is 0
-
-Feature of type 0 starts(5, 7) ends(28, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(28, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(28, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(28, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(28, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(28, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(28, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(28, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(28, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(28, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(28, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(28, 13) is 0
-
-Feature of type 0 starts(5, 7) ends(29, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(29, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(29, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(29, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(29, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(29, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(29, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(29, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(29, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(29, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(29, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(29, 13) is 0
-
-Feature of type 0 starts(5, 7) ends(30, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(30, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(30, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(30, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(30, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(30, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(30, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(30, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(30, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(30, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(30, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(30, 13) is 0
-
-Feature of type 0 starts(5, 7) ends(31, 11) is 0
-
-Feature of type 1 starts(5, 7) ends(31, 11) is 0
-
-Feature of type 2 starts(5, 7) ends(31, 11) is 0
-
-Feature of type 3 starts(5, 7) ends(31, 11) is 0
-
-Feature of type 0 starts(5, 7) ends(31, 12) is 0
-
-Feature of type 1 starts(5, 7) ends(31, 12) is 0
-
-Feature of type 2 starts(5, 7) ends(31, 12) is 0
-
-Feature of type 3 starts(5, 7) ends(31, 12) is 0
-
-Feature of type 0 starts(5, 7) ends(31, 13) is 0
-
-Feature of type 1 starts(5, 7) ends(31, 13) is 0
-
-Feature of type 2 starts(5, 7) ends(31, 13) is 0
-
-Feature of type 3 starts(5, 7) ends(31, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(24, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(24, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(24, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(24, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(24, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(24, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(24, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(24, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(24, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(24, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(24, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(24, 14) is 0
-
-Feature of type 0 starts(5, 8) ends(25, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(25, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(25, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(25, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(25, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(25, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(25, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(25, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(25, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(25, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(25, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(25, 14) is 0
-
-Feature of type 0 starts(5, 8) ends(26, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(26, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(26, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(26, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(26, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(26, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(26, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(26, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(26, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(26, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(26, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(26, 14) is 0
-
-Feature of type 0 starts(5, 8) ends(27, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(27, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(27, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(27, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(27, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(27, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(27, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(27, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(27, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(27, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(27, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(27, 14) is 0
-
-Feature of type 0 starts(5, 8) ends(28, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(28, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(28, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(28, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(28, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(28, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(28, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(28, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(28, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(28, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(28, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(28, 14) is 0
-
-Feature of type 0 starts(5, 8) ends(29, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(29, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(29, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(29, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(29, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(29, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(29, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(29, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(29, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(29, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(29, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(29, 14) is 0
-
-Feature of type 0 starts(5, 8) ends(30, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(30, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(30, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(30, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(30, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(30, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(30, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(30, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(30, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(30, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(30, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(30, 14) is 0
-
-Feature of type 0 starts(5, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(5, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(5, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(5, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(5, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(5, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(5, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(5, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(5, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(5, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(5, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(5, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(24, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(24, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(24, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(24, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(24, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(24, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(24, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(24, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(24, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(24, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(24, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(24, 15) is 0
-
-Feature of type 0 starts(5, 9) ends(25, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(25, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(25, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(25, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(25, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(25, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(25, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(25, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(25, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(25, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(25, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(25, 15) is 0
-
-Feature of type 0 starts(5, 9) ends(26, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(26, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(26, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(26, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(26, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(26, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(26, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(26, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(26, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(26, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(26, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(26, 15) is 0
-
-Feature of type 0 starts(5, 9) ends(27, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(27, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(27, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(27, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(27, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(27, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(27, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(27, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(27, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(27, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(27, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(27, 15) is 0
-
-Feature of type 0 starts(5, 9) ends(28, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(28, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(28, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(28, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(28, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(28, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(28, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(28, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(28, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(28, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(28, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(28, 15) is 0
-
-Feature of type 0 starts(5, 9) ends(29, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(29, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(29, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(29, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(29, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(29, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(29, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(29, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(29, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(29, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(29, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(29, 15) is 0
-
-Feature of type 0 starts(5, 9) ends(30, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(30, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(30, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(30, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(30, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(30, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(30, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(30, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(30, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(30, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(30, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(30, 15) is 0
-
-Feature of type 0 starts(5, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(5, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(5, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(5, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(5, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(5, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(5, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(5, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(5, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(5, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(5, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(5, 9) ends(31, 15) is 0
-
 Feature of type 0 starts(6, 5) ends(25, 9) is 0
 
 Feature of type 1 starts(6, 5) ends(25, 9) is 0
@@ -2893,14 +349,6 @@ Feature of type 1 starts(6, 5) ends(25, 10) is 0
 Feature of type 2 starts(6, 5) ends(25, 10) is 0
 
 Feature of type 3 starts(6, 5) ends(25, 10) is 0
-
-Feature of type 0 starts(6, 5) ends(25, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(25, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(25, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(25, 11) is 0
 
 Feature of type 0 starts(6, 5) ends(26, 9) is 0
 
@@ -2918,14 +366,6 @@ Feature of type 2 starts(6, 5) ends(26, 10) is 0
 
 Feature of type 3 starts(6, 5) ends(26, 10) is 0
 
-Feature of type 0 starts(6, 5) ends(26, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(26, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(26, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(26, 11) is 0
-
 Feature of type 0 starts(6, 5) ends(27, 9) is 0
 
 Feature of type 1 starts(6, 5) ends(27, 9) is 0
@@ -2941,14 +381,6 @@ Feature of type 1 starts(6, 5) ends(27, 10) is 0
 Feature of type 2 starts(6, 5) ends(27, 10) is 0
 
 Feature of type 3 starts(6, 5) ends(27, 10) is 0
-
-Feature of type 0 starts(6, 5) ends(27, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(27, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(27, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(27, 11) is 0
 
 Feature of type 0 starts(6, 5) ends(28, 9) is 0
 
@@ -2966,14 +398,6 @@ Feature of type 2 starts(6, 5) ends(28, 10) is 0
 
 Feature of type 3 starts(6, 5) ends(28, 10) is 0
 
-Feature of type 0 starts(6, 5) ends(28, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(28, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(28, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(28, 11) is 0
-
 Feature of type 0 starts(6, 5) ends(29, 9) is 0
 
 Feature of type 1 starts(6, 5) ends(29, 9) is 0
@@ -2989,14 +413,6 @@ Feature of type 1 starts(6, 5) ends(29, 10) is 0
 Feature of type 2 starts(6, 5) ends(29, 10) is 0
 
 Feature of type 3 starts(6, 5) ends(29, 10) is 0
-
-Feature of type 0 starts(6, 5) ends(29, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(29, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(29, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(29, 11) is 0
 
 Feature of type 0 starts(6, 5) ends(30, 9) is 0
 
@@ -3014,14 +430,6 @@ Feature of type 2 starts(6, 5) ends(30, 10) is 0
 
 Feature of type 3 starts(6, 5) ends(30, 10) is 0
 
-Feature of type 0 starts(6, 5) ends(30, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(30, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(30, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(30, 11) is 0
-
 Feature of type 0 starts(6, 5) ends(31, 9) is 0
 
 Feature of type 1 starts(6, 5) ends(31, 9) is 0
@@ -3037,806 +445,6 @@ Feature of type 1 starts(6, 5) ends(31, 10) is 0
 Feature of type 2 starts(6, 5) ends(31, 10) is 0
 
 Feature of type 3 starts(6, 5) ends(31, 10) is 0
-
-Feature of type 0 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 0 starts(6, 5) ends(31, 9) is 0
-
-Feature of type 1 starts(6, 5) ends(31, 9) is 0
-
-Feature of type 2 starts(6, 5) ends(31, 9) is 0
-
-Feature of type 3 starts(6, 5) ends(31, 9) is 0
-
-Feature of type 0 starts(6, 5) ends(31, 10) is 0
-
-Feature of type 1 starts(6, 5) ends(31, 10) is 0
-
-Feature of type 2 starts(6, 5) ends(31, 10) is 0
-
-Feature of type 3 starts(6, 5) ends(31, 10) is 0
-
-Feature of type 0 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 1 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 2 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 3 starts(6, 5) ends(31, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(25, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(25, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(25, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(25, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(25, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(25, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(25, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(25, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(25, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(25, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(25, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(25, 12) is 0
-
-Feature of type 0 starts(6, 6) ends(26, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(26, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(26, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(26, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(26, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(26, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(26, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(26, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(26, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(26, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(26, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(26, 12) is 0
-
-Feature of type 0 starts(6, 6) ends(27, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(27, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(27, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(27, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(27, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(27, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(27, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(27, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(27, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(27, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(27, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(27, 12) is 0
-
-Feature of type 0 starts(6, 6) ends(28, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(28, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(28, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(28, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(28, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(28, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(28, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(28, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(28, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(28, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(28, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(28, 12) is 0
-
-Feature of type 0 starts(6, 6) ends(29, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(29, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(29, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(29, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(29, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(29, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(29, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(29, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(29, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(29, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(29, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(29, 12) is 0
-
-Feature of type 0 starts(6, 6) ends(30, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(30, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(30, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(30, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(30, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(30, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(30, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(30, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(30, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(30, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(30, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(30, 12) is 0
-
-Feature of type 0 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 0 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 1 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 2 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 3 starts(6, 6) ends(31, 10) is 0
-
-Feature of type 0 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 1 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 2 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 3 starts(6, 6) ends(31, 11) is 0
-
-Feature of type 0 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 1 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 2 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 3 starts(6, 6) ends(31, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(25, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(25, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(25, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(25, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(25, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(25, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(25, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(25, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(25, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(25, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(25, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(25, 13) is 0
-
-Feature of type 0 starts(6, 7) ends(26, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(26, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(26, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(26, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(26, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(26, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(26, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(26, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(26, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(26, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(26, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(26, 13) is 0
-
-Feature of type 0 starts(6, 7) ends(27, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(27, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(27, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(27, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(27, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(27, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(27, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(27, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(27, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(27, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(27, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(27, 13) is 0
-
-Feature of type 0 starts(6, 7) ends(28, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(28, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(28, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(28, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(28, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(28, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(28, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(28, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(28, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(28, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(28, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(28, 13) is 0
-
-Feature of type 0 starts(6, 7) ends(29, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(29, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(29, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(29, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(29, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(29, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(29, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(29, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(29, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(29, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(29, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(29, 13) is 0
-
-Feature of type 0 starts(6, 7) ends(30, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(30, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(30, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(30, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(30, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(30, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(30, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(30, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(30, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(30, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(30, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(30, 13) is 0
-
-Feature of type 0 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 0 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 1 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 2 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 3 starts(6, 7) ends(31, 11) is 0
-
-Feature of type 0 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 1 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 2 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 3 starts(6, 7) ends(31, 12) is 0
-
-Feature of type 0 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 1 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 2 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 3 starts(6, 7) ends(31, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(25, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(25, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(25, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(25, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(25, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(25, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(25, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(25, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(25, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(25, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(25, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(25, 14) is 0
-
-Feature of type 0 starts(6, 8) ends(26, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(26, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(26, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(26, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(26, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(26, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(26, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(26, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(26, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(26, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(26, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(26, 14) is 0
-
-Feature of type 0 starts(6, 8) ends(27, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(27, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(27, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(27, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(27, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(27, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(27, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(27, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(27, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(27, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(27, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(27, 14) is 0
-
-Feature of type 0 starts(6, 8) ends(28, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(28, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(28, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(28, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(28, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(28, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(28, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(28, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(28, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(28, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(28, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(28, 14) is 0
-
-Feature of type 0 starts(6, 8) ends(29, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(29, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(29, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(29, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(29, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(29, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(29, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(29, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(29, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(29, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(29, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(29, 14) is 0
-
-Feature of type 0 starts(6, 8) ends(30, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(30, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(30, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(30, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(30, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(30, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(30, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(30, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(30, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(30, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(30, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(30, 14) is 0
-
-Feature of type 0 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(6, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(6, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(6, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(25, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(25, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(25, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(25, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(25, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(25, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(25, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(25, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(25, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(25, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(25, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(25, 15) is 0
-
-Feature of type 0 starts(6, 9) ends(26, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(26, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(26, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(26, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(26, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(26, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(26, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(26, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(26, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(26, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(26, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(26, 15) is 0
-
-Feature of type 0 starts(6, 9) ends(27, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(27, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(27, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(27, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(27, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(27, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(27, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(27, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(27, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(27, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(27, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(27, 15) is 0
-
-Feature of type 0 starts(6, 9) ends(28, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(28, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(28, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(28, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(28, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(28, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(28, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(28, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(28, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(28, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(28, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(28, 15) is 0
-
-Feature of type 0 starts(6, 9) ends(29, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(29, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(29, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(29, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(29, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(29, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(29, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(29, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(29, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(29, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(29, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(29, 15) is 0
-
-Feature of type 0 starts(6, 9) ends(30, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(30, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(30, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(30, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(30, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(30, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(30, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(30, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(30, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(30, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(30, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(30, 15) is 0
-
-Feature of type 0 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(31, 15) is 0
-
-Feature of type 0 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(6, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(6, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(6, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(6, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(6, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(6, 9) ends(31, 15) is 0
 
 Feature of type 0 starts(7, 5) ends(26, 9) is 0
 
@@ -3854,14 +462,6 @@ Feature of type 2 starts(7, 5) ends(26, 10) is 0
 
 Feature of type 3 starts(7, 5) ends(26, 10) is 0
 
-Feature of type 0 starts(7, 5) ends(26, 11) is 0
-
-Feature of type 1 starts(7, 5) ends(26, 11) is 0
-
-Feature of type 2 starts(7, 5) ends(26, 11) is 0
-
-Feature of type 3 starts(7, 5) ends(26, 11) is 0
-
 Feature of type 0 starts(7, 5) ends(27, 9) is 0
 
 Feature of type 1 starts(7, 5) ends(27, 9) is 0
@@ -3877,14 +477,6 @@ Feature of type 1 starts(7, 5) ends(27, 10) is 0
 Feature of type 2 starts(7, 5) ends(27, 10) is 0
 
 Feature of type 3 starts(7, 5) ends(27, 10) is 0
-
-Feature of type 0 starts(7, 5) ends(27, 11) is 0
-
-Feature of type 1 starts(7, 5) ends(27, 11) is 0
-
-Feature of type 2 starts(7, 5) ends(27, 11) is 0
-
-Feature of type 3 starts(7, 5) ends(27, 11) is 0
 
 Feature of type 0 starts(7, 5) ends(28, 9) is 0
 
@@ -3902,14 +494,6 @@ Feature of type 2 starts(7, 5) ends(28, 10) is 0
 
 Feature of type 3 starts(7, 5) ends(28, 10) is 0
 
-Feature of type 0 starts(7, 5) ends(28, 11) is 0
-
-Feature of type 1 starts(7, 5) ends(28, 11) is 0
-
-Feature of type 2 starts(7, 5) ends(28, 11) is 0
-
-Feature of type 3 starts(7, 5) ends(28, 11) is 0
-
 Feature of type 0 starts(7, 5) ends(29, 9) is 0
 
 Feature of type 1 starts(7, 5) ends(29, 9) is 0
@@ -3925,14 +509,6 @@ Feature of type 1 starts(7, 5) ends(29, 10) is 0
 Feature of type 2 starts(7, 5) ends(29, 10) is 0
 
 Feature of type 3 starts(7, 5) ends(29, 10) is 0
-
-Feature of type 0 starts(7, 5) ends(29, 11) is 0
-
-Feature of type 1 starts(7, 5) ends(29, 11) is 0
-
-Feature of type 2 starts(7, 5) ends(29, 11) is 0
-
-Feature of type 3 starts(7, 5) ends(29, 11) is 0
 
 Feature of type 0 starts(7, 5) ends(30, 9) is 0
 
@@ -3950,13 +526,21 @@ Feature of type 2 starts(7, 5) ends(30, 10) is 0
 
 Feature of type 3 starts(7, 5) ends(30, 10) is 0
 
-Feature of type 0 starts(7, 5) ends(30, 11) is 0
+Feature of type 0 starts(7, 5) ends(31, 9) is 0
 
-Feature of type 1 starts(7, 5) ends(30, 11) is 0
+Feature of type 1 starts(7, 5) ends(31, 9) is 0
 
-Feature of type 2 starts(7, 5) ends(30, 11) is 0
+Feature of type 2 starts(7, 5) ends(31, 9) is 0
 
-Feature of type 3 starts(7, 5) ends(30, 11) is 0
+Feature of type 3 starts(7, 5) ends(31, 9) is 0
+
+Feature of type 0 starts(7, 5) ends(31, 10) is 0
+
+Feature of type 1 starts(7, 5) ends(31, 10) is 0
+
+Feature of type 2 starts(7, 5) ends(31, 10) is 0
+
+Feature of type 3 starts(7, 5) ends(31, 10) is 0
 
 Feature of type 0 starts(7, 5) ends(31, 9) is 0
 
@@ -3974,61 +558,453 @@ Feature of type 2 starts(7, 5) ends(31, 10) is 0
 
 Feature of type 3 starts(7, 5) ends(31, 10) is 0
 
-Feature of type 0 starts(7, 5) ends(31, 11) is 0
+Feature of type 0 starts(3, 6) ends(22, 10) is 0
 
-Feature of type 1 starts(7, 5) ends(31, 11) is 0
+Feature of type 1 starts(3, 6) ends(22, 10) is 0
 
-Feature of type 2 starts(7, 5) ends(31, 11) is 0
+Feature of type 2 starts(3, 6) ends(22, 10) is 0
 
-Feature of type 3 starts(7, 5) ends(31, 11) is 0
+Feature of type 3 starts(3, 6) ends(22, 10) is 0
 
-Feature of type 0 starts(7, 5) ends(31, 9) is 0
+Feature of type 0 starts(3, 6) ends(22, 11) is 0
 
-Feature of type 1 starts(7, 5) ends(31, 9) is 0
+Feature of type 1 starts(3, 6) ends(22, 11) is 0
 
-Feature of type 2 starts(7, 5) ends(31, 9) is 0
+Feature of type 2 starts(3, 6) ends(22, 11) is 0
 
-Feature of type 3 starts(7, 5) ends(31, 9) is 0
+Feature of type 3 starts(3, 6) ends(22, 11) is 0
 
-Feature of type 0 starts(7, 5) ends(31, 10) is 0
+Feature of type 0 starts(3, 6) ends(23, 10) is 0
 
-Feature of type 1 starts(7, 5) ends(31, 10) is 0
+Feature of type 1 starts(3, 6) ends(23, 10) is 0
 
-Feature of type 2 starts(7, 5) ends(31, 10) is 0
+Feature of type 2 starts(3, 6) ends(23, 10) is 0
 
-Feature of type 3 starts(7, 5) ends(31, 10) is 0
+Feature of type 3 starts(3, 6) ends(23, 10) is 0
 
-Feature of type 0 starts(7, 5) ends(31, 11) is 0
+Feature of type 0 starts(3, 6) ends(23, 11) is 0
 
-Feature of type 1 starts(7, 5) ends(31, 11) is 0
+Feature of type 1 starts(3, 6) ends(23, 11) is 0
 
-Feature of type 2 starts(7, 5) ends(31, 11) is 0
+Feature of type 2 starts(3, 6) ends(23, 11) is 0
 
-Feature of type 3 starts(7, 5) ends(31, 11) is 0
+Feature of type 3 starts(3, 6) ends(23, 11) is 0
 
-Feature of type 0 starts(7, 5) ends(31, 9) is 0
+Feature of type 0 starts(3, 6) ends(24, 10) is 0
 
-Feature of type 1 starts(7, 5) ends(31, 9) is 0
+Feature of type 1 starts(3, 6) ends(24, 10) is 0
 
-Feature of type 2 starts(7, 5) ends(31, 9) is 0
+Feature of type 2 starts(3, 6) ends(24, 10) is 0
 
-Feature of type 3 starts(7, 5) ends(31, 9) is 0
+Feature of type 3 starts(3, 6) ends(24, 10) is 0
 
-Feature of type 0 starts(7, 5) ends(31, 10) is 0
+Feature of type 0 starts(3, 6) ends(24, 11) is 0
 
-Feature of type 1 starts(7, 5) ends(31, 10) is 0
+Feature of type 1 starts(3, 6) ends(24, 11) is 0
 
-Feature of type 2 starts(7, 5) ends(31, 10) is 0
+Feature of type 2 starts(3, 6) ends(24, 11) is 0
 
-Feature of type 3 starts(7, 5) ends(31, 10) is 0
+Feature of type 3 starts(3, 6) ends(24, 11) is 0
 
-Feature of type 0 starts(7, 5) ends(31, 11) is 0
+Feature of type 0 starts(3, 6) ends(25, 10) is 0
 
-Feature of type 1 starts(7, 5) ends(31, 11) is 0
+Feature of type 1 starts(3, 6) ends(25, 10) is 0
 
-Feature of type 2 starts(7, 5) ends(31, 11) is 0
+Feature of type 2 starts(3, 6) ends(25, 10) is 0
 
-Feature of type 3 starts(7, 5) ends(31, 11) is 0
+Feature of type 3 starts(3, 6) ends(25, 10) is 0
+
+Feature of type 0 starts(3, 6) ends(25, 11) is 0
+
+Feature of type 1 starts(3, 6) ends(25, 11) is 0
+
+Feature of type 2 starts(3, 6) ends(25, 11) is 0
+
+Feature of type 3 starts(3, 6) ends(25, 11) is 0
+
+Feature of type 0 starts(3, 6) ends(26, 10) is 0
+
+Feature of type 1 starts(3, 6) ends(26, 10) is 0
+
+Feature of type 2 starts(3, 6) ends(26, 10) is 0
+
+Feature of type 3 starts(3, 6) ends(26, 10) is 0
+
+Feature of type 0 starts(3, 6) ends(26, 11) is 0
+
+Feature of type 1 starts(3, 6) ends(26, 11) is 0
+
+Feature of type 2 starts(3, 6) ends(26, 11) is 0
+
+Feature of type 3 starts(3, 6) ends(26, 11) is 0
+
+Feature of type 0 starts(3, 6) ends(27, 10) is 0
+
+Feature of type 1 starts(3, 6) ends(27, 10) is 0
+
+Feature of type 2 starts(3, 6) ends(27, 10) is 0
+
+Feature of type 3 starts(3, 6) ends(27, 10) is 0
+
+Feature of type 0 starts(3, 6) ends(27, 11) is 0
+
+Feature of type 1 starts(3, 6) ends(27, 11) is 0
+
+Feature of type 2 starts(3, 6) ends(27, 11) is 0
+
+Feature of type 3 starts(3, 6) ends(27, 11) is 0
+
+Feature of type 0 starts(3, 6) ends(28, 10) is 0
+
+Feature of type 1 starts(3, 6) ends(28, 10) is 0
+
+Feature of type 2 starts(3, 6) ends(28, 10) is 0
+
+Feature of type 3 starts(3, 6) ends(28, 10) is 0
+
+Feature of type 0 starts(3, 6) ends(28, 11) is 0
+
+Feature of type 1 starts(3, 6) ends(28, 11) is 0
+
+Feature of type 2 starts(3, 6) ends(28, 11) is 0
+
+Feature of type 3 starts(3, 6) ends(28, 11) is 0
+
+Feature of type 0 starts(4, 6) ends(23, 10) is 0
+
+Feature of type 1 starts(4, 6) ends(23, 10) is 0
+
+Feature of type 2 starts(4, 6) ends(23, 10) is 0
+
+Feature of type 3 starts(4, 6) ends(23, 10) is 0
+
+Feature of type 0 starts(4, 6) ends(23, 11) is 0
+
+Feature of type 1 starts(4, 6) ends(23, 11) is 0
+
+Feature of type 2 starts(4, 6) ends(23, 11) is 0
+
+Feature of type 3 starts(4, 6) ends(23, 11) is 0
+
+Feature of type 0 starts(4, 6) ends(24, 10) is 0
+
+Feature of type 1 starts(4, 6) ends(24, 10) is 0
+
+Feature of type 2 starts(4, 6) ends(24, 10) is 0
+
+Feature of type 3 starts(4, 6) ends(24, 10) is 0
+
+Feature of type 0 starts(4, 6) ends(24, 11) is 0
+
+Feature of type 1 starts(4, 6) ends(24, 11) is 0
+
+Feature of type 2 starts(4, 6) ends(24, 11) is 0
+
+Feature of type 3 starts(4, 6) ends(24, 11) is 0
+
+Feature of type 0 starts(4, 6) ends(25, 10) is 0
+
+Feature of type 1 starts(4, 6) ends(25, 10) is 0
+
+Feature of type 2 starts(4, 6) ends(25, 10) is 0
+
+Feature of type 3 starts(4, 6) ends(25, 10) is 0
+
+Feature of type 0 starts(4, 6) ends(25, 11) is 0
+
+Feature of type 1 starts(4, 6) ends(25, 11) is 0
+
+Feature of type 2 starts(4, 6) ends(25, 11) is 0
+
+Feature of type 3 starts(4, 6) ends(25, 11) is 0
+
+Feature of type 0 starts(4, 6) ends(26, 10) is 0
+
+Feature of type 1 starts(4, 6) ends(26, 10) is 0
+
+Feature of type 2 starts(4, 6) ends(26, 10) is 0
+
+Feature of type 3 starts(4, 6) ends(26, 10) is 0
+
+Feature of type 0 starts(4, 6) ends(26, 11) is 0
+
+Feature of type 1 starts(4, 6) ends(26, 11) is 0
+
+Feature of type 2 starts(4, 6) ends(26, 11) is 0
+
+Feature of type 3 starts(4, 6) ends(26, 11) is 0
+
+Feature of type 0 starts(4, 6) ends(27, 10) is 0
+
+Feature of type 1 starts(4, 6) ends(27, 10) is 0
+
+Feature of type 2 starts(4, 6) ends(27, 10) is 0
+
+Feature of type 3 starts(4, 6) ends(27, 10) is 0
+
+Feature of type 0 starts(4, 6) ends(27, 11) is 0
+
+Feature of type 1 starts(4, 6) ends(27, 11) is 0
+
+Feature of type 2 starts(4, 6) ends(27, 11) is 0
+
+Feature of type 3 starts(4, 6) ends(27, 11) is 0
+
+Feature of type 0 starts(4, 6) ends(28, 10) is 0
+
+Feature of type 1 starts(4, 6) ends(28, 10) is 0
+
+Feature of type 2 starts(4, 6) ends(28, 10) is 0
+
+Feature of type 3 starts(4, 6) ends(28, 10) is 0
+
+Feature of type 0 starts(4, 6) ends(28, 11) is 0
+
+Feature of type 1 starts(4, 6) ends(28, 11) is 0
+
+Feature of type 2 starts(4, 6) ends(28, 11) is 0
+
+Feature of type 3 starts(4, 6) ends(28, 11) is 0
+
+Feature of type 0 starts(4, 6) ends(29, 10) is 0
+
+Feature of type 1 starts(4, 6) ends(29, 10) is 0
+
+Feature of type 2 starts(4, 6) ends(29, 10) is 0
+
+Feature of type 3 starts(4, 6) ends(29, 10) is 0
+
+Feature of type 0 starts(4, 6) ends(29, 11) is 0
+
+Feature of type 1 starts(4, 6) ends(29, 11) is 0
+
+Feature of type 2 starts(4, 6) ends(29, 11) is 0
+
+Feature of type 3 starts(4, 6) ends(29, 11) is 0
+
+Feature of type 0 starts(5, 6) ends(24, 10) is 0
+
+Feature of type 1 starts(5, 6) ends(24, 10) is 0
+
+Feature of type 2 starts(5, 6) ends(24, 10) is 0
+
+Feature of type 3 starts(5, 6) ends(24, 10) is 0
+
+Feature of type 0 starts(5, 6) ends(24, 11) is 0
+
+Feature of type 1 starts(5, 6) ends(24, 11) is 0
+
+Feature of type 2 starts(5, 6) ends(24, 11) is 0
+
+Feature of type 3 starts(5, 6) ends(24, 11) is 0
+
+Feature of type 0 starts(5, 6) ends(25, 10) is 0
+
+Feature of type 1 starts(5, 6) ends(25, 10) is 0
+
+Feature of type 2 starts(5, 6) ends(25, 10) is 0
+
+Feature of type 3 starts(5, 6) ends(25, 10) is 0
+
+Feature of type 0 starts(5, 6) ends(25, 11) is 0
+
+Feature of type 1 starts(5, 6) ends(25, 11) is 0
+
+Feature of type 2 starts(5, 6) ends(25, 11) is 0
+
+Feature of type 3 starts(5, 6) ends(25, 11) is 0
+
+Feature of type 0 starts(5, 6) ends(26, 10) is 0
+
+Feature of type 1 starts(5, 6) ends(26, 10) is 0
+
+Feature of type 2 starts(5, 6) ends(26, 10) is 0
+
+Feature of type 3 starts(5, 6) ends(26, 10) is 0
+
+Feature of type 0 starts(5, 6) ends(26, 11) is 0
+
+Feature of type 1 starts(5, 6) ends(26, 11) is 0
+
+Feature of type 2 starts(5, 6) ends(26, 11) is 0
+
+Feature of type 3 starts(5, 6) ends(26, 11) is 0
+
+Feature of type 0 starts(5, 6) ends(27, 10) is 0
+
+Feature of type 1 starts(5, 6) ends(27, 10) is 0
+
+Feature of type 2 starts(5, 6) ends(27, 10) is 0
+
+Feature of type 3 starts(5, 6) ends(27, 10) is 0
+
+Feature of type 0 starts(5, 6) ends(27, 11) is 0
+
+Feature of type 1 starts(5, 6) ends(27, 11) is 0
+
+Feature of type 2 starts(5, 6) ends(27, 11) is 0
+
+Feature of type 3 starts(5, 6) ends(27, 11) is 0
+
+Feature of type 0 starts(5, 6) ends(28, 10) is 0
+
+Feature of type 1 starts(5, 6) ends(28, 10) is 0
+
+Feature of type 2 starts(5, 6) ends(28, 10) is 0
+
+Feature of type 3 starts(5, 6) ends(28, 10) is 0
+
+Feature of type 0 starts(5, 6) ends(28, 11) is 0
+
+Feature of type 1 starts(5, 6) ends(28, 11) is 0
+
+Feature of type 2 starts(5, 6) ends(28, 11) is 0
+
+Feature of type 3 starts(5, 6) ends(28, 11) is 0
+
+Feature of type 0 starts(5, 6) ends(29, 10) is 0
+
+Feature of type 1 starts(5, 6) ends(29, 10) is 0
+
+Feature of type 2 starts(5, 6) ends(29, 10) is 0
+
+Feature of type 3 starts(5, 6) ends(29, 10) is 0
+
+Feature of type 0 starts(5, 6) ends(29, 11) is 0
+
+Feature of type 1 starts(5, 6) ends(29, 11) is 0
+
+Feature of type 2 starts(5, 6) ends(29, 11) is 0
+
+Feature of type 3 starts(5, 6) ends(29, 11) is 0
+
+Feature of type 0 starts(5, 6) ends(30, 10) is 0
+
+Feature of type 1 starts(5, 6) ends(30, 10) is 0
+
+Feature of type 2 starts(5, 6) ends(30, 10) is 0
+
+Feature of type 3 starts(5, 6) ends(30, 10) is 0
+
+Feature of type 0 starts(5, 6) ends(30, 11) is 0
+
+Feature of type 1 starts(5, 6) ends(30, 11) is 0
+
+Feature of type 2 starts(5, 6) ends(30, 11) is 0
+
+Feature of type 3 starts(5, 6) ends(30, 11) is 0
+
+Feature of type 0 starts(6, 6) ends(25, 10) is 0
+
+Feature of type 1 starts(6, 6) ends(25, 10) is 0
+
+Feature of type 2 starts(6, 6) ends(25, 10) is 0
+
+Feature of type 3 starts(6, 6) ends(25, 10) is 0
+
+Feature of type 0 starts(6, 6) ends(25, 11) is 0
+
+Feature of type 1 starts(6, 6) ends(25, 11) is 0
+
+Feature of type 2 starts(6, 6) ends(25, 11) is 0
+
+Feature of type 3 starts(6, 6) ends(25, 11) is 0
+
+Feature of type 0 starts(6, 6) ends(26, 10) is 0
+
+Feature of type 1 starts(6, 6) ends(26, 10) is 0
+
+Feature of type 2 starts(6, 6) ends(26, 10) is 0
+
+Feature of type 3 starts(6, 6) ends(26, 10) is 0
+
+Feature of type 0 starts(6, 6) ends(26, 11) is 0
+
+Feature of type 1 starts(6, 6) ends(26, 11) is 0
+
+Feature of type 2 starts(6, 6) ends(26, 11) is 0
+
+Feature of type 3 starts(6, 6) ends(26, 11) is 0
+
+Feature of type 0 starts(6, 6) ends(27, 10) is 0
+
+Feature of type 1 starts(6, 6) ends(27, 10) is 0
+
+Feature of type 2 starts(6, 6) ends(27, 10) is 0
+
+Feature of type 3 starts(6, 6) ends(27, 10) is 0
+
+Feature of type 0 starts(6, 6) ends(27, 11) is 0
+
+Feature of type 1 starts(6, 6) ends(27, 11) is 0
+
+Feature of type 2 starts(6, 6) ends(27, 11) is 0
+
+Feature of type 3 starts(6, 6) ends(27, 11) is 0
+
+Feature of type 0 starts(6, 6) ends(28, 10) is 0
+
+Feature of type 1 starts(6, 6) ends(28, 10) is 0
+
+Feature of type 2 starts(6, 6) ends(28, 10) is 0
+
+Feature of type 3 starts(6, 6) ends(28, 10) is 0
+
+Feature of type 0 starts(6, 6) ends(28, 11) is 0
+
+Feature of type 1 starts(6, 6) ends(28, 11) is 0
+
+Feature of type 2 starts(6, 6) ends(28, 11) is 0
+
+Feature of type 3 starts(6, 6) ends(28, 11) is 0
+
+Feature of type 0 starts(6, 6) ends(29, 10) is 0
+
+Feature of type 1 starts(6, 6) ends(29, 10) is 0
+
+Feature of type 2 starts(6, 6) ends(29, 10) is 0
+
+Feature of type 3 starts(6, 6) ends(29, 10) is 0
+
+Feature of type 0 starts(6, 6) ends(29, 11) is 0
+
+Feature of type 1 starts(6, 6) ends(29, 11) is 0
+
+Feature of type 2 starts(6, 6) ends(29, 11) is 0
+
+Feature of type 3 starts(6, 6) ends(29, 11) is 0
+
+Feature of type 0 starts(6, 6) ends(30, 10) is 0
+
+Feature of type 1 starts(6, 6) ends(30, 10) is 0
+
+Feature of type 2 starts(6, 6) ends(30, 10) is 0
+
+Feature of type 3 starts(6, 6) ends(30, 10) is 0
+
+Feature of type 0 starts(6, 6) ends(30, 11) is 0
+
+Feature of type 1 starts(6, 6) ends(30, 11) is 0
+
+Feature of type 2 starts(6, 6) ends(30, 11) is 0
+
+Feature of type 3 starts(6, 6) ends(30, 11) is 0
+
+Feature of type 0 starts(6, 6) ends(31, 10) is 0
+
+Feature of type 1 starts(6, 6) ends(31, 10) is 0
+
+Feature of type 2 starts(6, 6) ends(31, 10) is 0
+
+Feature of type 3 starts(6, 6) ends(31, 10) is 0
+
+Feature of type 0 starts(6, 6) ends(31, 11) is 0
+
+Feature of type 1 starts(6, 6) ends(31, 11) is 0
+
+Feature of type 2 starts(6, 6) ends(31, 11) is 0
+
+Feature of type 3 starts(6, 6) ends(31, 11) is 0
 
 Feature of type 0 starts(7, 6) ends(26, 10) is 0
 
@@ -4046,14 +1022,6 @@ Feature of type 2 starts(7, 6) ends(26, 11) is 0
 
 Feature of type 3 starts(7, 6) ends(26, 11) is 0
 
-Feature of type 0 starts(7, 6) ends(26, 12) is 0
-
-Feature of type 1 starts(7, 6) ends(26, 12) is 0
-
-Feature of type 2 starts(7, 6) ends(26, 12) is 0
-
-Feature of type 3 starts(7, 6) ends(26, 12) is 0
-
 Feature of type 0 starts(7, 6) ends(27, 10) is 0
 
 Feature of type 1 starts(7, 6) ends(27, 10) is 0
@@ -4069,14 +1037,6 @@ Feature of type 1 starts(7, 6) ends(27, 11) is 0
 Feature of type 2 starts(7, 6) ends(27, 11) is 0
 
 Feature of type 3 starts(7, 6) ends(27, 11) is 0
-
-Feature of type 0 starts(7, 6) ends(27, 12) is 0
-
-Feature of type 1 starts(7, 6) ends(27, 12) is 0
-
-Feature of type 2 starts(7, 6) ends(27, 12) is 0
-
-Feature of type 3 starts(7, 6) ends(27, 12) is 0
 
 Feature of type 0 starts(7, 6) ends(28, 10) is 0
 
@@ -4094,14 +1054,6 @@ Feature of type 2 starts(7, 6) ends(28, 11) is 0
 
 Feature of type 3 starts(7, 6) ends(28, 11) is 0
 
-Feature of type 0 starts(7, 6) ends(28, 12) is 0
-
-Feature of type 1 starts(7, 6) ends(28, 12) is 0
-
-Feature of type 2 starts(7, 6) ends(28, 12) is 0
-
-Feature of type 3 starts(7, 6) ends(28, 12) is 0
-
 Feature of type 0 starts(7, 6) ends(29, 10) is 0
 
 Feature of type 1 starts(7, 6) ends(29, 10) is 0
@@ -4117,14 +1069,6 @@ Feature of type 1 starts(7, 6) ends(29, 11) is 0
 Feature of type 2 starts(7, 6) ends(29, 11) is 0
 
 Feature of type 3 starts(7, 6) ends(29, 11) is 0
-
-Feature of type 0 starts(7, 6) ends(29, 12) is 0
-
-Feature of type 1 starts(7, 6) ends(29, 12) is 0
-
-Feature of type 2 starts(7, 6) ends(29, 12) is 0
-
-Feature of type 3 starts(7, 6) ends(29, 12) is 0
 
 Feature of type 0 starts(7, 6) ends(30, 10) is 0
 
@@ -4142,13 +1086,21 @@ Feature of type 2 starts(7, 6) ends(30, 11) is 0
 
 Feature of type 3 starts(7, 6) ends(30, 11) is 0
 
-Feature of type 0 starts(7, 6) ends(30, 12) is 0
+Feature of type 0 starts(7, 6) ends(31, 10) is 0
 
-Feature of type 1 starts(7, 6) ends(30, 12) is 0
+Feature of type 1 starts(7, 6) ends(31, 10) is 0
 
-Feature of type 2 starts(7, 6) ends(30, 12) is 0
+Feature of type 2 starts(7, 6) ends(31, 10) is 0
 
-Feature of type 3 starts(7, 6) ends(30, 12) is 0
+Feature of type 3 starts(7, 6) ends(31, 10) is 0
+
+Feature of type 0 starts(7, 6) ends(31, 11) is 0
+
+Feature of type 1 starts(7, 6) ends(31, 11) is 0
+
+Feature of type 2 starts(7, 6) ends(31, 11) is 0
+
+Feature of type 3 starts(7, 6) ends(31, 11) is 0
 
 Feature of type 0 starts(7, 6) ends(31, 10) is 0
 
@@ -4166,61 +1118,453 @@ Feature of type 2 starts(7, 6) ends(31, 11) is 0
 
 Feature of type 3 starts(7, 6) ends(31, 11) is 0
 
-Feature of type 0 starts(7, 6) ends(31, 12) is 0
+Feature of type 0 starts(3, 7) ends(22, 11) is 0
 
-Feature of type 1 starts(7, 6) ends(31, 12) is 0
+Feature of type 1 starts(3, 7) ends(22, 11) is 0
 
-Feature of type 2 starts(7, 6) ends(31, 12) is 0
+Feature of type 2 starts(3, 7) ends(22, 11) is 0
 
-Feature of type 3 starts(7, 6) ends(31, 12) is 0
+Feature of type 3 starts(3, 7) ends(22, 11) is 0
 
-Feature of type 0 starts(7, 6) ends(31, 10) is 0
+Feature of type 0 starts(3, 7) ends(22, 12) is 0
 
-Feature of type 1 starts(7, 6) ends(31, 10) is 0
+Feature of type 1 starts(3, 7) ends(22, 12) is 0
 
-Feature of type 2 starts(7, 6) ends(31, 10) is 0
+Feature of type 2 starts(3, 7) ends(22, 12) is 0
 
-Feature of type 3 starts(7, 6) ends(31, 10) is 0
+Feature of type 3 starts(3, 7) ends(22, 12) is 0
 
-Feature of type 0 starts(7, 6) ends(31, 11) is 0
+Feature of type 0 starts(3, 7) ends(23, 11) is 0
 
-Feature of type 1 starts(7, 6) ends(31, 11) is 0
+Feature of type 1 starts(3, 7) ends(23, 11) is 0
 
-Feature of type 2 starts(7, 6) ends(31, 11) is 0
+Feature of type 2 starts(3, 7) ends(23, 11) is 0
 
-Feature of type 3 starts(7, 6) ends(31, 11) is 0
+Feature of type 3 starts(3, 7) ends(23, 11) is 0
 
-Feature of type 0 starts(7, 6) ends(31, 12) is 0
+Feature of type 0 starts(3, 7) ends(23, 12) is 0
 
-Feature of type 1 starts(7, 6) ends(31, 12) is 0
+Feature of type 1 starts(3, 7) ends(23, 12) is 0
 
-Feature of type 2 starts(7, 6) ends(31, 12) is 0
+Feature of type 2 starts(3, 7) ends(23, 12) is 0
 
-Feature of type 3 starts(7, 6) ends(31, 12) is 0
+Feature of type 3 starts(3, 7) ends(23, 12) is 0
 
-Feature of type 0 starts(7, 6) ends(31, 10) is 0
+Feature of type 0 starts(3, 7) ends(24, 11) is 0
 
-Feature of type 1 starts(7, 6) ends(31, 10) is 0
+Feature of type 1 starts(3, 7) ends(24, 11) is 0
 
-Feature of type 2 starts(7, 6) ends(31, 10) is 0
+Feature of type 2 starts(3, 7) ends(24, 11) is 0
 
-Feature of type 3 starts(7, 6) ends(31, 10) is 0
+Feature of type 3 starts(3, 7) ends(24, 11) is 0
 
-Feature of type 0 starts(7, 6) ends(31, 11) is 0
+Feature of type 0 starts(3, 7) ends(24, 12) is 0
 
-Feature of type 1 starts(7, 6) ends(31, 11) is 0
+Feature of type 1 starts(3, 7) ends(24, 12) is 0
 
-Feature of type 2 starts(7, 6) ends(31, 11) is 0
+Feature of type 2 starts(3, 7) ends(24, 12) is 0
 
-Feature of type 3 starts(7, 6) ends(31, 11) is 0
+Feature of type 3 starts(3, 7) ends(24, 12) is 0
 
-Feature of type 0 starts(7, 6) ends(31, 12) is 0
+Feature of type 0 starts(3, 7) ends(25, 11) is 0
 
-Feature of type 1 starts(7, 6) ends(31, 12) is 0
+Feature of type 1 starts(3, 7) ends(25, 11) is 0
 
-Feature of type 2 starts(7, 6) ends(31, 12) is 0
+Feature of type 2 starts(3, 7) ends(25, 11) is 0
 
-Feature of type 3 starts(7, 6) ends(31, 12) is 0
+Feature of type 3 starts(3, 7) ends(25, 11) is 0
+
+Feature of type 0 starts(3, 7) ends(25, 12) is 0
+
+Feature of type 1 starts(3, 7) ends(25, 12) is 0
+
+Feature of type 2 starts(3, 7) ends(25, 12) is 0
+
+Feature of type 3 starts(3, 7) ends(25, 12) is 0
+
+Feature of type 0 starts(3, 7) ends(26, 11) is 0
+
+Feature of type 1 starts(3, 7) ends(26, 11) is 0
+
+Feature of type 2 starts(3, 7) ends(26, 11) is 0
+
+Feature of type 3 starts(3, 7) ends(26, 11) is 0
+
+Feature of type 0 starts(3, 7) ends(26, 12) is 0
+
+Feature of type 1 starts(3, 7) ends(26, 12) is 0
+
+Feature of type 2 starts(3, 7) ends(26, 12) is 0
+
+Feature of type 3 starts(3, 7) ends(26, 12) is 0
+
+Feature of type 0 starts(3, 7) ends(27, 11) is 0
+
+Feature of type 1 starts(3, 7) ends(27, 11) is 0
+
+Feature of type 2 starts(3, 7) ends(27, 11) is 0
+
+Feature of type 3 starts(3, 7) ends(27, 11) is 0
+
+Feature of type 0 starts(3, 7) ends(27, 12) is 0
+
+Feature of type 1 starts(3, 7) ends(27, 12) is 0
+
+Feature of type 2 starts(3, 7) ends(27, 12) is 0
+
+Feature of type 3 starts(3, 7) ends(27, 12) is 0
+
+Feature of type 0 starts(3, 7) ends(28, 11) is 0
+
+Feature of type 1 starts(3, 7) ends(28, 11) is 0
+
+Feature of type 2 starts(3, 7) ends(28, 11) is 0
+
+Feature of type 3 starts(3, 7) ends(28, 11) is 0
+
+Feature of type 0 starts(3, 7) ends(28, 12) is 0
+
+Feature of type 1 starts(3, 7) ends(28, 12) is 0
+
+Feature of type 2 starts(3, 7) ends(28, 12) is 0
+
+Feature of type 3 starts(3, 7) ends(28, 12) is 0
+
+Feature of type 0 starts(4, 7) ends(23, 11) is 0
+
+Feature of type 1 starts(4, 7) ends(23, 11) is 0
+
+Feature of type 2 starts(4, 7) ends(23, 11) is 0
+
+Feature of type 3 starts(4, 7) ends(23, 11) is 0
+
+Feature of type 0 starts(4, 7) ends(23, 12) is 0
+
+Feature of type 1 starts(4, 7) ends(23, 12) is 0
+
+Feature of type 2 starts(4, 7) ends(23, 12) is 0
+
+Feature of type 3 starts(4, 7) ends(23, 12) is 0
+
+Feature of type 0 starts(4, 7) ends(24, 11) is 0
+
+Feature of type 1 starts(4, 7) ends(24, 11) is 0
+
+Feature of type 2 starts(4, 7) ends(24, 11) is 0
+
+Feature of type 3 starts(4, 7) ends(24, 11) is 0
+
+Feature of type 0 starts(4, 7) ends(24, 12) is 0
+
+Feature of type 1 starts(4, 7) ends(24, 12) is 0
+
+Feature of type 2 starts(4, 7) ends(24, 12) is 0
+
+Feature of type 3 starts(4, 7) ends(24, 12) is 0
+
+Feature of type 0 starts(4, 7) ends(25, 11) is 0
+
+Feature of type 1 starts(4, 7) ends(25, 11) is 0
+
+Feature of type 2 starts(4, 7) ends(25, 11) is 0
+
+Feature of type 3 starts(4, 7) ends(25, 11) is 0
+
+Feature of type 0 starts(4, 7) ends(25, 12) is 0
+
+Feature of type 1 starts(4, 7) ends(25, 12) is 0
+
+Feature of type 2 starts(4, 7) ends(25, 12) is 0
+
+Feature of type 3 starts(4, 7) ends(25, 12) is 0
+
+Feature of type 0 starts(4, 7) ends(26, 11) is 0
+
+Feature of type 1 starts(4, 7) ends(26, 11) is 0
+
+Feature of type 2 starts(4, 7) ends(26, 11) is 0
+
+Feature of type 3 starts(4, 7) ends(26, 11) is 0
+
+Feature of type 0 starts(4, 7) ends(26, 12) is 0
+
+Feature of type 1 starts(4, 7) ends(26, 12) is 0
+
+Feature of type 2 starts(4, 7) ends(26, 12) is 0
+
+Feature of type 3 starts(4, 7) ends(26, 12) is 0
+
+Feature of type 0 starts(4, 7) ends(27, 11) is 0
+
+Feature of type 1 starts(4, 7) ends(27, 11) is 0
+
+Feature of type 2 starts(4, 7) ends(27, 11) is 0
+
+Feature of type 3 starts(4, 7) ends(27, 11) is 0
+
+Feature of type 0 starts(4, 7) ends(27, 12) is 0
+
+Feature of type 1 starts(4, 7) ends(27, 12) is 0
+
+Feature of type 2 starts(4, 7) ends(27, 12) is 0
+
+Feature of type 3 starts(4, 7) ends(27, 12) is 0
+
+Feature of type 0 starts(4, 7) ends(28, 11) is 0
+
+Feature of type 1 starts(4, 7) ends(28, 11) is 0
+
+Feature of type 2 starts(4, 7) ends(28, 11) is 0
+
+Feature of type 3 starts(4, 7) ends(28, 11) is 0
+
+Feature of type 0 starts(4, 7) ends(28, 12) is 0
+
+Feature of type 1 starts(4, 7) ends(28, 12) is 0
+
+Feature of type 2 starts(4, 7) ends(28, 12) is 0
+
+Feature of type 3 starts(4, 7) ends(28, 12) is 0
+
+Feature of type 0 starts(4, 7) ends(29, 11) is 0
+
+Feature of type 1 starts(4, 7) ends(29, 11) is 0
+
+Feature of type 2 starts(4, 7) ends(29, 11) is 0
+
+Feature of type 3 starts(4, 7) ends(29, 11) is 0
+
+Feature of type 0 starts(4, 7) ends(29, 12) is 0
+
+Feature of type 1 starts(4, 7) ends(29, 12) is 0
+
+Feature of type 2 starts(4, 7) ends(29, 12) is 0
+
+Feature of type 3 starts(4, 7) ends(29, 12) is 0
+
+Feature of type 0 starts(5, 7) ends(24, 11) is 0
+
+Feature of type 1 starts(5, 7) ends(24, 11) is 0
+
+Feature of type 2 starts(5, 7) ends(24, 11) is 0
+
+Feature of type 3 starts(5, 7) ends(24, 11) is 0
+
+Feature of type 0 starts(5, 7) ends(24, 12) is 0
+
+Feature of type 1 starts(5, 7) ends(24, 12) is 0
+
+Feature of type 2 starts(5, 7) ends(24, 12) is 0
+
+Feature of type 3 starts(5, 7) ends(24, 12) is 0
+
+Feature of type 0 starts(5, 7) ends(25, 11) is 0
+
+Feature of type 1 starts(5, 7) ends(25, 11) is 0
+
+Feature of type 2 starts(5, 7) ends(25, 11) is 0
+
+Feature of type 3 starts(5, 7) ends(25, 11) is 0
+
+Feature of type 0 starts(5, 7) ends(25, 12) is 0
+
+Feature of type 1 starts(5, 7) ends(25, 12) is 0
+
+Feature of type 2 starts(5, 7) ends(25, 12) is 0
+
+Feature of type 3 starts(5, 7) ends(25, 12) is 0
+
+Feature of type 0 starts(5, 7) ends(26, 11) is 0
+
+Feature of type 1 starts(5, 7) ends(26, 11) is 0
+
+Feature of type 2 starts(5, 7) ends(26, 11) is 0
+
+Feature of type 3 starts(5, 7) ends(26, 11) is 0
+
+Feature of type 0 starts(5, 7) ends(26, 12) is 0
+
+Feature of type 1 starts(5, 7) ends(26, 12) is 0
+
+Feature of type 2 starts(5, 7) ends(26, 12) is 0
+
+Feature of type 3 starts(5, 7) ends(26, 12) is 0
+
+Feature of type 0 starts(5, 7) ends(27, 11) is 0
+
+Feature of type 1 starts(5, 7) ends(27, 11) is 0
+
+Feature of type 2 starts(5, 7) ends(27, 11) is 0
+
+Feature of type 3 starts(5, 7) ends(27, 11) is 0
+
+Feature of type 0 starts(5, 7) ends(27, 12) is 0
+
+Feature of type 1 starts(5, 7) ends(27, 12) is 0
+
+Feature of type 2 starts(5, 7) ends(27, 12) is 0
+
+Feature of type 3 starts(5, 7) ends(27, 12) is 0
+
+Feature of type 0 starts(5, 7) ends(28, 11) is 0
+
+Feature of type 1 starts(5, 7) ends(28, 11) is 0
+
+Feature of type 2 starts(5, 7) ends(28, 11) is 0
+
+Feature of type 3 starts(5, 7) ends(28, 11) is 0
+
+Feature of type 0 starts(5, 7) ends(28, 12) is 0
+
+Feature of type 1 starts(5, 7) ends(28, 12) is 0
+
+Feature of type 2 starts(5, 7) ends(28, 12) is 0
+
+Feature of type 3 starts(5, 7) ends(28, 12) is 0
+
+Feature of type 0 starts(5, 7) ends(29, 11) is 0
+
+Feature of type 1 starts(5, 7) ends(29, 11) is 0
+
+Feature of type 2 starts(5, 7) ends(29, 11) is 0
+
+Feature of type 3 starts(5, 7) ends(29, 11) is 0
+
+Feature of type 0 starts(5, 7) ends(29, 12) is 0
+
+Feature of type 1 starts(5, 7) ends(29, 12) is 0
+
+Feature of type 2 starts(5, 7) ends(29, 12) is 0
+
+Feature of type 3 starts(5, 7) ends(29, 12) is 0
+
+Feature of type 0 starts(5, 7) ends(30, 11) is 0
+
+Feature of type 1 starts(5, 7) ends(30, 11) is 0
+
+Feature of type 2 starts(5, 7) ends(30, 11) is 0
+
+Feature of type 3 starts(5, 7) ends(30, 11) is 0
+
+Feature of type 0 starts(5, 7) ends(30, 12) is 0
+
+Feature of type 1 starts(5, 7) ends(30, 12) is 0
+
+Feature of type 2 starts(5, 7) ends(30, 12) is 0
+
+Feature of type 3 starts(5, 7) ends(30, 12) is 0
+
+Feature of type 0 starts(6, 7) ends(25, 11) is 0
+
+Feature of type 1 starts(6, 7) ends(25, 11) is 0
+
+Feature of type 2 starts(6, 7) ends(25, 11) is 0
+
+Feature of type 3 starts(6, 7) ends(25, 11) is 0
+
+Feature of type 0 starts(6, 7) ends(25, 12) is 0
+
+Feature of type 1 starts(6, 7) ends(25, 12) is 0
+
+Feature of type 2 starts(6, 7) ends(25, 12) is 0
+
+Feature of type 3 starts(6, 7) ends(25, 12) is 0
+
+Feature of type 0 starts(6, 7) ends(26, 11) is 0
+
+Feature of type 1 starts(6, 7) ends(26, 11) is 0
+
+Feature of type 2 starts(6, 7) ends(26, 11) is 0
+
+Feature of type 3 starts(6, 7) ends(26, 11) is 0
+
+Feature of type 0 starts(6, 7) ends(26, 12) is 0
+
+Feature of type 1 starts(6, 7) ends(26, 12) is 0
+
+Feature of type 2 starts(6, 7) ends(26, 12) is 0
+
+Feature of type 3 starts(6, 7) ends(26, 12) is 0
+
+Feature of type 0 starts(6, 7) ends(27, 11) is 0
+
+Feature of type 1 starts(6, 7) ends(27, 11) is 0
+
+Feature of type 2 starts(6, 7) ends(27, 11) is 0
+
+Feature of type 3 starts(6, 7) ends(27, 11) is 0
+
+Feature of type 0 starts(6, 7) ends(27, 12) is 0
+
+Feature of type 1 starts(6, 7) ends(27, 12) is 0
+
+Feature of type 2 starts(6, 7) ends(27, 12) is 0
+
+Feature of type 3 starts(6, 7) ends(27, 12) is 0
+
+Feature of type 0 starts(6, 7) ends(28, 11) is 0
+
+Feature of type 1 starts(6, 7) ends(28, 11) is 0
+
+Feature of type 2 starts(6, 7) ends(28, 11) is 0
+
+Feature of type 3 starts(6, 7) ends(28, 11) is 0
+
+Feature of type 0 starts(6, 7) ends(28, 12) is 0
+
+Feature of type 1 starts(6, 7) ends(28, 12) is 0
+
+Feature of type 2 starts(6, 7) ends(28, 12) is 0
+
+Feature of type 3 starts(6, 7) ends(28, 12) is 0
+
+Feature of type 0 starts(6, 7) ends(29, 11) is 0
+
+Feature of type 1 starts(6, 7) ends(29, 11) is 0
+
+Feature of type 2 starts(6, 7) ends(29, 11) is 0
+
+Feature of type 3 starts(6, 7) ends(29, 11) is 0
+
+Feature of type 0 starts(6, 7) ends(29, 12) is 0
+
+Feature of type 1 starts(6, 7) ends(29, 12) is 0
+
+Feature of type 2 starts(6, 7) ends(29, 12) is 0
+
+Feature of type 3 starts(6, 7) ends(29, 12) is 0
+
+Feature of type 0 starts(6, 7) ends(30, 11) is 0
+
+Feature of type 1 starts(6, 7) ends(30, 11) is 0
+
+Feature of type 2 starts(6, 7) ends(30, 11) is 0
+
+Feature of type 3 starts(6, 7) ends(30, 11) is 0
+
+Feature of type 0 starts(6, 7) ends(30, 12) is 0
+
+Feature of type 1 starts(6, 7) ends(30, 12) is 0
+
+Feature of type 2 starts(6, 7) ends(30, 12) is 0
+
+Feature of type 3 starts(6, 7) ends(30, 12) is 0
+
+Feature of type 0 starts(6, 7) ends(31, 11) is 0
+
+Feature of type 1 starts(6, 7) ends(31, 11) is 0
+
+Feature of type 2 starts(6, 7) ends(31, 11) is 0
+
+Feature of type 3 starts(6, 7) ends(31, 11) is 0
+
+Feature of type 0 starts(6, 7) ends(31, 12) is 0
+
+Feature of type 1 starts(6, 7) ends(31, 12) is 0
+
+Feature of type 2 starts(6, 7) ends(31, 12) is 0
+
+Feature of type 3 starts(6, 7) ends(31, 12) is 0
 
 Feature of type 0 starts(7, 7) ends(26, 11) is 0
 
@@ -4238,14 +1582,6 @@ Feature of type 2 starts(7, 7) ends(26, 12) is 0
 
 Feature of type 3 starts(7, 7) ends(26, 12) is 0
 
-Feature of type 0 starts(7, 7) ends(26, 13) is 0
-
-Feature of type 1 starts(7, 7) ends(26, 13) is 0
-
-Feature of type 2 starts(7, 7) ends(26, 13) is 0
-
-Feature of type 3 starts(7, 7) ends(26, 13) is 0
-
 Feature of type 0 starts(7, 7) ends(27, 11) is 0
 
 Feature of type 1 starts(7, 7) ends(27, 11) is 0
@@ -4261,14 +1597,6 @@ Feature of type 1 starts(7, 7) ends(27, 12) is 0
 Feature of type 2 starts(7, 7) ends(27, 12) is 0
 
 Feature of type 3 starts(7, 7) ends(27, 12) is 0
-
-Feature of type 0 starts(7, 7) ends(27, 13) is 0
-
-Feature of type 1 starts(7, 7) ends(27, 13) is 0
-
-Feature of type 2 starts(7, 7) ends(27, 13) is 0
-
-Feature of type 3 starts(7, 7) ends(27, 13) is 0
 
 Feature of type 0 starts(7, 7) ends(28, 11) is 0
 
@@ -4286,14 +1614,6 @@ Feature of type 2 starts(7, 7) ends(28, 12) is 0
 
 Feature of type 3 starts(7, 7) ends(28, 12) is 0
 
-Feature of type 0 starts(7, 7) ends(28, 13) is 0
-
-Feature of type 1 starts(7, 7) ends(28, 13) is 0
-
-Feature of type 2 starts(7, 7) ends(28, 13) is 0
-
-Feature of type 3 starts(7, 7) ends(28, 13) is 0
-
 Feature of type 0 starts(7, 7) ends(29, 11) is 0
 
 Feature of type 1 starts(7, 7) ends(29, 11) is 0
@@ -4309,14 +1629,6 @@ Feature of type 1 starts(7, 7) ends(29, 12) is 0
 Feature of type 2 starts(7, 7) ends(29, 12) is 0
 
 Feature of type 3 starts(7, 7) ends(29, 12) is 0
-
-Feature of type 0 starts(7, 7) ends(29, 13) is 0
-
-Feature of type 1 starts(7, 7) ends(29, 13) is 0
-
-Feature of type 2 starts(7, 7) ends(29, 13) is 0
-
-Feature of type 3 starts(7, 7) ends(29, 13) is 0
 
 Feature of type 0 starts(7, 7) ends(30, 11) is 0
 
@@ -4334,13 +1646,21 @@ Feature of type 2 starts(7, 7) ends(30, 12) is 0
 
 Feature of type 3 starts(7, 7) ends(30, 12) is 0
 
-Feature of type 0 starts(7, 7) ends(30, 13) is 0
+Feature of type 0 starts(7, 7) ends(31, 11) is 0
 
-Feature of type 1 starts(7, 7) ends(30, 13) is 0
+Feature of type 1 starts(7, 7) ends(31, 11) is 0
 
-Feature of type 2 starts(7, 7) ends(30, 13) is 0
+Feature of type 2 starts(7, 7) ends(31, 11) is 0
 
-Feature of type 3 starts(7, 7) ends(30, 13) is 0
+Feature of type 3 starts(7, 7) ends(31, 11) is 0
+
+Feature of type 0 starts(7, 7) ends(31, 12) is 0
+
+Feature of type 1 starts(7, 7) ends(31, 12) is 0
+
+Feature of type 2 starts(7, 7) ends(31, 12) is 0
+
+Feature of type 3 starts(7, 7) ends(31, 12) is 0
 
 Feature of type 0 starts(7, 7) ends(31, 11) is 0
 
@@ -4358,61 +1678,453 @@ Feature of type 2 starts(7, 7) ends(31, 12) is 0
 
 Feature of type 3 starts(7, 7) ends(31, 12) is 0
 
-Feature of type 0 starts(7, 7) ends(31, 13) is 0
+Feature of type 0 starts(3, 8) ends(22, 12) is 0
 
-Feature of type 1 starts(7, 7) ends(31, 13) is 0
+Feature of type 1 starts(3, 8) ends(22, 12) is 0
 
-Feature of type 2 starts(7, 7) ends(31, 13) is 0
+Feature of type 2 starts(3, 8) ends(22, 12) is 0
 
-Feature of type 3 starts(7, 7) ends(31, 13) is 0
+Feature of type 3 starts(3, 8) ends(22, 12) is 0
 
-Feature of type 0 starts(7, 7) ends(31, 11) is 0
+Feature of type 0 starts(3, 8) ends(22, 13) is 0
 
-Feature of type 1 starts(7, 7) ends(31, 11) is 0
+Feature of type 1 starts(3, 8) ends(22, 13) is 0
 
-Feature of type 2 starts(7, 7) ends(31, 11) is 0
+Feature of type 2 starts(3, 8) ends(22, 13) is 0
 
-Feature of type 3 starts(7, 7) ends(31, 11) is 0
+Feature of type 3 starts(3, 8) ends(22, 13) is 0
 
-Feature of type 0 starts(7, 7) ends(31, 12) is 0
+Feature of type 0 starts(3, 8) ends(23, 12) is 0
 
-Feature of type 1 starts(7, 7) ends(31, 12) is 0
+Feature of type 1 starts(3, 8) ends(23, 12) is 0
 
-Feature of type 2 starts(7, 7) ends(31, 12) is 0
+Feature of type 2 starts(3, 8) ends(23, 12) is 0
 
-Feature of type 3 starts(7, 7) ends(31, 12) is 0
+Feature of type 3 starts(3, 8) ends(23, 12) is 0
 
-Feature of type 0 starts(7, 7) ends(31, 13) is 0
+Feature of type 0 starts(3, 8) ends(23, 13) is 0
 
-Feature of type 1 starts(7, 7) ends(31, 13) is 0
+Feature of type 1 starts(3, 8) ends(23, 13) is 0
 
-Feature of type 2 starts(7, 7) ends(31, 13) is 0
+Feature of type 2 starts(3, 8) ends(23, 13) is 0
 
-Feature of type 3 starts(7, 7) ends(31, 13) is 0
+Feature of type 3 starts(3, 8) ends(23, 13) is 0
 
-Feature of type 0 starts(7, 7) ends(31, 11) is 0
+Feature of type 0 starts(3, 8) ends(24, 12) is 0
 
-Feature of type 1 starts(7, 7) ends(31, 11) is 0
+Feature of type 1 starts(3, 8) ends(24, 12) is 0
 
-Feature of type 2 starts(7, 7) ends(31, 11) is 0
+Feature of type 2 starts(3, 8) ends(24, 12) is 0
 
-Feature of type 3 starts(7, 7) ends(31, 11) is 0
+Feature of type 3 starts(3, 8) ends(24, 12) is 0
 
-Feature of type 0 starts(7, 7) ends(31, 12) is 0
+Feature of type 0 starts(3, 8) ends(24, 13) is 0
 
-Feature of type 1 starts(7, 7) ends(31, 12) is 0
+Feature of type 1 starts(3, 8) ends(24, 13) is 0
 
-Feature of type 2 starts(7, 7) ends(31, 12) is 0
+Feature of type 2 starts(3, 8) ends(24, 13) is 0
 
-Feature of type 3 starts(7, 7) ends(31, 12) is 0
+Feature of type 3 starts(3, 8) ends(24, 13) is 0
 
-Feature of type 0 starts(7, 7) ends(31, 13) is 0
+Feature of type 0 starts(3, 8) ends(25, 12) is 0
 
-Feature of type 1 starts(7, 7) ends(31, 13) is 0
+Feature of type 1 starts(3, 8) ends(25, 12) is 0
 
-Feature of type 2 starts(7, 7) ends(31, 13) is 0
+Feature of type 2 starts(3, 8) ends(25, 12) is 0
 
-Feature of type 3 starts(7, 7) ends(31, 13) is 0
+Feature of type 3 starts(3, 8) ends(25, 12) is 0
+
+Feature of type 0 starts(3, 8) ends(25, 13) is 0
+
+Feature of type 1 starts(3, 8) ends(25, 13) is 0
+
+Feature of type 2 starts(3, 8) ends(25, 13) is 0
+
+Feature of type 3 starts(3, 8) ends(25, 13) is 0
+
+Feature of type 0 starts(3, 8) ends(26, 12) is 0
+
+Feature of type 1 starts(3, 8) ends(26, 12) is 0
+
+Feature of type 2 starts(3, 8) ends(26, 12) is 0
+
+Feature of type 3 starts(3, 8) ends(26, 12) is 0
+
+Feature of type 0 starts(3, 8) ends(26, 13) is 0
+
+Feature of type 1 starts(3, 8) ends(26, 13) is 0
+
+Feature of type 2 starts(3, 8) ends(26, 13) is 0
+
+Feature of type 3 starts(3, 8) ends(26, 13) is 0
+
+Feature of type 0 starts(3, 8) ends(27, 12) is 0
+
+Feature of type 1 starts(3, 8) ends(27, 12) is 0
+
+Feature of type 2 starts(3, 8) ends(27, 12) is 0
+
+Feature of type 3 starts(3, 8) ends(27, 12) is 0
+
+Feature of type 0 starts(3, 8) ends(27, 13) is 0
+
+Feature of type 1 starts(3, 8) ends(27, 13) is 0
+
+Feature of type 2 starts(3, 8) ends(27, 13) is 0
+
+Feature of type 3 starts(3, 8) ends(27, 13) is 0
+
+Feature of type 0 starts(3, 8) ends(28, 12) is 0
+
+Feature of type 1 starts(3, 8) ends(28, 12) is 0
+
+Feature of type 2 starts(3, 8) ends(28, 12) is 0
+
+Feature of type 3 starts(3, 8) ends(28, 12) is 0
+
+Feature of type 0 starts(3, 8) ends(28, 13) is 0
+
+Feature of type 1 starts(3, 8) ends(28, 13) is 0
+
+Feature of type 2 starts(3, 8) ends(28, 13) is 0
+
+Feature of type 3 starts(3, 8) ends(28, 13) is 0
+
+Feature of type 0 starts(4, 8) ends(23, 12) is 0
+
+Feature of type 1 starts(4, 8) ends(23, 12) is 0
+
+Feature of type 2 starts(4, 8) ends(23, 12) is 0
+
+Feature of type 3 starts(4, 8) ends(23, 12) is 0
+
+Feature of type 0 starts(4, 8) ends(23, 13) is 0
+
+Feature of type 1 starts(4, 8) ends(23, 13) is 0
+
+Feature of type 2 starts(4, 8) ends(23, 13) is 0
+
+Feature of type 3 starts(4, 8) ends(23, 13) is 0
+
+Feature of type 0 starts(4, 8) ends(24, 12) is 0
+
+Feature of type 1 starts(4, 8) ends(24, 12) is 0
+
+Feature of type 2 starts(4, 8) ends(24, 12) is 0
+
+Feature of type 3 starts(4, 8) ends(24, 12) is 0
+
+Feature of type 0 starts(4, 8) ends(24, 13) is 0
+
+Feature of type 1 starts(4, 8) ends(24, 13) is 0
+
+Feature of type 2 starts(4, 8) ends(24, 13) is 0
+
+Feature of type 3 starts(4, 8) ends(24, 13) is 0
+
+Feature of type 0 starts(4, 8) ends(25, 12) is 0
+
+Feature of type 1 starts(4, 8) ends(25, 12) is 0
+
+Feature of type 2 starts(4, 8) ends(25, 12) is 0
+
+Feature of type 3 starts(4, 8) ends(25, 12) is 0
+
+Feature of type 0 starts(4, 8) ends(25, 13) is 0
+
+Feature of type 1 starts(4, 8) ends(25, 13) is 0
+
+Feature of type 2 starts(4, 8) ends(25, 13) is 0
+
+Feature of type 3 starts(4, 8) ends(25, 13) is 0
+
+Feature of type 0 starts(4, 8) ends(26, 12) is 0
+
+Feature of type 1 starts(4, 8) ends(26, 12) is 0
+
+Feature of type 2 starts(4, 8) ends(26, 12) is 0
+
+Feature of type 3 starts(4, 8) ends(26, 12) is 0
+
+Feature of type 0 starts(4, 8) ends(26, 13) is 0
+
+Feature of type 1 starts(4, 8) ends(26, 13) is 0
+
+Feature of type 2 starts(4, 8) ends(26, 13) is 0
+
+Feature of type 3 starts(4, 8) ends(26, 13) is 0
+
+Feature of type 0 starts(4, 8) ends(27, 12) is 0
+
+Feature of type 1 starts(4, 8) ends(27, 12) is 0
+
+Feature of type 2 starts(4, 8) ends(27, 12) is 0
+
+Feature of type 3 starts(4, 8) ends(27, 12) is 0
+
+Feature of type 0 starts(4, 8) ends(27, 13) is 0
+
+Feature of type 1 starts(4, 8) ends(27, 13) is 0
+
+Feature of type 2 starts(4, 8) ends(27, 13) is 0
+
+Feature of type 3 starts(4, 8) ends(27, 13) is 0
+
+Feature of type 0 starts(4, 8) ends(28, 12) is 0
+
+Feature of type 1 starts(4, 8) ends(28, 12) is 0
+
+Feature of type 2 starts(4, 8) ends(28, 12) is 0
+
+Feature of type 3 starts(4, 8) ends(28, 12) is 0
+
+Feature of type 0 starts(4, 8) ends(28, 13) is 0
+
+Feature of type 1 starts(4, 8) ends(28, 13) is 0
+
+Feature of type 2 starts(4, 8) ends(28, 13) is 0
+
+Feature of type 3 starts(4, 8) ends(28, 13) is 0
+
+Feature of type 0 starts(4, 8) ends(29, 12) is 0
+
+Feature of type 1 starts(4, 8) ends(29, 12) is 0
+
+Feature of type 2 starts(4, 8) ends(29, 12) is 0
+
+Feature of type 3 starts(4, 8) ends(29, 12) is 0
+
+Feature of type 0 starts(4, 8) ends(29, 13) is 0
+
+Feature of type 1 starts(4, 8) ends(29, 13) is 0
+
+Feature of type 2 starts(4, 8) ends(29, 13) is 0
+
+Feature of type 3 starts(4, 8) ends(29, 13) is 0
+
+Feature of type 0 starts(5, 8) ends(24, 12) is 0
+
+Feature of type 1 starts(5, 8) ends(24, 12) is 0
+
+Feature of type 2 starts(5, 8) ends(24, 12) is 0
+
+Feature of type 3 starts(5, 8) ends(24, 12) is 0
+
+Feature of type 0 starts(5, 8) ends(24, 13) is 0
+
+Feature of type 1 starts(5, 8) ends(24, 13) is 0
+
+Feature of type 2 starts(5, 8) ends(24, 13) is 0
+
+Feature of type 3 starts(5, 8) ends(24, 13) is 0
+
+Feature of type 0 starts(5, 8) ends(25, 12) is 0
+
+Feature of type 1 starts(5, 8) ends(25, 12) is 0
+
+Feature of type 2 starts(5, 8) ends(25, 12) is 0
+
+Feature of type 3 starts(5, 8) ends(25, 12) is 0
+
+Feature of type 0 starts(5, 8) ends(25, 13) is 0
+
+Feature of type 1 starts(5, 8) ends(25, 13) is 0
+
+Feature of type 2 starts(5, 8) ends(25, 13) is 0
+
+Feature of type 3 starts(5, 8) ends(25, 13) is 0
+
+Feature of type 0 starts(5, 8) ends(26, 12) is 0
+
+Feature of type 1 starts(5, 8) ends(26, 12) is 0
+
+Feature of type 2 starts(5, 8) ends(26, 12) is 0
+
+Feature of type 3 starts(5, 8) ends(26, 12) is 0
+
+Feature of type 0 starts(5, 8) ends(26, 13) is 0
+
+Feature of type 1 starts(5, 8) ends(26, 13) is 0
+
+Feature of type 2 starts(5, 8) ends(26, 13) is 0
+
+Feature of type 3 starts(5, 8) ends(26, 13) is 0
+
+Feature of type 0 starts(5, 8) ends(27, 12) is 0
+
+Feature of type 1 starts(5, 8) ends(27, 12) is 0
+
+Feature of type 2 starts(5, 8) ends(27, 12) is 0
+
+Feature of type 3 starts(5, 8) ends(27, 12) is 0
+
+Feature of type 0 starts(5, 8) ends(27, 13) is 0
+
+Feature of type 1 starts(5, 8) ends(27, 13) is 0
+
+Feature of type 2 starts(5, 8) ends(27, 13) is 0
+
+Feature of type 3 starts(5, 8) ends(27, 13) is 0
+
+Feature of type 0 starts(5, 8) ends(28, 12) is 0
+
+Feature of type 1 starts(5, 8) ends(28, 12) is 0
+
+Feature of type 2 starts(5, 8) ends(28, 12) is 0
+
+Feature of type 3 starts(5, 8) ends(28, 12) is 0
+
+Feature of type 0 starts(5, 8) ends(28, 13) is 0
+
+Feature of type 1 starts(5, 8) ends(28, 13) is 0
+
+Feature of type 2 starts(5, 8) ends(28, 13) is 0
+
+Feature of type 3 starts(5, 8) ends(28, 13) is 0
+
+Feature of type 0 starts(5, 8) ends(29, 12) is 0
+
+Feature of type 1 starts(5, 8) ends(29, 12) is 0
+
+Feature of type 2 starts(5, 8) ends(29, 12) is 0
+
+Feature of type 3 starts(5, 8) ends(29, 12) is 0
+
+Feature of type 0 starts(5, 8) ends(29, 13) is 0
+
+Feature of type 1 starts(5, 8) ends(29, 13) is 0
+
+Feature of type 2 starts(5, 8) ends(29, 13) is 0
+
+Feature of type 3 starts(5, 8) ends(29, 13) is 0
+
+Feature of type 0 starts(5, 8) ends(30, 12) is 0
+
+Feature of type 1 starts(5, 8) ends(30, 12) is 0
+
+Feature of type 2 starts(5, 8) ends(30, 12) is 0
+
+Feature of type 3 starts(5, 8) ends(30, 12) is 0
+
+Feature of type 0 starts(5, 8) ends(30, 13) is 0
+
+Feature of type 1 starts(5, 8) ends(30, 13) is 0
+
+Feature of type 2 starts(5, 8) ends(30, 13) is 0
+
+Feature of type 3 starts(5, 8) ends(30, 13) is 0
+
+Feature of type 0 starts(6, 8) ends(25, 12) is 0
+
+Feature of type 1 starts(6, 8) ends(25, 12) is 0
+
+Feature of type 2 starts(6, 8) ends(25, 12) is 0
+
+Feature of type 3 starts(6, 8) ends(25, 12) is 0
+
+Feature of type 0 starts(6, 8) ends(25, 13) is 0
+
+Feature of type 1 starts(6, 8) ends(25, 13) is 0
+
+Feature of type 2 starts(6, 8) ends(25, 13) is 0
+
+Feature of type 3 starts(6, 8) ends(25, 13) is 0
+
+Feature of type 0 starts(6, 8) ends(26, 12) is 0
+
+Feature of type 1 starts(6, 8) ends(26, 12) is 0
+
+Feature of type 2 starts(6, 8) ends(26, 12) is 0
+
+Feature of type 3 starts(6, 8) ends(26, 12) is 0
+
+Feature of type 0 starts(6, 8) ends(26, 13) is 0
+
+Feature of type 1 starts(6, 8) ends(26, 13) is 0
+
+Feature of type 2 starts(6, 8) ends(26, 13) is 0
+
+Feature of type 3 starts(6, 8) ends(26, 13) is 0
+
+Feature of type 0 starts(6, 8) ends(27, 12) is 0
+
+Feature of type 1 starts(6, 8) ends(27, 12) is 0
+
+Feature of type 2 starts(6, 8) ends(27, 12) is 0
+
+Feature of type 3 starts(6, 8) ends(27, 12) is 0
+
+Feature of type 0 starts(6, 8) ends(27, 13) is 0
+
+Feature of type 1 starts(6, 8) ends(27, 13) is 0
+
+Feature of type 2 starts(6, 8) ends(27, 13) is 0
+
+Feature of type 3 starts(6, 8) ends(27, 13) is 0
+
+Feature of type 0 starts(6, 8) ends(28, 12) is 0
+
+Feature of type 1 starts(6, 8) ends(28, 12) is 0
+
+Feature of type 2 starts(6, 8) ends(28, 12) is 0
+
+Feature of type 3 starts(6, 8) ends(28, 12) is 0
+
+Feature of type 0 starts(6, 8) ends(28, 13) is 0
+
+Feature of type 1 starts(6, 8) ends(28, 13) is 0
+
+Feature of type 2 starts(6, 8) ends(28, 13) is 0
+
+Feature of type 3 starts(6, 8) ends(28, 13) is 0
+
+Feature of type 0 starts(6, 8) ends(29, 12) is 0
+
+Feature of type 1 starts(6, 8) ends(29, 12) is 0
+
+Feature of type 2 starts(6, 8) ends(29, 12) is 0
+
+Feature of type 3 starts(6, 8) ends(29, 12) is 0
+
+Feature of type 0 starts(6, 8) ends(29, 13) is 0
+
+Feature of type 1 starts(6, 8) ends(29, 13) is 0
+
+Feature of type 2 starts(6, 8) ends(29, 13) is 0
+
+Feature of type 3 starts(6, 8) ends(29, 13) is 0
+
+Feature of type 0 starts(6, 8) ends(30, 12) is 0
+
+Feature of type 1 starts(6, 8) ends(30, 12) is 0
+
+Feature of type 2 starts(6, 8) ends(30, 12) is 0
+
+Feature of type 3 starts(6, 8) ends(30, 12) is 0
+
+Feature of type 0 starts(6, 8) ends(30, 13) is 0
+
+Feature of type 1 starts(6, 8) ends(30, 13) is 0
+
+Feature of type 2 starts(6, 8) ends(30, 13) is 0
+
+Feature of type 3 starts(6, 8) ends(30, 13) is 0
+
+Feature of type 0 starts(6, 8) ends(31, 12) is 0
+
+Feature of type 1 starts(6, 8) ends(31, 12) is 0
+
+Feature of type 2 starts(6, 8) ends(31, 12) is 0
+
+Feature of type 3 starts(6, 8) ends(31, 12) is 0
+
+Feature of type 0 starts(6, 8) ends(31, 13) is 0
+
+Feature of type 1 starts(6, 8) ends(31, 13) is 0
+
+Feature of type 2 starts(6, 8) ends(31, 13) is 0
+
+Feature of type 3 starts(6, 8) ends(31, 13) is 0
 
 Feature of type 0 starts(7, 8) ends(26, 12) is 0
 
@@ -4430,14 +2142,6 @@ Feature of type 2 starts(7, 8) ends(26, 13) is 0
 
 Feature of type 3 starts(7, 8) ends(26, 13) is 0
 
-Feature of type 0 starts(7, 8) ends(26, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(26, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(26, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(26, 14) is 0
-
 Feature of type 0 starts(7, 8) ends(27, 12) is 0
 
 Feature of type 1 starts(7, 8) ends(27, 12) is 0
@@ -4453,14 +2157,6 @@ Feature of type 1 starts(7, 8) ends(27, 13) is 0
 Feature of type 2 starts(7, 8) ends(27, 13) is 0
 
 Feature of type 3 starts(7, 8) ends(27, 13) is 0
-
-Feature of type 0 starts(7, 8) ends(27, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(27, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(27, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(27, 14) is 0
 
 Feature of type 0 starts(7, 8) ends(28, 12) is 0
 
@@ -4478,14 +2174,6 @@ Feature of type 2 starts(7, 8) ends(28, 13) is 0
 
 Feature of type 3 starts(7, 8) ends(28, 13) is 0
 
-Feature of type 0 starts(7, 8) ends(28, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(28, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(28, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(28, 14) is 0
-
 Feature of type 0 starts(7, 8) ends(29, 12) is 0
 
 Feature of type 1 starts(7, 8) ends(29, 12) is 0
@@ -4501,14 +2189,6 @@ Feature of type 1 starts(7, 8) ends(29, 13) is 0
 Feature of type 2 starts(7, 8) ends(29, 13) is 0
 
 Feature of type 3 starts(7, 8) ends(29, 13) is 0
-
-Feature of type 0 starts(7, 8) ends(29, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(29, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(29, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(29, 14) is 0
 
 Feature of type 0 starts(7, 8) ends(30, 12) is 0
 
@@ -4526,14 +2206,6 @@ Feature of type 2 starts(7, 8) ends(30, 13) is 0
 
 Feature of type 3 starts(7, 8) ends(30, 13) is 0
 
-Feature of type 0 starts(7, 8) ends(30, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(30, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(30, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(30, 14) is 0
-
 Feature of type 0 starts(7, 8) ends(31, 12) is 0
 
 Feature of type 1 starts(7, 8) ends(31, 12) is 0
@@ -4550,14 +2222,6 @@ Feature of type 2 starts(7, 8) ends(31, 13) is 0
 
 Feature of type 3 starts(7, 8) ends(31, 13) is 0
 
-Feature of type 0 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(31, 14) is 0
-
 Feature of type 0 starts(7, 8) ends(31, 12) is 0
 
 Feature of type 1 starts(7, 8) ends(31, 12) is 0
@@ -4573,1188 +2237,4 @@ Feature of type 1 starts(7, 8) ends(31, 13) is 0
 Feature of type 2 starts(7, 8) ends(31, 13) is 0
 
 Feature of type 3 starts(7, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(7, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(7, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(7, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(7, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(7, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(7, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(7, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(7, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(7, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(26, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(26, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(26, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(26, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(26, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(26, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(26, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(26, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(26, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(26, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(26, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(26, 15) is 0
-
-Feature of type 0 starts(7, 9) ends(27, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(27, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(27, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(27, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(27, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(27, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(27, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(27, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(27, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(27, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(27, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(27, 15) is 0
-
-Feature of type 0 starts(7, 9) ends(28, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(28, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(28, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(28, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(28, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(28, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(28, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(28, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(28, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(28, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(28, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(28, 15) is 0
-
-Feature of type 0 starts(7, 9) ends(29, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(29, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(29, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(29, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(29, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(29, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(29, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(29, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(29, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(29, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(29, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(29, 15) is 0
-
-Feature of type 0 starts(7, 9) ends(30, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(30, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(30, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(30, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(30, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(30, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(30, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(30, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(30, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(30, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(30, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(30, 15) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(7, 9) ends(31, 15) is 0
-
-Feature of type 0 starts(8, 5) ends(27, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(27, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(27, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(27, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(27, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(27, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(27, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(27, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(27, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(27, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(27, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(27, 11) is 0
-
-Feature of type 0 starts(8, 5) ends(28, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(28, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(28, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(28, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(28, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(28, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(28, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(28, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(28, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(28, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(28, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(28, 11) is 0
-
-Feature of type 0 starts(8, 5) ends(29, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(29, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(29, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(29, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(29, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(29, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(29, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(29, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(29, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(29, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(29, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(29, 11) is 0
-
-Feature of type 0 starts(8, 5) ends(30, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(30, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(30, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(30, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(30, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(30, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(30, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(30, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(30, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(30, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(30, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(30, 11) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 9) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 5) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(27, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(27, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(27, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(27, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(27, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(27, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(27, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(27, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(27, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(27, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(27, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(27, 12) is 0
-
-Feature of type 0 starts(8, 6) ends(28, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(28, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(28, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(28, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(28, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(28, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(28, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(28, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(28, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(28, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(28, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(28, 12) is 0
-
-Feature of type 0 starts(8, 6) ends(29, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(29, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(29, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(29, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(29, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(29, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(29, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(29, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(29, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(29, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(29, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(29, 12) is 0
-
-Feature of type 0 starts(8, 6) ends(30, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(30, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(30, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(30, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(30, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(30, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(30, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(30, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(30, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(30, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(30, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(30, 12) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 10) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 6) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(27, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(27, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(27, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(27, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(27, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(27, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(27, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(27, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(27, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(27, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(27, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(27, 13) is 0
-
-Feature of type 0 starts(8, 7) ends(28, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(28, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(28, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(28, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(28, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(28, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(28, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(28, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(28, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(28, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(28, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(28, 13) is 0
-
-Feature of type 0 starts(8, 7) ends(29, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(29, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(29, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(29, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(29, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(29, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(29, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(29, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(29, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(29, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(29, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(29, 13) is 0
-
-Feature of type 0 starts(8, 7) ends(30, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(30, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(30, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(30, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(30, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(30, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(30, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(30, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(30, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(30, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(30, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(30, 13) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 11) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 7) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(27, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(27, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(27, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(27, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(27, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(27, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(27, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(27, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(27, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(27, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(27, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(27, 14) is 0
-
-Feature of type 0 starts(8, 8) ends(28, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(28, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(28, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(28, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(28, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(28, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(28, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(28, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(28, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(28, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(28, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(28, 14) is 0
-
-Feature of type 0 starts(8, 8) ends(29, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(29, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(29, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(29, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(29, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(29, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(29, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(29, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(29, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(29, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(29, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(29, 14) is 0
-
-Feature of type 0 starts(8, 8) ends(30, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(30, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(30, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(30, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(30, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(30, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(30, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(30, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(30, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(30, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(30, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(30, 14) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 12) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 8) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(27, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(27, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(27, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(27, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(27, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(27, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(27, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(27, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(27, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(27, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(27, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(27, 15) is 0
-
-Feature of type 0 starts(8, 9) ends(28, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(28, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(28, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(28, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(28, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(28, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(28, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(28, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(28, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(28, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(28, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(28, 15) is 0
-
-Feature of type 0 starts(8, 9) ends(29, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(29, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(29, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(29, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(29, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(29, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(29, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(29, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(29, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(29, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(29, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(29, 15) is 0
-
-Feature of type 0 starts(8, 9) ends(30, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(30, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(30, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(30, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(30, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(30, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(30, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(30, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(30, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(30, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(30, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(30, 15) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 13) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 14) is 0
-
-Feature of type 0 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 1 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 2 starts(8, 9) ends(31, 15) is 0
-
-Feature of type 3 starts(8, 9) ends(31, 15) is 0
 
