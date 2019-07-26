@@ -805,10 +805,9 @@ class ViolaJones:
         return weights
 
     # def train(self, image_path: str, metadata_path: str) -> Tuple[List, List, List, List]:
-    def train(self, weights, sorted_X_list, y_list, pos_stat, neg_stat, features):
+    def train(self, foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features):
         """ 
         Doing the actual training procedure here
-
         """
         updated_weights = []
         for t in range(self.T):
@@ -821,7 +820,7 @@ class ViolaJones:
                 weights)
             print("Max normalized weight is now %s" % max_normalized_weights)
             print("Total normalized weights is now %s" %
-                  total_normalized_weights)
+                total_normalized_weights)
             print("Normalizing Finished")
 
             """ Step 2 & 3, finding best classifier: """
@@ -833,7 +832,7 @@ class ViolaJones:
             clf_errors, useful_clf_errors, best_error_index, best_error, best_accuracy = self.apply_classifiers(
                 sorted_X_list, y_list, classifiers, normalized_weights, max_normalized_weights)
             print("Best error of this round found at index %i with value %s" %
-                  (best_error_index, best_error))
+                (best_error_index, best_error))
             # print("With accuracy of %s" % best_accuracy)
             sorted_clf_errors = sorted(clf_errors, key=lambda ii: ii[1])
             sorted_useful_clf_errors = sorted(
@@ -855,11 +854,11 @@ class ViolaJones:
             alpha = 0
             if best_error > 1:
                 print("ERROR: best error shouldn't even approach 1: %s" %
-                      best_error)
+                    best_error)
                 alpha = math.log(1/big_number)
             elif best_error < 0:
                 print("ERROR: best error should never drop below 0: %s" %
-                      best_error)
+                    best_error)
                 alpha = math.log(big_number)
             elif best_error == 1:
                 # alpha = float('-inf')
@@ -876,46 +875,46 @@ class ViolaJones:
             self.clfs.append(classifiers[best_error_index])
             if t == (self.T - 1):
                 # print("SAVING DATA")
-                with open("output/normalized_weights.txt", "w") as f:
+                with open(foldername+"/normalized_weights.txt", "w") as f:
                     for item in normalized_weights:
                         f.write("%s\n" % item)
-                with open("output/best_thresholds.txt", "w") as f:
+                with open(foldername+"/best_thresholds.txt", "w") as f:
                     for item in (best_thresholds):
                         f.write("%s\n" % item)
-                with open("output/classifiers.txt", "w") as f:
+                with open(foldername+"/classifiers.txt", "w") as f:
                     for item in classifiers:
                         f.write("%s\n" % item)
-                with open("output/clf_errors.txt", "w") as f:
+                with open(foldername+"/clf_errors.txt", "w") as f:
                     for item in clf_errors:
                         f.write("%s\n" % item)
-                with open("output/useful_clf_errors.txt", "w") as f:
+                with open(foldername+"/useful_clf_errors.txt", "w") as f:
                     for item in useful_clf_errors:
                         f.write("%s\n" % item)
-                with open("output/sorted_clf_errors.txt", "w") as f:
+                with open(foldername+"/sorted_clf_errors.txt", "w") as f:
                     for item in sorted_clf_errors:
                         f.write("%s\n" % item)
-                with open("output/sorted_useful_clf_errors.txt", "w") as f:
+                with open(foldername+"/sorted_useful_clf_errors.txt", "w") as f:
                     for item in sorted_useful_clf_errors:
                         f.write("%s\n" % item)
-                with open("output/updated_weights.txt", "w") as f:
+                with open(foldername+"/updated_weights.txt", "w") as f:
                     for item in updated_weights:
                         f.write("%s\n" % item)
-                with open("output/errs.txt", "w") as f:
+                with open(foldername+"/errs.txt", "w") as f:
                     for item in self.errs:
                         f.write("%s\n" % item)
-                with open("output/alphas.txt", "w") as f:
+                with open(foldername+"/alphas.txt", "w") as f:
                     for item in self.alphas:
                         f.write("%s\n" % item)
-                with open("output/final_clf_indexes.txt", "w") as f:
+                with open(foldername+"/final_clf_indexes.txt", "w") as f:
                     for item in self.clf_indexes:
                         f.write("%s\n" % item)
-                with open("output/final_clfs.txt", "w") as f:
+                with open(foldername+"/final_clfs.txt", "w") as f:
                     for item in self.clfs:
                         f.write("%s\n" % item)
                 print("DATA SAVED")
-        print("alpha list:", self.alphas)
-        print("WeakClassifier list:", "\n\t".join(str(classifier)
-                                                  for classifier in self.clfs))
+            print("alpha list:", self.alphas)
+            print("WeakClassifier list:", "\n\t".join(str(classifier)
+                                                    for classifier in self.clfs))
         return self.clf_indexes, self.alphas, self.errs, self.clfs
 
         # print(len(classifiers))
@@ -1117,7 +1116,7 @@ try:
 except FileExistsError as e:
     print(e)
     pass
-image_path, metadata_path = 'data/database0/training_set/*.bmp', 'data/database0/training_set/eye_table.bin'
+image_path, metadata_path, foldername = 'data/database0/training_set/*.bmp', 'data/database0/training_set/eye_table.bin', "output"
 strong_classifier = ViolaJones(2880)
 """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 print("0.) Starting Prep")
@@ -1130,35 +1129,41 @@ normalized_list = max_normalize(image_list)
 #     normalized_list[i] /= pow(2, 16)
 ii_list = integral_image(normalized_list)
 features = strong_classifier.build_features(ii_list[0].shape, minmax)
-with open("output/feature_table.txt", "w") as f:
+with open(foldername+"/feature_table.txt", "w") as f:
     for item in features:
         f.write("%s\n" % item)
 im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
     features, correct)
-with open("output/feature_stat.txt", "w") as f:
+with open(foldername+"/feature_stat.txt", "w") as f:
     for row in feature_stat:
         f.write("%s\n" % row)
 X_list, sorted_X_list = strong_classifier.apply_features(
     features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-with open("output/X_list.txt", "w") as f:
+with open(foldername+"/X_list.txt", "w") as f:
     for item in X_list:
         f.write("%s\n" % item)
-with open("output/sorted_X_list.txt", "w") as f:
+with open(foldername+"/sorted_X_list.txt", "w") as f:
     for item in sorted_X_list:
         f.write("%s\n" % item)
 
 weights = strong_classifier.initialize_weights(feature_stat, y_list)
-with open("output/weights.txt", "w") as f:
+with open(foldername+"/weights.txt", "w") as f:
     for item in weights:
         f.write("%s\n" % item)
-print("Prep Done\n")
+print("Prep Done")
 print("Number of iterations to run is %i" % strong_classifier.T)
-""" Since I already ran it once and has the indexes of the final weak classifiers ordered by best errors... """
-clf_indexes = [line.rstrip('\n')
-               for line in open("output/final_clf_indexes.txt")]
-strong_classifier.train()
-strong_classifier.save("output/strong_classifier")
-strong_classifier_copy = strong_classifier.load("output/strong_classifier")
+# Actually training below, which took 3 hours and 12 minutes
+# weak_classifier_list = strong_classifier.train(
+#     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
+# strong_classifier.save(foldername+"/strong_classifier")
+# strong_classifier_copy = strong_classifier.load(
+#     foldername+"/strong_classifier")
+# Since I already ran it once and has the indexes of the final weak classifiers ordered by best errors...
+final_clf_indexes = [line.rstrip('\n')
+                     for line in open("output_old/final_clf_indexes.txt")]
+# indexes, alphas, errors, weak_classifiers
+
+
 
 # correct = read_metadata('database0/training_set/eye_table.bin')
 # with open("output/correct.txt", "w") as f:
