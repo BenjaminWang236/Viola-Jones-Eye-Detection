@@ -116,11 +116,11 @@ def integral_image(image_list):
     for image in image_list:
         ii = np.zeros(image.shape)
         s = np.zeros(image.shape)
-        for x in range(len(image)):
-            for y in range(len(image[x])):
-                s[x][y] = s[x-1][y] + \
-                    image[x][y] if (x-1 >= 0) else image[x][y]
-                ii[x][y] = ii[x][y-1] + s[x][y] if (y-1 >= 0) else s[x][y]
+        for y in range(len(image)):
+            for x in range(len(image[y])):
+                s[y][x] = s[y-1][x] + \
+                    image[y][x] if (y-1 >= 0) else image[y][x]
+                ii[y][x] = ii[y][x-1] + s[y][x] if (x-1 >= 0) else s[y][x]
                 # if (x-1 >= 0):
                 #     s[x][y] = s[x-1][y] + image[x][y]
                 # else:
@@ -137,7 +137,7 @@ def integral_image(image_list):
 
 
 class RectangleRegion:
-    """ Rectangle that makes up the Haar-features, (y, x) coordinate format where x is horizontal """
+    """ Rectangle that makes up the Haar-features, (x, y) coordinate format where x is horizontal (COL) and y is vertical (ROW) """
 
     def __init__(self, x, y, width, height):
         self.x = x
@@ -744,9 +744,9 @@ class ViolaJones:
         else:
             beta = best_error / (1 - best_error)
         print("Beta is %s" % beta)
-        for x in range(len(best_weights)):
-            best_weights[x] = best_weights[x] * \
-                pow(beta, (1 - best_accuracy[x]))
+        for i in range(len(best_weights)):
+            best_weights[i] = best_weights[i] * \
+                pow(beta, (1 - best_accuracy[i]))
         weights[best_error_index][1] = best_weights
         # print("best weights is", best_weights)
         # print("Updated weight is", weights[best_error_index][1])
@@ -1100,10 +1100,13 @@ with open(foldername+"/sorted_X_list.txt", "w") as f:
     for item in sorted_X_list:
         f.write("%s\n" % item)
 
-""" Plot the not-sorted feature graphs for verification """
+""" 
+Plot the not-sorted feature graphs for verification
+Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
+"""
 # strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
-# temp_list = X_list[0:10]
-# strong_classifier.plot_graphs("verify", temp_list, pos_stat)
+temp_list = X_list[0:10]
+strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 
 weights = strong_classifier.initialize_weights(feature_stat, y_list)
 with open(foldername+"/weights.txt", "w") as f:
