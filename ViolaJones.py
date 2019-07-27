@@ -137,7 +137,7 @@ def integral_image(image_list):
 class RectangleRegion:
     """ Rectangle that makes up the Haar-features, (y, x) coordinate format where x is horizontal """
 
-    def __init__(self, y, x, width, height):
+    def __init__(self, x, y, width, height):
         self.x = x
         self.y = y
         self.width = width
@@ -365,16 +365,16 @@ class ViolaJones:
         print("X: %i->%i, Y: %i->%i, Width: %i->%i, Height: %i->%i" % (min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height))
         # Row
         # for y in range(minmax[0], minmax[1]+1):
-        for y in range(min_y, max_y):
+        for y in range(min_y, max_y+1):
             # Col
             # for x in range(minmax[2], minmax[3]+1):
-            for x in range(min_x, max_x):
+            for x in range(min_x, max_x+1):
                 # Width
                 # for w in range(minmax[4], minmax[5]+1):
-                for w in range(min_width, max_width):
+                for w in range(min_width, max_width+1):
                     # Height
                     # for h in range(minmax[6], minmax[7]+1):
-                    for h in range(min_height, max_height):
+                    for h in range(min_height, max_height+1):
                         # print('x/y/w/h\t', x, y, w, h)
                         half_width = math.floor(w/2)
                         third_width = math.floor(w/3)
@@ -571,7 +571,7 @@ class ViolaJones:
                     for ind in above_indexes:
                         if ind in negative_sample_indexes:
                             above_negatives += 1
-            # print("\nIndex %x\nAbove pos-neg:\t%x-%x\nBelow pos-neg:\t%x-%x" %
+            # print("\nIndex %s\nAbove pos-neg:\t%s-%s\nBelow pos-neg:\t%s-%s" %
             #       (index, above_positives, above_negatives, below_positives, below_negatives))
 
             """ Now we have all the metadata we need on each feature to start searchingfor both thresholds through gini """
@@ -730,7 +730,7 @@ class ViolaJones:
         for clf in classifiers:
             error, accuracy = 0, []
             if clf.index != sorted_X_list[clf.index][0]:
-                print("ERROR: Classifier index and X_list index mismatched at %x->%x" %
+                print("ERROR: Classifier index and X_list index mismatched at %s->%s" %
                       (clf.index, sorted_X_list[clf.index][0]))
             for sample_index, sample_value in sorted_X_list[clf.index][1]:
                 # Less than threshold = Guess Negative (Guess No-Eye) 0, Keeping consistency with find_gini_threshold
@@ -778,7 +778,7 @@ class ViolaJones:
         # sorted_clf_errors = sorted(clf_errors, key=lambda ii: ii[1])
         # to_prune = list(
         #     filter(lambda ii: ii[1] == 0, sorted_clf_errors))   # 2204, 2684
-        # # print("len-weights %x len-to-prune %x" % (len(weights), len(to_prune)))
+        # # print("len-weights %s len-to-prune %s" % (len(weights), len(to_prune)))
         # num_useful_features = int(len(useful_features) - len(to_prune))
         # # weights = [[row[0], 1/num_useful_features]
         # #            for row in useful_features if row[0] not in zero_list]
@@ -828,7 +828,7 @@ class ViolaJones:
         for t in range(self.T):
             if t != 0:
                 weights = updated_weights
-            print("\nROUND %x" % t)
+            print("\nROUND %s" % t)
             """ Step 1, Normalize the weights """
             # print("1.) Starting normalizing")
             normalized_weights, total_normalized_weights, max_normalized_weights = self.normalize_weights(
@@ -846,7 +846,7 @@ class ViolaJones:
             # Apply the classifier to find its error (epsilon) as min-error of all errors from all samples applied to
             clf_errors, useful_clf_errors, best_error_index, best_error, best_accuracy = self.apply_classifiers(
                 sorted_X_list, y_list, classifiers, normalized_weights, max_normalized_weights)
-            print("Best error of this round found at index %x with value %s" %
+            print("Best error of this round found at index %s with value %s" %
                   (best_error_index, best_error))
             # print("With accuracy of %s" % best_accuracy)
             sorted_clf_errors = sorted(clf_errors, key=lambda ii: ii[1])
@@ -934,7 +934,7 @@ class ViolaJones:
 
         # print(len(classifiers))
         # for x, item in enumerate(classifiers):
-        #     print("%x\t%s" % (x, item))
+        #     print("%s\t%s" % (x, item))
         # with open("output/classifiers.pkl", "wb") as f:
         #     pickle.dump(classifiers, f)
 
@@ -1000,10 +1000,10 @@ class WeakClassifier:
         self.upper_threshold_value = upper_threshold_value
 
     def __repr__(self):
-        return "WeakClassifier %x:\n\tLower Threshold @ index %x is %s\n\tUpper Threshold @ index %x is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
+        return "WeakClassifier %s:\n\tLower Threshold @ index %s is %s\n\tUpper Threshold @ index %s is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
     def __str__(self):
-        return "WeakClassifier %x:\n\tLower Threshold @ index %x is %s\n\tUpper Threshold @ index %x is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
+        return "WeakClassifier %s:\n\tLower Threshold @ index %s is %s\n\tUpper Threshold @ index %s is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
 # class WeakClassifier:
 #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
@@ -1152,7 +1152,7 @@ with open(foldername+"/feature_table.txt", "w") as f:
 indexed_feature_table = list(enumerate(features))
 with open("output/indexed_feature_table.txt", "w") as f:
     for index, item in indexed_feature_table:
-        f.write("Index %x->%s\n" % (index, item))
+        f.write("Index %i->%s\n" % (index, item))
 im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
     features, correct)
 with open(foldername+"/feature_stat.txt", "w") as f:
@@ -1225,7 +1225,7 @@ print("Number of iterations to run is %i" % strong_classifier.T)
 # indexed_feature_table = list(enumerate(feature_table))
 # with open("output/indexed_feature_table.txt", "w") as f:
 #     for index, item in indexed_feature_table:
-#         f.write("Index %x->%s\n" % (index, item))
+#         f.write("Index %s->%s\n" % (index, item))
 
 """ Generate Alpha-Error Graph """
 # # gp.c('set terminal pdf')
