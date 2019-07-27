@@ -154,7 +154,7 @@ class RectangleRegion:
 
 
 class Feature:
-    """ pos_neg 0 for "Other parts of the face", 1 for "eye part", 0 for unknown """
+    """ pos_neg 0 for "Other parts of the face" Negative, 1 for "eye part" Positive """
 
     def __init__(self, haar_pos, haar_neg, pos_neg=0, feature_type=-1):
         self.haar_pos = haar_pos
@@ -169,27 +169,27 @@ class Feature:
             tup = (self.feature_type, self.haar_neg[0].x,
                    self.haar_neg[0].y, self.haar_pos[0].x +
                    self.haar_pos[0].width,
-                   self.haar_pos[0].y+self.haar_pos[0].height, self.pos_neg)
+                   self.haar_pos[0].y+self.haar_pos[0].height)
         elif (self.feature_type == 1):
             tup = (self.feature_type, self.haar_pos[0].x,
                    self.haar_pos[0].y, self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height)
         elif (self.feature_type == 2):
             tup = (self.feature_type, self.haar_neg[1].x,
                    self.haar_neg[1].y,
                    self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height)
         elif (self.feature_type == 3):
             tup = (self.feature_type, self.haar_neg[0].x,
                    self.haar_neg[0].y,
                    self.haar_neg[1].x +
                    self.haar_neg[1].width,
-                   self.haar_neg[1].y+self.haar_neg[1].height, self.pos_neg)
+                   self.haar_neg[1].y+self.haar_neg[1].height)
         else:
             return "ERROR: feature should never be of a type not a/b/c/d"
-        return "<Feature of type %s starts(%s, %s) ends(%s, %s) is %s>" % tup
+        return "<Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format>" % tup
 
     def __str__(self):
         tup = tuple()
@@ -197,27 +197,27 @@ class Feature:
             tup = (self.feature_type, self.haar_neg[0].x,
                    self.haar_neg[0].y, self.haar_pos[0].x +
                    self.haar_pos[0].width,
-                   self.haar_pos[0].y+self.haar_pos[0].height, self.pos_neg)
+                   self.haar_pos[0].y+self.haar_pos[0].height)
         elif (self.feature_type == 1):
             tup = (self.feature_type, self.haar_pos[0].x,
                    self.haar_pos[0].y, self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height)
         elif (self.feature_type == 2):
             tup = (self.feature_type, self.haar_neg[1].x,
                    self.haar_neg[1].y,
                    self.haar_neg[0].x +
                    self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height, self.pos_neg)
+                   self.haar_neg[0].y+self.haar_neg[0].height)
         elif (self.feature_type == 3):
             tup = (self.feature_type, self.haar_neg[0].x,
                    self.haar_neg[0].y,
                    self.haar_neg[1].x +
                    self.haar_neg[1].width,
-                   self.haar_neg[1].y+self.haar_neg[1].height, self.pos_neg)
+                   self.haar_neg[1].y+self.haar_neg[1].height)
         else:
             return "ERROR: feature should never be of a type not a/b/c/d"
-        return "Feature of type %s starts(%s, %s) ends(%s, %s) is %s" % tup
+        return "Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format" % tup
 
     def get_size(self):
         """ Return the starting point and end point in (x, y) """
@@ -362,7 +362,8 @@ class ViolaJones:
         features = []
         # minmax format = [min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height]
         min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height = minmax
-        print("X: %i->%i, Y: %i->%i, Width: %i->%i, Height: %i->%i" % (min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height))
+        print("X: %i->%i, Y: %i->%i, Width: %i->%i, Height: %i->%i" %
+              (min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height))
         # Row
         # for y in range(minmax[0], minmax[1]+1):
         for y in range(min_y, max_y+1):
