@@ -321,9 +321,6 @@ class ViolaJones:
         # If NOT sorted:
         for index, sorted_list in X_list:
             print(counter, "Feature Index:\t", index)
-            # indexed_X = list(pair for pair in enumerate(X_list[f[0]]))
-            # sorted_indexed_X = sorted(
-            #     indexed_X, key=lambda y: y[1])    # Sort by value, now already sorted
             # sorted_index = list(map(lambda y: y[0], sorted_list))
             # sorted_value = list(map(lambda y: y[1], sorted_list))
             # ind = np.arange(len(sorted_index))
@@ -1126,18 +1123,19 @@ def print_score(dataframe_collectioon):
 # print("total neg/pos\t", total_neg, total_pos, "\t", (total_pos*100)/(len(features)*50), "% Positive" )
 
 # ViolaJones().train("database0/training_set/eye_table.bin", ii_list)
-try:
-    os.makedirs("/output")  # Making Folder if not exists
-    # os.makedirs("/feature_graphs")
-    # print("Succeeded!")
-except FileExistsError as e:
-    print(e)
-    pass
+# try:
+#     os.makedirs("/output")  # Making Folder if not exists
+#     # os.makedirs("/feature_graphs")
+#     # print("Succeeded!")
+# except FileExistsError as e:
+#     print(e)
+#     pass
 image_path, metadata_path, foldername = 'data/database0/training_set/*.bmp', 'data/database0/training_set/eye_table.bin', "output"
 strong_classifier = ViolaJones(2880)
 """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 print("0.) Starting Prep")
 minmax = min_max_eye(metadata_path)
+print(minmax)
 correct = read_metadata(metadata_path)
 image_list = import_image(image_path)
 normalized_list = max_normalize(image_list)
@@ -1164,9 +1162,8 @@ with open(foldername+"/sorted_X_list.txt", "w") as f:
         f.write("%s\n" % item)
 
 """ Plot the not-sorted feature graphs for verification """
-# strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
-# temp_list = []
-# temp_list.append(X_list[0])
+strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+# temp_list = X_list[0:10]
 # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 
 weights = strong_classifier.initialize_weights(feature_stat, y_list)
