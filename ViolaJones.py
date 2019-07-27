@@ -217,7 +217,7 @@ class Feature:
                    self.haar_neg[1].y+self.haar_neg[1].height, self.pos_neg)
         else:
             return "ERROR: feature should never be of a type not a/b/c/d"
-        return "Feature of type %s starts(%s, %s) ends(%s, %s) is %s\n" % tup
+        return "Feature of type %s starts(%s, %s) ends(%s, %s) is %s" % tup
 
     def get_size(self):
         """ Return the starting point and end point in (x, y) """
@@ -1147,6 +1147,10 @@ features = strong_classifier.build_features(ii_list[0].shape, minmax)
 with open(foldername+"/feature_table.txt", "w") as f:
     for item in features:
         f.write("%s\n" % item)
+indexed_feature_table = list(enumerate(features))
+with open("output/indexed_feature_table.txt", "w") as f:
+    for index, item in indexed_feature_table:
+        f.write("Index %x->%s\n" % (index, item))
 im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
     features, correct)
 with open(foldername+"/feature_stat.txt", "w") as f:
@@ -1162,7 +1166,7 @@ with open(foldername+"/sorted_X_list.txt", "w") as f:
         f.write("%s\n" % item)
 
 """ Plot the not-sorted feature graphs for verification """
-strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+# strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
 # temp_list = X_list[0:10]
 # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 
