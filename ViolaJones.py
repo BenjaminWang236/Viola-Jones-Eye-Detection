@@ -135,9 +135,9 @@ def integral_image(image_list):
 
 
 class RectangleRegion:
-    """ Rectangle that makes up the Haar-features, (x, y) coordinate format where x is horizontal """
+    """ Rectangle that makes up the Haar-features, (y, x) coordinate format where x is horizontal """
 
-    def __init__(self, x, y, width, height):
+    def __init__(self, y, x, width, height):
         self.x = x
         self.y = y
         self.width = width
@@ -362,6 +362,7 @@ class ViolaJones:
         features = []
         # minmax format = [min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height]
         min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height = minmax
+        print("X: %i->%i, Y: %i->%i, Width: %i->%i, Height: %i->%i" % (min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height))
         # Row
         # for y in range(minmax[0], minmax[1]+1):
         for y in range(min_y, max_y):
@@ -1144,6 +1145,7 @@ normalized_list = max_normalize(image_list)
 #     normalized_list[x] /= pow(2, 16)
 ii_list = integral_image(normalized_list)
 features = strong_classifier.build_features(ii_list[0].shape, minmax)
+print("Number of features generated is %i" % len(features))
 with open(foldername+"/feature_table.txt", "w") as f:
     for item in features:
         f.write("%s\n" % item)
