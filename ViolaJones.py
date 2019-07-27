@@ -17,12 +17,14 @@ import PyGnuplot as gp
 start_time = time.time()
 
 """ Note:  
+        Coordinate System: (x, y) or (y, x) but y is always ROW (vertical)
+            and x is always COLUMN (horizontal)
         Dataframe collection is in 3D, accessor codes commented out for now
         Using notation 1 = Positive (Yes-eye), 0 = Negative (No-eye)
         Thresholding condition (Positive): feature-value <= Lower Threshold
                                            feature-value >= Upper Threshold
         Special case: If all samples for a feature are negative, then both
-                      thresholds remain at 0 with gini = infinity
+            thresholds remain at 0 with gini = infinity
         2880 iterations Adaboosting loop took 3 hours and 12 minutes
 
     Progress Report:
@@ -175,93 +177,8 @@ class Feature:
     def __str__(self):
         return "Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format" % (self.feature_type, self.start_x, self.start_y, self.end_x, self.end_y)
 
-    # def __repr__(self):
-    #     tup = tuple()
-    #     if(self.feature_type == 0):
-    #         tup = (self.feature_type, self.haar_neg[0].x,
-    #                self.haar_neg[0].y, self.haar_pos[0].x +
-    #                self.haar_pos[0].width,
-    #                self.haar_pos[0].y+self.haar_pos[0].height)
-    #     elif (self.feature_type == 1):
-    #         tup = (self.feature_type, self.haar_pos[0].x,
-    #                self.haar_pos[0].y, self.haar_neg[0].x +
-    #                self.haar_neg[0].width,
-    #                self.haar_neg[0].y+self.haar_neg[0].height)
-    #     elif (self.feature_type == 2):
-    #         tup = (self.feature_type, self.haar_neg[1].x,
-    #                self.haar_neg[1].y,
-    #                self.haar_neg[0].x +
-    #                self.haar_neg[0].width,
-    #                self.haar_neg[0].y+self.haar_neg[0].height)
-    #     elif (self.feature_type == 3):
-    #         tup = (self.feature_type, self.haar_neg[0].x,
-    #                self.haar_neg[0].y,
-    #                self.haar_neg[1].x +
-    #                self.haar_neg[1].width,
-    #                self.haar_neg[1].y+self.haar_neg[1].height)
-    #     else:
-    #         return "ERROR: feature should never be of a type not a/b/c/d"
-    #     return "<Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format>" % tup
-
-    # def __str__(self):
-    #     tup = tuple()
-    #     if(self.feature_type == 0):
-    #         tup = (self.feature_type, self.haar_neg[0].x,
-    #                self.haar_neg[0].y, self.haar_pos[0].x +
-    #                self.haar_pos[0].width,
-    #                self.haar_pos[0].y+self.haar_pos[0].height)
-    #     elif (self.feature_type == 1):
-    #         tup = (self.feature_type, self.haar_pos[0].x,
-    #                self.haar_pos[0].y, self.haar_neg[0].x +
-    #                self.haar_neg[0].width,
-    #                self.haar_neg[0].y+self.haar_neg[0].height)
-    #     elif (self.feature_type == 2):
-    #         tup = (self.feature_type, self.haar_neg[1].x,
-    #                self.haar_neg[1].y,
-    #                self.haar_neg[0].x +
-    #                self.haar_neg[0].width,
-    #                self.haar_neg[0].y+self.haar_neg[0].height)
-    #     elif (self.feature_type == 3):
-    #         tup = (self.feature_type, self.haar_neg[0].x,
-    #                self.haar_neg[0].y,
-    #                self.haar_neg[1].x +
-    #                self.haar_neg[1].width,
-    #                self.haar_neg[1].y+self.haar_neg[1].height)
-    #     else:
-    #         return "ERROR: feature should never be of a type not a/b/c/d"
-    #     return "Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format" % tup
-
     def get_size(self):
         """ Return the starting point and end point in (x, y) """
-        # # print("Feature.get_size() type is %s" % self.feature_type)
-        # start_end = []
-        # if(self.feature_type == 0):
-        #     start_end = (self.haar_neg[0].x,
-        #                  self.haar_neg[0].y, self.haar_pos[0].x +
-        #                  self.haar_pos[0].width,
-        #                  self.haar_pos[0].y+self.haar_pos[0].height)
-        # elif (self.feature_type == 1):
-        #     start_end = (self.haar_pos[0].x,
-        #                  self.haar_pos[0].y, self.haar_neg[0].x +
-        #                  self.haar_neg[0].width,
-        #                  self.haar_neg[0].y+self.haar_neg[0].height)
-        # elif (self.feature_type == 2):
-        #     start_end = (self.haar_neg[1].x,
-        #                  self.haar_neg[1].y,
-        #                  self.haar_neg[0].x +
-        #                  self.haar_neg[0].width,
-        #                  self.haar_neg[0].y+self.haar_neg[0].height)
-        # elif (self.feature_type == 3):
-        #     start_end = (self.haar_neg[0].x,
-        #                  self.haar_neg[0].y,
-        #                  self.haar_neg[1].x +
-        #                  self.haar_neg[1].width,
-        #                  self.haar_neg[1].y+self.haar_neg[1].height)
-        # else:
-        #     # Must be feature type of -1 default parameter then
-        #     print("ERROR: feature should never be of a type not a/b/c/d")
-        #     start_end = [0, 0, 0, 0]
-        # return start_end
         return [self.start_x, self.start_y, self.end_x, self.end_y]
 
 
