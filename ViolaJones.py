@@ -156,100 +156,113 @@ class RectangleRegion:
 class Feature:
     """ pos_neg 0 for "Other parts of the face" Negative, 1 for "eye part" Positive """
 
-    def __init__(self, haar_pos, haar_neg, pos_neg=0, feature_type=-1):
+    def __init__(self, start_x, start_y, end_x, end_y, haar_pos, haar_neg, pos_neg=0, feature_type=-1):
+        self.start_x = start_x
+        self.start_y = start_y
+        self.end_x = end_x
+        self.end_y = end_y
         self.haar_pos = haar_pos
         self.haar_neg = haar_neg
         self.pos_neg = pos_neg
         if(feature_type >= 0 and feature_type <= 3):
             self.feature_type = feature_type
+        else:
+            print("ERROR: Feature's type should always be between 0 and 3 inclusive")
 
     def __repr__(self):
-        tup = tuple()
-        if(self.feature_type == 0):
-            tup = (self.feature_type, self.haar_neg[0].x,
-                   self.haar_neg[0].y, self.haar_pos[0].x +
-                   self.haar_pos[0].width,
-                   self.haar_pos[0].y+self.haar_pos[0].height)
-        elif (self.feature_type == 1):
-            tup = (self.feature_type, self.haar_pos[0].x,
-                   self.haar_pos[0].y, self.haar_neg[0].x +
-                   self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height)
-        elif (self.feature_type == 2):
-            tup = (self.feature_type, self.haar_neg[1].x,
-                   self.haar_neg[1].y,
-                   self.haar_neg[0].x +
-                   self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height)
-        elif (self.feature_type == 3):
-            tup = (self.feature_type, self.haar_neg[0].x,
-                   self.haar_neg[0].y,
-                   self.haar_neg[1].x +
-                   self.haar_neg[1].width,
-                   self.haar_neg[1].y+self.haar_neg[1].height)
-        else:
-            return "ERROR: feature should never be of a type not a/b/c/d"
-        return "<Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format>" % tup
+        return "<Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format>" % (self.feature_type, self.start_x, self.start_y, self.end_x, self.end_y)
 
     def __str__(self):
-        tup = tuple()
-        if(self.feature_type == 0):
-            tup = (self.feature_type, self.haar_neg[0].x,
-                   self.haar_neg[0].y, self.haar_pos[0].x +
-                   self.haar_pos[0].width,
-                   self.haar_pos[0].y+self.haar_pos[0].height)
-        elif (self.feature_type == 1):
-            tup = (self.feature_type, self.haar_pos[0].x,
-                   self.haar_pos[0].y, self.haar_neg[0].x +
-                   self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height)
-        elif (self.feature_type == 2):
-            tup = (self.feature_type, self.haar_neg[1].x,
-                   self.haar_neg[1].y,
-                   self.haar_neg[0].x +
-                   self.haar_neg[0].width,
-                   self.haar_neg[0].y+self.haar_neg[0].height)
-        elif (self.feature_type == 3):
-            tup = (self.feature_type, self.haar_neg[0].x,
-                   self.haar_neg[0].y,
-                   self.haar_neg[1].x +
-                   self.haar_neg[1].width,
-                   self.haar_neg[1].y+self.haar_neg[1].height)
-        else:
-            return "ERROR: feature should never be of a type not a/b/c/d"
-        return "Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format" % tup
+        return "Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format" % (self.feature_type, self.start_x, self.start_y, self.end_x, self.end_y)
+
+    # def __repr__(self):
+    #     tup = tuple()
+    #     if(self.feature_type == 0):
+    #         tup = (self.feature_type, self.haar_neg[0].x,
+    #                self.haar_neg[0].y, self.haar_pos[0].x +
+    #                self.haar_pos[0].width,
+    #                self.haar_pos[0].y+self.haar_pos[0].height)
+    #     elif (self.feature_type == 1):
+    #         tup = (self.feature_type, self.haar_pos[0].x,
+    #                self.haar_pos[0].y, self.haar_neg[0].x +
+    #                self.haar_neg[0].width,
+    #                self.haar_neg[0].y+self.haar_neg[0].height)
+    #     elif (self.feature_type == 2):
+    #         tup = (self.feature_type, self.haar_neg[1].x,
+    #                self.haar_neg[1].y,
+    #                self.haar_neg[0].x +
+    #                self.haar_neg[0].width,
+    #                self.haar_neg[0].y+self.haar_neg[0].height)
+    #     elif (self.feature_type == 3):
+    #         tup = (self.feature_type, self.haar_neg[0].x,
+    #                self.haar_neg[0].y,
+    #                self.haar_neg[1].x +
+    #                self.haar_neg[1].width,
+    #                self.haar_neg[1].y+self.haar_neg[1].height)
+    #     else:
+    #         return "ERROR: feature should never be of a type not a/b/c/d"
+    #     return "<Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format>" % tup
+
+    # def __str__(self):
+    #     tup = tuple()
+    #     if(self.feature_type == 0):
+    #         tup = (self.feature_type, self.haar_neg[0].x,
+    #                self.haar_neg[0].y, self.haar_pos[0].x +
+    #                self.haar_pos[0].width,
+    #                self.haar_pos[0].y+self.haar_pos[0].height)
+    #     elif (self.feature_type == 1):
+    #         tup = (self.feature_type, self.haar_pos[0].x,
+    #                self.haar_pos[0].y, self.haar_neg[0].x +
+    #                self.haar_neg[0].width,
+    #                self.haar_neg[0].y+self.haar_neg[0].height)
+    #     elif (self.feature_type == 2):
+    #         tup = (self.feature_type, self.haar_neg[1].x,
+    #                self.haar_neg[1].y,
+    #                self.haar_neg[0].x +
+    #                self.haar_neg[0].width,
+    #                self.haar_neg[0].y+self.haar_neg[0].height)
+    #     elif (self.feature_type == 3):
+    #         tup = (self.feature_type, self.haar_neg[0].x,
+    #                self.haar_neg[0].y,
+    #                self.haar_neg[1].x +
+    #                self.haar_neg[1].width,
+    #                self.haar_neg[1].y+self.haar_neg[1].height)
+    #     else:
+    #         return "ERROR: feature should never be of a type not a/b/c/d"
+    #     return "Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format" % tup
 
     def get_size(self):
         """ Return the starting point and end point in (x, y) """
-        # print("Feature.get_size() type is %s" % self.feature_type)
-        start_end = []
-        if(self.feature_type == 0):
-            start_end = (self.haar_neg[0].x,
-                         self.haar_neg[0].y, self.haar_pos[0].x +
-                         self.haar_pos[0].width,
-                         self.haar_pos[0].y+self.haar_pos[0].height)
-        elif (self.feature_type == 1):
-            start_end = (self.haar_pos[0].x,
-                         self.haar_pos[0].y, self.haar_neg[0].x +
-                         self.haar_neg[0].width,
-                         self.haar_neg[0].y+self.haar_neg[0].height)
-        elif (self.feature_type == 2):
-            start_end = (self.haar_neg[1].x,
-                         self.haar_neg[1].y,
-                         self.haar_neg[0].x +
-                         self.haar_neg[0].width,
-                         self.haar_neg[0].y+self.haar_neg[0].height)
-        elif (self.feature_type == 3):
-            start_end = (self.haar_neg[0].x,
-                         self.haar_neg[0].y,
-                         self.haar_neg[1].x +
-                         self.haar_neg[1].width,
-                         self.haar_neg[1].y+self.haar_neg[1].height)
-        else:
-            # Must be feature type of -1 default parameter then
-            print("ERROR: feature should never be of a type not a/b/c/d")
-            start_end = [0, 0, 0, 0]
-        return start_end
+        # # print("Feature.get_size() type is %s" % self.feature_type)
+        # start_end = []
+        # if(self.feature_type == 0):
+        #     start_end = (self.haar_neg[0].x,
+        #                  self.haar_neg[0].y, self.haar_pos[0].x +
+        #                  self.haar_pos[0].width,
+        #                  self.haar_pos[0].y+self.haar_pos[0].height)
+        # elif (self.feature_type == 1):
+        #     start_end = (self.haar_pos[0].x,
+        #                  self.haar_pos[0].y, self.haar_neg[0].x +
+        #                  self.haar_neg[0].width,
+        #                  self.haar_neg[0].y+self.haar_neg[0].height)
+        # elif (self.feature_type == 2):
+        #     start_end = (self.haar_neg[1].x,
+        #                  self.haar_neg[1].y,
+        #                  self.haar_neg[0].x +
+        #                  self.haar_neg[0].width,
+        #                  self.haar_neg[0].y+self.haar_neg[0].height)
+        # elif (self.feature_type == 3):
+        #     start_end = (self.haar_neg[0].x,
+        #                  self.haar_neg[0].y,
+        #                  self.haar_neg[1].x +
+        #                  self.haar_neg[1].width,
+        #                  self.haar_neg[1].y+self.haar_neg[1].height)
+        # else:
+        #     # Must be feature type of -1 default parameter then
+        #     print("ERROR: feature should never be of a type not a/b/c/d")
+        #     start_end = [0, 0, 0, 0]
+        # return start_end
+        return [self.start_x, self.start_y, self.end_x, self.end_y]
 
 
 def add_value_labels(ax, special, fsize=5, rotate=60, spacing=5):
@@ -404,7 +417,8 @@ class ViolaJones:
                                 x, y, half_width, h - extra_h)
                             right = RectangleRegion(
                                 x+half_width, y, half_width + make_up_half_w - extra_w, h - extra_h)
-                            a = Feature([right], [immediate], 0, 0)
+                            a = Feature(x, y, x+half_width*2+make_up_half_w -
+                                        extra_w, y+h-extra_h, [right], [immediate], 0, 0)
                             features.append(a)
                         # print(a)
                         # Feature B:
@@ -416,7 +430,8 @@ class ViolaJones:
                                 x, y, w-extra_w, half_height)
                             bottom = RectangleRegion(
                                 x, y+half_height, w-extra_w, half_height + make_up_half_h - extra_h)
-                            b = Feature([immediate_2], [bottom], 0, 1)
+                            b = Feature(x, y, x+w-extra_w, y+half_height*2 +
+                                        make_up_half_h-extra_h, [immediate_2], [bottom], 0, 1)
                             features.append(b)
                         # print(b)
                         # Feature C:
@@ -427,7 +442,7 @@ class ViolaJones:
                                 x+third_width, y, third_width, h - extra_h)
                             right_3rd = RectangleRegion(
                                 x+third_width*2, y, third_width + make_up_third_w - extra_w, h - extra_h)
-                            c = Feature([center_3rd], [
+                            c = Feature(x, y, x+third_width*3+make_up_third_w-extra_w, y+h-extra_h, [center_3rd], [
                                         right_3rd, immediate_3rd], 0, 2)
                             features.append(c)
                         # print(c)
@@ -441,7 +456,7 @@ class ViolaJones:
                                 x, y+half_height, half_width, half_height + make_up_half_h - extra_h)
                             bottom_right = RectangleRegion(
                                 x+half_width, y+half_height,  half_width + make_up_half_w - extra_w, half_height + make_up_half_h - extra_h)
-                            d = Feature([right, bottom], [
+                            d = Feature(x, y, x+half_width*2+make_up_half_w-extra_w, y+half_height*2+make_up_half_h-extra_h, [right, bottom], [
                                         top, bottom_right], 0, 3)
                             features.append(d)
                         # print(d)
