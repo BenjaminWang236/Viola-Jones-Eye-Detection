@@ -1172,9 +1172,9 @@ print("Number of iterations to run is %i" % strong_classifier.T)
 # format = indexes, alphas, errors, weak_classifiers
 weak_classifier_list = strong_classifier.train(
     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
-with open("output/weak_classifier_list.pkl", 'wb') as f:
+with open("weak_classifier_list.pkl", 'wb') as f:
     pickle.dump(weak_classifier_list, f)
-strong_classifier.save(foldername+"/strong_classifier")
+strong_classifier.save("strong_classifier")
 strong_classifier_copy = strong_classifier.load(
     foldername+"/strong_classifier")
 print(type(strong_classifier_copy))
