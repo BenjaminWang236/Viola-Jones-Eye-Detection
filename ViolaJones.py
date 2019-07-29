@@ -93,7 +93,8 @@ def import_image(path, num_images):
     #     # cv.destroyAllWindows()
     # print(sorted_image_list)
     for i in range(1, num_images+1):
-        filename = path+'training'+str(i)+'.bmp'
+        filename = path+str(i)+'.bmp'
+        # filename = path+'testing'+str(i)+'.bmp'
         image_list.append(imageio.imread(filename))
     return image_list
 
@@ -151,6 +152,12 @@ class RectangleRegion:
         self.y = y
         self.width = width
         self.height = height
+
+    def __repr__(self):
+        return "Rect @ (%s, %s) has (w, h)=(%s, %s) ends @ (%s, %s)" % (self.x, self.y, self.width, self.height, self.x+self.width, self.y+self.height)
+
+    def __str__(self):
+        return "Rect @ (%s, %s) has (w, h)=(%s, %s) ends @ (%s, %s)" % (self.x, self.y, self.width, self.height, self.x+self.width, self.y+self.height)
 
     def compute_feature(self, ii):
         """ D + A - (C + B) """
@@ -294,7 +301,7 @@ class ViolaJones:
         merger.write(foldername+"/Combined.pdf")
         merger.close()
 
-    def build_features(self, image_shape, minmax):
+    def build_features_minmax(self, image_shape, minmax):
         height, width = image_shape
         features = []
         # minmax format = [min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height]
@@ -313,6 +320,10 @@ class ViolaJones:
                     # Height
                     # for h in range(minmax[6], minmax[7]+1):
                     for h in range(min_height, max_height+1):
+                        if (x+w) > (width-1):
+                            w -= x+w-31
+                        if (y+h) > (height-1):
+                            h -= y+h-31
                         # print('x/y/w/h\t', x, y, w, h)
                         half_width = math.floor(w/2)
                         third_width = math.floor(w/3)
@@ -372,6 +383,7 @@ class ViolaJones:
                         # print(c)
                         # Feature D:
                         if(half_width >= 1 and half_height >= 1):
+                            # print("debugging: halfwidth %s, halfHeight %s" % (half_width, half_height))
                             top = RectangleRegion(
                                 x, y, half_width, half_height)
                             right = RectangleRegion(
@@ -946,7 +958,7 @@ class WeakClassifier:
         return "WeakClassifier %s:\n\tLower Threshold @ index %s is %s\n\tUpper Threshold @ index %s is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
     def classify(val):
-
+        feature_value = lambda ii: sum([pos.compute_feature(ii) for pos in self.positive_regions]) - sum([neg.compute_feature(ii) for neg in self.negative_regions])
         # class WeakClassifier:
         #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
         #         self.feature = feature
@@ -1029,22 +1041,26 @@ def print_score(dataframe_collectioon):
         print(dataframe_collectioon[key])
 
 
-def test(foldername: str, data_filename: str, clf_filename: str):
-    """ 
-    Load the classifiers and test data containing [feature_value (x), correct_classification (y)] for testing 
-    """
-    with open(foldername + "/" + data_filename, "rb") as f:
-        test_data = pickle.load(f)
-    clf = ViolaJones.load(foldername + "/" + clf_filename)
-    evaluate(clf, test_data)
+def testing():
+    """ Test if strong classifier can correctly identify testing images """
+    print()
+
+# def test(foldername: str, data_filename: str, clf_filename: str):
+#     """
+#     Load the classifiers and test data containing [feature_value (x), correct_classification (y)] for testing
+#     """
+#     with open(foldername + "/" + data_filename, "rb") as f:
+#         test_data = pickle.load(f)
+#     clf = ViolaJones.load(foldername + "/" + clf_filename)
+#     evaluate(clf, test_data)
 
 
-def evaluate(clf, data):
-    """ Evaluate the correctness of the Strong Classifier on the testing images """
-    correct = 0
-    for x, y in data:
-        correct += 1 if clf.classify(x) == y else 0
-    print("Classified %d out of %d test samples" % (correct, len(data)))
+# def evaluate(clf, data):
+#     """ Evaluate the correctness of the Strong Classifier on the testing images """
+#     correct = 0
+#     for x, y in data:
+#         correct += 1 if clf.classify(x) == y else 0
+#     print("Classified %d out of %d test samples" % (correct, len(data)))
 
 # Running here:
 # path = "database0/training_set/eye_table.bin"
@@ -1091,7 +1107,9 @@ def evaluate(clf, data):
 # except FileExistsError as e:
 #     print(e)
 #     pass
-image_path, metadata_path, foldername = 'data/database0/training_set/', 'data/database0/training_set/eye_table.bin', "output"
+image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
+foldername = 'output'
+test_path = 'data/database0/testing_set/testing'
 strong_classifier = ViolaJones(2880)
 """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 print("0.) Starting Prep")
@@ -1099,30 +1117,31 @@ minmax = min_max_eye(metadata_path)
 print(minmax)
 correct = read_metadata(metadata_path)
 image_list = import_image(image_path, 50)
+test_list = import_image(test_path, 22)
 normalized_list = max_normalize(image_list)
 ii_list = integral_image(normalized_list)
-features = strong_classifier.build_features(ii_list[0].shape, minmax)
+features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
 print("Number of features generated is %i" % len(features))
 with open(foldername+"/feature_table.txt", "w") as f:
     for item in features:
         f.write("%s\n" % item)
-indexed_feature_table = list(enumerate(features))
+# indexed_feature_table = list(enumerate(features))
 with open("output/indexed_feature_table.txt", "w") as f:
-    for index, item in indexed_feature_table:
+    for index, item in enumerate(features):
         f.write("Index %i->%s\n" % (index, item))
-im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
-    features, correct)
-with open(foldername+"/feature_stat.txt", "w") as f:
-    for row in feature_stat:
-        f.write("%s\n" % row)
-X_list, sorted_X_list = strong_classifier.apply_features(
-    features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-with open(foldername+"/X_list.txt", "w") as f:
-    for item in X_list:
-        f.write("%s\n" % item)
-with open(foldername+"/sorted_X_list.txt", "w") as f:
-    for item in sorted_X_list:
-        f.write("%s\n" % item)
+# im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+#     features, correct)
+# with open(foldername+"/feature_stat.txt", "w") as f:
+#     for row in feature_stat:
+#         f.write("%s\n" % row)
+# X_list, sorted_X_list = strong_classifier.apply_features(
+#     features, ii_list)   # X_list is already positive_X list because only useful features were passed in
+# with open(foldername+"/X_list.txt", "w") as f:
+#     for item in X_list:
+#         f.write("%s\n" % item)
+# with open(foldername+"/sorted_X_list.txt", "w") as f:
+#     for item in sorted_X_list:
+#         f.write("%s\n" % item)
 
 """ 
 Plot the not-sorted feature graphs for verification
@@ -1132,12 +1151,12 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # temp_list = X_list[0:10]
 # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 
-weights = strong_classifier.initialize_weights(feature_stat, y_list)
-with open(foldername+"/weights.txt", "w") as f:
-    for item in weights:
-        f.write("%s\n" % item)
+# weights = strong_classifier.initialize_weights(feature_stat, y_list)
+# with open(foldername+"/weights.txt", "w") as f:
+#     for item in weights:
+#         f.write("%s\n" % item)
 print("Prep Done")
-print("Number of iterations to run is %i" % strong_classifier.T)
+# print("Number of iterations to run is %i" % strong_classifier.T)s
 # Actually training below, which took 3 hours and 12 minutes
 # format = indexes, alphas, errors, weak_classifiers
 # weak_classifier_list = strong_classifier.train(
@@ -1147,9 +1166,27 @@ print("Number of iterations to run is %i" % strong_classifier.T)
 # strong_classifier.save(foldername+"/strong_classifier")
 strong_classifier_copy = strong_classifier.load(
     foldername+"/strong_classifier")
+print(type(strong_classifier_copy))
+weak_classifier_list = []
+with open("output/weak_classifier_list.pkl", "rb") as f:
+    weak_classifier_list = pickle.load(f)
+# print(weak_classifier_list)
+# with open("output/testing.txt", "w") as f:
+#     for item in weak_classifier_list:
+#         f.write("%s\n" % item)
+# for item in weak_classifier_list[3]:
+#     print(item.index, item.feature)
 
+img1 = imageio.imread('data/database0/testing_set/testing1.bmp')
+for i in range(len(weak_classifier_list[0])):
+    if(weak_classifier_list[3][i].index == 2879):
+        print(weak_classifier_list[3][i])
+        print(weak_classifier_list[3][i].feature)
+        for pos in weak_classifier_list[3][i].feature.haar_pos:
+            print("pos: ", pos)
+        for neg in weak_classifier_list[3][i].feature.haar_neg:
+            print("neg ", neg)
 
-test(foldername+"/strong_classifier")
 
 # correct = read_metadata('database0/training_set/eye_table.bin')
 # with open("output/correct.txt", "w") as f:
@@ -1174,40 +1211,40 @@ test(foldername+"/strong_classifier")
 #         f.write("Index %s->%s\n" % (index, item))
 
 """ Generate Alpha-Error Graph """
-alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
-errors = [float(line.rstrip('\n')) for line in open(foldername+"/errs.txt")]
-betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
-sum_alphas, sum_betas, sum_errors = sum(alphas), sum(betas), sum(errors)
-print(sum_alphas, sum_betas, sum_errors)
-normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
-normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
-normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
-with open(foldername+"/normalized_alphas.txt", "w") as f:
-    for item in normalized_alphas:
-        f.write("%s\n" % item)
-with open(foldername+"/normalized_betas.txt", "w") as f:
-    for item in normalized_betas:
-        f.write("%s\n" % item)
-with open(foldername+"/normalized_errs.txt", "w") as f:
-    for item in normalized_errors:
-        f.write("%s\n" % item)
-gp.c('plot \
-    "output/normalized_alphas.txt" title "alpha" with linespoints, \
-    "output/normalized_betas.txt" title "beta" with linespoints, \
-    "output/normalized_errs.txt" title "error" with linespoints ')
-gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
-gp.c('set xlabel "Image Index" ')
-gp.c('set ylabel "Feature Value" ')
-clf_indexes = [line.rstrip('\n')
-               for line in open("output/final_clf_indexes.txt")]
-xtics = 'set xtics add ('
-for index, index_label in enumerate(clf_indexes):
-    xtics += '"' + index_label + '" ' + str(index)
-    if index != (len(clf_indexes) - 1):
-        xtics += ','
-xtics += ') rotate'
-gp.c(xtics)
-gp.c('save "output/alpha_beta_error.dat" ')
+# alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
+# errors = [float(line.rstrip('\n')) for line in open(foldername+"/errs.txt")]
+# betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
+# sum_alphas, sum_betas, sum_errors = sum(alphas), sum(betas), sum(errors)
+# print(sum_alphas, sum_betas, sum_errors)
+# normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
+# normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
+# normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
+# with open(foldername+"/normalized_alphas.txt", "w") as f:
+#     for item in normalized_alphas:
+#         f.write("%s\n" % item)
+# with open(foldername+"/normalized_betas.txt", "w") as f:
+#     for item in normalized_betas:
+#         f.write("%s\n" % item)
+# with open(foldername+"/normalized_errs.txt", "w") as f:
+#     for item in normalized_errors:
+#         f.write("%s\n" % item)
+# gp.c('plot \
+#     "output/normalized_alphas.txt" title "alpha" with linespoints, \
+#     "output/normalized_betas.txt" title "beta" with linespoints, \
+#     "output/normalized_errs.txt" title "error" with linespoints ')
+# gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
+# gp.c('set xlabel "Image Index" ')
+# gp.c('set ylabel "Feature Value" ')
+# clf_indexes = [line.rstrip('\n')
+#                for line in open("output/final_clf_indexes.txt")]
+# xtics = 'set xtics add ('
+# for index, index_label in enumerate(clf_indexes):
+#     xtics += '"' + index_label + '" ' + str(index)
+#     if index != (len(clf_indexes) - 1):
+#         xtics += ','
+# xtics += ') rotate'
+# gp.c(xtics)
+# gp.c('save "output/alpha_beta_error.dat" ')
 """ Since alpha-error-graph already generated and saved, just load again """
 # gp.c('load "output/alpha_beta_error.dat" ')
 
