@@ -1111,7 +1111,7 @@ with open(foldername+"/sorted_X_list.txt", "w") as f:
 Plot the not-sorted feature graphs for verification
 Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 """
-strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+# strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
 # temp_list = X_list[0:10]
 # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 
@@ -1123,32 +1123,13 @@ print("Prep Done")
 print("Number of iterations to run is %i" % strong_classifier.T)
 # Actually training below, which took 3 hours and 12 minutes
 # format = indexes, alphas, errors, weak_classifiers
-weak_classifier_list = strong_classifier.train(
-    foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
-with open("output/weak_classifier_list.pkl", 'wb') as f:
-    pickle.dump(weak_classifier_list, f)
-strong_classifier.save(foldername+"/strong_classifier")
-# strong_classifier_copy = strong_classifier.load(
-#     foldername+"/strong_classifier")
-
-# Since I already ran it once and has the indexes of the final weak classifiers ordered by best errors...
-# final_clf_indexes = [line.rstrip('\n')
-#                      for line in open("output_old/final_clf_indexes.txt")]
-# counter, x = 0, 0
-# lower_t, upper_t = [], []
-# for index, line in enumerate(open("output_old/final_clfs.txt")):
-#     if counter > 2:
-#         three = 0
-#     line = line.rstrip('\n')
-#     if counter == 0:
-#         if str(final_clf_indexes[x]) not in line:
-#             print("ERROR: final_clf.txt's index not matching ")
-#         x += 1
-#     elif counter == 1:
-#         print()
-
-#     counter += 1
-
+# weak_classifier_list = strong_classifier.train(
+#     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
+# with open("output/weak_classifier_list.pkl", 'wb') as f:
+#     pickle.dump(weak_classifier_list, f)
+# strong_classifier.save(foldername+"/strong_classifier")
+strong_classifier_copy = strong_classifier.load(
+    foldername+"/strong_classifier")
 
 # correct = read_metadata('database0/training_set/eye_table.bin')
 # with open("output/correct.txt", "w") as f:
@@ -1173,58 +1154,58 @@ strong_classifier.save(foldername+"/strong_classifier")
 #         f.write("Index %s->%s\n" % (index, item))
 
 """ Generate Alpha-Error Graph """
-# # gp.c('set terminal pdf')
-# # gp.c('set output "alpha_error_graph.pdf" ')
-# alphas = [float(line.rstrip('\n')) for line in open("output/alphas.txt")]
-# errors = [float(line.rstrip('\n')) for line in open("output/errs.txt")]
-# betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
-# sum_alphas, sum_betas, sum_errors = sum(alphas), sum(betas), sum(errors)
-# # min_alphas, max_alphas, min_errors, max_errors = min(
-# #     alphas), max(alphas), min(errors), max(errors)
-# print(sum_alphas, sum_betas, sum_errors)
-# normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
-# normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
-# normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
-# # normalized_alphas = list(
-# #     map(lambda ii: (ii - min_alphas)/(max_alphas - min_alphas), alphas))
-# # normalized_errors = list(
-# #     map(lambda ii: (ii - min_errors)/(max_errors - min_errors), errors))
-# with open("output/normalized_alphas.txt", "w") as f:
-#     for item in normalized_alphas:
-#         f.write("%s\n" % item)
-# with open("output/normalized_betas.txt", "w") as f:
-#     for item in normalized_betas:
-#         f.write("%s\n" % item)
-# with open("output/normalized_errs.txt", "w") as f:
-#     for item in normalized_errors:
-#         f.write("%s\n" % item)
-# # gp.c('plot \
-# #     "output/normalized_alphas.txt" title "alpha" with linespoints, \
-# #     "output/normalized_errs.txt" title "error" with linespoints')
-# # gp.c('set title "Alpha-Error Graph (Linespoints)" ')
-# # gp.c('plot \
-# #     "output/normalized_alphas.txt" title "alpha" with linespoints, \
-# #     "output/normalized_betas.txt" title "beta" with linespoints')
-# # gp.c('set title "Alpha-Beta Graph (Linespoints)" ')
+# gp.c('set terminal pdf')
+# gp.c('set output "alpha_error_graph.pdf" ')
+alphas = [float(line.rstrip('\n')) for line in open("output/alphas.txt")]
+errors = [float(line.rstrip('\n')) for line in open("output/errs.txt")]
+betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
+sum_alphas, sum_betas, sum_errors = sum(alphas), sum(betas), sum(errors)
+# min_alphas, max_alphas, min_errors, max_errors = min(
+#     alphas), max(alphas), min(errors), max(errors)
+print(sum_alphas, sum_betas, sum_errors)
+normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
+normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
+normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
+# normalized_alphas = list(
+#     map(lambda ii: (ii - min_alphas)/(max_alphas - min_alphas), alphas))
+# normalized_errors = list(
+#     map(lambda ii: (ii - min_errors)/(max_errors - min_errors), errors))
+with open("output/normalized_alphas.txt", "w") as f:
+    for item in normalized_alphas:
+        f.write("%s\n" % item)
+with open("output/normalized_betas.txt", "w") as f:
+    for item in normalized_betas:
+        f.write("%s\n" % item)
+with open("output/normalized_errs.txt", "w") as f:
+    for item in normalized_errors:
+        f.write("%s\n" % item)
 # gp.c('plot \
 #     "output/normalized_alphas.txt" title "alpha" with linespoints, \
-#     "output/normalized_betas.txt" title "beta" with linespoints, \
-#     "output/normalized_errs.txt" title "error" with linespoints ')
-# gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
-# gp.c('set xlabel "Image Index" ')
-# gp.c('set ylabel "Feature Value" ')
-# clf_indexes = [line.rstrip('\n')
-#                for line in open("output/final_clf_indexes.txt")]
-# xtics = 'set xtics add ('
-# for index, index_label in enumerate(clf_indexes):
-#     xtics += '"' + index_label + '" ' + str(index)
-#     if index != (len(clf_indexes) - 1):
-#         xtics += ','
-# xtics += ') rotate'
-# gp.c(xtics)
-# # gp.c('save "output/alpha_error.dat" ')
-# # gp.c('save "output/alpha_beta.dat" ')
-# gp.c('save "output/alpha_beta_error.dat" ')
+#     "output/normalized_errs.txt" title "error" with linespoints')
+# gp.c('set title "Alpha-Error Graph (Linespoints)" ')
+# gp.c('plot \
+#     "output/normalized_alphas.txt" title "alpha" with linespoints, \
+#     "output/normalized_betas.txt" title "beta" with linespoints')
+# gp.c('set title "Alpha-Beta Graph (Linespoints)" ')
+gp.c('plot \
+    "output/normalized_alphas.txt" title "alpha" with linespoints, \
+    "output/normalized_betas.txt" title "beta" with linespoints, \
+    "output/normalized_errs.txt" title "error" with linespoints ')
+gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
+gp.c('set xlabel "Image Index" ')
+gp.c('set ylabel "Feature Value" ')
+clf_indexes = [line.rstrip('\n')
+               for line in open("output/final_clf_indexes.txt")]
+xtics = 'set xtics add ('
+for index, index_label in enumerate(clf_indexes):
+    xtics += '"' + index_label + '" ' + str(index)
+    if index != (len(clf_indexes) - 1):
+        xtics += ','
+xtics += ') rotate'
+gp.c(xtics)
+# gp.c('save "output/alpha_error.dat" ')
+# gp.c('save "output/alpha_beta.dat" ')
+gp.c('save "output/alpha_beta_error.dat" ')
 """ Since alpha-error-graph already generated and saved, just load again """
 # gp.c('load "output/alpha_error.dat" ')
 # gp.c('load "output/alpha_beta.dat" ')
