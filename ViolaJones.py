@@ -79,15 +79,22 @@ def min_max_eye(path):
 # Import images
 
 
-def import_image(path):
+def import_image(path, num_images):
     """ Given the path to the folder containing the images, import all images and return them as a list """
     image_list = []
-    for filename in glob.glob(path):
-        image = imageio.imread(filename)
-        image_list.append(image)
-        # cv.imshow('image', image)
-        # cv.waitKey(0)
-        # cv.destroyAllWindows()
+    # filename_list = []
+    # for filename in glob.glob(path):
+    #     print(filename)
+    #     filename_list.append(filename)
+    #     image = imageio.imread(filename)
+    #     image_list.append(image)
+    #     # cv.imshow('image', image)
+    #     # cv.waitKey(0)
+    #     # cv.destroyAllWindows()
+    # print(sorted_image_list)
+    for i in range(1, num_images+1):
+        filename = path+'training'+str(i)+'.bmp'
+        image_list.append(imageio.imread(filename))
     return image_list
 
 
@@ -1064,14 +1071,14 @@ def print_score(dataframe_collectioon):
 # except FileExistsError as e:
 #     print(e)
 #     pass
-image_path, metadata_path, foldername = 'data/database0/training_set/*.bmp', 'data/database0/training_set/eye_table.bin', "output"
+image_path, metadata_path, foldername = 'data/database0/training_set/', 'data/database0/training_set/eye_table.bin', "output"
 strong_classifier = ViolaJones(2880)
 """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 print("0.) Starting Prep")
 minmax = min_max_eye(metadata_path)
 print(minmax)
 correct = read_metadata(metadata_path)
-image_list = import_image(image_path)
+image_list = import_image(image_path, 50)
 normalized_list = max_normalize(image_list)
 # for x in range(len(normalized_list)):
 #     # Refactor the data back to before it was multiplied by 2^16
