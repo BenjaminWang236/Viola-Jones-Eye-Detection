@@ -740,7 +740,7 @@ class ViolaJones:
         #                 (str(item), math.ceil(item[1]*num_useful_features)))
         return clf_errors, useful_clf_errors, best_error_index, best_error, best_accuracy
 
-    def update_weights(self, final_clf_indexes, weights, best_error_index, best_error, best_accuracy):
+    def update_weights(self, weights, best_error_index, best_error, best_accuracy):
         """ Update the weight at the end of current round/iteration as described in step 4 of the original paper """
         best_weights, beta = weights[best_error_index][1], 0
         if best_error > 1:
@@ -788,7 +788,7 @@ class ViolaJones:
                 sorted_X_list, y_list, classifiers, normalized_weights, max_normalized_weights)
             print("Best error of this round found at index %s with value %s" %
                   (best_error_index, best_error))
-            # print("With accuracy of %s" % best_accuracy)
+            print("With accuracy of %s" % best_accuracy)
             sorted_clf_errors = sorted(clf_errors, key=lambda ii: ii[1])
             sorted_useful_clf_errors = sorted(
                 useful_clf_errors, key=lambda ii: ii[1])
@@ -867,9 +867,9 @@ class ViolaJones:
                     for item in self.clfs:
                         f.write("%s\n" % item)
                 print("DATA SAVED")
-            print("alpha list:", self.alphas)
-            print("WeakClassifier list:", "\n\t".join(str(classifier)
-                                                      for classifier in self.clfs))
+        print("alpha list:", self.alphas)
+        print("WeakClassifier list:", "\n\t".join(str(classifier)
+                                                  for classifier in self.clfs))
         return self.clf_indexes, self.alphas, self.errs, self.clfs
 
         # print(len(classifiers))
@@ -1111,9 +1111,9 @@ with open(foldername+"/sorted_X_list.txt", "w") as f:
 Plot the not-sorted feature graphs for verification
 Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 """
-# strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
-temp_list = X_list[0:10]
-strong_classifier.plot_graphs("verify", temp_list, pos_stat)
+strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+# temp_list = X_list[0:10]
+# strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 
 weights = strong_classifier.initialize_weights(feature_stat, y_list)
 with open(foldername+"/weights.txt", "w") as f:
@@ -1123,9 +1123,11 @@ print("Prep Done")
 print("Number of iterations to run is %i" % strong_classifier.T)
 # Actually training below, which took 3 hours and 12 minutes
 # format = indexes, alphas, errors, weak_classifiers
-# weak_classifier_list = strong_classifier.train(
-#     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
-# strong_classifier.save(foldername+"/strong_classifier")
+weak_classifier_list = strong_classifier.train(
+    foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
+with open("output/weak_classifier_list.pkl", 'wb') as f:
+    pickle.dump(weak_classifier_list, f)
+strong_classifier.save(foldername+"/strong_classifier")
 # strong_classifier_copy = strong_classifier.load(
 #     foldername+"/strong_classifier")
 
