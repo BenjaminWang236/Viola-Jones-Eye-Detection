@@ -196,8 +196,8 @@ class Feature:
         return [self.start_x, self.start_y, self.end_x, self.end_y]
 
     def compute(self, integral_image):
-         def feature_value(ii): return sum([pos.compute_feature(
-            ii) for pos in self.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.haar_neg])
+        return sum([pos.compute_feature(
+            integral_image) for pos in self.haar_pos]) - sum([neg.compute_feature(integral_image) for neg in self.haar_neg])
 
 
 def add_value_labels(ax, special, fsize=5, rotate=60, spacing=5):
@@ -969,7 +969,7 @@ class WeakClassifier:
         def feature_value(ii): return sum([pos.compute_feature(
             ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
         return 1 if feature_value(integral_image) <= self.lower_threshold_value or feature_value(integral_image) >= self.upper_threshold_value
-        
+
         # class WeakClassifier:
         #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
         #         self.feature = feature
