@@ -1122,7 +1122,7 @@ def testing():
 """ PREP """
 image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
 foldername = 'output'
-strong_classifier = ViolaJones(2880)
+strong_classifier = ViolaJones(100)
 """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 print("0.) Starting Prep")
 minmax = min_max_eye(metadata_path)
