@@ -1080,9 +1080,6 @@ print(minmax)
 correct = read_metadata(metadata_path)
 image_list = import_image(image_path, 50)
 normalized_list = max_normalize(image_list)
-# for x in range(len(normalized_list)):
-#     # Refactor the data back to before it was multiplied by 2^16
-#     normalized_list[x] /= pow(2, 16)
 ii_list = integral_image(normalized_list)
 features = strong_classifier.build_features(ii_list[0].shape, minmax)
 print("Number of features generated is %i" % len(features))
