@@ -1127,8 +1127,8 @@ WeakClassifier 375:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 376:
-	Lower Threshold @ index 44 is -334729.6892430242
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 0 is 0
+	Upper Threshold @ index 44 is 174936.73306773137
 WeakClassifier 377:
 	Lower Threshold @ index 44 is -610973.0677290857
 	Upper Threshold @ index 0 is 0
@@ -1136,11 +1136,11 @@ WeakClassifier 378:
 	Lower Threshold @ index 44 is -1284610.0398406405
 	Upper Threshold @ index 0 is 0
 WeakClassifier 379:
-	Lower Threshold @ index 0 is 0
-	Upper Threshold @ index 44 is 31854.151394423097
-WeakClassifier 380:
-	Lower Threshold @ index 40 is -533895.3717277497
+	Lower Threshold @ index 44 is -45431.330677288584
 	Upper Threshold @ index 0 is 0
+WeakClassifier 380:
+	Lower Threshold @ index 40 is -73427.76963350922
+	Upper Threshold @ index 44 is 240733.83266932145
 WeakClassifier 381:
 	Lower Threshold @ index 44 is -374939.02788844425
 	Upper Threshold @ index 0 is 0
@@ -1148,8 +1148,8 @@ WeakClassifier 382:
 	Lower Threshold @ index 40 is -1310720.0000000028
 	Upper Threshold @ index 0 is 0
 WeakClassifier 383:
-	Lower Threshold @ index 44 is -47520.12749003433
-	Upper Threshold @ index 40 is 158521.6335078543
+	Lower Threshold @ index 44 is -13054.980079680681
+	Upper Threshold @ index 49 is 23244.29556649737
 WeakClassifier 384:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
@@ -1415,7 +1415,7 @@ WeakClassifier 471:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 472:
-	Lower Threshold @ index 44 is -568413.8326693205
+	Lower Threshold @ index 44 is -172064.63745019492
 	Upper Threshold @ index 0 is 0
 WeakClassifier 473:
 	Lower Threshold @ index 44 is -559014.247011954
@@ -1424,10 +1424,10 @@ WeakClassifier 474:
 	Lower Threshold @ index 44 is -1131866.7729083677
 	Upper Threshold @ index 0 is 0
 WeakClassifier 475:
-	Lower Threshold @ index 0 is 0
-	Upper Threshold @ index 44 is 48303.426294822246
+	Lower Threshold @ index 44 is -20104.66932270676
+	Upper Threshold @ index 0 is 0
 WeakClassifier 476:
-	Lower Threshold @ index 44 is -654054.501992031
+	Lower Threshold @ index 44 is -161098.45418326557
 	Upper Threshold @ index 0 is 0
 WeakClassifier 477:
 	Lower Threshold @ index 44 is -346479.1713147368
@@ -1436,7 +1436,7 @@ WeakClassifier 478:
 	Lower Threshold @ index 44 is -1516727.5856573703
 	Upper Threshold @ index 0 is 0
 WeakClassifier 479:
-	Lower Threshold @ index 44 is -57180.81274899747
+	Lower Threshold @ index 44 is -75979.98406373989
 	Upper Threshold @ index 0 is 0
 WeakClassifier 480:
 	Lower Threshold @ index 0 is 0
@@ -1631,28 +1631,28 @@ WeakClassifier 543:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 544:
-	Lower Threshold @ index 44 is -412015.1713147387
+	Lower Threshold @ index 44 is -15665.976095614024
 	Upper Threshold @ index 0 is 0
 WeakClassifier 545:
 	Lower Threshold @ index 44 is -520632.6055776905
 	Upper Threshold @ index 0 is 0
 WeakClassifier 546:
-	Lower Threshold @ index 44 is -1111762.1035856577
+	Lower Threshold @ index 44 is -1326385.9760956187
 	Upper Threshold @ index 0 is 0
 WeakClassifier 547:
-	Lower Threshold @ index 0 is 0
-	Upper Threshold @ index 44 is 9921.784860558808
+	Lower Threshold @ index 44 is -58486.3107569702
+	Upper Threshold @ index 0 is 0
 WeakClassifier 548:
-	Lower Threshold @ index 44 is -451441.2111553773
+	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 549:
 	Lower Threshold @ index 44 is -318280.41434262693
 	Upper Threshold @ index 0 is 0
 WeakClassifier 550:
-	Lower Threshold @ index 44 is -1432131.3147410331
+	Lower Threshold @ index 44 is -1771560.7968127485
 	Upper Threshold @ index 0 is 0
 WeakClassifier 551:
-	Lower Threshold @ index 44 is -85379.5697211083
+	Lower Threshold @ index 44 is -104178.74103585072
 	Upper Threshold @ index 0 is 0
 WeakClassifier 552:
 	Lower Threshold @ index 0 is 0
@@ -1667,28 +1667,28 @@ WeakClassifier 555:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 556:
-	Lower Threshold @ index 44 is -412015.1713147387
+	Lower Threshold @ index 44 is -15665.976095614024
 	Upper Threshold @ index 0 is 0
 WeakClassifier 557:
 	Lower Threshold @ index 44 is -520632.6055776905
 	Upper Threshold @ index 0 is 0
 WeakClassifier 558:
-	Lower Threshold @ index 44 is -1111762.1035856577
+	Lower Threshold @ index 44 is -1326385.9760956187
 	Upper Threshold @ index 0 is 0
 WeakClassifier 559:
-	Lower Threshold @ index 0 is 0
-	Upper Threshold @ index 44 is 9921.784860558808
+	Lower Threshold @ index 44 is -58486.3107569702
+	Upper Threshold @ index 0 is 0
 WeakClassifier 560:
-	Lower Threshold @ index 44 is -451441.2111553773
+	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 561:
 	Lower Threshold @ index 44 is -318280.41434262693
 	Upper Threshold @ index 0 is 0
 WeakClassifier 562:
-	Lower Threshold @ index 44 is -1432131.3147410331
+	Lower Threshold @ index 44 is -1771560.7968127485
 	Upper Threshold @ index 0 is 0
 WeakClassifier 563:
-	Lower Threshold @ index 44 is -85379.5697211083
+	Lower Threshold @ index 44 is -104178.74103585072
 	Upper Threshold @ index 0 is 0
 WeakClassifier 564:
 	Lower Threshold @ index 0 is 0
@@ -1703,28 +1703,28 @@ WeakClassifier 567:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 568:
-	Lower Threshold @ index 44 is -781210.007968124
+	Lower Threshold @ index 44 is -15665.976095614024
 	Upper Threshold @ index 0 is 0
 WeakClassifier 569:
 	Lower Threshold @ index 44 is -520632.6055776905
 	Upper Threshold @ index 0 is 0
 WeakClassifier 570:
-	Lower Threshold @ index 44 is -1111762.1035856577
+	Lower Threshold @ index 44 is -1326385.9760956187
 	Upper Threshold @ index 0 is 0
 WeakClassifier 571:
-	Lower Threshold @ index 0 is 0
-	Upper Threshold @ index 44 is 27154.358565736562
+	Lower Threshold @ index 44 is -58486.3107569702
+	Upper Threshold @ index 0 is 0
 WeakClassifier 572:
-	Lower Threshold @ index 44 is -915154.1035856549
+	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 573:
 	Lower Threshold @ index 44 is -318280.41434262693
 	Upper Threshold @ index 0 is 0
 WeakClassifier 574:
-	Lower Threshold @ index 44 is -1432131.3147410331
+	Lower Threshold @ index 44 is -1771560.7968127485
 	Upper Threshold @ index 0 is 0
 WeakClassifier 575:
-	Lower Threshold @ index 44 is -85379.56972111482
+	Lower Threshold @ index 44 is -104178.74103585072
 	Upper Threshold @ index 0 is 0
 WeakClassifier 576:
 	Lower Threshold @ index 0 is 0
@@ -2855,7 +2855,7 @@ WeakClassifier 951:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 952:
-	Lower Threshold @ index 49 is -613068.2955664992
+	Lower Threshold @ index 40 is -77545.2146596862
 	Upper Threshold @ index 0 is 0
 WeakClassifier 953:
 	Lower Threshold @ index 49 is -1482146.6798029616
@@ -2864,10 +2864,10 @@ WeakClassifier 954:
 	Lower Threshold @ index 49 is -1006929.9704433493
 	Upper Threshold @ index 0 is 0
 WeakClassifier 955:
-	Lower Threshold @ index 0 is 0
-	Upper Threshold @ index 49 is 79095.17241379246
+	Lower Threshold @ index 49 is -35834.955665028654
+	Upper Threshold @ index 40 is 90583.79057591222
 WeakClassifier 956:
-	Lower Threshold @ index 49 is -636958.2660098542
+	Lower Threshold @ index 49 is -141725.63546798192
 	Upper Threshold @ index 0 is 0
 WeakClassifier 957:
 	Lower Threshold @ index 49 is -930740.3349753711
@@ -2876,7 +2876,7 @@ WeakClassifier 958:
 	Lower Threshold @ index 49 is -1323310.660098522
 	Upper Threshold @ index 0 is 0
 WeakClassifier 959:
-	Lower Threshold @ index 40 is -184941.90575915948
+	Lower Threshold @ index 40 is -213077.78010470886
 	Upper Threshold @ index 0 is 0
 WeakClassifier 960:
 	Lower Threshold @ index 0 is 0
@@ -4583,7 +4583,7 @@ WeakClassifier 1527:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1528:
-	Lower Threshold @ index 34 is -718136.5894736806
+	Lower Threshold @ index 34 is -326990.1473684171
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1529:
 	Lower Threshold @ index 34 is -1701176.5894736834
@@ -4592,11 +4592,11 @@ WeakClassifier 1530:
 	Lower Threshold @ index 34 is -1160332.1263157884
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1531:
-	Lower Threshold @ index 34 is -68295.4105263194
+	Lower Threshold @ index 34 is -240068.71578948386
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1532:
-	Lower Threshold @ index 41 is -1052994.1573033705
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 3 is -178683.623931624
+	Upper Threshold @ index 43 is 206438.40000000224
 WeakClassifier 1533:
 	Lower Threshold @ index 38 is -973343.3469387833
 	Upper Threshold @ index 0 is 0
@@ -4604,8 +4604,8 @@ WeakClassifier 1534:
 	Lower Threshold @ index 43 is -1388999.111111111
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1535:
-	Lower Threshold @ index 43 is -196243.91111110616
-	Upper Threshold @ index 41 is 248153.16853934154
+	Lower Threshold @ index 36 is -172842.19780220557
+	Upper Threshold @ index 41 is 192926.20224719867
 WeakClassifier 1536:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
@@ -4883,7 +4883,7 @@ WeakClassifier 1627:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1628:
-	Lower Threshold @ index 32 is -834448.4752475265
+	Lower Threshold @ index 32 is -404246.81188118644
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1629:
 	Lower Threshold @ index 32 is -1021972.2772277277
@@ -4892,7 +4892,7 @@ WeakClassifier 1630:
 	Lower Threshold @ index 32 is -1256863.6831683135
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1631:
-	Lower Threshold @ index 32 is -122636.67326732818
+	Lower Threshold @ index 32 is -137560.7128712898
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1632:
 	Lower Threshold @ index 0 is 0
@@ -5099,16 +5099,16 @@ WeakClassifier 1699:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1700:
-	Lower Threshold @ index 32 is -624863.0495049516
+	Lower Threshold @ index 32 is -194661.3861386124
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1701:
 	Lower Threshold @ index 32 is -950596.4356435686
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1702:
-	Lower Threshold @ index 32 is -1164723.9603960356
+	Lower Threshold @ index 32 is -1471640.0792079186
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1703:
-	Lower Threshold @ index 32 is -194012.51485148724
+	Lower Threshold @ index 32 is -208936.55445544887
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1704:
 	Lower Threshold @ index 0 is 0
@@ -5135,16 +5135,16 @@ WeakClassifier 1711:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1712:
-	Lower Threshold @ index 32 is -624863.0495049516
+	Lower Threshold @ index 32 is -194661.3861386124
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1713:
 	Lower Threshold @ index 32 is -950596.4356435686
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1714:
-	Lower Threshold @ index 32 is -1164723.9603960356
+	Lower Threshold @ index 32 is -1471640.0792079186
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1715:
-	Lower Threshold @ index 32 is -194012.51485148724
+	Lower Threshold @ index 32 is -208936.55445544887
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1716:
 	Lower Threshold @ index 0 is 0
@@ -5171,16 +5171,16 @@ WeakClassifier 1723:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1724:
-	Lower Threshold @ index 32 is -1104378.9306930695
+	Lower Threshold @ index 32 is -194661.3861386124
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1725:
 	Lower Threshold @ index 32 is -950596.4356435686
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1726:
-	Lower Threshold @ index 32 is -1164723.9603960356
+	Lower Threshold @ index 32 is -1471640.0792079186
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1727:
-	Lower Threshold @ index 32 is -167408.79207920935
+	Lower Threshold @ index 32 is -208936.55445544887
 	Upper Threshold @ index 0 is 0
 WeakClassifier 1728:
 	Lower Threshold @ index 0 is 0
@@ -6311,8 +6311,8 @@ WeakClassifier 2103:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2104:
-	Lower Threshold @ index 43 is -340423.11111111194
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 32 is -256628.59405940585
+	Upper Threshold @ index 37 is 80577.04918032978
 WeakClassifier 2105:
 	Lower Threshold @ index 38 is -1718648.163265312
 	Upper Threshold @ index 0 is 0
@@ -6320,11 +6320,11 @@ WeakClassifier 2106:
 	Lower Threshold @ index 36 is -1212776.0879120864
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2107:
-	Lower Threshold @ index 43 is -214448.355555553
-	Upper Threshold @ index 41 is 411993.1685393406
+	Lower Threshold @ index 36 is -230456.26373627223
+	Upper Threshold @ index 41 is 283866.606741583
 WeakClassifier 2108:
-	Lower Threshold @ index 43 is -323310.9333333336
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 32 is -232944.79207920656
+	Upper Threshold @ index 37 is 175120.7868852485
 WeakClassifier 2109:
 	Lower Threshold @ index 38 is -881726.6938775498
 	Upper Threshold @ index 0 is 0
@@ -6332,8 +6332,8 @@ WeakClassifier 2110:
 	Lower Threshold @ index 31 is -1556964.7337278118
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2111:
-	Lower Threshold @ index 31 is -134562.0828402443
-	Upper Threshold @ index 41 is 36449.79775282089
+	Lower Threshold @ index 42 is -266218.77720206603
+	Upper Threshold @ index 0 is 0
 WeakClassifier 2112:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
@@ -6599,7 +6599,7 @@ WeakClassifier 2199:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2200:
-	Lower Threshold @ index 32 is -823417.6633663382
+	Lower Threshold @ index 32 is -457454.2574257441
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2201:
 	Lower Threshold @ index 32 is -1689011.9603960477
@@ -6608,10 +6608,10 @@ WeakClassifier 2202:
 	Lower Threshold @ index 32 is -1224420.1188118793
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2203:
-	Lower Threshold @ index 32 is -111605.86138613988
+	Lower Threshold @ index 32 is -190768.1584158456
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2204:
-	Lower Threshold @ index 32 is -910041.9801980229
+	Lower Threshold @ index 32 is -475947.0891089067
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2205:
 	Lower Threshold @ index 31 is -1053617.2307692412
@@ -6620,7 +6620,7 @@ WeakClassifier 2206:
 	Lower Threshold @ index 32 is -1595898.9306930676
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2207:
-	Lower Threshold @ index 32 is -338386.3762376271
+	Lower Threshold @ index 31 is -185749.9644970484
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2208:
 	Lower Threshold @ index 0 is 0
@@ -6815,28 +6815,28 @@ WeakClassifier 2271:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2272:
-	Lower Threshold @ index 32 is -628756.277227723
+	Lower Threshold @ index 32 is -262792.8712871298
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2273:
 	Lower Threshold @ index 32 is -1602712.079207927
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2274:
-	Lower Threshold @ index 32 is -1133578.138613862
+	Lower Threshold @ index 32 is -1397019.881188117
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2275:
-	Lower Threshold @ index 32 is -197905.74257425964
+	Lower Threshold @ index 32 is -277068.03960396536
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2276:
-	Lower Threshold @ index 31 is -452935.1952662729
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 32 is -234566.97029702645
+	Upper Threshold @ index 31 is 64372.639053252526
 WeakClassifier 2277:
 	Lower Threshold @ index 31 is -981101.0650887638
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2278:
-	Lower Threshold @ index 32 is -1470017.900990094
+	Lower Threshold @ index 32 is -1819759.524752478
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2279:
-	Lower Threshold @ index 31 is -238876.78106509522
+	Lower Threshold @ index 31 is -258266.130177523
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2280:
 	Lower Threshold @ index 0 is 0
@@ -6851,28 +6851,28 @@ WeakClassifier 2283:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2284:
-	Lower Threshold @ index 32 is -628756.277227723
+	Lower Threshold @ index 32 is -262792.8712871298
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2285:
 	Lower Threshold @ index 32 is -1602712.079207927
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2286:
-	Lower Threshold @ index 32 is -1133578.138613862
+	Lower Threshold @ index 32 is -1397019.881188117
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2287:
-	Lower Threshold @ index 32 is -197905.74257425964
+	Lower Threshold @ index 32 is -277068.03960396536
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2288:
-	Lower Threshold @ index 31 is -452935.1952662729
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 32 is -234566.97029702645
+	Upper Threshold @ index 31 is 64372.639053252526
 WeakClassifier 2289:
 	Lower Threshold @ index 31 is -981101.0650887638
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2290:
-	Lower Threshold @ index 32 is -1470017.900990094
+	Lower Threshold @ index 32 is -1819759.524752478
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2291:
-	Lower Threshold @ index 31 is -238876.78106509522
+	Lower Threshold @ index 31 is -258266.130177523
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2292:
 	Lower Threshold @ index 0 is 0
@@ -6887,28 +6887,28 @@ WeakClassifier 2295:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2296:
-	Lower Threshold @ index 32 is -1037545.1881188098
+	Lower Threshold @ index 32 is -262792.8712871298
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2297:
 	Lower Threshold @ index 32 is -1602712.079207927
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2298:
-	Lower Threshold @ index 32 is -1133578.138613862
+	Lower Threshold @ index 32 is -1397019.881188117
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2299:
-	Lower Threshold @ index 32 is -100575.04950495157
+	Lower Threshold @ index 32 is -277068.03960396536
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2300:
-	Lower Threshold @ index 32 is -1159857.4257425778
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 32 is -234566.97029702645
+	Upper Threshold @ index 31 is 64372.639053252526
 WeakClassifier 2301:
 	Lower Threshold @ index 31 is -981101.0650887638
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2302:
-	Lower Threshold @ index 32 is -1470017.900990094
+	Lower Threshold @ index 32 is -1819759.524752478
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2303:
-	Lower Threshold @ index 32 is -390296.0792079214
+	Lower Threshold @ index 31 is -258266.130177523
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2304:
 	Lower Threshold @ index 0 is 0
@@ -8027,7 +8027,7 @@ WeakClassifier 2675:
 	Lower Threshold @ index 41 is -256621.30337079242
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2676:
-	Lower Threshold @ index 41 is -784222.9213483185
+	Lower Threshold @ index 41 is -484524.5842696689
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2677:
 	Lower Threshold @ index 41 is -583933.1235955022
@@ -8036,11 +8036,11 @@ WeakClassifier 2678:
 	Lower Threshold @ index 41 is -1030167.0112359533
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2679:
-	Lower Threshold @ index 41 is -29454.38202246651
+	Lower Threshold @ index 41 is -122972.04494381789
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2680:
-	Lower Threshold @ index 41 is -955058.337078657
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 41 is -550060.5842696689
+	Upper Threshold @ index 31 is 82210.84023668244
 WeakClassifier 2681:
 	Lower Threshold @ index 41 is -1731917.6629213374
 	Upper Threshold @ index 0 is 0
@@ -8048,11 +8048,11 @@ WeakClassifier 2682:
 	Lower Threshold @ index 42 is -1242127.9170984486
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2683:
-	Lower Threshold @ index 31 is -170626.27218936104
-	Upper Threshold @ index 41 is 141381.03370787203
-WeakClassifier 2684:
-	Lower Threshold @ index 41 is -1104171.1460674163
+	Lower Threshold @ index 31 is -266797.4437869899
 	Upper Threshold @ index 0 is 0
+WeakClassifier 2684:
+	Lower Threshold @ index 41 is -577674.0674157292
+	Upper Threshold @ index 42 is 47539.06735751405
 WeakClassifier 2685:
 	Lower Threshold @ index 41 is -872954.2471910138
 	Upper Threshold @ index 0 is 0
@@ -8060,7 +8060,7 @@ WeakClassifier 2686:
 	Lower Threshold @ index 42 is -1599350.0518134674
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2687:
-	Lower Threshold @ index 31 is -305963.9289940819
+	Lower Threshold @ index 41 is -256621.30337079242
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2688:
 	Lower Threshold @ index 0 is 0
@@ -8327,7 +8327,7 @@ WeakClassifier 2775:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2776:
-	Lower Threshold @ index 31 is -634807.2899408303
+	Lower Threshold @ index 31 is -192730.1301775165
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2777:
 	Lower Threshold @ index 31 is -1804372.8284023795
@@ -8336,10 +8336,10 @@ WeakClassifier 2778:
 	Lower Threshold @ index 31 is -1248286.2958579864
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2779:
-	Lower Threshold @ index 31 is -148522.41420119535
+	Lower Threshold @ index 31 is -243142.4378698347
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2780:
-	Lower Threshold @ index 31 is -674361.5621301811
+	Lower Threshold @ index 31 is -148522.4142011851
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2781:
 	Lower Threshold @ index 31 is -921769.656804733
@@ -8348,7 +8348,7 @@ WeakClassifier 2782:
 	Lower Threshold @ index 31 is -1587987.6923076892
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2783:
-	Lower Threshold @ index 31 is -339313.60946745425
+	Lower Threshold @ index 31 is -343967.05325443856
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2784:
 	Lower Threshold @ index 0 is 0
@@ -8543,28 +8543,28 @@ WeakClassifier 2847:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2848:
-	Lower Threshold @ index 31 is -452935.19526627474
+	Lower Threshold @ index 31 is -10858.035502960905
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2849:
 	Lower Threshold @ index 31 is -1714018.4615384713
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2850:
-	Lower Threshold @ index 31 is -1120704.3786982242
+	Lower Threshold @ index 31 is -1423953.7988165664
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2851:
-	Lower Threshold @ index 31 is -238876.7810651008
+	Lower Threshold @ index 31 is -333496.80473374017
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2852:
-	Lower Threshold @ index 31 is -445567.2426035553
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 0 is 0
+	Upper Threshold @ index 31 is 80271.90532544069
 WeakClassifier 2853:
 	Lower Threshold @ index 31 is -855070.2958579902
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2854:
-	Lower Threshold @ index 31 is -1408830.1065088753
+	Lower Threshold @ index 31 is -1829191.1952662654
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2855:
-	Lower Threshold @ index 31 is -406012.97041419894
+	Lower Threshold @ index 31 is -410666.4142011795
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2856:
 	Lower Threshold @ index 0 is 0
@@ -8579,28 +8579,28 @@ WeakClassifier 2859:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2860:
-	Lower Threshold @ index 31 is -452935.19526627474
+	Lower Threshold @ index 31 is -10858.035502960905
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2861:
 	Lower Threshold @ index 31 is -1714018.4615384713
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2862:
-	Lower Threshold @ index 31 is -1120704.3786982242
+	Lower Threshold @ index 31 is -1423953.7988165664
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2863:
-	Lower Threshold @ index 31 is -238876.7810651008
+	Lower Threshold @ index 31 is -333496.80473374017
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2864:
-	Lower Threshold @ index 31 is -445567.2426035553
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 0 is 0
+	Upper Threshold @ index 31 is 80271.90532544069
 WeakClassifier 2865:
 	Lower Threshold @ index 31 is -855070.2958579902
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2866:
-	Lower Threshold @ index 31 is -1408830.1065088753
+	Lower Threshold @ index 31 is -1829191.1952662654
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2867:
-	Lower Threshold @ index 31 is -406012.97041419894
+	Lower Threshold @ index 31 is -410666.4142011795
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2868:
 	Lower Threshold @ index 0 is 0
@@ -8615,26 +8615,26 @@ WeakClassifier 2871:
 	Lower Threshold @ index 0 is 0
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2872:
-	Lower Threshold @ index 31 is -886481.0414201226
+	Lower Threshold @ index 31 is -10858.035502960905
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2873:
 	Lower Threshold @ index 31 is -1714018.4615384713
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2874:
-	Lower Threshold @ index 31 is -1120704.3786982242
+	Lower Threshold @ index 31 is -1423953.7988165664
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2875:
-	Lower Threshold @ index 31 is -90742.15384616517
+	Lower Threshold @ index 31 is -333496.80473374017
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2876:
-	Lower Threshold @ index 31 is -977610.9822485242
-	Upper Threshold @ index 0 is 0
+	Lower Threshold @ index 0 is 0
+	Upper Threshold @ index 31 is 80271.90532544069
 WeakClassifier 2877:
 	Lower Threshold @ index 31 is -855070.2958579902
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2878:
-	Lower Threshold @ index 31 is -1408830.1065088753
+	Lower Threshold @ index 31 is -1829191.1952662654
 	Upper Threshold @ index 0 is 0
 WeakClassifier 2879:
-	Lower Threshold @ index 31 is -345518.201183429
+	Lower Threshold @ index 31 is -410666.4142011795
 	Upper Threshold @ index 0 is 0

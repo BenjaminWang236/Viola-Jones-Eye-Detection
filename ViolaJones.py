@@ -195,6 +195,10 @@ class Feature:
         """ Return the starting point and end point in (x, y) """
         return [self.start_x, self.start_y, self.end_x, self.end_y]
 
+    def compute(self, integral_image):
+         def feature_value(ii): return sum([pos.compute_feature(
+            ii) for pos in self.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.haar_neg])
+
 
 def add_value_labels(ax, special, fsize=5, rotate=60, spacing=5):
     """ Function from justfortherec's answer to "Adding value labels on a matplotlib bar chart"
@@ -822,17 +826,21 @@ class ViolaJones:
             if best_error > 1:
                 print("ERROR: best error shouldn't even approach 1: %s" %
                       best_error)
-                alpha = math.log(1/big_number)
+                # alpha = math.log(1/big_number)
+                alpha = -15.0
             elif best_error < 0:
                 print("ERROR: best error should never drop below 0: %s" %
                       best_error)
-                alpha = math.log(big_number)
+                # alpha = math.log(big_number)
+                alpha = 15.0
             elif best_error == 1:
                 # alpha = float('-inf')
-                alpha = math.log(1/big_number)  # -709.782712893384
+                # alpha = math.log(1/big_number)  # -709.782712893384
+                alpha = -15.0
             elif best_error == 0:
                 # alpha = float('inf')
-                alpha = math.log(big_number)    # 709.782712893384
+                # alpha = math.log(big_number)    # 709.782712893384
+                alpha = 15.0
             else:   # 0 < best_error < 1, as it should be
                 alpha = math.log((1 - best_error) / best_error)
             print("Alpha is %s" % alpha)
@@ -957,8 +965,11 @@ class WeakClassifier:
     def __str__(self):
         return "WeakClassifier %s:\n\tLower Threshold @ index %s is %s\n\tUpper Threshold @ index %s is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
-    def classify(val):
-        feature_value = lambda ii: sum([pos.compute_feature(ii) for pos in self.positive_regions]) - sum([neg.compute_feature(ii) for neg in self.negative_regions])
+    def classify(self, integral_image):
+        def feature_value(ii): return sum([pos.compute_feature(
+            ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
+        return 1 if feature_value(integral_image) <= self.lower_threshold_value or feature_value(integral_image) >= self.upper_threshold_value
+        
         # class WeakClassifier:
         #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
         #         self.feature = feature
@@ -1107,28 +1118,30 @@ def testing():
 # except FileExistsError as e:
 #     print(e)
 #     pass
-image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
+# image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
 foldername = 'output'
 test_path = 'data/database0/testing_set/testing'
 strong_classifier = ViolaJones(2880)
 """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 print("0.) Starting Prep")
-minmax = min_max_eye(metadata_path)
-print(minmax)
-correct = read_metadata(metadata_path)
-image_list = import_image(image_path, 50)
+# minmax = min_max_eye(metadata_path)
+# print(minmax)
+# correct = read_metadata(metadata_path)
+# image_list = import_image(image_path, 50)
 test_list = import_image(test_path, 22)
-normalized_list = max_normalize(image_list)
-ii_list = integral_image(normalized_list)
-features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
-print("Number of features generated is %i" % len(features))
-with open(foldername+"/feature_table.txt", "w") as f:
-    for item in features:
-        f.write("%s\n" % item)
-# indexed_feature_table = list(enumerate(features))
-with open("output/indexed_feature_table.txt", "w") as f:
-    for index, item in enumerate(features):
-        f.write("Index %i->%s\n" % (index, item))
+normalized_test_list = max_normalize(test_list)
+ii_test_list = integral_image(normalized_test_list)
+# normalized_list = max_normalize(image_list)
+# ii_list = integral_image(normalized_list)
+# features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
+# print("Number of features generated is %i" % len(features))
+# with open(foldername+"/feature_table.txt", "w") as f:
+#     for item in features:
+#         f.write("%s\n" % item)
+# # indexed_feature_table = list(enumerate(features))
+# with open(foldername+"/indexed_feature_table.txt", "w") as f:
+#     for index, item in enumerate(features):
+#         f.write("Index %i->%s\n" % (index, item))
 # im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
 #     features, correct)
 # with open(foldername+"/feature_stat.txt", "w") as f:
@@ -1156,7 +1169,7 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 #     for item in weights:
 #         f.write("%s\n" % item)
 print("Prep Done")
-# print("Number of iterations to run is %i" % strong_classifier.T)s
+print("Number of iterations to run is %i" % strong_classifier.T)
 # Actually training below, which took 3 hours and 12 minutes
 # format = indexes, alphas, errors, weak_classifiers
 # weak_classifier_list = strong_classifier.train(
@@ -1164,11 +1177,11 @@ print("Prep Done")
 # with open("output/weak_classifier_list.pkl", 'wb') as f:
 #     pickle.dump(weak_classifier_list, f)
 # strong_classifier.save(foldername+"/strong_classifier")
-strong_classifier_copy = strong_classifier.load(
-    foldername+"/strong_classifier")
-print(type(strong_classifier_copy))
+# strong_classifier_copy = strong_classifier.load(
+#     foldername+"/strong_classifier")
+# print(type(strong_classifier_copy))
 weak_classifier_list = []
-with open("output/weak_classifier_list.pkl", "rb") as f:
+with open("weak_classifier_list.pkl", "rb") as f:
     weak_classifier_list = pickle.load(f)
 # print(weak_classifier_list)
 # with open("output/testing.txt", "w") as f:
