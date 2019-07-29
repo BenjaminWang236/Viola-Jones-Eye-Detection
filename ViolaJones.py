@@ -945,34 +945,36 @@ class WeakClassifier:
     def __str__(self):
         return "WeakClassifier %s:\n\tLower Threshold @ index %s is %s\n\tUpper Threshold @ index %s is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
-# class WeakClassifier:
-#     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
-#         self.feature = feature
-#         self.threshold = threshold  # (sample index, threshold value)
-#         # self.gini = gini
-#         # self.alpha = alpha
-#         self.true_positive = true_positive
-#         self.true_negative = true_negative
-#         self.false_positive = false_positive
-#         self.false_negative = false_negative
-#         # self.polarity = threshold
+    def classify(val):
 
-    # def __repr__(self):
-    #     return "<WeakClassifier:\tThreshold %s True_Negative %s True_Positive %s False_Positive %s False Negative %s>" % (self.threshold, self.true_negative, self.true_positive, self.false_positive, self.false_negative)
+        # class WeakClassifier:
+        #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
+        #         self.feature = feature
+        #         self.threshold = threshold  # (sample index, threshold value)
+        #         # self.gini = gini
+        #         # self.alpha = alpha
+        #         self.true_positive = true_positive
+        #         self.true_negative = true_negative
+        #         self.false_positive = false_positive
+        #         self.false_negative = false_negative
+        #         # self.polarity = threshold
 
-    # def __str__(self):
-    #     return "WeakClassifier: Threshold: %s True_Negative: %s" % (self.threshold, self.true_negative)
+        # def __repr__(self):
+        #     return "<WeakClassifier:\tThreshold %s True_Negative %s True_Positive %s False_Positive %s False Negative %s>" % (self.threshold, self.true_negative, self.true_positive, self.false_positive, self.false_negative)
 
-    # This is the h(y, f, p, theta) function being calculated
-    # def classify(self, y):
-    #     def feature(ii): return sum([pos.compute_feature(ii) for pos in self.feature.haar_pos]) - sum(
-    #         [neg.compute_feature(ii) for neg in self.feature.haar_neg])
-    #     return 1 if (self.polarity * feature(y) < self.polarity * self.threshold) else 0
+        # def __str__(self):
+        #     return "WeakClassifier: Threshold: %s True_Negative: %s" % (self.threshold, self.true_negative)
 
-# Create the tables:
-# 1.) 3D table via dictionary holding 2D dataframes: one dataframe for each 50 images/ 2880 features total/ start point, end point, feature type, calculated value
-# 2.) 2D dataframe: (50) images/ positive-threshold, negative-threshold
-# 3.) 2D dataframe: (50) images/ hit-rate
+        # This is the h(y, f, p, theta) function being calculated
+        # def classify(self, y):
+        #     def feature(ii): return sum([pos.compute_feature(ii) for pos in self.feature.haar_pos]) - sum(
+        #         [neg.compute_feature(ii) for neg in self.feature.haar_neg])
+        #     return 1 if (self.polarity * feature(y) < self.polarity * self.threshold) else 0
+
+        # Create the tables:
+        # 1.) 3D table via dictionary holding 2D dataframes: one dataframe for each 50 images/ 2880 features total/ start point, end point, feature type, calculated value
+        # 2.) 2D dataframe: (50) images/ positive-threshold, negative-threshold
+        # 3.) 2D dataframe: (50) images/ hit-rate
 
 
 def create_metadata_table(size):
@@ -1027,6 +1029,23 @@ def print_score(dataframe_collectioon):
         print(dataframe_collectioon[key])
 
 
+def test(foldername: str, data_filename: str, clf_filename: str):
+    """ 
+    Load the classifiers and test data containing [feature_value (x), correct_classification (y)] for testing 
+    """
+    with open(foldername + "/" + data_filename, "rb") as f:
+        test_data = pickle.load(f)
+    clf = ViolaJones.load(foldername + "/" + clf_filename)
+    evaluate(clf, test_data)
+
+
+def evaluate(clf, data):
+    """ Evaluate the correctness of the Strong Classifier on the testing images """
+    correct = 0
+    for x, y in data:
+        correct += 1 if clf.classify(x) == y else 0
+    print("Classified %d out of %d test samples" % (correct, len(data)))
+
 # Running here:
 # path = "database0/training_set/eye_table.bin"
 # minmax = min_max_eye(path)
@@ -1062,6 +1081,7 @@ def print_score(dataframe_collectioon):
 #     total_neg += temp[1]
 #     im_feature_label.append(temp)   #[2880 features, #neg, #pos] for each image
 # print("total neg/pos\t", total_neg, total_pos, "\t", (total_pos*100)/(len(features)*50), "% Positive" )
+
 
 # ViolaJones().train("database0/training_set/eye_table.bin", ii_list)
 # try:
@@ -1128,6 +1148,9 @@ print("Number of iterations to run is %i" % strong_classifier.T)
 strong_classifier_copy = strong_classifier.load(
     foldername+"/strong_classifier")
 
+
+test(foldername+"/strong_classifier")
+
 # correct = read_metadata('database0/training_set/eye_table.bin')
 # with open("output/correct.txt", "w") as f:
 #     for item in correct:
@@ -1151,42 +1174,42 @@ strong_classifier_copy = strong_classifier.load(
 #         f.write("Index %s->%s\n" % (index, item))
 
 """ Generate Alpha-Error Graph """
-# alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
-# errors = [float(line.rstrip('\n')) for line in open(foldername+"/errs.txt")]
-# betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
-# sum_alphas, sum_betas, sum_errors = sum(alphas), sum(betas), sum(errors)
-# print(sum_alphas, sum_betas, sum_errors)
-# normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
-# normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
-# normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
-# with open(foldername+"/normalized_alphas.txt", "w") as f:
-#     for item in normalized_alphas:
-#         f.write("%s\n" % item)
-# with open(foldername+"/normalized_betas.txt", "w") as f:
-#     for item in normalized_betas:
-#         f.write("%s\n" % item)
-# with open(foldername+"/normalized_errs.txt", "w") as f:
-#     for item in normalized_errors:
-#         f.write("%s\n" % item)
-# gp.c('plot \
-#     "output/normalized_alphas.txt" title "alpha" with linespoints, \
-#     "output/normalized_betas.txt" title "beta" with linespoints, \
-#     "output/normalized_errs.txt" title "error" with linespoints ')
-# gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
-# gp.c('set xlabel "Image Index" ')
-# gp.c('set ylabel "Feature Value" ')
-# clf_indexes = [line.rstrip('\n')
-#                for line in open("output/final_clf_indexes.txt")]
-# xtics = 'set xtics add ('
-# for index, index_label in enumerate(clf_indexes):
-#     xtics += '"' + index_label + '" ' + str(index)
-#     if index != (len(clf_indexes) - 1):
-#         xtics += ','
-# xtics += ') rotate'
-# gp.c(xtics)
-# gp.c('save "output/alpha_beta_error.dat" ')
+alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
+errors = [float(line.rstrip('\n')) for line in open(foldername+"/errs.txt")]
+betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
+sum_alphas, sum_betas, sum_errors = sum(alphas), sum(betas), sum(errors)
+print(sum_alphas, sum_betas, sum_errors)
+normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
+normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
+normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
+with open(foldername+"/normalized_alphas.txt", "w") as f:
+    for item in normalized_alphas:
+        f.write("%s\n" % item)
+with open(foldername+"/normalized_betas.txt", "w") as f:
+    for item in normalized_betas:
+        f.write("%s\n" % item)
+with open(foldername+"/normalized_errs.txt", "w") as f:
+    for item in normalized_errors:
+        f.write("%s\n" % item)
+gp.c('plot \
+    "output/normalized_alphas.txt" title "alpha" with linespoints, \
+    "output/normalized_betas.txt" title "beta" with linespoints, \
+    "output/normalized_errs.txt" title "error" with linespoints ')
+gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
+gp.c('set xlabel "Image Index" ')
+gp.c('set ylabel "Feature Value" ')
+clf_indexes = [line.rstrip('\n')
+               for line in open("output/final_clf_indexes.txt")]
+xtics = 'set xtics add ('
+for index, index_label in enumerate(clf_indexes):
+    xtics += '"' + index_label + '" ' + str(index)
+    if index != (len(clf_indexes) - 1):
+        xtics += ','
+xtics += ') rotate'
+gp.c(xtics)
+gp.c('save "output/alpha_beta_error.dat" ')
 """ Since alpha-error-graph already generated and saved, just load again """
-gp.c('load "output/alpha_beta_error.dat" ')
+# gp.c('load "output/alpha_beta_error.dat" ')
 
 
 # X_list = []
