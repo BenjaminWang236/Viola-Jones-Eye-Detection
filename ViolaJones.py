@@ -966,9 +966,10 @@ class WeakClassifier:
         return "WeakClassifier %s:\n\tLower Threshold @ index %s is %s\n\tUpper Threshold @ index %s is %s" % (self.index, self.lower_threshold_index, self.lower_threshold_value, self.upper_threshold_index, self.upper_threshold_value)
 
     def classify(self, integral_image):
-        def feature_value(ii): return sum([pos.compute_feature(
-            ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
-        return 1 if feature_value(integral_image) <= self.lower_threshold_value or feature_value(integral_image) >= self.upper_threshold_value
+        # def feature_value(ii): return sum([pos.compute_feature(
+        #     ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
+        feature_value = self.feature.compute(integral_image)
+        return 1 if feature_value <= self.lower_threshold_value or feature_value >= self.upper_threshold_value else 0
 
         # class WeakClassifier:
         #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
