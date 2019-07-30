@@ -437,16 +437,6 @@ class ViolaJones:
                 f.write("%s\n" % item)
         return features, stat, y_list, pos_stat, neg_stat
 
-    def discard_useless_features(self, features, feature_stat, num_samples):
-        """ Features that is completely correct or completely incorrect provides no relevant information, thus discarded """
-        useful_features = []
-        for x, f in enumerate(features):
-            # print(x, "f:", f)
-            if(num_samples not in feature_stat[x]):
-                useful_features.append([x, f])
-                # print("useful_f_haar_pos", f.haar_pos)
-        return useful_features
-
     def apply_features(self, features, ii_list):
         """ Apply each feature to the integral images generated from the samples and save result X list to file """
         X, sorted_X = [], []
@@ -480,7 +470,6 @@ class ViolaJones:
         When 1 is positive, 0 is negative
         """
         best_thresholds, classifiers = [], []  # One for each feature
-        # x = 0
         # For each feature, sorted_list is [[img_index, feature_value], [],...]
         for index, sorted_list in (sorted_indexed_X):
             """ Splice feature values in half by 0.0, both thresholds start searching at 0+-, feature score does reach 0 quite often """
@@ -509,9 +498,6 @@ class ViolaJones:
                     for ind in above_indexes:
                         if ind in negative_sample_indexes:
                             above_negatives += 1
-            # print("\nIndex %s\nAbove pos-neg:\t%s-%s\nBelow pos-neg:\t%s-%s" %
-            #       (index, above_positives, above_negatives, below_positives, below_negatives))
-
             """ Now we have all the metadata we need on each feature to start searchingfor both thresholds through gini """
             lower_best_threshold_index, lower_best_threshold_value, lower_best_gini = 0, 0, float(
                 'inf')
@@ -869,113 +855,64 @@ class WeakClassifier:
         # print("feature value %s" % feature_value)
         return 1 if feature_value <= self.lower_threshold_value or feature_value >= self.upper_threshold_value else 0
 
-        # class WeakClassifier:
-        #     def __init__(self, feature, threshold, true_negative, true_positive, false_positive, false_negative):
-        #         self.feature = feature
-        #         self.threshold = threshold  # (sample index, threshold value)
-        #         # self.gini = gini
-        #         # self.alpha = alpha
-        #         self.true_positive = true_positive
-        #         self.true_negative = true_negative
-        #         self.false_positive = false_positive
-        #         self.false_negative = false_negative
-        #         # self.polarity = threshold
-
-        # def __repr__(self):
-        #     return "<WeakClassifier:\tThreshold %s True_Negative %s True_Positive %s False_Positive %s False Negative %s>" % (self.threshold, self.true_negative, self.true_positive, self.false_positive, self.false_negative)
-
-        # def __str__(self):
-        #     return "WeakClassifier: Threshold: %s True_Negative: %s" % (self.threshold, self.true_negative)
-
-        # This is the h(y, f, p, theta) function being calculated
-        # def classify(self, y):
-        #     def feature(ii): return sum([pos.compute_feature(ii) for pos in self.feature.haar_pos]) - sum(
-        #         [neg.compute_feature(ii) for neg in self.feature.haar_neg])
-        #     return 1 if (self.polarity * feature(y) < self.polarity * self.threshold) else 0
-
-        # Create the tables:
-        # 1.) 3D table via dictionary holding 2D dataframes: one dataframe for each 50 images/ 2880 features total/ start point, end point, feature type, calculated value
-        # 2.) 2D dataframe: (50) images/ positive-threshold, negative-threshold
-        # 3.) 2D dataframe: (50) images/ hit-rate
+# def create_metadata_table(size):
+#     # 1.)
+#     dataframe_collectioon = {}
+#     column_list = ["start_Y", "start_X", "end_Y",
+#                    "end_X", "feature_type", "value", "actual"]
+#     for x in range(0, size):  # 0 to 49th, since we have 50 images in training-set
+#         framename = "image_" + str(x) + "_data"
+#         dataframe_collectioon[framename] = pd.DataFrame(columns=column_list)
+#     # 2.)
+#     threshold_df = pd.DataFrame(
+#         columns=['negative_threshold', 'positive_threshold'])
+#     # print(threshold_df)
+#     # 3.)
+#     hit_rate_df = pd.DataFrame(columns=['hit_rate'])
+#     # print(hit_rate_df)
+#     return dataframe_collectioon, hit_rate_df, threshold_df
 
 
-def create_metadata_table(size):
-    # 1.)
-    dataframe_collectioon = {}
-    column_list = ["start_Y", "start_X", "end_Y",
-                   "end_X", "feature_type", "value", "actual"]
-    for x in range(0, size):  # 0 to 49th, since we have 50 images in training-set
-        framename = "image_" + str(x) + "_data"
-        dataframe_collectioon[framename] = pd.DataFrame(columns=column_list)
-    # 2.)
-    threshold_df = pd.DataFrame(
-        columns=['negative_threshold', 'positive_threshold'])
-    # print(threshold_df)
-    # 3.)
-    hit_rate_df = pd.DataFrame(columns=['hit_rate'])
-    # print(hit_rate_df)
-    return dataframe_collectioon, hit_rate_df, threshold_df
+# def score_keeping(dataframe_collectioon, X_list, im_feature_label):
+#     # feature_combined = features[0]+features[1]+features[2]+features[3]
+#     c = 0
+#     for key in dataframe_collectioon.keys():
+#         for x in range(0, len(X_list)):
+#             row = []
+#             if (im_feature_label[c][x].feature_type in [0, 1, 2, 3]):
+#                 data = im_feature_label[c][x].get_size() + \
+#                     [im_feature_label[c][x].feature_type, X_list[x][c],
+#                      im_feature_label[c][x].pos_neg]
+#                 row = [
+#                     pd.Series(data, index=dataframe_collectioon.get(key).columns)]
+#             else:
+#                 # This should never be reached since each feature was initialize as a/b/c/d type
+#                 print("ERROR: There shouldn't be a feature with type not a/b/c/d\t",
+#                       im_feature_label[c][x].feature_type)
+#             dataframe_collectioon[key] = dataframe_collectioon[key].append(
+#                 row, ignore_index=True)
+#         dataframe_collectioon[key].to_csv('applied/df_' + str(c) + '.csv',
+#                                           sep='|', index=False)
+#         c += 1
+#     # print(dataframe_collectioon)
+#     return dataframe_collectioon
 
 
-def score_keeping(dataframe_collectioon, X_list, im_feature_label):
-    # feature_combined = features[0]+features[1]+features[2]+features[3]
-    c = 0
-    for key in dataframe_collectioon.keys():
-        for x in range(0, len(X_list)):
-            row = []
-            if (im_feature_label[c][x].feature_type in [0, 1, 2, 3]):
-                data = im_feature_label[c][x].get_size() + \
-                    [im_feature_label[c][x].feature_type, X_list[x][c],
-                     im_feature_label[c][x].pos_neg]
-                row = [
-                    pd.Series(data, index=dataframe_collectioon.get(key).columns)]
-            else:
-                # This should never be reached since each feature was initialize as a/b/c/d type
-                print("ERROR: There shouldn't be a feature with type not a/b/c/d\t",
-                      im_feature_label[c][x].feature_type)
-            dataframe_collectioon[key] = dataframe_collectioon[key].append(
-                row, ignore_index=True)
-        dataframe_collectioon[key].to_csv('applied/df_' + str(c) + '.csv',
-                                          sep='|', index=False)
-        c += 1
-    # print(dataframe_collectioon)
-    return dataframe_collectioon
-
-
-def print_score(dataframe_collectioon):
-    for key in dataframe_collectioon.keys():
-        print("\n" + "="*40)
-        print(key)
-        print(dataframe_collectioon[key].columns.tolist())
-        print("-"*40)
-        print(dataframe_collectioon[key])
-
-
-def testing():
-    """ Test if strong classifier can correctly identify testing images """
-    print()
-
-# def test(foldername: str, data_filename: str, clf_filename: str):
-#     """
-#     Load the classifiers and test data containing [feature_value (x), correct_classification (y)] for testing
-#     """
-#     with open(foldername + "/" + data_filename, "rb") as f:
-#         test_data = pickle.load(f)
-#     clf = ViolaJones.load(foldername + "/" + clf_filename)
-#     evaluate(clf, test_data)
-
-
-# def evaluate(clf, data):
-#     """ Evaluate the correctness of the Strong Classifier on the testing images """
-#     correct = 0
-#     for x, y in data:
-#         correct += 1 if clf.classify(x) == y else 0
-#     print("Classified %d out of %d test samples" % (correct, len(data)))
+# def print_score(dataframe_collectioon):
+#     for key in dataframe_collectioon.keys():
+#         print("\n" + "="*40)
+#         print(key)
+#         print(dataframe_collectioon[key].columns.tolist())
+#         print("-"*40)
+#         print(dataframe_collectioon[key])
 
 def test(foldername, test_path):
     weak_classifier_list = []
     with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
         weak_classifier_list = pickle.load(f)
+    with open(foldername+"/clfs.txt", "w") as f:
+        for item in weak_classifier_list:
+            f.write("%s\n" % item)
     with open(foldername+"/alpha_error_clf.txt", "w") as f:
         # format = indexes, alphas, errors, weak_classifiers
         for i in range(len(weak_classifier_list[0])):
@@ -1020,44 +957,7 @@ def test(foldername, test_path):
             f.write("%s\n" % item)
 
 
-# Running here:
-# path = "database0/training_set/eye_table.bin"
-# minmax = min_max_eye(path)
-# print(minmax)
-# # correct = read_metadata(path)    # Returns the correct eye-box of each image
-# path = 'database0/training_set/*.bmp'
-# image_list = import_image(path)
-# # num_image = len(image_list)
-# normalized_list = max_normalize(image_list)
-# # Refactor the data back to before it was multiplied by 2^8
-# # for x in range(len(normalized_list)):
-# #     # assert np.all(n_list[x] == ret[x]), "Normalized image read not matching with original normalized!"
-# #     # Convert back from the multiplication of 2^16
-# #     normalized_list[x] /= pow(2, 16)
-# ii_list = integral_image(normalized_list)
-# # Only needs to be done once since all images have same dimensions
-# features = ViolaJones().build_features(ii_list[0].shape, minmax)
-# feature_combined = features[0]+features[1]+features[2]+features[3]
-# im_feature = []
-# for x in range(50):
-#     im_feature.append(feature_combined)
-# print('Each feature type has:\t', len(features[0]), len(features[1]), len(features[2]), len(features[3]))
-# print('For total of\t', len(features[0])+ len(features[1])+ len(features[2])+ len(features[3]))
-# with open("features.txt", "wb") as f:
-#     pickle.dump(features, f)
-# im_feature_label = []
-# total_pos = 0
-# total_neg = 0
-# for x in range(50):
-#     print("image ", x)
-#     temp = ViolaJones().label_neg_pos_features(features, correct[x])
-#     total_pos += temp[2]
-#     total_neg += temp[1]
-#     im_feature_label.append(temp)   #[2880 features, #neg, #pos] for each image
-# print("total neg/pos\t", total_neg, total_pos, "\t", (total_pos*100)/(len(features)*50), "% Positive" )
-
-
-# ViolaJones().train("database0/training_set/eye_table.bin", ii_list)
+""" RUNNING HERE """
 # try:
 #     os.makedirs("/output")  # Making Folder if not exists
 #     # os.makedirs("/feature_graphs")
@@ -1065,51 +965,50 @@ def test(foldername, test_path):
 # except FileExistsError as e:
 #     print(e)
 #     pass
-
-
-# """ PREP """
-image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
-foldername = 'output'
-strong_classifier = ViolaJones(100)
-""" Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
-print("0.) Starting Prep")
-minmax = min_max_eye(metadata_path)
-print(minmax)
-correct = read_metadata(metadata_path)
-image_list = import_image(image_path, 50)
-normalized_list = max_normalize(image_list)
-ii_list = integral_image(normalized_list)
-features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
-print("Number of features generated is %i" % len(features))
-with open(foldername+"/feature_table.txt", "w") as f:
-    for item in features:
-        f.write("%s\n" % item)
-# indexed_feature_table = list(enumerate(features))
-with open(foldername+"/indexed_feature_table.txt", "w") as f:
-    for index, item in enumerate(features):
-        f.write("Index %i->%s\n" % (index, item))
-im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
-    features, correct)
-with open(foldername+"/feature_stat.txt", "w") as f:
-    for row in feature_stat:
-        f.write("%s\n" % row)
-X_list, sorted_X_list = strong_classifier.apply_features(
-    features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-with open(foldername+"/X_list.txt", "w") as f:
-    for item in X_list:
-        f.write("%s\n" % item)
-with open(foldername+"/sorted_X_list.txt", "w") as f:
-    for item in sorted_X_list:
-        f.write("%s\n" % item)
+""" PREP """
+# image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
+# foldername = 'output'
+# strong_classifier = ViolaJones(100)
+# """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
+# print("0.) Starting Prep")
+# minmax = min_max_eye(metadata_path)
+# print(minmax)
+# correct = read_metadata(metadata_path)
+# image_list = import_image(image_path, 50)
+# normalized_list = max_normalize(image_list)
+# ii_list = integral_image(normalized_list)
+# features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
+# print("Number of features generated is %i" % len(features))
+# with open(foldername+"/feature_table.txt", "w") as f:
+#     for item in features:
+#         f.write("%s\n" % item)
+# # indexed_feature_table = list(enumerate(features))
+# with open(foldername+"/indexed_feature_table.txt", "w") as f:
+#     for index, item in enumerate(features):
+#         f.write("Index %i->%s\n" % (index, item))
+# im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+#     features, correct)
+# with open(foldername+"/feature_stat.txt", "w") as f:
+#     for row in feature_stat:
+#         f.write("%s\n" % row)
+# X_list, sorted_X_list = strong_classifier.apply_features(
+#     features, ii_list)   # X_list is already positive_X list because only useful features were passed in
+# with open(foldername+"/X_list.txt", "w") as f:
+#     for item in X_list:
+#         f.write("%s\n" % item)
+# with open(foldername+"/sorted_X_list.txt", "w") as f:
+#     for item in sorted_X_list:
+#         f.write("%s\n" % item)
 """
+Plot the sorted feature graphs OR
 Plot the not-sorted feature graphs for verification
 Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 """
-strong_classifier.plot_sorted_graphs("sorted", sorted_X_list, pos_stat)
+# strong_classifier.plot_sorted_graphs("sorted", sorted_X_list, pos_stat)
 # strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
 # temp_list = X_list[0:10]
 # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
-# """ Training here """
+""" Training here """
 # weights = strong_classifier.initialize_weights(feature_stat, y_list)
 # with open(foldername+"/weights.txt", "w") as f:
 #     for item in weights:
@@ -1127,60 +1026,8 @@ strong_classifier.plot_sorted_graphs("sorted", sorted_X_list, pos_stat)
 #     foldername+"/strong_classifier")
 # print(type(strong_classifier_copy))
 
-
-# print(weak_classifier_list)
-# with open(foldername+"/alpha_error_clf.txt", "w") as f:
-#     # format = indexes, alphas, errors, weak_classifiers
-#     for i in range(len(weak_classifier_list[0])):
-#         f.write("Index %i: Alpha %s Error %s\n" % (
-#             weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
-
-# with open(foldername+"/testing.txt", "w") as f:
-#     for item in weak_classifier_list:
-#         f.write("%s\n" % item)
-
-
-# old_alphas = [float(line.rstrip('\n')) for line in open("alphas_old.txt")]
-# old_sum = sum(old_alphas)
-# print("Old alpha sum %s" % old_sum)
-# # print(old_alphas)
-
+"""  """
 test('output', 'data/database0/testing_set/testing')
-
-
-# img1 = imageio.imread('data/database0/testing_set/testing1.bmp')
-# print(img1)
-# for i in range(len(weak_classifier_list[0])):
-#     if(weak_classifier_list[3][i].index == 2879):
-#         print(weak_classifier_list[3][i])
-#         print(weak_classifier_list[3][i].feature)
-#         for pos in weak_classifier_list[3][i].feature.haar_pos:
-#             print("pos: ", pos)
-#         for neg in weak_classifier_list[3][i].feature.haar_neg:
-#             print("neg ", neg)
-
-
-# correct = read_metadata('database0/training_set/eye_table.bin')
-# with open("output/correct.txt", "w") as f:
-#     for item in correct:
-#         f.write("%s\n" % item)
-# with open("output/correct_start_end.txt", "w") as f:
-#     for item in correct:
-#         start_end_point = [item[0], item[1], item[0]+item[2], item[1]+item[3]]
-#         f.write("%s\n" % start_end_point)
-
-
-# feature_table = [line.rstrip('\n') for line in open("output/feature_table.txt")]
-# feature_table = []
-# empty_line = False
-# for line in open("output/feature_table.txt"):
-#     if not empty_line:
-#         feature_table.append(line.rstrip('\n'))
-#     empty_line = not empty_line
-# indexed_feature_table = list(enumerate(feature_table))
-# with open("output/indexed_feature_table.txt", "w") as f:
-#     for index, item in indexed_feature_table:
-#         f.write("Index %s->%s\n" % (index, item))
 
 """ Generate Alpha-Error Graph """
 # alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
@@ -1221,6 +1068,7 @@ test('output', 'data/database0/testing_set/testing')
 # gp.c('load "output/alpha_beta_error.dat" ')
 
 
+""" Old code for using panda dataframe here for preservation purposes """
 # X_list = []
 # for x in range(len(features)):  # 4, one for each feature type
 #     X, x = ViolaJones().apply_features(features[x], ii_list)     # Applying feature A/B/C/D to integral images
@@ -1233,8 +1081,7 @@ test('output', 'data/database0/testing_set/testing')
 # dataframe_collectioon = score_keeping(dataframe_collectioon, X_list, im_feature_label)
 # print_score(dataframe_collectioon)
 
-# Start training/Adaboost here
-
+""" Timing how long it took to execute """
 print("--- %s seconds ---" % (time.time() - start_time))
 
 
