@@ -598,15 +598,16 @@ class ViolaJones:
             num_positives, num_negatives, row_weights = pair[0], pair[1], []
             for actual in y_list[index]:    # 1 for positive, 0 for negative
                 num_sample = len(y_list[index])
+                # print(num_sample == num_negatives)
                 # Special case: When all negative (no-eye) or all positive (yes-eye)
                 # Since weights in feature must add up to 1, and only one type exists, do NOT multiply by half as in usual case
                 if num_negatives == num_sample or num_positives == num_sample:
-                    if actual == 1:
+                    if actual == 0:
                         row_weights.append(1/num_positives)
                     else:
                         row_weights.append(1/num_negatives)
                 else:   # Since total weights in feature must add up to 1, and two types exists, must multiply by half
-                    if actual == 1:
+                    if actual == 0:
                         row_weights.append(1/(2*num_positives))
                     else:
                         row_weights.append(1/(2*num_negatives))
@@ -986,39 +987,40 @@ def draw_bbox(bboxes, input_path, output_folder):
 #     print(e)
 #     pass
 """ PREP """
-# image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
-# foldername = 'output'
-# strong_classifier = ViolaJones(100)
-# """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
-# print("0.) Starting Prep")
-# minmax = min_max_eye(metadata_path)
-# print(minmax)
-# correct = read_metadata(metadata_path)
-# image_list = import_image(image_path, 50)
-# normalized_list = max_normalize(image_list)
-# ii_list = integral_image(normalized_list)
-# features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
-# print("Number of features generated is %i" % len(features))
-# with open(foldername+"/feature_table.txt", "w") as f:
-#     for item in features:
-#         f.write("%s\n" % item)
-# # indexed_feature_table = list(enumerate(features))
-# with open(foldername+"/indexed_feature_table.txt", "w") as f:
-#     for index, item in enumerate(features):
-#         f.write("Index %i->%s\n" % (index, item))
-# im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
-#     features, correct)
-# with open(foldername+"/feature_stat.txt", "w") as f:
-#     for row in feature_stat:
-#         f.write("%s\n" % row)
-# X_list, sorted_X_list = strong_classifier.apply_features(
-#     features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-# with open(foldername+"/X_list.txt", "w") as f:
-#     for item in X_list:
-#         f.write("%s\n" % item)
-# with open(foldername+"/sorted_X_list.txt", "w") as f:
-#     for item in sorted_X_list:
-#         f.write("%s\n" % item)
+image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
+foldername = 'output'
+strong_classifier = ViolaJones()
+""" Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
+print("0.) Starting Prep")
+minmax = min_max_eye(metadata_path)
+print(minmax)
+correct = read_metadata(metadata_path)
+image_list = import_image(image_path)
+normalized_list = max_normalize(image_list)
+ii_list = integral_image(normalized_list)
+features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
+print("Number of features generated is %i" % len(features))
+strong_classifier.T = len(features)
+with open(foldername+"/feature_table.txt", "w") as f:
+    for item in features:
+        f.write("%s\n" % item)
+# indexed_feature_table = list(enumerate(features))
+with open(foldername+"/indexed_feature_table.txt", "w") as f:
+    for index, item in enumerate(features):
+        f.write("Index %i->%s\n" % (index, item))
+im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+    features, correct)
+with open(foldername+"/feature_stat.txt", "w") as f:
+    for row in feature_stat:
+        f.write("%s\n" % row)
+X_list, sorted_X_list = strong_classifier.apply_features(
+    features, ii_list)   # X_list is already positive_X list because only useful features were passed in
+with open(foldername+"/X_list.txt", "w") as f:
+    for item in X_list:
+        f.write("%s\n" % item)
+with open(foldername+"/sorted_X_list.txt", "w") as f:
+    for item in sorted_X_list:
+        f.write("%s\n" % item)
 """
 Plot the sorted feature graphs OR
 Plot the not-sorted feature graphs for verification
@@ -1029,34 +1031,18 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # temp_list = X_list[0:10]
 # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 """ Training here """
-# weights = strong_classifier.initialize_weights(feature_stat, y_list)
-# with open(foldername+"/weights.txt", "w") as f:
-#     for item in weights:
-#         f.write("%s\n" % item)
-# print("Prep Done")
-# print("Number of iterations to run is %i" % strong_classifier.T)
-# # Actually training below, which took 3 hours and 12 minutes
-# # format = indexes, alphas, errors, weak_classifiers
-# weak_classifier_list = strong_classifier.train(
-#     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
-# with open("weak_classifier_list.pkl", 'wb') as f:
-#     pickle.dump(weak_classifier_list, f)
-# strong_classifier.save("strong_classifier")
-# strong_classifier_copy = strong_classifier.load(
-#     foldername+"/strong_classifier")
-# print(type(strong_classifier_copy))
-
-""" Test if Strong Classifier actually works (After training is done) """
-foldername = 'output'
-# test_path = 'data/database0/testing_set/testing'
-test_path = 'data/database0/training_set/training'
-index_count, hit_list, indexed_features = test(foldername, test_path)
-print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
-print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
-print("Avg index-count at %s" %
-      (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
-bboxes = bbox(foldername, hit_list, indexed_features, 2)
-draw_bbox(bboxes, test_path, "bbox/img")
+weights = strong_classifier.initialize_weights(feature_stat, y_list)
+with open(foldername+"/weights.txt", "w") as f:
+    for item in weights:
+        f.write("%s\n" % item)
+print("Prep Done")
+print("Number of iterations to run is %i" % strong_classifier.T)
+# Actually training below, which took 3 hours and 12 minutes
+# format = indexes, alphas, errors, weak_classifiers
+weak_classifier_list = strong_classifier.train(
+    foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
+with open("weak_classifier_list.pkl", 'wb') as f:
+    pickle.dump(weak_classifier_list, f)
 
 """ Generate Alpha-Error Graph """
 # alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
@@ -1096,19 +1082,17 @@ draw_bbox(bboxes, test_path, "bbox/img")
 """ Since alpha-error-graph already generated and saved, just load again """
 # gp.c('load "output/alpha_beta_error.dat" ')
 
-
-""" Old code for using panda dataframe here for preservation purposes """
-# X_list = []
-# for x in range(len(features)):  # 4, one for each feature type
-#     X, x = ViolaJones().apply_features(features[x], ii_list)     # Applying feature A/B/C/D to integral images
-#     print('Total applied feature score:\t', X.shape)  # 2340 y 50, 2340 for each image since there's 2340 feature A
-#     np.savetxt("applied/X" + str(x) + ".txt", X)
-#     X_list = X_list + (X.tolist())
-# X_list, x = ViolaJones().apply_features(features, ii_list)
-# print(X_list.shape)
-# dataframe_collectioon, hit_rate_df, threshold_df = create_metadata_table(num_image)
-# dataframe_collectioon = score_keeping(dataframe_collectioon, X_list, im_feature_label)
-# print_score(dataframe_collectioon)
+""" Test if Strong Classifier actually works (After training is done) """
+# foldername = 'output'
+# # test_path = 'data/database0/testing_set/testing'
+# test_path = 'data/database0/training_set/training'
+# index_count, hit_list, indexed_features = test(foldername, test_path)
+# print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
+# print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
+# print("Avg index-count at %s" %
+#       (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+# bboxes = bbox(foldername, hit_list, indexed_features, 2)
+# draw_bbox(bboxes, test_path, "bbox/img")
 
 """ Timing how long it took to execute """
 # seconds = time.time() - start_time
