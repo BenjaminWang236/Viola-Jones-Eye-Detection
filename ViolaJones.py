@@ -1122,68 +1122,76 @@ def testing():
 #     pass
 
 
-""" PREP """
-image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
-foldername = 'output'
-strong_classifier = ViolaJones(100)
-""" Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
-print("0.) Starting Prep")
-minmax = min_max_eye(metadata_path)
-print(minmax)
-correct = read_metadata(metadata_path)
-image_list = import_image(image_path, 50)
-normalized_list = max_normalize(image_list)
-ii_list = integral_image(normalized_list)
-features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
-print("Number of features generated is %i" % len(features))
-with open(foldername+"/feature_table.txt", "w") as f:
-    for item in features:
-        f.write("%s\n" % item)
-# indexed_feature_table = list(enumerate(features))
-with open(foldername+"/indexed_feature_table.txt", "w") as f:
-    for index, item in enumerate(features):
-        f.write("Index %i->%s\n" % (index, item))
-im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
-    features, correct)
-with open(foldername+"/feature_stat.txt", "w") as f:
-    for row in feature_stat:
-        f.write("%s\n" % row)
-X_list, sorted_X_list = strong_classifier.apply_features(
-    features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-with open(foldername+"/X_list.txt", "w") as f:
-    for item in X_list:
-        f.write("%s\n" % item)
-with open(foldername+"/sorted_X_list.txt", "w") as f:
-    for item in sorted_X_list:
-        f.write("%s\n" % item)
-"""
-Plot the not-sorted feature graphs for verification
-Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
-"""
-# strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
-# temp_list = X_list[0:10]
-# strong_classifier.plot_graphs("verify", temp_list, pos_stat)
-""" Training here """
-weights = strong_classifier.initialize_weights(feature_stat, y_list)
-with open(foldername+"/weights.txt", "w") as f:
-    for item in weights:
-        f.write("%s\n" % item)
-print("Prep Done")
-print("Number of iterations to run is %i" % strong_classifier.T)
-# Actually training below, which took 3 hours and 12 minutes
-# format = indexes, alphas, errors, weak_classifiers
-weak_classifier_list = strong_classifier.train(
-    foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
-with open("weak_classifier_list.pkl", 'wb') as f:
-    pickle.dump(weak_classifier_list, f)
-strong_classifier.save("strong_classifier")
-strong_classifier_copy = strong_classifier.load(
-    foldername+"/strong_classifier")
-print(type(strong_classifier_copy))
-# weak_classifier_list = []
-# with open("weak_classifier_list.pkl", "rb") as f:
-#     weak_classifier_list = pickle.load(f)
-# print(weak_classifier_list)
+# """ PREP """
+# image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
+# foldername = 'output'
+# strong_classifier = ViolaJones(100)
+# """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
+# print("0.) Starting Prep")
+# minmax = min_max_eye(metadata_path)
+# print(minmax)
+# correct = read_metadata(metadata_path)
+# image_list = import_image(image_path, 50)
+# normalized_list = max_normalize(image_list)
+# ii_list = integral_image(normalized_list)
+# features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
+# print("Number of features generated is %i" % len(features))
+# with open(foldername+"/feature_table.txt", "w") as f:
+#     for item in features:
+#         f.write("%s\n" % item)
+# # indexed_feature_table = list(enumerate(features))
+# with open(foldername+"/indexed_feature_table.txt", "w") as f:
+#     for index, item in enumerate(features):
+#         f.write("Index %i->%s\n" % (index, item))
+# im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+#     features, correct)
+# with open(foldername+"/feature_stat.txt", "w") as f:
+#     for row in feature_stat:
+#         f.write("%s\n" % row)
+# X_list, sorted_X_list = strong_classifier.apply_features(
+#     features, ii_list)   # X_list is already positive_X list because only useful features were passed in
+# with open(foldername+"/X_list.txt", "w") as f:
+#     for item in X_list:
+#         f.write("%s\n" % item)
+# with open(foldername+"/sorted_X_list.txt", "w") as f:
+#     for item in sorted_X_list:
+#         f.write("%s\n" % item)
+# """
+# Plot the not-sorted feature graphs for verification
+# Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
+# """
+# # strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+# # temp_list = X_list[0:10]
+# # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
+# """ Training here """
+# weights = strong_classifier.initialize_weights(feature_stat, y_list)
+# with open(foldername+"/weights.txt", "w") as f:
+#     for item in weights:
+#         f.write("%s\n" % item)
+# print("Prep Done")
+# print("Number of iterations to run is %i" % strong_classifier.T)
+# # Actually training below, which took 3 hours and 12 minutes
+# # format = indexes, alphas, errors, weak_classifiers
+# weak_classifier_list = strong_classifier.train(
+#     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
+# with open("weak_classifier_list.pkl", 'wb') as f:
+#     pickle.dump(weak_classifier_list, f)
+# strong_classifier.save("strong_classifier")
+# strong_classifier_copy = strong_classifier.load(
+#     foldername+"/strong_classifier")
+# print(type(strong_classifier_copy))
+
+
+
+weak_classifier_list = []
+with open("weak_classifier_list.pkl", "rb") as f:
+    weak_classifier_list = pickle.load(f)
+print(weak_classifier_list)
+with open("formatted_clf.txt", "w") as f:
+    # format = indexes, alphas, errors, weak_classifiers
+    for i in range(len(weak_classifier_list[0])):
+        f.write("Index %i: Alpha %s\n" % (weak_classifier_list[0][i], weak_classifier_list[1][i]))
+
 # with open("output/testing.txt", "w") as f:
 #     for item in weak_classifier_list:
 #         f.write("%s\n" % item)
