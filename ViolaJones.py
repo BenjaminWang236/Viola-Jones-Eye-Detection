@@ -254,9 +254,55 @@ class ViolaJones:
         self.clf_indexes = []
         self.clfs = []
 
+    def plot_sorted_graphs(self, foldername, sorted_X_list, pos_stat):
+        """
+        Plotting the sorted not-eye and eye bar graphs and save to folder
+        Note: Bar plot parameters must be same shape/dimensions!!!
+        Vertical axis: the X values (applied feature value)
+        Horizontal axis: the image that feature corresponds to! (Which is not in order, unless miracle)
+        X-list might or might not be sorted by its feature value
+        """
+        pdfs, counter = [], 0
+        # pos_indexes = list(map(lambda ii: ii[0], pos_stat))
+        for index, sorted_list in sorted_X_list:
+            print(counter, "Feature Index:\t", index)
+            sorted_index = list(map(lambda y: y[0], sorted_list))
+            sorted_value = list(map(lambda y: y[1], sorted_list))
+            ind = np.arange(len(sorted_index))
+            fig, ax = plt.subplots()
+            ax.bar(ind, sorted_value)
+            # ax.bar(ind, sorted_list)
+            ax.set_title('Feature [' + str(index) + ']')
+            ax.set_xlabel('Image Index')
+            ax.set_ylabel('Feature Value')
+            ax.set_xticks(ind)  # y-location of each tick!!!
+            ax.set_xticklabels(ind, fontsize=5, rotation=45)
+
+            positive_index_after_sort = []
+            for x in range(len(pos_stat)):
+                pos_index = pos_stat[x][0]
+                if pos_index > index:
+                    break
+                if pos_index == index:
+                    # Find out the new index of the positive indexes after sorting above
+                    positive_index_after_sort = list(
+                        map(lambda ii: sorted_index.index(ii), pos_stat[x][1]))
+            add_value_labels(ax, positive_index_after_sort, 5, 'vertical')
+            plt.savefig(foldername+'/feature_' +
+                        str(index) + '_graph.pdf', bbox_inches='tight')
+            pdfs.append(foldername+'/feature_' + str(index) + '_graph.pdf')
+            # plt.show()
+            plt.close()
+            counter += 1
+        merger = p.PdfFileMerger()
+        for pdf in pdfs:
+            merger.append(pdf)
+        merger.write(foldername+"/Combined.pdf")
+        merger.close()
+
     def plot_graphs(self, foldername, X_list, pos_stat):
         """
-        Plotting the not-eye and eye bar graphs and save to folder
+        Plotting the unsorted not-eye and eye bar graphs and save to folder
         Note: Bar plot parameters must be same shape/dimensions!!!
         Vertical axis: the X values (applied feature value)
         Horizontal axis: the image that feature corresponds to! (Which is not in order, unless miracle)
@@ -264,17 +310,10 @@ class ViolaJones:
         """
         pdfs, counter = [], 0
         pos_indexes = list(map(lambda ii: ii[0], pos_stat))
-        # If sorted:
-        # for index, sorted_list in X_list:
-        # If NOT sorted:
         for index, sorted_list in X_list:
             print(counter, "Feature Index:\t", index)
-            # sorted_index = list(map(lambda y: y[0], sorted_list))
-            # sorted_value = list(map(lambda y: y[1], sorted_list))
-            # ind = np.arange(len(sorted_index))
             ind = np.arange(len(sorted_list))
             fig, ax = plt.subplots()
-            # ax.bar(ind, sorted_value)
             ax.bar(ind, sorted_list)
             ax.set_title('Feature [' + str(index) + ']')
             ax.set_xlabel('Image Index')
@@ -288,9 +327,6 @@ class ViolaJones:
                 if pos_index > index:
                     break
                 if pos_index == index:
-                    # Find out the new index of the positive indexes after sorting above
-                    # positive_index_after_sort = list(
-                    #     map(lambda ii: ind.index(ii), pos_stat[x][1]))
                     positive_index_after_sort = pos_stat[x][1]
             add_value_labels(ax, positive_index_after_sort, 5, 'vertical')
             plt.savefig(foldername+'/feature_' +
@@ -313,93 +349,66 @@ class ViolaJones:
         print("X: %i->%i, Y: %i->%i, Width: %i->%i, Height: %i->%i" %
               (min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height))
         # Row
-        # for y in range(minmax[0], minmax[1]+1):
         for y in range(min_y, max_y+1):
             # Col
-            # for x in range(minmax[2], minmax[3]+1):
             for x in range(min_x, max_x+1):
                 # Width
-                # for w in range(minmax[4], minmax[5]+1):
                 for w in range(min_width, max_width+1):
                     # Height
-                    # for h in range(minmax[6], minmax[7]+1):
                     for h in range(min_height, max_height+1):
                         if (x+w) > (width-1):
                             w -= x+w-31
                         if (y+h) > (height-1):
                             h -= y+h-31
-                        # print('x/y/w/h\t', x, y, w, h)
                         half_width = math.floor(w/2)
                         third_width = math.floor(w/3)
                         half_height = math.floor(h/2)
-
                         # 2*half_width will never exceed w, at most equals w. Same for half_height and third_width
                         make_up_half_w, make_up_half_h, make_up_third_w = w - \
                             (2*half_width), h - \
                             (2*half_height), w - (3*third_width)
-
-                        # print("x %s, y %s, w %s, h %s" % (x, y, w, h))
-                        # print("half_width: %s, 3rd_width %s, half_height %s" % (half_width, third_width, half_height))
-                        # # Rectangles: Note that format is [positive], [negative]
-                        extra_w, extra_h = 0, 0
-                        if(x+w >= width):
-                            extra_w = (x+w) - width + 1
-                        if(y+h >= height):
-                            extra_h = (y+h) - height + 1
                         # Feature A:
                         if(half_width >= 1):
-                            # print("\nhalf_width", half_width, "width", w)
-                            # print("start point", x, y, "end point", x +
-                            #       half_width+half_width-extra_w, y+h-extra_h)
-                            # print("extra w, h", extra_w, extra_h)
                             immediate = RectangleRegion(
-                                x, y, half_width, h - extra_h)
+                                x, y, half_width, h)
                             right = RectangleRegion(
-                                x+half_width, y, half_width + make_up_half_w - extra_w, h - extra_h)
-                            a = Feature(x, y, x+half_width*2+make_up_half_w -
-                                        extra_w, y+h-extra_h, [right], [immediate], 0, 0)
+                                x+half_width, y, half_width + make_up_half_w, h)
+                            a = Feature(x, y, x+half_width*2+make_up_half_w,
+                                        y+h, [right], [immediate], 0, 0)
                             features.append(a)
-                        # print(a)
                         # Feature B:
                         if(half_height >= 1):
-                            # if(half_height + make_up_half_h - extra_h) > minmax[7]:
-                            #     print(y, "B's height", half_height + make_up_half_h - extra_h)
-                            #     print("h", h, "half h", half_height, "makeup", make_up_half_h, "extra h", extra_h)
                             immediate_2 = RectangleRegion(
-                                x, y, w-extra_w, half_height)
+                                x, y, w, half_height)
                             bottom = RectangleRegion(
-                                x, y+half_height, w-extra_w, half_height + make_up_half_h - extra_h)
-                            b = Feature(x, y, x+w-extra_w, y+half_height*2 +
-                                        make_up_half_h-extra_h, [immediate_2], [bottom], 0, 1)
+                                x, y+half_height, w, half_height + make_up_half_h)
+                            b = Feature(x, y, x+w, y+half_height*2 +
+                                        make_up_half_h, [immediate_2], [bottom], 0, 1)
                             features.append(b)
-                        # print(b)
                         # Feature C:
                         if(third_width >= 1):
                             immediate_3rd = RectangleRegion(
-                                x, y, third_width, h - extra_h)
+                                x, y, third_width, h)
                             center_3rd = RectangleRegion(
-                                x+third_width, y, third_width, h - extra_h)
+                                x+third_width, y, third_width, h)
                             right_3rd = RectangleRegion(
-                                x+third_width*2, y, third_width + make_up_third_w - extra_w, h - extra_h)
-                            c = Feature(x, y, x+third_width*3+make_up_third_w-extra_w, y+h-extra_h, [center_3rd], [
+                                x+third_width*2, y, third_width + make_up_third_w, h)
+                            c = Feature(x, y, x+third_width*3+make_up_third_w, y+h, [center_3rd], [
                                         right_3rd, immediate_3rd], 0, 2)
                             features.append(c)
-                        # print(c)
                         # Feature D:
                         if(half_width >= 1 and half_height >= 1):
-                            # print("debugging: halfwidth %s, halfHeight %s" % (half_width, half_height))
                             top = RectangleRegion(
                                 x, y, half_width, half_height)
                             right = RectangleRegion(
-                                x+half_width, y, half_width + make_up_half_w - extra_w, half_height)
+                                x+half_width, y, half_width + make_up_half_w, half_height)
                             bottom = RectangleRegion(
-                                x, y+half_height, half_width, half_height + make_up_half_h - extra_h)
+                                x, y+half_height, half_width, half_height + make_up_half_h)
                             bottom_right = RectangleRegion(
-                                x+half_width, y+half_height,  half_width + make_up_half_w - extra_w, half_height + make_up_half_h - extra_h)
-                            d = Feature(x, y, x+half_width*2+make_up_half_w-extra_w, y+half_height*2+make_up_half_h-extra_h, [right, bottom], [
+                                x+half_width, y+half_height,  half_width + make_up_half_w, half_height + make_up_half_h)
+                            d = Feature(x, y, x+half_width*2+make_up_half_w, y+half_height*2+make_up_half_h, [right, bottom], [
                                         top, bottom_right], 0, 3)
                             features.append(d)
-                        # print(d)
         return features
 
     def bigger_box(self, start_end, correct):
@@ -593,40 +602,6 @@ class ViolaJones:
                                    upper_best_threshold_index, upper_best_threshold_value, upper_best_gini]])
             classifiers.append(WeakClassifier(index, features[index], lower_best_threshold_index,
                                               lower_best_threshold_value, upper_best_threshold_index, upper_best_threshold_value))
-
-            # gini_at_threshold = []
-            # total_positive, total_negative = feature_stat[index][0], feature_stat[index][1]
-            # # For each threshold its (img_index, feature_value @ image = threshold value)
-            # for threshold in sorted_list:
-            #     false_positive, false_negative, true_negative, true_positive = 0, 0, 0, 0
-            #     error_positive, error_negative = 0, 0
-            #     # For each sample to apply threshold to
-            #     for sample in sorted_list:
-            #         # 1 for Positve, 0 for Negative
-            #         # If greater than threshold, guess Positive
-            #         guess = 1 if sample[1] > threshold[1] else 0
-            #         # AKA guess = 0 if sample[1] <= threshold[1] else 1
-            #         if guess == 1 and y_list[index][sample[0]] == 0:
-            #             false_positive += 1
-            #         elif guess == 0 and y_list[index][sample[0]] == 1:
-            #             false_negative += 1
-            #         elif guess == 0 and y_list[index][sample[0]] == 0:
-            #             true_negative += 1
-            #         else:  # elif guess == 1 and y_list[index][sample[0]] == 1:
-            #             true_positive += 1
-            #     error_positive = false_negative / \
-            #         feature_stat[index][0] if false_negative > 0 else 0
-            #     error_negative = false_positive / \
-            #         feature_stat[index][1] if false_positive > 0 else 0
-            #     gini = pow(error_positive, 2) + pow(error_negative, 2)
-            #     gini_at_threshold.append(
-            #         [index, threshold, gini, (true_negative, true_positive, false_positive, false_negative)])
-            # # Best_threshold_value at best_threshold[feat_index][0=feature index, 1=threshold_pair, 2=gini_value, 3=true/false-pos/neg stats][1]
-            # min_gini = min(gini_at_threshold, key=lambda ii: ii[2])
-            # best_thresholds.append(min_gini)
-            # classifiers.append([index, WeakClassifier(
-            #     useful_features[x], min_gini[1], min_gini[3][0], min_gini[3][1], min_gini[3][2], min_gini[3][3])])
-            # x += 1
         return best_thresholds, classifiers
 
     def initialize_weights(self, feature_stat, y_list):
@@ -656,12 +631,6 @@ class ViolaJones:
         total_weights = sum(list(map(lambda ii: sum(ii[1]), weights)))
         print("Total weights across all feature and all samples: %s" %
               total_weights)
-        # normalized_weights = list(
-        #     map(lambda ii: [ii[0], list(map(lambda jj: jj / total_weights, ii[1]))], weights))
-        # total_normalized_weights = sum(
-        #     list(map(lambda ii: sum(ii[1]), normalized_weights)))
-        # max_normalized_weights = max(
-        #     list(map(lambda ii: sum(ii[1]), normalized_weights)))
         """ Using nested-for loops is faster by 1.3 seconds with size of 20 """
         normalized_weights, total_normalized_weights, max_normalized_weights = [], 0, 0
         for x in range(len(weights)):
@@ -709,51 +678,6 @@ class ViolaJones:
             # if error < min_error and error not in [0, 50]:
             if error < best_error and clf.index not in self.clf_indexes:
                 best_error, best_error_index, best_accuracy = error, clf.index, accuracy
-
-        # """ At each threshold, compare to each feature value and find min error """
-        # clf_errors, zero_list, counter = [], [], 0
-        # for x, clf in classifiers:
-        #     error = 0
-        #     for y, val in sorted_X_list[counter][1]:
-        #         # Less than threshold = Guess Negative (Guess No-Eye) 0, Keeping consistency with find_gini_threshold
-        #         guess = 1 if val > clf.threshold[1] else 0
-        #         # correctness = 0 if guessed Correctly, 1 if guessed Incorrectly, If matches 0, else absolute value to +1
-        #         correctness = abs(guess - y_list[x][y])
-        #         if correctness == 1:    # Either False Negative or False Positive
-        #             # error += 1 * weights[counter][1]
-        #             error += 1
-        #     clf_errors.append([x, error])
-        #     if error == 0:
-        #         zero_list.append(x)
-        #     counter += 1
-        # with open("output/clf_error.txt", "w") as f:
-        #     for item in clf_errors:
-        #         f.write("%s\n" % item)
-
-        # # print("zero list", zero_list)
-        # sorted_clf_errors = sorted(clf_errors, key=lambda ii: ii[1])
-        # to_prune = list(
-        #     filter(lambda ii: ii[1] == 0, sorted_clf_errors))   # 2204, 2684
-        # # print("len-weights %s len-to-prune %s" % (len(weights), len(to_prune)))
-        # num_useful_features = int(len(useful_features) - len(to_prune))
-        # # weights = [[row[0], 1/num_useful_features]
-        # #            for row in useful_features if row[0] not in zero_list]
-        # # with open("output/weights.txt", "w") as f:
-        # #     for item in weights:
-        # #         f.write("%s\n" % item)
-        # pruned_sorted_clf_errors = list(
-        #     filter(lambda ii: ii[1] != 0, sorted_clf_errors))
-        # # clf_error values still just counter of errors, multiply by corresponding weight
-        # weighted_pruned_sorted_clf_errors = list(
-        #     map(lambda ii: [ii[0], ii[1]*(1/num_useful_features)], pruned_sorted_clf_errors))
-        # # print(weighted_pruned_sorted_clf_errors, pruned_sorted_clf_errors)
-        # with open("output/sorted_clf_errors.txt", "w") as f:
-        #     for item in weighted_pruned_sorted_clf_errors:
-        #         f.write("%s\n" % item)
-        # with open("output/sorted_clf_errors_metadata.txt", "w") as f:
-        #     for item in weighted_pruned_sorted_clf_errors:
-        #         f.write("clf-error %s\t->\t%ix normalized weight\n" %
-        #                 (str(item), math.ceil(item[1]*num_useful_features)))
         return clf_errors, useful_clf_errors, best_error_index, best_error, best_accuracy
 
     def update_weights(self, weights, best_error_index, best_error, best_accuracy):
@@ -1121,7 +1045,7 @@ def test(foldername, test_path):
     with open(foldername+"/index_count.txt", "w") as f:
         for item in counter:
             f.write("%s\n" % item)
-    
+
 
 # Running here:
 # path = "database0/training_set/eye_table.bin"
@@ -1171,46 +1095,47 @@ def test(foldername, test_path):
 
 
 # """ PREP """
-# image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
-# foldername = 'output'
-# strong_classifier = ViolaJones(100)
-# """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
-# print("0.) Starting Prep")
-# minmax = min_max_eye(metadata_path)
-# print(minmax)
-# correct = read_metadata(metadata_path)
-# image_list = import_image(image_path, 50)
-# normalized_list = max_normalize(image_list)
-# ii_list = integral_image(normalized_list)
-# features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
-# print("Number of features generated is %i" % len(features))
-# with open(foldername+"/feature_table.txt", "w") as f:
-#     for item in features:
-#         f.write("%s\n" % item)
-# # indexed_feature_table = list(enumerate(features))
-# with open(foldername+"/indexed_feature_table.txt", "w") as f:
-#     for index, item in enumerate(features):
-#         f.write("Index %i->%s\n" % (index, item))
-# im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
-#     features, correct)
-# with open(foldername+"/feature_stat.txt", "w") as f:
-#     for row in feature_stat:
-#         f.write("%s\n" % row)
-# X_list, sorted_X_list = strong_classifier.apply_features(
-#     features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-# with open(foldername+"/X_list.txt", "w") as f:
-#     for item in X_list:
-#         f.write("%s\n" % item)
-# with open(foldername+"/sorted_X_list.txt", "w") as f:
-#     for item in sorted_X_list:
-#         f.write("%s\n" % item)
-# """
-# Plot the not-sorted feature graphs for verification
-# Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
-# """
-# # strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
-# # temp_list = X_list[0:10]
-# # strong_classifier.plot_graphs("verify", temp_list, pos_stat)
+image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
+foldername = 'output'
+strong_classifier = ViolaJones(100)
+""" Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
+print("0.) Starting Prep")
+minmax = min_max_eye(metadata_path)
+print(minmax)
+correct = read_metadata(metadata_path)
+image_list = import_image(image_path, 50)
+normalized_list = max_normalize(image_list)
+ii_list = integral_image(normalized_list)
+features = strong_classifier.build_features_minmax(ii_list[0].shape, minmax)
+print("Number of features generated is %i" % len(features))
+with open(foldername+"/feature_table.txt", "w") as f:
+    for item in features:
+        f.write("%s\n" % item)
+# indexed_feature_table = list(enumerate(features))
+with open(foldername+"/indexed_feature_table.txt", "w") as f:
+    for index, item in enumerate(features):
+        f.write("Index %i->%s\n" % (index, item))
+im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+    features, correct)
+with open(foldername+"/feature_stat.txt", "w") as f:
+    for row in feature_stat:
+        f.write("%s\n" % row)
+X_list, sorted_X_list = strong_classifier.apply_features(
+    features, ii_list)   # X_list is already positive_X list because only useful features were passed in
+with open(foldername+"/X_list.txt", "w") as f:
+    for item in X_list:
+        f.write("%s\n" % item)
+with open(foldername+"/sorted_X_list.txt", "w") as f:
+    for item in sorted_X_list:
+        f.write("%s\n" % item)
+"""
+Plot the not-sorted feature graphs for verification
+Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
+"""
+strong_classifier.plot_sorted_graphs("sorted", sorted_X_list, pos_stat)
+# strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+# temp_list = X_list[0:10]
+# strong_classifier.plot_graphs("verify", temp_list, pos_stat)
 # """ Training here """
 # weights = strong_classifier.initialize_weights(feature_stat, y_list)
 # with open(foldername+"/weights.txt", "w") as f:
