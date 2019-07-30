@@ -1031,6 +1031,7 @@ def draw_bbox(bboxes, input_path, output_folder):
     image_list = import_image(input_path)
     for i in range(len(image_list)):
         start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
+        print(i, "\t", start_x, start_y, end_x, end_y)
         # Top row
         image_list[i][start_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
         # Bottom row
