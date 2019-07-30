@@ -532,13 +532,13 @@ class ViolaJones:
             lower_best_threshold_index, lower_best_threshold_value, lower_best_gini = 0, 0, float(
                 'inf')
             # Since we start searching the < 0s at closest to 0 downward, order is reversed
-            # Trying the value at each below_zero as threshold
+            # Trying the value at each below_zero as lower threshold
             for threshold_index, threshold_value in reversed(below_zero):
                 false_positive, false_negative, true_negative, true_positive, error_positive, error_negative = 0, 0, 0, 0, 0, 0
                 # Applying current threshold at each below_zero sample, also starting at closest to zero downward:
                 for sample_index, sample_value in reversed(below_zero):
                     """ Notation: 1 for positive, 0 for negative """
-                    guess = 1 if sample_value <= threshold_value else 0
+                    guess = 1 if sample_value > threshold_value else 0
                     # correctness = abs(guess - y_list[index][sample_index])
                     if guess == 0 and y_list[index][sample_index] == 0:
                         true_negative += 1
@@ -561,13 +561,13 @@ class ViolaJones:
 
             upper_best_threshold_index, upper_best_threshold_value, upper_best_gini = 0, 0, float(
                 'inf')
-            # Trying the value at each above_zero as threshold
+            # Trying the value at each above_zero as upper threshold
             for threshold_index, threshold_value in above_zero:
                 false_positive, false_negative, true_negative, true_positive, error_positive, error_negative = 0, 0, 0, 0, 0, 0
                 # Applying current threshold at each below_zero sample, also starting at closest to zero downward:
                 for sample_index, sample_value in above_zero:
                     """ Notation: 1 for positive, 0 for negative """
-                    guess = 1 if sample_value >= threshold_value else 0
+                    guess = 1 if sample_value < threshold_value else 0
                     # correctness = abs(guess - y_list[index][sample_index])
                     if guess == 0 and y_list[index][sample_index] == 0:
                         true_negative += 1
@@ -883,7 +883,7 @@ class WeakClassifier:
         #     ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
         feature_value = self.feature.compute(integral_image)
         # print("feature value %s" % feature_value)
-        return 1 if feature_value <= self.lower_threshold_value or feature_value >= self.upper_threshold_value else 0
+        return 1 if feature_value > self.lower_threshold_value or feature_value < self.upper_threshold_value else 0
 
 # def create_metadata_table(size):
 #     # 1.)
@@ -1127,7 +1127,7 @@ index_count, hit_list, indexed_features = test(foldername, test_path)
 print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
 print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
 print("Avg index-count at %s" %
-      (math.ceil(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+      (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
 bboxes = bbox(foldername, hit_list, indexed_features, 2)
 draw_bbox(bboxes, test_path, "bbox/img")
 
