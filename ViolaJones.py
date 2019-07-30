@@ -1124,7 +1124,7 @@ def testing():
 
 # """ PREP """
 # image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
-# foldername = 'output'
+foldername = 'output'
 # strong_classifier = ViolaJones(100)
 # """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 # print("0.) Starting Prep")
@@ -1183,20 +1183,18 @@ def testing():
 
 
 weak_classifier_list = []
-with open("weak_classifier_list.pkl", "rb") as f:
+with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
     weak_classifier_list = pickle.load(f)
 # print(weak_classifier_list)
-with open("formatted_clf.txt", "w") as f:
-    # format = indexes, alphas, errors, weak_classifiers
-    for i in range(len(weak_classifier_list[0])):
-        f.write("Index %i: Alpha %s Error %s\n" % (
-            weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
+# with open(foldername+"/alpha_error_clf.txt", "w") as f:
+#     # format = indexes, alphas, errors, weak_classifiers
+#     for i in range(len(weak_classifier_list[0])):
+#         f.write("Index %i: Alpha %s Error %s\n" % (
+#             weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
 
-# with open("output/testing.txt", "w") as f:
+# with open(foldername+"/testing.txt", "w") as f:
 #     for item in weak_classifier_list:
 #         f.write("%s\n" % item)
-# for item in weak_classifier_list[3]:
-#     print(item.index, item.feature)
 
 
 # old_alphas = [float(line.rstrip('\n')) for line in open("alphas_old.txt")]
@@ -1205,27 +1203,39 @@ with open("formatted_clf.txt", "w") as f:
 # # print(old_alphas)
 
 
-# test_path = 'data/database0/testing_set/testing'
-# test_list = import_image(test_path, 22)
-# normalized_test_list = max_normalize(test_list)
-# ii_test_list = integral_image(normalized_test_list)
-# # print(test_list[0])
-# new_sum = sum(weak_classifier_list[1])
-# for index, ii in enumerate(ii_test_list):
-#     print("\nImage %i" % index)
-#     positive_hit = []
-#     total = 0
-#     for i in range(len(weak_classifier_list[3])):
-#         # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
-#         yesno = weak_classifier_list[3][i].classify(ii)
-#         positive_hit.append(yesno)
-#         total += weak_classifier_list[1][i] * yesno
-#     if total > (0.5*new_sum):
-#         print("Positive hit", positive_hit)
-#         print("Total: %s" % total)
-#         print("Image %i contains eye/ classified correctly" % index)
-#     else:
-#         print("Image %i doesn't have eye/ classified incorrectly" % index)
+test_path = 'data/database0/testing_set/testing'
+test_list = import_image(test_path, 22)
+normalized_test_list = max_normalize(test_list)
+ii_test_list = integral_image(normalized_test_list)
+# print(test_list[0])
+alpha_sum = sum(weak_classifier_list[1])
+counter = []
+f = open(foldername+"/hit_list.txt", "a+")
+for index, ii in enumerate(ii_test_list):
+    print("\nImage %i" % index)
+    positive_hit = []
+    total = 0
+    first_run = True
+    for i in range(len(weak_classifier_list[3])):
+        # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
+        yesno = weak_classifier_list[3][i].classify(ii)
+        positive_hit.append(yesno)
+        total += weak_classifier_list[1][i] * yesno
+        if total > (0.5*alpha_sum) and first_run:
+            counter.append([index, i])
+            first_run = False
+    f.write("Image %i: %s\n" % index, positive_hit)
+    if total > (0.5*alpha_sum):
+        # print("Positive hit", positive_hit)
+        print("Total: %s" % total)
+        print("Image %i contains eye/ classified correctly" % index)
+    else:
+        print("Image %i doesn't have eye/ classified incorrectly" % index)
+f.close()
+print("Counter: ", counter)
+with open(foldername+"/index_count.txt", "w") as f:
+    for item in counter:
+        f.write("%s\n" % item)
 
 
 # img1 = imageio.imread('data/database0/testing_set/testing1.bmp')
