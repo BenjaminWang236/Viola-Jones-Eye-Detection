@@ -19,6 +19,7 @@ import os
 import PyPDF2 as p
 import sys
 import PyGnuplot as gp
+import statistics
 # start_time = time.time()
 start_time = datetime.now()
 
@@ -978,6 +979,7 @@ def test(foldername, test_path):
     with open(foldername+"/index_count.txt", "w") as f:
         for item in counter:
             f.write("%s\n" % item)
+    return counter
 
 
 """ RUNNING HERE """
@@ -1050,7 +1052,11 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # print(type(strong_classifier_copy))
 
 """  """
-test('output', 'data/database0/testing_set/testing')
+index_count = test('output', 'data/database0/testing_set/testing')
+print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
+print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
+print("Avg index-count at %s" %
+      (math.ceil(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
 
 """ Generate Alpha-Error Graph """
 # alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
