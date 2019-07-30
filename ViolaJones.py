@@ -939,6 +939,12 @@ def test(foldername, test_path):
     weak_classifier_list = []
     with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
         weak_classifier_list = pickle.load(f)
+    indexed_features = [(clf.index, clf.feature)
+                        for clf in weak_classifier_list[3]]
+    with open(foldername+'/clf_ordered_features.txt', 'w') as f:
+        for item in indexed_features:
+            f.write("%i->%s\n" % (item[0], item[1]))
+    sorted_indexed_features = sorted(indexed_features, key=lambda ii: ii[0])
     with open(foldername+"/clfs.txt", "w") as f:
         for item in weak_classifier_list:
             f.write("%s\n" % item)
@@ -981,11 +987,34 @@ def test(foldername, test_path):
     with open(foldername+"/index_count.txt", "w") as f:
         for item in counter:
             f.write("%s\n" % item)
-    return counter
+    return counter, hits, indexed_features
 
 
-def bbox():
-    print()
+def bbox(hit_list, indexed_features):
+    """ 
+    Find the minimum bounding box (Max start point, Min end point) 
+    for each image on the hit list
+
+    Return format: [ [start_x, start_y, end_x, end_y], []...]
+    """
+    bboxes = []
+    for i in range(len(hit_list)):
+        print("Image %i" % (i+1))
+        start_max_x, start_max_y, end_min_x, end_min_y = float(
+            '-inf'), float('-inf'), float('inf'), float('inf')
+        for j in range(len(hit_list[i][1])):
+            if hit_list[i][1][j] == 1:
+                f = indexed_features[j][1]
+                if f.start_x > start_max_x:
+                    start_max_x = f.start_x
+                if f.start_y > start_max_y:
+                    start_max_y = f.start_y
+                if f.end_x < end_min_x:
+                    end_min_x = f.end_x
+                if f.end_y < end_min_y:
+                    end_min_y = f.end_y
+        bboxes.append([i, [start_max_x, start_max_y, end_min_x, end_min_y]])
+    return bboxes
 
 
 """ RUNNING HERE """
@@ -1058,12 +1087,17 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # print(type(strong_classifier_copy))
 
 """ Test if Strong Classifier actually works (After training is done) """
+foldername = 'output'
 test_path = 'data/database0/testing_set/testing'
-index_count = test('output', test_path)
+index_count, hit_list, indexed_features = test(foldername, test_path)
 print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
 print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
 print("Avg index-count at %s" %
       (math.ceil(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+bboxes = bbox(hit_list, indexed_features)
+with open(foldername+'/bbox.txt', 'w') as f:
+    for item in bboxes:
+        f.write("%s\n" % item)
 
 """ Generate Alpha-Error Graph """
 # alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
