@@ -975,9 +975,9 @@ def test(foldername, test_path):
             # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
             yesno = weak_classifier_list[3][i].classify(ii)
             # feature_hits.append(yesno)
-            feature_hits.append(abs(1-yesno))
+            feature_hits.append(abs(yesno))
             # total += weak_classifier_list[1][i] * yesno
-            total += weak_classifier_list[1][i] * abs(1-yesno)
+            total += weak_classifier_list[1][i] * abs(yesno)
             if total >= (0.5*alpha_sum) and first_run:
                 counter.append([index+1, 1, i])
                 first_run = False
@@ -1121,7 +1121,8 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 
 """ Test if Strong Classifier actually works (After training is done) """
 foldername = 'output'
-test_path = 'data/database0/testing_set/testing'
+# test_path = 'data/database0/testing_set/testing'
+test_path = 'data/database0/training_set/training'
 index_count, hit_list, indexed_features = test(foldername, test_path)
 print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
 print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
