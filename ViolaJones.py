@@ -974,7 +974,8 @@ def test(foldername, test_path):
         for i in range(len(weak_classifier_list[3])):
             # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
             yesno = weak_classifier_list[3][i].classify(ii)
-            feature_hits.append(yesno)
+            # feature_hits.append(yesno)
+            feature_hits.append(abs(1-yesno))
             # total += weak_classifier_list[1][i] * yesno
             total += weak_classifier_list[1][i] * abs(1-yesno)
             if total >= (0.5*alpha_sum) and first_run:
