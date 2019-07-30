@@ -1185,7 +1185,7 @@ def testing():
 weak_classifier_list = []
 with open("weak_classifier_list.pkl", "rb") as f:
     weak_classifier_list = pickle.load(f)
-print(weak_classifier_list)
+# print(weak_classifier_list)
 with open("formatted_clf.txt", "w") as f:
     # format = indexes, alphas, errors, weak_classifiers
     for i in range(len(weak_classifier_list[0])):
@@ -1203,10 +1203,11 @@ with open("formatted_clf.txt", "w") as f:
 # old_sum = sum(old_alphas)
 # print("Old alpha sum %s" % old_sum)
 # # print(old_alphas)
-# test_path = 'data/database0/testing_set/testing'
-# test_list = import_image(test_path, 22)
-# normalized_test_list = max_normalize(test_list)
-# ii_test_list = integral_image(normalized_test_list)
+test_path = 'data/database0/testing_set/testing'
+test_list = import_image(test_path, 22)
+normalized_test_list = max_normalize(test_list)
+ii_test_list = integral_image(normalized_test_list)
+print(test_list[0])
 # new_sum = sum(weak_classifier_list[1])
 # for index, ii in enumerate(ii_test_list):
 #     print("\nImage %i" % index)
