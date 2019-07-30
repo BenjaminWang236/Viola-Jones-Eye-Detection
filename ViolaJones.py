@@ -1109,7 +1109,7 @@ test('output', 'data/database0/testing_set/testing')
 # print("--- %s (%s seconds) ---" %
 #       (time.strftime('%H:%M:%S', time.gmtime(seconds)), seconds))
 duration = datetime.now() - start_time
-print('\n%s %s %s' % ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+print('\n%s %s %s' % ('-'*5, strfdelta(duration, '%H:%M:%S.%F'), '-'*5))
 
 
 # %%
