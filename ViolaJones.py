@@ -951,11 +951,8 @@ def test(foldername, test_path):
     test_list = import_image(test_path, 22)
     normalized_test_list = max_normalize(test_list)
     ii_test_list = integral_image(normalized_test_list)
-    # print(test_list[0])
     alpha_sum = sum(weak_classifier_list[1])
     counter, hits = [], []
-    # os.remove(foldername+"/hit_list.txt")
-    # f = open(foldername+"/hit_list.txt", "a+")
     for index, ii in enumerate(ii_test_list):
         print("\nImage %i" % (index+1))
         feature_hits = []
@@ -972,23 +969,20 @@ def test(foldername, test_path):
         if first_run:
             # If No eye detected...
             counter.append([index+1, 0, len(weak_classifier_list[3])])
-        # f.write("Image %i: %s\n" % (index+1, positive_hit))
         hits.append([index, feature_hits])
         if total > (0.5*alpha_sum):
-            # print("Positive hit", positive_hit)
             print("Total: %s" % total)
             print("Image %i contains eye/ classified correctly" % (index+1))
         else:
             print("Image %i doesn't have eye/ classified incorrectly" % (index+1))
-    # f.close()
     with open(foldername+"/hit_list.txt", "w") as f:
         for item in hits:
             f.write("%s\n" % item)
-    # print("\nCounter: ", counter)
     with open(foldername+"/index_count.txt", "w") as f:
         for item in counter:
             f.write("%s\n" % item)
     return counter
+
 
 def bbox():
     print()
