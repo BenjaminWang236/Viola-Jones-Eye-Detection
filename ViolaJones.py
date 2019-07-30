@@ -997,7 +997,7 @@ def test(foldername, test_path):
     return counter, hits, indexed_features
 
 
-def bbox(foldername, hit_list, indexed_features):
+def bbox(foldername, hit_list, indexed_features, offset):
     """ 
     Find the minimum bounding box (Max start point, Min end point) 
     for each image on the hit list
@@ -1027,9 +1027,9 @@ def bbox(foldername, hit_list, indexed_features):
                 #     start_max_x = f.start_x
                 # if f.start_y > start_max_y:
                 #     start_max_y = f.start_y
-                if f.end_x < end_min_x and f.end_x not in [start_max_x, start_max_x+1]:
+                if f.end_x < end_min_x and f.end_x not in range(start_max_x, start_max_x+offset):
                     end_min_x = f.end_x
-                if f.end_y < end_min_y and f.end_y not in [start_max_y, start_max_y+1]:
+                if f.end_y < end_min_y and f.end_y not in range(start_max_y, start_max_y+offset):
                     end_min_y = f.end_y
         bboxes.append([i, [start_max_x, start_max_y, end_min_x, end_min_y]])
     with open(foldername+'/bbox.txt', 'w') as f:
@@ -1132,7 +1132,7 @@ print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
 print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
 print("Avg index-count at %s" %
       (math.ceil(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
-bboxes = bbox(foldername, hit_list, indexed_features)
+bboxes = bbox(foldername, hit_list, indexed_features, 2)
 draw_bbox(bboxes, test_path, "bbox/img")
 
 """ Generate Alpha-Error Graph """
