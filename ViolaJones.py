@@ -860,7 +860,8 @@ class WeakClassifier:
         #     ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
         feature_value = self.feature.compute(integral_image)
         # print("feature value %s" % feature_value)
-        return 1 if feature_value > self.lower_threshold_value or feature_value < self.upper_threshold_value else 0
+        return 0 if feature_value <= self.lower_threshold_value or feature_value >= self.upper_threshold_value else 1
+
 
 def test(foldername, test_path):
     """ 
