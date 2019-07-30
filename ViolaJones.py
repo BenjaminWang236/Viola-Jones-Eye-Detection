@@ -964,6 +964,7 @@ def test(foldername, test_path):
     normalized_test_list = max_normalize(test_list)
     ii_test_list = integral_image(normalized_test_list)
     alpha_sum = sum(weak_classifier_list[1])
+    print("Alpha sum %f" % alpha_sum)
     counter, hits = [], []
     for index, ii in enumerate(ii_test_list):
         print("\nImage %i" % (index+1))
@@ -1015,9 +1016,20 @@ def bbox(foldername, hit_list, indexed_features):
                     start_max_x = f.start_x
                 if f.start_y > start_max_y:
                     start_max_y = f.start_y
-                if f.end_x < end_min_x:
+                # if f.end_x < end_min_x:
+                #     end_min_x = f.end_x
+                # if f.end_y < end_min_y:
+                #     end_min_y = f.end_y
+        for j in range(len(hit_list[i][1])):
+            if hit_list[i][1][j] == 1:
+                f = indexed_features[j][1]
+                # if f.start_x > start_max_x:
+                #     start_max_x = f.start_x
+                # if f.start_y > start_max_y:
+                #     start_max_y = f.start_y
+                if f.end_x < end_min_x and f.end_x not in [start_max_x, start_max_x+1]:
                     end_min_x = f.end_x
-                if f.end_y < end_min_y:
+                if f.end_y < end_min_y and f.end_y not in [start_max_y, start_max_y+1]:
                     end_min_y = f.end_y
         bboxes.append([i, [start_max_x, start_max_y, end_min_x, end_min_y]])
     with open(foldername+'/bbox.txt', 'w') as f:
@@ -1031,7 +1043,7 @@ def draw_bbox(bboxes, input_path, output_folder):
     image_list = import_image(input_path)
     for i in range(len(image_list)):
         start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
-        print(i, "\t", start_x, start_y, end_x, end_y)
+        # print(i, "\t", start_x, start_y, end_x, end_y)
         # Top row
         image_list[i][start_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
         # Bottom row
@@ -1041,6 +1053,7 @@ def draw_bbox(bboxes, input_path, output_folder):
             image_list[i][j][start_x] = 255
             image_list[i][j][end_x] = 255
         imageio.imwrite(output_folder + str(i) + ".bmp", image_list[i])
+
 
 """ RUNNING HERE """
 # try:
