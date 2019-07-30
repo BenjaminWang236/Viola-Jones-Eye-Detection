@@ -33,6 +33,8 @@ start_time = datetime.now()
         Special case: If all samples for a feature are negative, then both
             thresholds remain at 0 with gini = infinity
         2880 iterations Adaboosting loop took 3 hours and 12 minutes
+        Best weak classifier of each iteration still in updating/normalizing
+            weights but cannot be chosen as best-classifier again
 
     Progress Report:
         Normalization of input images done
@@ -49,9 +51,13 @@ start_time = datetime.now()
         Weight initialization done (Training)
         Adaboosting loops done (Training)
         Strong Classifier's collection of weak classifiers found through
-        each iteration of Adaboosting (WORK-IN-PROGRESS)
-            ->Need to change the string representation of classifiers
-              saved during Adaboosting back to actual classifier type 
+        each iteration of Adaboosting done
+        Minimum error (formula) of all thresholds on all samples done, one
+            for each iteration done
+        Updating weight done
+
+        Strong Classifier training completed as above
+        Verification and drawing bounding box on sample images WIP
 """
 
 
@@ -947,18 +953,18 @@ def test(foldername, test_path):
     ii_test_list = integral_image(normalized_test_list)
     # print(test_list[0])
     alpha_sum = sum(weak_classifier_list[1])
-    counter = []
-    os.remove(foldername+"/hit_list.txt")
-    f = open(foldername+"/hit_list.txt", "a+")
+    counter, hits = [], []
+    # os.remove(foldername+"/hit_list.txt")
+    # f = open(foldername+"/hit_list.txt", "a+")
     for index, ii in enumerate(ii_test_list):
         print("\nImage %i" % (index+1))
-        positive_hit = []
+        feature_hits = []
         total = 0
         first_run = True
         for i in range(len(weak_classifier_list[3])):
             # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
             yesno = weak_classifier_list[3][i].classify(ii)
-            positive_hit.append(yesno)
+            feature_hits.append(yesno)
             total += weak_classifier_list[1][i] * yesno
             if total > (0.5*alpha_sum) and first_run:
                 counter.append([index+1, 1, i])
@@ -966,19 +972,26 @@ def test(foldername, test_path):
         if first_run:
             # If No eye detected...
             counter.append([index+1, 0, len(weak_classifier_list[3])])
-        f.write("Image %i: %s\n" % (index+1, positive_hit))
+        # f.write("Image %i: %s\n" % (index+1, positive_hit))
+        hits.append([index, feature_hits])
         if total > (0.5*alpha_sum):
             # print("Positive hit", positive_hit)
             print("Total: %s" % total)
             print("Image %i contains eye/ classified correctly" % (index+1))
         else:
             print("Image %i doesn't have eye/ classified incorrectly" % (index+1))
-    f.close()
+    # f.close()
+    with open(foldername+"/hit_list.txt", "w") as f:
+        for item in hits:
+            f.write("%s\n" % item)
     # print("\nCounter: ", counter)
     with open(foldername+"/index_count.txt", "w") as f:
         for item in counter:
             f.write("%s\n" % item)
     return counter
+
+def bbox():
+    print()
 
 
 """ RUNNING HERE """
