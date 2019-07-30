@@ -1018,17 +1018,10 @@ def bbox(foldername, hit_list, indexed_features, offset):
                     start_max_x = f.start_x
                 if f.start_y > start_max_y:
                     start_max_y = f.start_y
-                # if f.end_x < end_min_x:
-                #     end_min_x = f.end_x
-                # if f.end_y < end_min_y:
-                #     end_min_y = f.end_y
+        # In order to make sure start/end y's have an offset between them
         for j in range(len(hit_list[i][1])):
             if hit_list[i][1][j] == 1:
                 f = indexed_features[j][1]
-                # if f.start_x > start_max_x:
-                #     start_max_x = f.start_x
-                # if f.start_y > start_max_y:
-                #     start_max_y = f.start_y
                 if f.end_x < end_min_x and f.end_x not in range(start_max_x, start_max_x+offset):
                     end_min_x = f.end_x
                 if f.end_y < end_min_y and f.end_y not in range(start_max_y, start_max_y+offset):
