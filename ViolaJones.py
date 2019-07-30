@@ -1224,7 +1224,7 @@ for index, ii in enumerate(ii_test_list):
         if total > (0.5*alpha_sum) and first_run:
             counter.append([index, i])
             first_run = False
-    f.write("Image %i: %s\n" % index, positive_hit)
+    f.write("Image %i: %s\n" % (index, positive_hit))
     if total > (0.5*alpha_sum):
         # print("Positive hit", positive_hit)
         print("Total: %s" % total)
