@@ -23,23 +23,6 @@ import statistics
 # start_time = time.time()
 start_time = datetime.now()
 
-
-class DeltaTemplate(Template):
-    delimiter = "%"
-
-
-def strfdelta(tdelta, fmt):
-    d = {"D": tdelta.days}
-    hours, rem = divmod(tdelta.seconds, 3600)
-    minutes, seconds = divmod(rem, 60)
-    d["H"] = '{:02d}'.format(hours)
-    d["M"] = '{:02d}'.format(minutes)
-    d["S"] = '{:02d}'.format(seconds)
-    d["F"] = '{:03d}'.format(tdelta.microseconds)[:-3]
-    t = DeltaTemplate(fmt)
-    return t.substitute(**d)
-
-
 """ Note:  
         Coordinate System: (x, y) or (y, x) but y is always ROW (vertical)
             and x is always COLUMN (horizontal)
@@ -70,6 +53,22 @@ def strfdelta(tdelta, fmt):
             ->Need to change the string representation of classifiers
               saved during Adaboosting back to actual classifier type 
 """
+
+
+class DeltaTemplate(Template):
+    delimiter = "%"
+
+
+def strfdelta(tdelta, fmt):
+    d = {"D": tdelta.days}
+    hours, rem = divmod(tdelta.seconds, 3600)
+    minutes, seconds = divmod(rem, 60)
+    d["H"] = '{:02d}'.format(hours)
+    d["M"] = '{:02d}'.format(minutes)
+    d["S"] = '{:02d}'.format(seconds)
+    d["F"] = '{:03d}'.format(tdelta.microseconds)[:-3]
+    t = DeltaTemplate(fmt)
+    return t.substitute(**d)
 
 
 def read_metadata(path):
@@ -1052,7 +1051,8 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # print(type(strong_classifier_copy))
 
 """ Test if Strong Classifier actually works (After training is done) """
-index_count = test('output', 'data/database0/testing_set/testing')
+test_path = 'data/database0/testing_set/testing'
+index_count = test('output', test_path)
 print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
 print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
 print("Avg index-count at %s" %
