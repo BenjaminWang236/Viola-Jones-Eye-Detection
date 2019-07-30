@@ -1051,7 +1051,7 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 #     foldername+"/strong_classifier")
 # print(type(strong_classifier_copy))
 
-"""  """
+""" Test if Strong Classifier actually works (After training is done) """
 index_count = test('output', 'data/database0/testing_set/testing')
 print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
 print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
