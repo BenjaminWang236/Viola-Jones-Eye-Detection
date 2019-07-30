@@ -106,9 +106,10 @@ def min_max_eye(path):
 # Import images
 
 
-def import_image(path, num_images):
+def import_image(path):
     """ Given the path to the folder containing the images, import all images and return them as a list """
     image_list = []
+    num_images = len(list(glob.glob(path+"*.bmp")))
     for i in range(1, num_images+1):
         filename = path+str(i)+'.bmp'
         image_list.append(imageio.imread(filename))
@@ -936,6 +937,11 @@ class WeakClassifier:
 #         print(dataframe_collectioon[key])
 
 def test(foldername, test_path):
+    """ 
+    For each test image in test_path folder, apply strong classifier
+    to see if strong classifier finds any eye-pair in the image
+    Formula: Sum(alpha*hit=1) >= 1/2*sum(alpha)
+    """
     weak_classifier_list = []
     with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
         weak_classifier_list = pickle.load(f)
@@ -954,7 +960,7 @@ def test(foldername, test_path):
             f.write("Index %i:\tAlpha %s\tError %s\n" % (
                 weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
     # test_path = 'data/database0/testing_set/testing'
-    test_list = import_image(test_path, 22)
+    test_list = import_image(test_path)
     normalized_test_list = max_normalize(test_list)
     ii_test_list = integral_image(normalized_test_list)
     alpha_sum = sum(weak_classifier_list[1])
@@ -969,14 +975,14 @@ def test(foldername, test_path):
             yesno = weak_classifier_list[3][i].classify(ii)
             feature_hits.append(yesno)
             total += weak_classifier_list[1][i] * yesno
-            if total > (0.5*alpha_sum) and first_run:
+            if total >= (0.5*alpha_sum) and first_run:
                 counter.append([index+1, 1, i])
                 first_run = False
         if first_run:
             # If No eye detected...
             counter.append([index+1, 0, len(weak_classifier_list[3])])
         hits.append([index, feature_hits])
-        if total > (0.5*alpha_sum):
+        if total >= (0.5*alpha_sum):
             print("Total: %s" % total)
             print("Image %i contains eye/ classified correctly" % (index+1))
         else:
@@ -990,7 +996,7 @@ def test(foldername, test_path):
     return counter, hits, indexed_features
 
 
-def bbox(hit_list, indexed_features):
+def bbox(foldername, hit_list, indexed_features):
     """ 
     Find the minimum bounding box (Max start point, Min end point) 
     for each image on the hit list
@@ -999,7 +1005,7 @@ def bbox(hit_list, indexed_features):
     """
     bboxes = []
     for i in range(len(hit_list)):
-        print("Image %i" % (i+1))
+        # print("Image %i" % (i+1))
         start_max_x, start_max_y, end_min_x, end_min_y = float(
             '-inf'), float('-inf'), float('inf'), float('inf')
         for j in range(len(hit_list[i][1])):
@@ -1014,8 +1020,26 @@ def bbox(hit_list, indexed_features):
                 if f.end_y < end_min_y:
                     end_min_y = f.end_y
         bboxes.append([i, [start_max_x, start_max_y, end_min_x, end_min_y]])
+    with open(foldername+'/bbox.txt', 'w') as f:
+        for item in bboxes:
+            f.write("%s\n" % item)
     return bboxes
 
+
+def draw_bbox(bboxes, input_path, output_folder):
+    """ Draw the rectangular bounding box on each input image and save to new directory without overriding original images """
+    image_list = import_image(input_path)
+    for i in range(len(image_list)):
+        start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
+        # Top row
+        image_list[i][start_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
+        # Bottom row
+        image_list[i][end_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
+        # Left/Right Column
+        for j in range(start_y, end_y+1):
+            image_list[i][j][start_x] = 255
+            image_list[i][j][end_x] = 255
+        imageio.imwrite(output_folder + str(i) + ".bmp", image_list[i])
 
 """ RUNNING HERE """
 # try:
@@ -1094,10 +1118,8 @@ print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
 print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
 print("Avg index-count at %s" %
       (math.ceil(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
-bboxes = bbox(hit_list, indexed_features)
-with open(foldername+'/bbox.txt', 'w') as f:
-    for item in bboxes:
-        f.write("%s\n" % item)
+bboxes = bbox(foldername, hit_list, indexed_features)
+draw_bbox(bboxes, test_path, "bbox/img")
 
 """ Generate Alpha-Error Graph """
 # alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
