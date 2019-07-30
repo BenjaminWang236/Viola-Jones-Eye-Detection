@@ -1182,7 +1182,6 @@ def testing():
 # print(type(strong_classifier_copy))
 
 
-
 weak_classifier_list = []
 with open("weak_classifier_list.pkl", "rb") as f:
     weak_classifier_list = pickle.load(f)
@@ -1190,7 +1189,8 @@ print(weak_classifier_list)
 with open("formatted_clf.txt", "w") as f:
     # format = indexes, alphas, errors, weak_classifiers
     for i in range(len(weak_classifier_list[0])):
-        f.write("Index %i: Alpha %s\n" % (weak_classifier_list[0][i], weak_classifier_list[1][i]))
+        f.write("Index %i: Alpha %s Error %s\n" % (
+            weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
 
 # with open("output/testing.txt", "w") as f:
 #     for item in weak_classifier_list:
