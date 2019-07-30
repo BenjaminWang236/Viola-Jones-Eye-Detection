@@ -72,8 +72,6 @@ def min_max_eye(path):
     for x in range(0, 200, 50):
         ret.append(fileContent[x:x+50].min())
         ret.append(fileContent[x:x+50].max())
-    # print(ret)
-    # print(x_min, x_max, y_min, y_max, width_min, width_max, height_min, height_max)
     return ret
 
 # Import images
@@ -82,19 +80,8 @@ def min_max_eye(path):
 def import_image(path, num_images):
     """ Given the path to the folder containing the images, import all images and return them as a list """
     image_list = []
-    # filename_list = []
-    # for filename in glob.glob(path):
-    #     print(filename)
-    #     filename_list.append(filename)
-    #     image = imageio.imread(filename)
-    #     image_list.append(image)
-    #     # cv.imshow('image', image)
-    #     # cv.waitKey(0)
-    #     # cv.destroyAllWindows()
-    # print(sorted_image_list)
     for i in range(1, num_images+1):
         filename = path+str(i)+'.bmp'
-        # filename = path+'testing'+str(i)+'.bmp'
         image_list.append(imageio.imread(filename))
     return image_list
 
@@ -104,8 +91,6 @@ def max_normalize(image_list):
     normalized_list, count = [], 0
     for im in image_list:
         normalized_image = np.zeros(im.shape)
-        # normalized_image = cv.normalize(im, normalized_image, 0, 1, cv.NORM_MINMAX)
-        # image_mean = np.mean(im)
         image_max = np.max(im)
         normalized_image = im/image_max    # Normalizing
         # 18 bits to be precise, so losing 2 bits of precision here
@@ -129,14 +114,6 @@ def integral_image(image_list):
                 s[y][x] = s[y-1][x] + \
                     image[y][x] if (y-1 >= 0) else image[y][x]
                 ii[y][x] = ii[y][x-1] + s[y][x] if (x-1 >= 0) else s[y][x]
-                # if (x-1 >= 0):
-                #     s[x][y] = s[x-1][y] + image[x][y]
-                # else:
-                #     s[x][y] = image[x][y]
-                # if (y-1 >= 0):
-                #     ii[x][y] = ii[x][y-1] + s[x][y]
-                # else:
-                #     ii[x][y] = s[x][y]
         ii_list.append(ii)
         filename = "integral_image/integral_" + str(count) + ".txt"
         np.savetxt(filename, ii)
@@ -201,7 +178,8 @@ class Feature:
 
 
 def add_value_labels(ax, special, fsize=5, rotate=60, spacing=5):
-    """ Function from justfortherec's answer to "Adding value labels on a matplotlib bar chart"
+    """ 
+    Function from justfortherec's answer to "Adding value labels on a matplotlib bar chart"
     Add labels to the end of each bar in a bar chart.
 
     Arguments:
@@ -245,7 +223,7 @@ def add_value_labels(ax, special, fsize=5, rotate=60, spacing=5):
 
 
 class ViolaJones:
-    """ Strong Classifier """
+    """ Strong Classifier consisting of weak classifiers that each hold a feature and two thresholds """
 
     def __init__(self, T=10):
         self.T = T
@@ -263,7 +241,6 @@ class ViolaJones:
         X-list might or might not be sorted by its feature value
         """
         pdfs, counter = [], 0
-        # pos_indexes = list(map(lambda ii: ii[0], pos_stat))
         for index, sorted_list in sorted_X_list:
             print(counter, "Feature Index:\t", index)
             sorted_index = list(map(lambda y: y[0], sorted_list))
@@ -276,8 +253,7 @@ class ViolaJones:
             ax.set_xlabel('Image Index')
             ax.set_ylabel('Feature Value')
             ax.set_xticks(ind)  # y-location of each tick!!!
-            ax.set_xticklabels(ind, fontsize=5, rotation=45)
-
+            ax.set_xticklabels(sorted_index, fontsize=5, rotation=45)
             positive_index_after_sort = []
             for x in range(len(pos_stat)):
                 pos_index = pos_stat[x][0]
@@ -309,7 +285,6 @@ class ViolaJones:
         X-list might or might not be sorted by its feature value
         """
         pdfs, counter = [], 0
-        pos_indexes = list(map(lambda ii: ii[0], pos_stat))
         for index, sorted_list in X_list:
             print(counter, "Feature Index:\t", index)
             ind = np.arange(len(sorted_list))
@@ -320,10 +295,9 @@ class ViolaJones:
             ax.set_ylabel('Feature Value')
             ax.set_xticks(ind)  # y-location of each tick!!!
             ax.set_xticklabels(ind, fontsize=5, rotation=45)
-
             positive_index_after_sort = []
-            for x in range(len(pos_indexes)):
-                pos_index = pos_indexes[x]
+            for x in range(len(pos_stat)):
+                pos_index = pos_stat[x][0]
                 if pos_index > index:
                     break
                 if pos_index == index:
@@ -344,10 +318,9 @@ class ViolaJones:
     def build_features_minmax(self, image_shape, minmax):
         height, width = image_shape
         features = []
-        # minmax format = [min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height]
         min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height = minmax
-        print("X: %i->%i, Y: %i->%i, Width: %i->%i, Height: %i->%i" %
-              (min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height))
+        # print("X: %i->%i, Y: %i->%i, Width: %i->%i, Height: %i->%i" %
+        #       (min_x, max_x, min_y, max_y, min_width, max_width, min_height, max_height))
         # Row
         for y in range(min_y, max_y+1):
             # Col
