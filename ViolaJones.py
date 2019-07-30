@@ -103,8 +103,6 @@ def min_max_eye(path):
         ret.append(fileContent[x:x+50].max())
     return ret
 
-# Import images
-
 
 def import_image(path):
     """ Given the path to the folder containing the images, import all images and return them as a list """
@@ -439,13 +437,13 @@ class ViolaJones:
             for y in range(len(correct_list)):
                 if(self.bigger_box(start_end, correct_list[y])):    # Positive
                     pos += 1
-                    features[y][x].pos_neg = 1
-                    temp_y.append(1)
+                    features[y][x].pos_neg = 0
+                    temp_y.append(0)
                     temp_pos.append(y)
                 else:
                     neg += 1
-                    features[y][x].pos_neg = 0
-                    temp_y.append(0)
+                    features[y][x].pos_neg = 1
+                    temp_y.append(1)
                     temp_neg.append(y)
             y_list.append(temp_y)
             stat.append([pos, neg])
@@ -538,7 +536,7 @@ class ViolaJones:
                 # Applying current threshold at each below_zero sample, also starting at closest to zero downward:
                 for sample_index, sample_value in reversed(below_zero):
                     """ Notation: 1 for positive, 0 for negative """
-                    guess = 1 if sample_value > threshold_value else 0
+                    guess = 0 if sample_value <= threshold_value else 1
                     # correctness = abs(guess - y_list[index][sample_index])
                     if guess == 0 and y_list[index][sample_index] == 0:
                         true_negative += 1
@@ -567,7 +565,7 @@ class ViolaJones:
                 # Applying current threshold at each below_zero sample, also starting at closest to zero downward:
                 for sample_index, sample_value in above_zero:
                     """ Notation: 1 for positive, 0 for negative """
-                    guess = 1 if sample_value < threshold_value else 0
+                    guess = 0 if sample_value >= threshold_value else 1
                     # correctness = abs(guess - y_list[index][sample_index])
                     if guess == 0 and y_list[index][sample_index] == 0:
                         true_negative += 1
@@ -648,7 +646,7 @@ class ViolaJones:
                       (clf.index, sorted_X_list[clf.index][0]))
             for sample_index, sample_value in sorted_X_list[clf.index][1]:
                 # Less than threshold = Guess Negative (Guess No-Eye) 0, Keeping consistency with find_gini_threshold
-                guess = 1 if sample_value >= clf.upper_threshold_value or sample_value <= clf.lower_threshold_value else 0
+                guess = 0 if sample_value >= clf.upper_threshold_value or sample_value <= clf.lower_threshold_value else 1
                 # correctness = 0 if guessed Correctly, 1 if guessed Incorrectly, If matches 0, else absolute value to +1
                 correctness = abs(guess - y_list[clf.index][sample_index])
                 accuracy.append(correctness)
@@ -814,27 +812,6 @@ class ViolaJones:
         # Takes about 50 minutes to fun
         # self.plot_graphs("feature_graphs", sorted_X_list, pos_stat)
 
-    # def select_best(self, classifiers, weights, training_data):
-    #     """     Out of all the weak_classifiers/features select the best one, accuracy for that feature only across all samples """
-    #     x = 0
-    #     feature_index, best_clf, best_error, best_accuracy = None, None, float(
-    #         'inf'), None
-    #     # accuracy is of the feature when applied to each sample images
-    #     for clf in classifiers:  # For each of the 2880 weak classifiers
-    #         error, accuracy = 0, []
-    #         # For each sample feature was applied to:
-    #         for data, w, in zip(training_data[x], weights[x]):
-    #             # Classification of feature minus the actual correctness of feature
-    #             correctness = abs(clf.classify(data[0]) - data[1])
-    #             accuracy.append(correctness)
-    #             error += w*correctness
-    #         error /= len(training_data[x])
-    #         if error < best_error:
-    #             feature_index, best_clf, best_error, best_accuracy = x, clf, error, accuracy
-    #         x += 1
-    #     # print("len of best accuracy", len(best_accuracy))
-    #     return feature_index, best_clf, best_error, best_accuracy
-
     def classify(self, integral_image):
         total = 0
         for alpha, clf in zip(self.alphas, self.clfs):
@@ -884,57 +861,6 @@ class WeakClassifier:
         feature_value = self.feature.compute(integral_image)
         # print("feature value %s" % feature_value)
         return 1 if feature_value > self.lower_threshold_value or feature_value < self.upper_threshold_value else 0
-
-# def create_metadata_table(size):
-#     # 1.)
-#     dataframe_collectioon = {}
-#     column_list = ["start_Y", "start_X", "end_Y",
-#                    "end_X", "feature_type", "value", "actual"]
-#     for x in range(0, size):  # 0 to 49th, since we have 50 images in training-set
-#         framename = "image_" + str(x) + "_data"
-#         dataframe_collectioon[framename] = pd.DataFrame(columns=column_list)
-#     # 2.)
-#     threshold_df = pd.DataFrame(
-#         columns=['negative_threshold', 'positive_threshold'])
-#     # print(threshold_df)
-#     # 3.)
-#     hit_rate_df = pd.DataFrame(columns=['hit_rate'])
-#     # print(hit_rate_df)
-#     return dataframe_collectioon, hit_rate_df, threshold_df
-
-
-# def score_keeping(dataframe_collectioon, X_list, im_feature_label):
-#     # feature_combined = features[0]+features[1]+features[2]+features[3]
-#     c = 0
-#     for key in dataframe_collectioon.keys():
-#         for x in range(0, len(X_list)):
-#             row = []
-#             if (im_feature_label[c][x].feature_type in [0, 1, 2, 3]):
-#                 data = im_feature_label[c][x].get_size() + \
-#                     [im_feature_label[c][x].feature_type, X_list[x][c],
-#                      im_feature_label[c][x].pos_neg]
-#                 row = [
-#                     pd.Series(data, index=dataframe_collectioon.get(key).columns)]
-#             else:
-#                 # This should never be reached since each feature was initialize as a/b/c/d type
-#                 print("ERROR: There shouldn't be a feature with type not a/b/c/d\t",
-#                       im_feature_label[c][x].feature_type)
-#             dataframe_collectioon[key] = dataframe_collectioon[key].append(
-#                 row, ignore_index=True)
-#         dataframe_collectioon[key].to_csv('applied/df_' + str(c) + '.csv',
-#                                           sep='|', index=False)
-#         c += 1
-#     # print(dataframe_collectioon)
-#     return dataframe_collectioon
-
-
-# def print_score(dataframe_collectioon):
-#     for key in dataframe_collectioon.keys():
-#         print("\n" + "="*40)
-#         print(key)
-#         print(dataframe_collectioon[key].columns.tolist())
-#         print("-"*40)
-#         print(dataframe_collectioon[key])
 
 def test(foldername, test_path):
     """ 
