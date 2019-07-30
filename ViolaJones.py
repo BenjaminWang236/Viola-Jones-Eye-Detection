@@ -1082,7 +1082,9 @@ test('output', 'data/database0/testing_set/testing')
 # print_score(dataframe_collectioon)
 
 """ Timing how long it took to execute """
-print("--- %s seconds ---" % (time.time() - start_time))
+seconds = time.time() - start_time
+print("--- %s (%s seconds) ---" %
+      (time.strftime('%H:%M:%S', time.gmtime(seconds)), seconds))
 
 
 # %%
