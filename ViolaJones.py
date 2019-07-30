@@ -975,7 +975,8 @@ def test(foldername, test_path):
             # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
             yesno = weak_classifier_list[3][i].classify(ii)
             feature_hits.append(yesno)
-            total += weak_classifier_list[1][i] * yesno
+            # total += weak_classifier_list[1][i] * yesno
+            total += weak_classifier_list[1][i] * abs(1-yesno)
             if total >= (0.5*alpha_sum) and first_run:
                 counter.append([index+1, 1, i])
                 first_run = False
@@ -983,8 +984,8 @@ def test(foldername, test_path):
             # If No eye detected...
             counter.append([index+1, 0, len(weak_classifier_list[3])])
         hits.append([index, feature_hits])
+        print("Total: %s" % total)
         if total >= (0.5*alpha_sum):
-            print("Total: %s" % total)
             print("Image %i contains eye/ classified correctly" % (index+1))
         else:
             print("Image %i doesn't have eye/ classified incorrectly" % (index+1))
