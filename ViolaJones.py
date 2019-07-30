@@ -1079,6 +1079,11 @@ def test(foldername, test_path):
     weak_classifier_list = []
     with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
         weak_classifier_list = pickle.load(f)
+    with open(foldername+"/alpha_error_clf.txt", "w") as f:
+        # format = indexes, alphas, errors, weak_classifiers
+        for i in range(len(weak_classifier_list[0])):
+            f.write("Index %i:\tAlpha %s\tError %s\n" % (
+                weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
     # test_path = 'data/database0/testing_set/testing'
     test_list = import_image(test_path, 22)
     normalized_test_list = max_normalize(test_list)
