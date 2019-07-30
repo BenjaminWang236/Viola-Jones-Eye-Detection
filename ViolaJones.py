@@ -969,6 +969,7 @@ class WeakClassifier:
         # def feature_value(ii): return sum([pos.compute_feature(
         #     ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
         feature_value = self.feature.compute(integral_image)
+        # print("feature value %s" % feature_value)
         return 1 if feature_value <= self.lower_threshold_value or feature_value >= self.upper_threshold_value else 0
 
         # class WeakClassifier:
@@ -1121,7 +1122,6 @@ def testing():
 #     pass
 
 
-
 # """ PREP """
 # image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
 # foldername = 'output'
@@ -1156,8 +1156,7 @@ def testing():
 # with open(foldername+"/sorted_X_list.txt", "w") as f:
 #     for item in sorted_X_list:
 #         f.write("%s\n" % item)
-
-# """ 
+# """
 # Plot the not-sorted feature graphs for verification
 # Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # """
@@ -1192,23 +1191,42 @@ print(weak_classifier_list)
 #     print(item.index, item.feature)
 
 
-
+old_alphas = [float(line.rstrip('\n')) for line in open("alphas_old.txt")]
+old_sum = sum(old_alphas)
+print("Old alpha sum %s" % old_sum)
+# print(old_alphas)
 test_path = 'data/database0/testing_set/testing'
 test_list = import_image(test_path, 22)
 normalized_test_list = max_normalize(test_list)
 ii_test_list = integral_image(normalized_test_list)
-img1 = imageio.imread('data/database0/testing_set/testing1.bmp')
-print(img1)
-for i in range(len(weak_classifier_list[0])):
-    if(weak_classifier_list[3][i].index == 2879):
-        print(weak_classifier_list[3][i])
-        print(weak_classifier_list[3][i].feature)
-        for pos in weak_classifier_list[3][i].feature.haar_pos:
-            print("pos: ", pos)
-        for neg in weak_classifier_list[3][i].feature.haar_neg:
-            print("neg ", neg)
+new_sum = sum(weak_classifier_list[1])
+for index, ii in enumerate(ii_test_list):
+    print("\nImage %i" % index)
+    positive_hit = []
+    total = 0
+    for i in range(len(weak_classifier_list[3])):
+        # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
+        yesno = weak_classifier_list[3][i].classify(ii)
+        positive_hit.append(yesno)
+        total += weak_classifier_list[1][i] * yesno
+    if total > (0.5*new_sum):
+        print("Positive hit", positive_hit)
+        print("Total: %s" % total)
+        print("Image %i contains eye/ classified correctly" % index)
     else:
-        print(i, "NO")
+        print("Image %i doesn't have eye/ classified incorrectly" % index)
+
+
+# img1 = imageio.imread('data/database0/testing_set/testing1.bmp')
+# print(img1)
+# for i in range(len(weak_classifier_list[0])):
+#     if(weak_classifier_list[3][i].index == 2879):
+#         print(weak_classifier_list[3][i])
+#         print(weak_classifier_list[3][i].feature)
+#         for pos in weak_classifier_list[3][i].feature.haar_pos:
+#             print("pos: ", pos)
+#         for neg in weak_classifier_list[3][i].feature.haar_neg:
+#             print("neg ", neg)
 
 
 # correct = read_metadata('database0/training_set/eye_table.bin')
