@@ -1075,6 +1075,49 @@ def testing():
 #         correct += 1 if clf.classify(x) == y else 0
 #     print("Classified %d out of %d test samples" % (correct, len(data)))
 
+def test(foldername, test_path):
+    weak_classifier_list = []
+    with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
+        weak_classifier_list = pickle.load(f)
+    # test_path = 'data/database0/testing_set/testing'
+    test_list = import_image(test_path, 22)
+    normalized_test_list = max_normalize(test_list)
+    ii_test_list = integral_image(normalized_test_list)
+    # print(test_list[0])
+    alpha_sum = sum(weak_classifier_list[1])
+    counter = []
+    os.remove(foldername+"/hit_list.txt")
+    f = open(foldername+"/hit_list.txt", "a+")
+    for index, ii in enumerate(ii_test_list):
+        print("\nImage %i" % (index+1))
+        positive_hit = []
+        total = 0
+        first_run = True
+        for i in range(len(weak_classifier_list[3])):
+            # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
+            yesno = weak_classifier_list[3][i].classify(ii)
+            positive_hit.append(yesno)
+            total += weak_classifier_list[1][i] * yesno
+            if total > (0.5*alpha_sum) and first_run:
+                counter.append([index+1, 1, i])
+                first_run = False
+        if first_run:
+            # If No eye detected...
+            counter.append([index+1, 0, len(weak_classifier_list[3])])
+        f.write("Image %i: %s\n" % (index+1, positive_hit))
+        if total > (0.5*alpha_sum):
+            # print("Positive hit", positive_hit)
+            print("Total: %s" % total)
+            print("Image %i contains eye/ classified correctly" % (index+1))
+        else:
+            print("Image %i doesn't have eye/ classified incorrectly" % (index+1))
+    f.close()
+    # print("\nCounter: ", counter)
+    with open(foldername+"/index_count.txt", "w") as f:
+        for item in counter:
+            f.write("%s\n" % item)
+    
+
 # Running here:
 # path = "database0/training_set/eye_table.bin"
 # minmax = min_max_eye(path)
@@ -1124,7 +1167,7 @@ def testing():
 
 # """ PREP """
 # image_path, metadata_path, foldername = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin', "output"
-foldername = 'output'
+# foldername = 'output'
 # strong_classifier = ViolaJones(100)
 # """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
 # print("0.) Starting Prep")
@@ -1182,9 +1225,6 @@ foldername = 'output'
 # print(type(strong_classifier_copy))
 
 
-weak_classifier_list = []
-with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
-    weak_classifier_list = pickle.load(f)
 # print(weak_classifier_list)
 # with open(foldername+"/alpha_error_clf.txt", "w") as f:
 #     # format = indexes, alphas, errors, weak_classifiers
@@ -1202,40 +1242,7 @@ with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
 # print("Old alpha sum %s" % old_sum)
 # # print(old_alphas)
 
-
-test_path = 'data/database0/testing_set/testing'
-test_list = import_image(test_path, 22)
-normalized_test_list = max_normalize(test_list)
-ii_test_list = integral_image(normalized_test_list)
-# print(test_list[0])
-alpha_sum = sum(weak_classifier_list[1])
-counter = []
-f = open(foldername+"/hit_list.txt", "a+")
-for index, ii in enumerate(ii_test_list):
-    print("\nImage %i" % index)
-    positive_hit = []
-    total = 0
-    first_run = True
-    for i in range(len(weak_classifier_list[3])):
-        # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
-        yesno = weak_classifier_list[3][i].classify(ii)
-        positive_hit.append(yesno)
-        total += weak_classifier_list[1][i] * yesno
-        if total > (0.5*alpha_sum) and first_run:
-            counter.append([index, i])
-            first_run = False
-    f.write("Image %i: %s\n" % (index, positive_hit))
-    if total > (0.5*alpha_sum):
-        # print("Positive hit", positive_hit)
-        print("Total: %s" % total)
-        print("Image %i contains eye/ classified correctly" % index)
-    else:
-        print("Image %i doesn't have eye/ classified incorrectly" % index)
-f.close()
-print("Counter: ", counter)
-with open(foldername+"/index_count.txt", "w") as f:
-    for item in counter:
-        f.write("%s\n" % item)
+test('output', 'data/database0/testing_set/testing')
 
 
 # img1 = imageio.imread('data/database0/testing_set/testing1.bmp')
