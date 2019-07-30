@@ -10,11 +10,34 @@ import pickle
 import pandas as pd
 import math
 import time
+import datetime
+from datetime import timedelta
+from datetime import datetime
+import string
+from string import Template
 import os
 import PyPDF2 as p
 import sys
 import PyGnuplot as gp
-start_time = time.time()
+# start_time = time.time()
+start_time = datetime.now()
+
+
+class DeltaTemplate(Template):
+    delimiter = "%"
+
+
+def strfdelta(tdelta, fmt):
+    d = {"D": tdelta.days}
+    hours, rem = divmod(tdelta.seconds, 3600)
+    minutes, seconds = divmod(rem, 60)
+    d["H"] = '{:02d}'.format(hours)
+    d["M"] = '{:02d}'.format(minutes)
+    d["S"] = '{:02d}'.format(seconds)
+    d["F"] = '{:03d}'.format(tdelta.microseconds)[:-3]
+    t = DeltaTemplate(fmt)
+    return t.substitute(**d)
+
 
 """ Note:  
         Coordinate System: (x, y) or (y, x) but y is always ROW (vertical)
@@ -1082,9 +1105,11 @@ test('output', 'data/database0/testing_set/testing')
 # print_score(dataframe_collectioon)
 
 """ Timing how long it took to execute """
-seconds = time.time() - start_time
-print("--- %s (%s seconds) ---" %
-      (time.strftime('%H:%M:%S', time.gmtime(seconds)), seconds))
+# seconds = time.time() - start_time
+# print("--- %s (%s seconds) ---" %
+#       (time.strftime('%H:%M:%S', time.gmtime(seconds)), seconds))
+duration = datetime.now() - start_time
+print('\n\n--- %s ---' % strfdelta(duration, '%H:%M:%S.%F'))
 
 
 # %%
