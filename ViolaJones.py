@@ -21,6 +21,7 @@ import sys
 import PyGnuplot as gp
 import statistics
 import PIL
+import natsort
 start = datetime.now()
 
 """ Note:  
@@ -115,8 +116,10 @@ def import_image(path):
 
 
 def glob_image(path):
-    image_list, sorted_filenames = [], sorted(glob.glob(path+"*.bmp"))
+    image_list, sorted_filenames = [], natsort.natsorted(
+        glob.glob(path+"*.bmp"))
     for filename in sorted_filenames:
+        print(filename)
         image_list.append(imageio.imread(filename))
     return image_list
 
