@@ -987,17 +987,16 @@ def draw_bbox(bboxes, input_path, output_folder):
 
 
 """ RUNNING HERE """
-weak_classifier_list = []
-with open("test/weak_classifier_list.pkl", "rb") as f:
-    weak_classifier_list = pickle.load(f)
-alphas = weak_classifier_list[1]
-with open("test/alphas.txt", "w") as f:
-    for item in alphas:
-        f.write("%s\n" % item)
-with open("test/errs.txt", "w") as f:
-    for item in weak_classifier_list[2]:
-        f.write("%s\n" % item)
-
+# weak_classifier_list = []
+# with open("test/weak_classifier_list.pkl", "rb") as f:
+#     weak_classifier_list = pickle.load(f)
+# alphas = weak_classifier_list[1]
+# with open("test/alphas.txt", "w") as f:
+#     for item in alphas:
+#         f.write("%s\n" % item)
+# with open("test/errs.txt", "w") as f:
+#     for item in weak_classifier_list[2]:
+#         f.write("%s\n" % item)
 while(True):
     run = int(float(input(
         "0 to Prep/Plot Feature graphs/Train,\n1 to plot a-e-b graph,\n2 to load plotted graph,\n3 to run strong classifier,\n4 to quit\n")))
