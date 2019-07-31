@@ -20,6 +20,7 @@ import PyPDF2 as p
 import sys
 import PyGnuplot as gp
 import statistics
+import PIL
 # start_time = time.time()
 start_time = datetime.now()
 
@@ -895,8 +896,8 @@ def test(foldername, test_path):
     alphas = weak_classifier_list[1]
     for i in range(0, 15):
         if alphas[i] >= 15.0:
-            print("Setting %i to 0" % i)
-            alphas[i] = 0
+            print("Setting %i to 15" % i)
+            alphas[i] = 15
 
     alpha_sum = sum(alphas)
     print("Alpha sum %f" % alpha_sum)
@@ -938,30 +939,33 @@ def bbox(foldername, hit_list, indexed_features, offset):
 
     Return format: [ [start_x, start_y, end_x, end_y], []...]
     """
-    bboxes = []
+    bboxes, cut_off = [], 10
     for i in range(len(hit_list)):
         # print("Image %i" % (i+1))
-        start_max_x, start_max_y, end_min_x, end_min_y = float(
-            '-inf'), float('-inf'), float('inf'), float('inf')
+        start_max_x, start_max_y, end_min_x, end_min_y, c_start, c_end = float(
+            '-inf'), float('-inf'), float('inf'), float('inf'), 0, 0
         for j in range(len(hit_list[i][1])):
-            if hit_list[i][1][j] == 1:
+            if hit_list[i][1][j] == 1 and c_start < cut_off:
                 f = indexed_features[j][1]
                 if f.start_x > start_max_x:
                     start_max_x = f.start_x
                 if f.start_y > start_max_y:
                     start_max_y = f.start_y
-        # In order to make sure start/end y's have an offset between them
+                c_start += 1
+        # # In order to make sure start/end y's have an offset between them
         for j in range(len(hit_list[i][1])):
-            if hit_list[i][1][j] == 1:
+            if hit_list[i][1][j] == 1 and c_end < cut_off:
                 f = indexed_features[j][1]
                 if f.end_x < end_min_x and f.end_x not in range(start_max_x, start_max_x+offset):
                     end_min_x = f.end_x
                 if f.end_y < end_min_y and f.end_y not in range(start_max_y, start_max_y+offset):
                     end_min_y = f.end_y
+                c_end += 1
         bboxes.append([i, [start_max_x, start_max_y, end_min_x, end_min_y]])
     with open(foldername+'/bbox.txt', 'w') as f:
         for item in bboxes:
             f.write("%s\n" % item)
+    print("bbox done")
     return bboxes
 
 
@@ -979,7 +983,8 @@ def draw_bbox(bboxes, input_path, output_folder):
         for j in range(start_y, end_y+1):
             image_list[i][j][start_x] = 255
             image_list[i][j][end_x] = 255
-        imageio.imwrite(output_folder + str(i) + ".bmp", image_list[i])
+        filename = output_folder + str(i) + ".bmp"
+        imageio.imwrite(filename, image_list[i])
 
 
 """ RUNNING HERE """
@@ -1096,7 +1101,7 @@ try:
 except FileExistsError as e:
     print(e)
     pass
-foldername = 'output - positive'
+foldername = 'output'
 # test_path = 'data/database0/testing_set/testing'
 test_path = 'data/database0/training_set/training'
 index_count, hit_list, indexed_features = test(foldername, test_path)
