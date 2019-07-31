@@ -437,13 +437,13 @@ class ViolaJones:
             for y in range(len(correct_list)):
                 if(self.bigger_box(start_end, correct_list[y])):    # Positive
                     pos += 1
-                    features[y][x].pos_neg = 0
-                    temp_y.append(0)
+                    features[y][x].pos_neg = 1
+                    temp_y.append(1)
                     temp_pos.append(y)
                 else:
                     neg += 1
-                    features[y][x].pos_neg = 1
-                    temp_y.append(1)
+                    features[y][x].pos_neg = 0
+                    temp_y.append(0)
                     temp_neg.append(y)
             y_list.append(temp_y)
             stat.append([pos, neg])
@@ -536,7 +536,7 @@ class ViolaJones:
                 # Applying current threshold at each below_zero sample, also starting at closest to zero downward:
                 for sample_index, sample_value in reversed(below_zero):
                     """ Notation: 1 for positive, 0 for negative """
-                    guess = 0 if sample_value <= threshold_value else 1
+                    guess = 1 if sample_value <= threshold_value else 0
                     # correctness = abs(guess - y_list[index][sample_index])
                     if guess == 0 and y_list[index][sample_index] == 0:
                         true_negative += 1
@@ -565,7 +565,7 @@ class ViolaJones:
                 # Applying current threshold at each below_zero sample, also starting at closest to zero downward:
                 for sample_index, sample_value in above_zero:
                     """ Notation: 1 for positive, 0 for negative """
-                    guess = 0 if sample_value >= threshold_value else 1
+                    guess = 1 if sample_value >= threshold_value else 0
                     # correctness = abs(guess - y_list[index][sample_index])
                     if guess == 0 and y_list[index][sample_index] == 0:
                         true_negative += 1
@@ -647,7 +647,7 @@ class ViolaJones:
                       (clf.index, sorted_X_list[clf.index][0]))
             for sample_index, sample_value in sorted_X_list[clf.index][1]:
                 # Less than threshold = Guess Negative (Guess No-Eye) 0, Keeping consistency with find_gini_threshold
-                guess = 0 if sample_value >= clf.upper_threshold_value or sample_value <= clf.lower_threshold_value else 1
+                guess = 1 if sample_value >= clf.upper_threshold_value or sample_value <= clf.lower_threshold_value else 0
                 # correctness = 0 if guessed Correctly, 1 if guessed Incorrectly, If matches 0, else absolute value to +1
                 correctness = abs(guess - y_list[clf.index][sample_index])
                 accuracy.append(correctness)
@@ -861,7 +861,7 @@ class WeakClassifier:
         #     ii) for pos in self.feature.haar_pos]) - sum([neg.compute_feature(ii) for neg in self.feature.haar_neg])
         feature_value = self.feature.compute(integral_image)
         # print("feature value %s" % feature_value)
-        return 0 if feature_value <= self.lower_threshold_value or feature_value >= self.upper_threshold_value else 1
+        return 1 if feature_value <= self.lower_threshold_value or feature_value >= self.upper_threshold_value else 0
 
 
 def test(foldername, test_path):
