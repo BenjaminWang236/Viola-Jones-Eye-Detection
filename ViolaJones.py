@@ -1045,7 +1045,7 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 #     pickle.dump(weak_classifier_list, f)
 
 """ Generate Alpha-Error Graph """
-# foldername = 'output'
+# foldername = 'output - positive'
 # alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
 # errors = [float(line.rstrip('\n')) for line in open(foldername+"/errs.txt")]
 # betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
@@ -1079,9 +1079,10 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 #         xtics += ','
 # xtics += ') rotate'
 # gp.c(xtics)
-# gp.c('save "output/alpha_beta_error.dat" ')
+# gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
 """ Since alpha-error-graph already generated and saved, just load again """
-# gp.c('load "output/alpha_beta_error.dat" ')
+# foldername = 'output - positive'
+# gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
 
 """ Test if Strong Classifier actually works (After training is done) """
 foldername = 'output - positive'
