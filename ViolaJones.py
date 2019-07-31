@@ -970,7 +970,7 @@ def bbox(foldername, hit_list, indexed_features, offset):
                 if f.end_y < end_min_y and f.end_y not in range(start_max_y, start_max_y+offset):
                     end_min_y = f.end_y
                 c_end += 1
-        bboxes.append([i, [start_max_x, start_max_y, end_min_x, end_min_y]])
+        bboxes.append([i+1, [start_max_x, start_max_y, end_min_x, end_min_y]])
     with open(foldername+'/bbox.txt', 'w') as f:
         for item in bboxes:
             f.write("%s\n" % item)
