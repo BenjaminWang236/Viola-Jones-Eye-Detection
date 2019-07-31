@@ -1045,6 +1045,7 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 #     pickle.dump(weak_classifier_list, f)
 
 """ Generate Alpha-Error Graph """
+# foldername = 'output'
 # alphas = [float(line.rstrip('\n')) for line in open(foldername+"/alphas.txt")]
 # errors = [float(line.rstrip('\n')) for line in open(foldername+"/errs.txt")]
 # betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
@@ -1080,19 +1081,19 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # gp.c(xtics)
 # gp.c('save "output/alpha_beta_error.dat" ')
 """ Since alpha-error-graph already generated and saved, just load again """
-gp.c('load "output/alpha_beta_error.dat" ')
+# gp.c('load "output/alpha_beta_error.dat" ')
 
 """ Test if Strong Classifier actually works (After training is done) """
-# foldername = 'output'
-# # test_path = 'data/database0/testing_set/testing'
-# test_path = 'data/database0/training_set/training'
-# index_count, hit_list, indexed_features = test(foldername, test_path)
-# print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
-# print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
-# print("Avg index-count at %s" %
-#       (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
-# bboxes = bbox(foldername, hit_list, indexed_features, 2)
-# draw_bbox(bboxes, test_path, "bbox/img")
+foldername = 'output'
+# test_path = 'data/database0/testing_set/testing'
+test_path = 'data/database0/training_set/training'
+index_count, hit_list, indexed_features = test(foldername, test_path)
+print("\nMin index-count at %s" % (min(index_count, key=lambda ii: ii[2])[2]))
+print("Max index-count at %s" % (max(index_count, key=lambda ii: ii[2])[2]))
+print("Avg index-count at %s" %
+      (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+bboxes = bbox(foldername, hit_list, indexed_features, 2)
+draw_bbox(bboxes, test_path, "bbox/img")
 
 """ Timing how long it took to execute """
 # seconds = time.time() - start_time
