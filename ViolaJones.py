@@ -990,11 +990,22 @@ def draw_bbox(bboxes, input_path, output_folder):
 while(True):
     run = int(float(input(
         "0 to Prep/Plot Feature graphs/Train,\n1 to plot a-e-b graph,\n2 to load plotted graph,\n3 to run strong classifier,\n4 to quit\n")))
+    foldername = input("Folder to save to?\n")
     start_time = datetime.now()
+    if run not in [3, 4] and not os.path.exists('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s' % foldername):
+        try:
+            # Making Folder if not exists
+            os.makedirs(
+                "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)
+            print("Makedir called for %s" % foldername)
+        except FileExistsError as e:
+            print(e)
+            pass
+    else:
+        print("D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
     if run == 0:
         """ PREP """
         image_path, metadata_path = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin'
-        foldername = input("Folder to save to?\n")
         strong_classifier = ViolaJones()
         """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
         print("0.) Starting Prep")
@@ -1050,7 +1061,8 @@ while(True):
             else:
                 break
         if qr[0].lower() == 'y':
-            strong_classifier.plot_sorted_graphs("sorted", sorted_X_list, pos_stat)
+            strong_classifier.plot_sorted_graphs(
+                "sorted", sorted_X_list, pos_stat)
 
         """ Training here """
         while True:
@@ -1060,7 +1072,8 @@ while(True):
             else:
                 break
         if qr[0].lower() == 'y':
-            weights = strong_classifier.initialize_weights(feature_stat, y_list)
+            weights = strong_classifier.initialize_weights(
+                feature_stat, y_list)
             with open(foldername+"/weights.txt", "w") as f:
                 for item in weights:
                     f.write("%s\n" % item)
@@ -1072,7 +1085,6 @@ while(True):
                 pickle.dump(weak_classifier_list, f)
     elif run == 1:
         """ Generate Alpha-Error Graph """
-        foldername = input("Folder to save to?\n")
         alphas = [float(line.rstrip('\n'))
                   for line in open(foldername+"/alphas.txt")]
         errors = [float(line.rstrip('\n'))
@@ -1112,17 +1124,9 @@ while(True):
         gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
     elif run == 2:
         """ Since alpha-error-graph already generated and saved, just load again """
-        foldername = input("Folder to save to?\n")
         gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
     elif run == 3:
         """ Test if Strong Classifier actually works (After training is done) """
-        try:
-            os.makedirs("output")  # Making Folder if not exists
-            # os.makedirs("/feature_graphs")
-            # print("Succeeded!")
-        except FileExistsError as e:
-            print(e)
-            pass
         foldername = input("Folder to retrieve data from?\n")
         # test_path = 'data/database0/testing_set/testing'
         test_path = 'data/database0/training_set/training'
@@ -1138,7 +1142,8 @@ while(True):
     elif run == 4:
         """ Timing how long it took to execute this last iteration """
         duration = datetime.now() - start_time
-        print('\n%s %s %s\n' % ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+        print('\n%s %s %s\n' %
+              ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
         break
         # return
     else:
@@ -1146,15 +1151,6 @@ while(True):
     """ Timing how long it took to execute this iteration """
     duration = datetime.now() - start_time
     print('\n%s %s %s\n' % ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
-
-
-# try:
-#     os.makedirs("/output")  # Making Folder if not exists
-#     # os.makedirs("/feature_graphs")
-#     # print("Succeeded!")
-# except FileExistsError as e:
-#     print(e)
-#     pass
 
 
 """ Timing how long it took to execute in total """
