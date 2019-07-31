@@ -891,7 +891,14 @@ def test(foldername, test_path):
     test_list = import_image(test_path)
     normalized_test_list = max_normalize(test_list)
     ii_test_list = integral_image(normalized_test_list)
-    alpha_sum = sum(weak_classifier_list[1])
+
+    alphas = weak_classifier_list[1]
+    for i in range(0, 15):
+        if alphas[i] >= 15.0:
+            print("Setting %i to 0" % i)
+            alphas[i] = 0
+
+    alpha_sum = sum(alphas)
     print("Alpha sum %f" % alpha_sum)
     counter, hits = [], []
     for index, ii in enumerate(ii_test_list):
