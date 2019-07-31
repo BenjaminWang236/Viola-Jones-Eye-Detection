@@ -1026,7 +1026,7 @@ def main():
         start_time = datetime.now()
         if run == 0:
             """ PREP """
-            image_path, metadata_path = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin'
+            image_path, metadata_path = 'data/database0/training2/2training', 'data/database0/training2/eye_point.bin'
             strong_classifier = ViolaJones()
             """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
             print("0.) Starting Prep")
