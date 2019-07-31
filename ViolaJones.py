@@ -988,184 +988,177 @@ def draw_bbox(bboxes, input_path, output_folder):
         imageio.imwrite(filename, image_list[i])
 
 
-""" RUNNING HERE """
-# weak_classifier_list = []
-# with open("test/weak_classifier_list.pkl", "rb") as f:
-#     weak_classifier_list = pickle.load(f)
-# alphas = weak_classifier_list[1]
-# with open("test/alphas.txt", "w") as f:
-#     for item in alphas:
-#         f.write("%s\n" % item)
-# with open("test/errs.txt", "w") as f:
-#     for item in weak_classifier_list[2]:
-#         f.write("%s\n" % item)
-while(True):
-    run = int(float(input(
-        "0 to Prep/Plot Feature graphs/Train,\n1 to plot a-e-b graph,\n2 to load plotted graph,\n3 to run strong classifier,\n4 to quit\n")))
-    if run not in [3, 4]:
-        foldername = input("Folder to save to?\n")
-        if not os.path.exists('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s' % foldername):
-            try:
-                # Making Folder if not exists
-                os.makedirs(
-                    "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)
-                print("Makedir called for %s" % foldername)
-            except FileExistsError as e:
-                print(e)
-                pass
-        else:
-            print(
-                "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
-    start_time = datetime.now()
-    if run == 0:
-        """ PREP """
-        image_path, metadata_path = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin'
-        strong_classifier = ViolaJones()
-        """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
-        print("0.) Starting Prep")
-        minmax = min_max_eye(metadata_path)
-        print(minmax)
-        correct = read_metadata(metadata_path)
-        image_list = import_image(image_path)
-        normalized_list = max_normalize(image_list)
-        ii_list = integral_image(normalized_list)
-        features = strong_classifier.build_features_minmax(
-            ii_list[0].shape, minmax)
-        print("Number of features generated is %i" % len(features))
-        strong_classifier.T = len(features)
-        with open(foldername+"/feature_table.txt", "w") as f:
-            for item in features:
-                f.write("%s\n" % item)
-        # indexed_feature_table = list(enumerate(features))
-        with open(foldername+"/indexed_feature_table.txt", "w") as f:
-            for index, item in enumerate(features):
-                f.write("Index %i->%s\n" % (index, item))
-        im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
-            features, correct)
-        with open(foldername+"/feature_stat.txt", "w") as f:
-            for row in feature_stat:
-                f.write("%s\n" % row)
-        X_list, sorted_X_list = strong_classifier.apply_features(
-            features, ii_list)   # X_list is already positive_X list because only useful features were passed in
-        with open(foldername+"/X_list.txt", "w") as f:
-            for item in X_list:
-                f.write("%s\n" % item)
-        with open(foldername+"/sorted_X_list.txt", "w") as f:
-            for item in sorted_X_list:
-                f.write("%s\n" % item)
-        print("Prep Done")
-        print("Number of iterations to run is %i" % strong_classifier.T)
-        """
-        Plot the sorted feature graphs OR
-        Plot the not-sorted feature graphs for verification
-        Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
-        """
-        while True:
-            qr = input('Plot unsorted feature graphs? (y/n)\n')
-            if qr == '' or not qr[0].lower() in ['y', 'n']:
-                print('Please answer with yes or no!')
+def main():
+    """ RUNNING HERE, basic menu incliuded """
+    while(True):
+        run = int(float(input(
+            "0 to Prep/Plot Feature graphs/Train,\n1 to plot a-e-b graph,\n2 to load plotted graph,\n3 to run strong classifier,\n4 to quit\n")))
+        if run not in [3, 4]:
+            foldername = input("Folder to save to?\n")
+            if not os.path.exists('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s' % foldername):
+                try:
+                    # Making Folder if not exists
+                    os.makedirs(
+                        "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)
+                    print("Makedir called for %s" % foldername)
+                except FileExistsError as e:
+                    print(e)
+                    pass
             else:
-                break
-        if qr[0].lower() == 'y':
-            strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
-        while True:
-            qr = input('Plot value-sorted feature graphs? (y/n)\n')
-            if qr == '' or not qr[0].lower() in ['y', 'n']:
-                print('Please answer with yes or no!')
-            else:
-                break
-        if qr[0].lower() == 'y':
-            strong_classifier.plot_sorted_graphs(
-                "sorted", sorted_X_list, pos_stat)
-
-        """ Training here """
-        while True:
-            qr = input('Train? (y/n)\n')
-            if qr == '' or not qr[0].lower() in ['y', 'n']:
-                print('Please answer with yes or no!')
-            else:
-                break
-        if qr[0].lower() == 'y':
-            weights = strong_classifier.initialize_weights(
-                feature_stat, y_list)
-            with open(foldername+"/weights.txt", "w") as f:
-                for item in weights:
+                print(
+                    "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
+        start_time = datetime.now()
+        if run == 0:
+            """ PREP """
+            image_path, metadata_path = 'data/database0/training_set/training', 'data/database0/training_set/eye_table.bin'
+            strong_classifier = ViolaJones()
+            """ Step 0, Finding everything we'll need to run the adaboosting algorithm as described in the viola_jones_2.pdf original document """
+            print("0.) Starting Prep")
+            minmax = min_max_eye(metadata_path)
+            print(minmax)
+            correct = read_metadata(metadata_path)
+            image_list = import_image(image_path)
+            normalized_list = max_normalize(image_list)
+            ii_list = integral_image(normalized_list)
+            features = strong_classifier.build_features_minmax(
+                ii_list[0].shape, minmax)
+            print("Number of features generated is %i" % len(features))
+            strong_classifier.T = len(features)
+            with open(foldername+"/feature_table.txt", "w") as f:
+                for item in features:
                     f.write("%s\n" % item)
-            # Actually training below, which took 3 hours and 12 minutes
-            # format = indexes, alphas, errors, weak_classifiers
-            weak_classifier_list = strong_classifier.train(
-                foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
-            with open("weak_classifier_list.pkl", 'wb') as f:
-                pickle.dump(weak_classifier_list, f)
-    elif run == 1:
-        """ Generate Alpha-Error Graph """
-        alphas = [float(line.rstrip('\n'))
-                  for line in open(foldername+"/alphas.txt")]
-        errors = [float(line.rstrip('\n'))
-                  for line in open(foldername+"/errs.txt")]
-        betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
-        sum_alphas, sum_betas, sum_errors = sum(
-            alphas), sum(betas), sum(errors)
-        print(sum_alphas, sum_betas, sum_errors)
-        normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
-        normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
-        normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
-        with open(foldername+"/normalized_alphas.txt", "w") as f:
-            for item in normalized_alphas:
-                f.write("%s\n" % item)
-        with open(foldername+"/normalized_betas.txt", "w") as f:
-            for item in normalized_betas:
-                f.write("%s\n" % item)
-        with open(foldername+"/normalized_errs.txt", "w") as f:
-            for item in normalized_errors:
-                f.write("%s\n" % item)
-        gp.c('plot \
-            "output/normalized_alphas.txt" title "alpha" with linespoints, \
-            "output/normalized_betas.txt" title "beta" with linespoints, \
-            "output/normalized_errs.txt" title "error" with linespoints ')
-        gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
-        gp.c('set xlabel "Image Index" ')
-        gp.c('set ylabel "Feature Value" ')
-        clf_indexes = [line.rstrip('\n')
-                       for line in open("output/final_clf_indexes.txt")]
-        xtics = 'set xtics add ('
-        for index, index_label in enumerate(clf_indexes):
-            xtics += '"' + index_label + '" ' + str(index)
-            if index != (len(clf_indexes) - 1):
-                xtics += ','
-        xtics += ') rotate'
-        gp.c(xtics)
-        gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
-    elif run == 2:
-        """ Since alpha-error-graph already generated and saved, just load again """
-        gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
-    elif run == 3:
-        """ Test if Strong Classifier actually works (After training is done) """
-        foldername = input("Folder to retrieve data from?\n")
-        # test_path = 'data/database0/testing_set/testing'
-        test_path = 'data/database0/training_set/training'
-        index_count, hit_list, indexed_features = test(foldername, test_path)
-        print("\nMin index-count at %s" %
-              (min(index_count, key=lambda ii: ii[2])[2]))
-        print("Max index-count at %s" %
-              (max(index_count, key=lambda ii: ii[2])[2]))
-        print("Avg index-count at %s" %
-              (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
-        bboxes = bbox(foldername, hit_list, indexed_features, 2)
-        draw_bbox(bboxes, test_path, "bbox/img")
-    elif run == 4:
-        """ Timing how long it took to execute this last iteration """
-        duration = datetime.now() - start_time
-        print('\n%s %s %s\n' %
-              ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
-        break
-        # return
-    else:
-        print("Invalid input, try again")
-    """ Timing how long it took to execute this iteration """
-    duration = datetime.now() - start_time
-    print('\n%s %s %s\n' % ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+            # indexed_feature_table = list(enumerate(features))
+            with open(foldername+"/indexed_feature_table.txt", "w") as f:
+                for index, item in enumerate(features):
+                    f.write("Index %i->%s\n" % (index, item))
+            im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+                features, correct)
+            with open(foldername+"/feature_stat.txt", "w") as f:
+                for row in feature_stat:
+                    f.write("%s\n" % row)
+            X_list, sorted_X_list = strong_classifier.apply_features(
+                features, ii_list)   # X_list is already positive_X list because only useful features were passed in
+            with open(foldername+"/X_list.txt", "w") as f:
+                for item in X_list:
+                    f.write("%s\n" % item)
+            with open(foldername+"/sorted_X_list.txt", "w") as f:
+                for item in sorted_X_list:
+                    f.write("%s\n" % item)
+            print("Prep Done")
+            print("Number of iterations to run is %i" % strong_classifier.T)
+            """
+            Plot the sorted feature graphs OR
+            Plot the not-sorted feature graphs for verification
+            Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
+            """
+            while True:
+                qr = input('Plot unsorted feature graphs? (y/n)\n')
+                if qr == '' or not qr[0].lower() in ['y', 'n']:
+                    print('Please answer with yes or no!')
+                else:
+                    break
+            if qr[0].lower() == 'y':
+                strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
+            while True:
+                qr = input('Plot value-sorted feature graphs? (y/n)\n')
+                if qr == '' or not qr[0].lower() in ['y', 'n']:
+                    print('Please answer with yes or no!')
+                else:
+                    break
+            if qr[0].lower() == 'y':
+                strong_classifier.plot_sorted_graphs(
+                    "sorted", sorted_X_list, pos_stat)
 
+            """ Training here """
+            while True:
+                qr = input('Train? (y/n)\n')
+                if qr == '' or not qr[0].lower() in ['y', 'n']:
+                    print('Please answer with yes or no!')
+                else:
+                    break
+            if qr[0].lower() == 'y':
+                weights = strong_classifier.initialize_weights(
+                    feature_stat, y_list)
+                with open(foldername+"/weights.txt", "w") as f:
+                    for item in weights:
+                        f.write("%s\n" % item)
+                # Actually training below, which took 3 hours and 12 minutes
+                # format = indexes, alphas, errors, weak_classifiers
+                weak_classifier_list = strong_classifier.train(
+                    foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
+                with open("weak_classifier_list.pkl", 'wb') as f:
+                    pickle.dump(weak_classifier_list, f)
+        elif run == 1:
+            """ Generate Alpha-Error Graph """
+            alphas = [float(line.rstrip('\n'))
+                    for line in open(foldername+"/alphas.txt")]
+            errors = [float(line.rstrip('\n'))
+                    for line in open(foldername+"/errs.txt")]
+            betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
+            sum_alphas, sum_betas, sum_errors = sum(
+                alphas), sum(betas), sum(errors)
+            print(sum_alphas, sum_betas, sum_errors)
+            normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
+            normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
+            normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
+            with open(foldername+"/normalized_alphas.txt", "w") as f:
+                for item in normalized_alphas:
+                    f.write("%s\n" % item)
+            with open(foldername+"/normalized_betas.txt", "w") as f:
+                for item in normalized_betas:
+                    f.write("%s\n" % item)
+            with open(foldername+"/normalized_errs.txt", "w") as f:
+                for item in normalized_errors:
+                    f.write("%s\n" % item)
+            gp.c('plot \
+                "output/normalized_alphas.txt" title "alpha" with linespoints, \
+                "output/normalized_betas.txt" title "beta" with linespoints, \
+                "output/normalized_errs.txt" title "error" with linespoints ')
+            gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
+            gp.c('set xlabel "Image Index" ')
+            gp.c('set ylabel "Feature Value" ')
+            clf_indexes = [line.rstrip('\n')
+                        for line in open("output/final_clf_indexes.txt")]
+            xtics = 'set xtics add ('
+            for index, index_label in enumerate(clf_indexes):
+                xtics += '"' + index_label + '" ' + str(index)
+                if index != (len(clf_indexes) - 1):
+                    xtics += ','
+            xtics += ') rotate'
+            gp.c(xtics)
+            gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
+        elif run == 2:
+            """ Since alpha-error-graph already generated and saved, just load again """
+            gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
+        elif run == 3:
+            """ Test if Strong Classifier actually works (After training is done) """
+            foldername = input("Folder to retrieve data from?\n")
+            # test_path = 'data/database0/testing_set/testing'
+            test_path = 'data/database0/training_set/training'
+            index_count, hit_list, indexed_features = test(foldername, test_path)
+            print("\nMin index-count at %s" %
+                (min(index_count, key=lambda ii: ii[2])[2]))
+            print("Max index-count at %s" %
+                (max(index_count, key=lambda ii: ii[2])[2]))
+            print("Avg index-count at %s" %
+                (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+            bboxes = bbox(foldername, hit_list, indexed_features, 2)
+            draw_bbox(bboxes, test_path, "bbox/img")
+        elif run == 4:
+            """ Timing how long it took to execute this last iteration """
+            duration = datetime.now() - start_time
+            print('\n%s %s %s\n' %
+                ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+            break
+            # return
+        else:
+            print("Invalid input, try again")
+        """ Timing how long it took to execute this iteration """
+        duration = datetime.now() - start_time
+        print('\n%s %s %s\n' % ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+
+if __name__ == "__main__":
+    main()
 
 """ Timing how long it took to execute in total """
 duration = datetime.now() - start
