@@ -1084,7 +1084,7 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # gp.c('load "output/alpha_beta_error.dat" ')
 
 """ Test if Strong Classifier actually works (After training is done) """
-foldername = 'output'
+foldername = 'output - positive'
 # test_path = 'data/database0/testing_set/testing'
 test_path = 'data/database0/training_set/training'
 index_count, hit_list, indexed_features = test(foldername, test_path)
