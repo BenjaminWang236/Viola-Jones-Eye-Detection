@@ -598,16 +598,18 @@ class ViolaJones:
             num_positives, num_negatives, row_weights = pair[0], pair[1], []
             for actual in y_list[index]:    # 1 for positive, 0 for negative
                 num_sample = len(y_list[index])
+                # print("num sample %i, num_pos %i, num_neg %i" %
+                #       (num_sample, num_positives, num_negatives))
                 # print(num_sample == num_negatives)
                 # Special case: When all negative (no-eye) or all positive (yes-eye)
                 # Since weights in feature must add up to 1, and only one type exists, do NOT multiply by half as in usual case
                 if num_negatives == num_sample or num_positives == num_sample:
-                    if actual == 0:
+                    if actual == 1:
                         row_weights.append(1/num_positives)
                     else:
                         row_weights.append(1/num_negatives)
                 else:   # Since total weights in feature must add up to 1, and two types exists, must multiply by half
-                    if actual == 0:
+                    if actual == 1:
                         row_weights.append(1/(2*num_positives))
                     else:
                         row_weights.append(1/(2*num_negatives))
