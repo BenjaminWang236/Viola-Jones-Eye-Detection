@@ -903,9 +903,7 @@ def test(foldername, test_path):
     counter, hits = [], []
     for index, ii in enumerate(ii_test_list):
         print("\nImage %i" % (index+1))
-        feature_hits = []
-        total = 0
-        first_run = True
+        feature_hits, total, first_run, half_alpha_index = [], 0, True, 0
         for i in range(len(weak_classifier_list[3])):
             # Classifier returns 1 if positive (yes-eye) according to thresholds, 0 otherwise
             yesno = weak_classifier_list[3][i].classify(ii)
@@ -914,16 +912,15 @@ def test(foldername, test_path):
             # total += weak_classifier_list[1][i] * yesno
             total += weak_classifier_list[1][i] * abs(yesno)
             if total >= (0.5*alpha_sum) and first_run:
-                counter.append([index+1, 1, i])
+                half_alpha_index = i
                 first_run = False
-        if first_run:
-            # If No eye detected...
-            counter.append([index+1, 0, len(weak_classifier_list[3])])
-        hits.append([index, feature_hits])
+        hits.append([index+1, feature_hits])
         print("Total: %s" % total)
         if total >= (0.5*alpha_sum):
+            counter.append([index+1, 1, half_alpha_index, total])
             print("Image %i contains eye/ classified correctly" % (index+1))
         else:
+            counter.append([index+1, 0, len(weak_classifier_list[3]), total])
             print("Image %i doesn't have eye/ classified incorrectly" % (index+1))
     with open(foldername+"/hit_list.txt", "w") as f:
         for item in hits:
@@ -1092,6 +1089,13 @@ Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
 # gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
 
 """ Test if Strong Classifier actually works (After training is done) """
+try:
+    os.makedirs("output")  # Making Folder if not exists
+    # os.makedirs("/feature_graphs")
+    # print("Succeeded!")
+except FileExistsError as e:
+    print(e)
+    pass
 foldername = 'output - positive'
 # test_path = 'data/database0/testing_set/testing'
 test_path = 'data/database0/training_set/training'
