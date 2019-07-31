@@ -928,10 +928,10 @@ def test(foldername, test_path):
         print("Total: %s" % total)
         if total >= (0.5*alpha_sum):
             counter.append([index+1, 1, half_alpha_index, total])
-            print("Image %i contains eye/ classified correctly" % (index+1))
+            print("Image %i POSITIVE" % (index+1))
         else:
             counter.append([index+1, 0, len(weak_classifier_list[3]), total])
-            print("Image %i doesn't have eye/ classified incorrectly" % (index+1))
+            print("Image %i NEGATIVE" % (index+1))
     with open(foldername+"/hit_list.txt", "w") as f:
         for item in hits:
             f.write("%s\n" % item)
@@ -998,9 +998,14 @@ def draw_bbox(bboxes, input_path, output_folder):
 
 def main():
     """ RUNNING HERE, basic menu incliuded """
-    while(True):
-        run = int(float(input(
-            "0 to Prep/Plot Feature graphs/Train,\n1 to plot a-e-b graph,\n2 to load plotted graph,\n3 to run strong classifier,\n4 to quit\n")))
+    while True:
+        while True:
+            run = int(float(input(
+                "0 to Prep/Plot Feature graphs/Train,\n1 to plot a-e-b graph,\n2 to load plotted graph,\n3 to run strong classifier,\n4 to quit\n")))
+            if run == '' or run not in range(0, 5):
+                print('Please answer with 0-4!')
+            else:
+                break
         if run not in [3, 4]:
             foldername = input("Folder to save to?\n")
             if not os.path.exists('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s' % foldername):
@@ -1098,6 +1103,7 @@ def main():
                     pickle.dump(weak_classifier_list, f)
         elif run == 1:
             """ Generate Alpha-Error Graph """
+            print("Generating Alpha-Error Graph")
             alphas = [float(line.rstrip('\n'))
                       for line in open(foldername+"/alphas.txt")]
             errors = [float(line.rstrip('\n'))
@@ -1143,8 +1149,8 @@ def main():
             """ Test if Strong Classifier actually works (After training is done) """
             foldername = input(
                 "Folder to retrieve strong classifier data from?\n")
-            test_path = 'test_images/'
-            # test_path = input("Path to images?\n")
+            # test_path = 'test_images/'
+            test_path = input("Path to images? (Include '/' at end)\n")
             index_count, hit_list, indexed_features = test(
                 foldername, test_path)
             print("\nMin index-count at %s" %
@@ -1154,7 +1160,7 @@ def main():
             print("Avg index-count at %s" %
                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
             bboxes = bbox(foldername, hit_list, indexed_features, 2)
-            draw_bbox(bboxes, test_path, "bbox/img")
+            draw_bbox(bboxes, test_path, test_path+"bbox/img")
         elif run == 4:
             """ Timing how long it took to execute this last iteration """
             duration = datetime.now() - start_time
