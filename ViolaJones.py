@@ -992,7 +992,7 @@ def draw_bbox(bboxes, input_path, output_folder):
         for j in range(start_y, end_y+1):
             image_list[i][j][start_x] = 255
             image_list[i][j][end_x] = 255
-        filename = output_folder + str(i) + ".bmp"
+        filename = output_folder + str(i+1) + ".bmp"
         imageio.imwrite(filename, image_list[i])
 
 
