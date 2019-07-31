@@ -114,6 +114,13 @@ def import_image(path):
     return image_list
 
 
+def glob_image(path):
+    image_list, sorted_filenames = [], sorted(glob.glob(path+"*.bmp"))
+    for filename in sorted_filenames:
+        image_list.append(imageio.imread(filename))
+    return image_list
+
+
 def max_normalize(image_list):
     """ normalizing function to 0-1 image, need multiply each normalized pixel by 16 bits (2 byte per pixel) to keep precision """
     normalized_list, count = [], 0
@@ -890,7 +897,8 @@ def test(foldername, test_path):
             f.write("Index %i:\tAlpha %s\tError %s\n" % (
                 weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
     # test_path = 'data/database0/testing_set/testing'
-    test_list = import_image(test_path)
+    # test_list = import_image(test_path)
+    test_list = glob_image(test_path)
     normalized_test_list = max_normalize(test_list)
     ii_test_list = integral_image(normalized_test_list)
 
@@ -972,7 +980,7 @@ def bbox(foldername, hit_list, indexed_features, offset):
 
 def draw_bbox(bboxes, input_path, output_folder):
     """ Draw the rectangular bounding box on each input image and save to new directory without overriding original images """
-    image_list = import_image(input_path)
+    image_list = glob_image(input_path)
     for i in range(len(image_list)):
         start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
         # print(i, "\t", start_x, start_y, end_x, end_y)
@@ -1091,10 +1099,11 @@ def main():
         elif run == 1:
             """ Generate Alpha-Error Graph """
             alphas = [float(line.rstrip('\n'))
-                    for line in open(foldername+"/alphas.txt")]
+                      for line in open(foldername+"/alphas.txt")]
             errors = [float(line.rstrip('\n'))
-                    for line in open(foldername+"/errs.txt")]
-            betas = list(map(lambda ii: ii / (1 - ii) if ii < 1 else 15, errors))
+                      for line in open(foldername+"/errs.txt")]
+            betas = list(map(lambda ii: ii / (1 - ii)
+                             if ii < 1 else 15, errors))
             sum_alphas, sum_betas, sum_errors = sum(
                 alphas), sum(betas), sum(errors)
             print(sum_alphas, sum_betas, sum_errors)
@@ -1118,7 +1127,7 @@ def main():
             gp.c('set xlabel "Image Index" ')
             gp.c('set ylabel "Feature Value" ')
             clf_indexes = [line.rstrip('\n')
-                        for line in open("output/final_clf_indexes.txt")]
+                           for line in open("output/final_clf_indexes.txt")]
             xtics = 'set xtics add ('
             for index, index_label in enumerate(clf_indexes):
                 xtics += '"' + index_label + '" ' + str(index)
@@ -1132,30 +1141,34 @@ def main():
             gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
         elif run == 3:
             """ Test if Strong Classifier actually works (After training is done) """
-            foldername = input("Folder to retrieve data from?\n")
-            # test_path = 'data/database0/testing_set/testing'
-            test_path = 'data/database0/training_set/training'
-            index_count, hit_list, indexed_features = test(foldername, test_path)
+            foldername = input(
+                "Folder to retrieve strong classifier data from?\n")
+            test_path = 'test_images/'
+            # test_path = input("Path to images?\n")
+            index_count, hit_list, indexed_features = test(
+                foldername, test_path)
             print("\nMin index-count at %s" %
-                (min(index_count, key=lambda ii: ii[2])[2]))
+                  (min(index_count, key=lambda ii: ii[2])[2]))
             print("Max index-count at %s" %
-                (max(index_count, key=lambda ii: ii[2])[2]))
+                  (max(index_count, key=lambda ii: ii[2])[2]))
             print("Avg index-count at %s" %
-                (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+                  (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
             bboxes = bbox(foldername, hit_list, indexed_features, 2)
             draw_bbox(bboxes, test_path, "bbox/img")
         elif run == 4:
             """ Timing how long it took to execute this last iteration """
             duration = datetime.now() - start_time
             print('\n%s %s %s\n' %
-                ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+                  ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
             break
             # return
         else:
             print("Invalid input, try again")
         """ Timing how long it took to execute this iteration """
         duration = datetime.now() - start_time
-        print('\n%s %s %s\n' % ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+        print('\n%s %s %s\n' %
+              ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
+
 
 if __name__ == "__main__":
     main()
