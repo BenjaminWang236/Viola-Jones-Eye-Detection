@@ -122,7 +122,7 @@ def glob_image(path):
     image_list, sorted_filenames = [], natsort.natsorted(
         glob.glob(path+"*.bmp"))
     for filename in sorted_filenames:
-        print(filename)
+        # print(filename)
         image_list.append(imageio.imread(filename))
     return image_list
 
@@ -991,15 +991,16 @@ def draw_bbox(bboxes, input_path):
     image_list = glob_image(input_path)
     for i in range(len(image_list)):
         start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
-        print(i, "\t", start_x, start_y, end_x, end_y)
-        print(image_list[i])
+        # print(i, "\t", start_x, start_y, end_x, end_y)
+        # print(image_list[i])
         # Top row/ Bottom row/ Left col/ Right col:
         image_list[i][start_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
         image_list[i][end_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
         image_list[i][start_y:end_y+1, start_x] = [255]*(end_y+1-start_y)
         image_list[i][start_y:end_y+1, end_x] = [255]*(end_y+1-start_y)
-        # filename = output_folder + str(i+1) + ".bmp"
-    imageio.mimwrite(input_path+"bbox", image_list)
+        filename = input_path + "bbox/bb" + str(i+1) + ".bmp"
+        imageio.imwrite(filename, image_list[i])
+    # imageio.mimwrite(input_path+"bbox/bb_imgs.bmp", image_list)
 
 
 def main():
