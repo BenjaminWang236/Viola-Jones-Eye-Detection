@@ -2180,7 +2180,6 @@ static const char __pyx_k_Rect_s_s_has_w_h_s_s_ends_s_s[] = "Rect @ (%s, %s) has
 static const char __pyx_k_ViolaJones_initialize_weights[] = "ViolaJones.initialize_weights";
 static const char __pyx_k_ViolaJones_plot_sorted_graphs[] = "ViolaJones.plot_sorted_graphs";
 static const char __pyx_k_Max_normalized_weight_is_now_s[] = "Max normalized weight is now %s";
-static const char __pyx_k_D_Ben_Wang_OneDrive_NeuronBasic[] = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s";
 static const char __pyx_k_ERROR_best_error_shouldn_t_even[] = "ERROR: best error shouldn't even approach 1: %s";
 static const char __pyx_k_Feature_of_type_s_starts_s_s_en[] = "<Feature of type %s starts(%s, %s) ends(%s, %s) in (x, y) format>";
 static const char __pyx_k_Folder_to_save_to_retrieve_data[] = "Folder to save to/retrieve data from?\n";
@@ -2214,8 +2213,8 @@ static const char __pyx_k_data_database0_training2_2traini[] = "data/database0/t
 static const char __pyx_k_data_database0_training2_eye_poi[] = "data/database0/training2/eye_point.bin";
 static const char __pyx_k_plot_s_normalized_alphas_txt_tit[] = "plot                 \"%s/normalized_alphas.txt\" title \"alpha\" with linespoints,                 \"%s/normalized_betas.txt\" title \"beta\" with linespoints,                 \"%s/normalized_errs.txt\" title \"error\" with linespoints ";
 static const char __pyx_k_set_title_Alpha_Beta_Error_Graph[] = "set title \"Alpha-Beta-Error Graph (Linespoints)\" ";
-static const char __pyx_k_D_Ben_Wang_OneDrive_NeuronBasic_2[] = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists";
 static const char __pyx_k_ViolaJones_find_gini_thresholds_2[] = "ViolaJones.find_gini_thresholds";
+static const char __pyx_k_home_ben_git_Viola_Jones_Eye_De_2[] = "/home/ben/git/Viola-Jones-Eye-Detection/%s already exists";
 static PyObject *__pyx_kp_s_02d;
 static PyObject *__pyx_kp_s_03d;
 static PyObject *__pyx_kp_s_0_Starting_Prep;
@@ -2229,8 +2228,6 @@ static PyObject *__pyx_kp_s_Beta_is_s;
 static PyObject *__pyx_kp_s_Combined_pdf;
 static PyObject *__pyx_n_s_D;
 static PyObject *__pyx_kp_s_DATA_SAVED;
-static PyObject *__pyx_kp_s_D_Ben_Wang_OneDrive_NeuronBasic;
-static PyObject *__pyx_kp_s_D_Ben_Wang_OneDrive_NeuronBasic_2;
 static PyObject *__pyx_n_s_DeltaTemplate;
 static PyObject *__pyx_kp_s_ERROR_Best_error_should_never_re;
 static PyObject *__pyx_kp_s_ERROR_Classifier_index_and_X_lis;
@@ -2496,6 +2493,7 @@ static PyObject *__pyx_n_s_hit_list;
 static PyObject *__pyx_kp_s_hit_list_txt;
 static PyObject *__pyx_n_s_hits;
 static PyObject *__pyx_kp_s_home_ben_git_Viola_Jones_Eye_De;
+static PyObject *__pyx_kp_s_home_ben_git_Viola_Jones_Eye_De_2;
 static PyObject *__pyx_n_s_hours;
 static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_kp_s_i_s;
@@ -2844,7 +2842,6 @@ static PyObject *__pyx_pf_10ViolaJones_18bbox(CYTHON_UNUSED PyObject *__pyx_self
 static PyObject *__pyx_pf_10ViolaJones_20draw_bbox(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_bboxes, PyObject *__pyx_v_input_path, PyObject *__pyx_v_output_folder); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda12(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_ii); /* proto */
 static PyObject *__pyx_lambda_funcdef_lambda13(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_ii); /* proto */
-static PyObject *__pyx_lambda_funcdef_lambda14(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_ii); /* proto */
 static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_tp_new_10ViolaJones___pyx_scope_struct__plot_sorted_graphs(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_10ViolaJones___pyx_scope_struct_1_apply_features(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -28362,7 +28359,7 @@ static PyObject *__pyx_pw_10ViolaJones_23main(PyObject *__pyx_self, CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "ViolaJones.py":1160
+/* "ViolaJones.py":1155
  *                 foldername, test_path)
  *             print("\nMin index-count at %s" %
  *                   (min(index_count, key=lambda ii: ii[2])[2]))             # <<<<<<<<<<<<<<
@@ -28390,7 +28387,7 @@ static PyObject *__pyx_lambda_funcdef_lambda12(CYTHON_UNUSED PyObject *__pyx_sel
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("lambda12", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_ii, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1160, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_ii, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -28407,12 +28404,12 @@ static PyObject *__pyx_lambda_funcdef_lambda12(CYTHON_UNUSED PyObject *__pyx_sel
   return __pyx_r;
 }
 
-/* "ViolaJones.py":1162
+/* "ViolaJones.py":1157
  *                   (min(index_count, key=lambda ii: ii[2])[2]))
  *             print("Max index-count at %s" %
  *                   (max(index_count, key=lambda ii: ii[2])[2]))             # <<<<<<<<<<<<<<
  *             print("Avg index-count at %s" %
- *                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+ *                   math.floor(statistics.mean([ii[2] for ii in index_count])))
  */
 
 /* Python wrapper */
@@ -28435,7 +28432,7 @@ static PyObject *__pyx_lambda_funcdef_lambda13(CYTHON_UNUSED PyObject *__pyx_sel
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("lambda13", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_ii, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1162, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_ii, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -28445,51 +28442,6 @@ static PyObject *__pyx_lambda_funcdef_lambda13(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("ViolaJones.main.lambda13", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "ViolaJones.py":1164
- *                   (max(index_count, key=lambda ii: ii[2])[2]))
- *             print("Avg index-count at %s" %
- *                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))             # <<<<<<<<<<<<<<
- *             bboxes = bbox(foldername, hit_list, indexed_features, 2)
- *             draw_bbox(bboxes, test_path, test_path+"bbox/img")
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_10ViolaJones_4main_2lambda14(PyObject *__pyx_self, PyObject *__pyx_v_ii); /*proto*/
-static PyMethodDef __pyx_mdef_10ViolaJones_4main_2lambda14 = {"lambda14", (PyCFunction)__pyx_pw_10ViolaJones_4main_2lambda14, METH_O, 0};
-static PyObject *__pyx_pw_10ViolaJones_4main_2lambda14(PyObject *__pyx_self, PyObject *__pyx_v_ii) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("lambda14 (wrapper)", 0);
-  __pyx_r = __pyx_lambda_funcdef_lambda14(__pyx_self, ((PyObject *)__pyx_v_ii));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_lambda_funcdef_lambda14(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_ii) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("lambda14", 0);
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_ii, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1164, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("ViolaJones.main.lambda14", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -28520,14 +28472,11 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
   PyObject *__pyx_v_ii_list = NULL;
   PyObject *__pyx_v_features = NULL;
   PyObject *__pyx_v_f = NULL;
-  PyObject *__pyx_v_item = NULL;
-  PyObject *__pyx_v_index = NULL;
   CYTHON_UNUSED PyObject *__pyx_v_im_feature_label = NULL;
   PyObject *__pyx_v_feature_stat = NULL;
   PyObject *__pyx_v_y_list = NULL;
   PyObject *__pyx_v_pos_stat = NULL;
   PyObject *__pyx_v_neg_stat = NULL;
-  PyObject *__pyx_v_row = NULL;
   PyObject *__pyx_v_X_list = NULL;
   PyObject *__pyx_v_sorted_X_list = NULL;
   PyObject *__pyx_v_qr = NULL;
@@ -28544,6 +28493,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
   PyObject *__pyx_v_normalized_errors = NULL;
   PyObject *__pyx_v_clf_indexes = NULL;
   PyObject *__pyx_v_xtics = NULL;
+  PyObject *__pyx_v_index = NULL;
   PyObject *__pyx_v_index_label = NULL;
   PyObject *__pyx_v_test_path = NULL;
   PyObject *__pyx_v_index_count = NULL;
@@ -28551,6 +28501,9 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
   PyObject *__pyx_v_indexed_features = NULL;
   PyObject *__pyx_v_bboxes = NULL;
   PyObject *__pyx_v_duration = NULL;
+  PyObject *__pyx_v_item = NULL;
+  PyObject *__pyx_v_pair = NULL;
+  PyObject *__pyx_v_row = NULL;
   PyObject *__pyx_v_line = NULL;
   PyObject *__pyx_v_er = NULL;
   PyObject *__pyx_v_ii = NULL;
@@ -28768,7 +28721,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *                 try:
  *                     # Making Folder if not exists
  *                     os.makedirs(             # <<<<<<<<<<<<<<
- *                         "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)
+ *                         "/home/ben/git/Viola-Jones-Eye-Detection/%s" % foldername)
  *                     print("Makedir called for %s" % foldername)
  */
             __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_os); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1021, __pyx_L14_error)
@@ -28780,11 +28733,11 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             /* "ViolaJones.py":1022
  *                     # Making Folder if not exists
  *                     os.makedirs(
- *                         "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)             # <<<<<<<<<<<<<<
+ *                         "/home/ben/git/Viola-Jones-Eye-Detection/%s" % foldername)             # <<<<<<<<<<<<<<
  *                     print("Makedir called for %s" % foldername)
  *                 except FileExistsError as e:
  */
-            __pyx_t_2 = __Pyx_PyString_FormatSafe(__pyx_kp_s_D_Ben_Wang_OneDrive_NeuronBasic, __pyx_v_foldername); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1022, __pyx_L14_error)
+            __pyx_t_2 = __Pyx_PyString_FormatSafe(__pyx_kp_s_home_ben_git_Viola_Jones_Eye_De, __pyx_v_foldername); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1022, __pyx_L14_error)
             __Pyx_GOTREF(__pyx_t_2);
             __pyx_t_7 = NULL;
             if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
@@ -28806,7 +28759,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
 
             /* "ViolaJones.py":1023
  *                     os.makedirs(
- *                         "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)
+ *                         "/home/ben/git/Viola-Jones-Eye-Detection/%s" % foldername)
  *                     print("Makedir called for %s" % foldername)             # <<<<<<<<<<<<<<
  *                 except FileExistsError as e:
  *                     print(e)
@@ -28835,7 +28788,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
           __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
 
           /* "ViolaJones.py":1024
- *                         "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)
+ *                         "/home/ben/git/Viola-Jones-Eye-Detection/%s" % foldername)
  *                     print("Makedir called for %s" % foldername)
  *                 except FileExistsError as e:             # <<<<<<<<<<<<<<
  *                     print(e)
@@ -28907,7 +28860,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *                     pass
  *             else:
  *                 print(             # <<<<<<<<<<<<<<
- *                     "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
+ *                     "/home/ben/git/Viola-Jones-Eye-Detection/%s already exists" % foldername)
  *         start_time = datetime.now()
  */
       /*else*/ {
@@ -28915,11 +28868,11 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         /* "ViolaJones.py":1029
  *             else:
  *                 print(
- *                     "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)             # <<<<<<<<<<<<<<
+ *                     "/home/ben/git/Viola-Jones-Eye-Detection/%s already exists" % foldername)             # <<<<<<<<<<<<<<
  *         start_time = datetime.now()
  *         if run == 0:
  */
-        __pyx_t_1 = __Pyx_PyString_FormatSafe(__pyx_kp_s_D_Ben_Wang_OneDrive_NeuronBasic_2, __pyx_v_foldername); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1029, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyString_FormatSafe(__pyx_kp_s_home_ben_git_Viola_Jones_Eye_De_2, __pyx_v_foldername); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1029, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 1028, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -28937,7 +28890,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
 
     /* "ViolaJones.py":1030
  *                 print(
- *                     "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
+ *                     "/home/ben/git/Viola-Jones-Eye-Detection/%s already exists" % foldername)
  *         start_time = datetime.now()             # <<<<<<<<<<<<<<
  *         if run == 0:
  *             """ PREP """
@@ -28966,7 +28919,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
     __pyx_t_1 = 0;
 
     /* "ViolaJones.py":1031
- *                     "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
+ *                     "/home/ben/git/Viola-Jones-Eye-Detection/%s already exists" % foldername)
  *         start_time = datetime.now()
  *         if run == 0:             # <<<<<<<<<<<<<<
  *             """ PREP """
@@ -29268,7 +29221,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *             print("Number of features generated is %i" % len(features))
  *             strong_classifier.T = len(features)             # <<<<<<<<<<<<<<
  *             with open(foldername+"/feature_table.txt", "w") as f:
- *                 for item in features:
+ *                 [f.write("%s\n" % item) for item in features]
  */
       __pyx_t_13 = PyObject_Length(__pyx_v_features); if (unlikely(__pyx_t_13 == ((Py_ssize_t)-1))) __PYX_ERR(0, 1046, __pyx_L1_error)
       __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1046, __pyx_L1_error)
@@ -29280,8 +29233,8 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *             print("Number of features generated is %i" % len(features))
  *             strong_classifier.T = len(features)
  *             with open(foldername+"/feature_table.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for item in features:
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in features]
+ *             # indexed_feature_table = list(enumerate(features))
  */
       /*with:*/ {
         if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1047, __pyx_L1_error) }
@@ -29335,40 +29288,42 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               /* "ViolaJones.py":1048
  *             strong_classifier.T = len(features)
  *             with open(foldername+"/feature_table.txt", "w") as f:
- *                 for item in features:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in features]             # <<<<<<<<<<<<<<
  *             # indexed_feature_table = list(enumerate(features))
+ *             with open(foldername+"/indexed_feature_table.txt", "w") as f:
  */
+              __pyx_t_12 = PyList_New(0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1048, __pyx_L31_error)
+              __Pyx_GOTREF(__pyx_t_12);
               if (likely(PyList_CheckExact(__pyx_v_features)) || PyTuple_CheckExact(__pyx_v_features)) {
-                __pyx_t_12 = __pyx_v_features; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+                __pyx_t_1 = __pyx_v_features; __Pyx_INCREF(__pyx_t_1); __pyx_t_13 = 0;
                 __pyx_t_15 = NULL;
               } else {
-                __pyx_t_13 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_v_features); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1048, __pyx_L31_error)
-                __Pyx_GOTREF(__pyx_t_12);
-                __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                __pyx_t_13 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_features); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                __Pyx_GOTREF(__pyx_t_1);
+                __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1048, __pyx_L31_error)
               }
               for (;;) {
                 if (likely(!__pyx_t_15)) {
-                  if (likely(PyList_CheckExact(__pyx_t_12))) {
-                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+                  if (likely(PyList_CheckExact(__pyx_t_1))) {
+                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_1)) break;
                     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_1 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                    __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1048, __pyx_L31_error)
                     #else
-                    __pyx_t_1 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1048, __pyx_L31_error)
-                    __Pyx_GOTREF(__pyx_t_1);
+                    __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                    __Pyx_GOTREF(__pyx_t_2);
                     #endif
                   } else {
-                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
+                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
                     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                    __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1048, __pyx_L31_error)
                     #else
-                    __pyx_t_1 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1048, __pyx_L31_error)
-                    __Pyx_GOTREF(__pyx_t_1);
+                    __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                    __Pyx_GOTREF(__pyx_t_2);
                     #endif
                   }
                 } else {
-                  __pyx_t_1 = __pyx_t_15(__pyx_t_12);
-                  if (unlikely(!__pyx_t_1)) {
+                  __pyx_t_2 = __pyx_t_15(__pyx_t_1);
+                  if (unlikely(!__pyx_t_2)) {
                     PyObject* exc_type = PyErr_Occurred();
                     if (exc_type) {
                       if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -29376,56 +29331,42 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
                     }
                     break;
                   }
-                  __Pyx_GOTREF(__pyx_t_1);
+                  __Pyx_GOTREF(__pyx_t_2);
                 }
-                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_1);
-                __pyx_t_1 = 0;
-
-                /* "ViolaJones.py":1049
- *             with open(foldername+"/feature_table.txt", "w") as f:
- *                 for item in features:
- *                     f.write("%s\n" % item)             # <<<<<<<<<<<<<<
- *             # indexed_feature_table = list(enumerate(features))
- *             with open(foldername+"/indexed_feature_table.txt", "w") as f:
- */
-                __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1049, __pyx_L31_error)
-                __Pyx_GOTREF(__pyx_t_2);
-                __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1049, __pyx_L31_error)
+                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_2);
+                __pyx_t_2 = 0;
+                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1048, __pyx_L31_error)
                 __Pyx_GOTREF(__pyx_t_7);
-                __pyx_t_6 = NULL;
-                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-                  __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
-                  if (likely(__pyx_t_6)) {
-                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-                    __Pyx_INCREF(__pyx_t_6);
+                __pyx_t_6 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                __Pyx_GOTREF(__pyx_t_6);
+                __pyx_t_16 = NULL;
+                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+                  __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_7);
+                  if (likely(__pyx_t_16)) {
+                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+                    __Pyx_INCREF(__pyx_t_16);
                     __Pyx_INCREF(function);
-                    __Pyx_DECREF_SET(__pyx_t_2, function);
+                    __Pyx_DECREF_SET(__pyx_t_7, function);
                   }
                 }
-                __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_6, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_7);
-                __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+                __pyx_t_2 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_16, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6);
+                __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1048, __pyx_L31_error)
+                __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1049, __pyx_L31_error)
-                __Pyx_GOTREF(__pyx_t_1);
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_12, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 1048, __pyx_L31_error)
                 __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-                /* "ViolaJones.py":1048
- *             strong_classifier.T = len(features)
- *             with open(foldername+"/feature_table.txt", "w") as f:
- *                 for item in features:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % item)
- *             # indexed_feature_table = list(enumerate(features))
- */
               }
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
               /* "ViolaJones.py":1047
  *             print("Number of features generated is %i" % len(features))
  *             strong_classifier.T = len(features)
  *             with open(foldername+"/feature_table.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for item in features:
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in features]
+ *             # indexed_feature_table = list(enumerate(features))
  */
             }
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -29435,6 +29376,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L31_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -29446,13 +29388,13 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               __Pyx_GOTREF(__pyx_t_2);
               __pyx_t_7 = PyTuple_Pack(3, __pyx_t_12, __pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1047, __pyx_L33_except_error)
               __Pyx_GOTREF(__pyx_t_7);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1047, __pyx_L33_except_error)
-              __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1047, __pyx_L33_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
               if (__pyx_t_3 < 0) __PYX_ERR(0, 1047, __pyx_L33_except_error)
               __pyx_t_5 = ((!(__pyx_t_3 != 0)) != 0);
               if (__pyx_t_5) {
@@ -29502,18 +29444,18 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L44:;
       }
 
-      /* "ViolaJones.py":1051
- *                     f.write("%s\n" % item)
+      /* "ViolaJones.py":1050
+ *                 [f.write("%s\n" % item) for item in features]
  *             # indexed_feature_table = list(enumerate(features))
  *             with open(foldername+"/indexed_feature_table.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for index, item in enumerate(features):
- *                     f.write("Index %i->%s\n" % (index, item))
+ *                 [f.write("Index %i->%s\n" % pair)
+ *                  for pair in enumerate(features)]
  */
       /*with:*/ {
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1051, __pyx_L1_error) }
-        __pyx_t_2 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_indexed_feature_table_txt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1051, __pyx_L1_error)
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1050, __pyx_L1_error) }
+        __pyx_t_2 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_indexed_feature_table_txt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1050, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1051, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1050, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_GIVEREF(__pyx_t_2);
         PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
@@ -29521,12 +29463,12 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_GIVEREF(__pyx_n_s_w);
         PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_w);
         __pyx_t_2 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1051, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1050, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1051, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1050, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1051, __pyx_L45_error)
+        __pyx_t_12 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1050, __pyx_L45_error)
         __Pyx_GOTREF(__pyx_t_12);
         __pyx_t_7 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_12))) {
@@ -29540,7 +29482,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         }
         __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_12);
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1051, __pyx_L45_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1050, __pyx_L45_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         __pyx_t_12 = __pyx_t_1;
@@ -29558,45 +29500,56 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_12);
               __pyx_t_12 = 0;
 
-              /* "ViolaJones.py":1052
+              /* "ViolaJones.py":1051
  *             # indexed_feature_table = list(enumerate(features))
  *             with open(foldername+"/indexed_feature_table.txt", "w") as f:
- *                 for index, item in enumerate(features):             # <<<<<<<<<<<<<<
- *                     f.write("Index %i->%s\n" % (index, item))
+ *                 [f.write("Index %i->%s\n" % pair)             # <<<<<<<<<<<<<<
+ *                  for pair in enumerate(features)]
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
  */
-              __Pyx_INCREF(__pyx_int_0);
-              __pyx_t_12 = __pyx_int_0;
-              if (likely(PyList_CheckExact(__pyx_v_features)) || PyTuple_CheckExact(__pyx_v_features)) {
-                __pyx_t_2 = __pyx_v_features; __Pyx_INCREF(__pyx_t_2); __pyx_t_13 = 0;
+              __pyx_t_12 = PyList_New(0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1051, __pyx_L51_error)
+              __Pyx_GOTREF(__pyx_t_12);
+
+              /* "ViolaJones.py":1052
+ *             with open(foldername+"/indexed_feature_table.txt", "w") as f:
+ *                 [f.write("Index %i->%s\n" % pair)
+ *                  for pair in enumerate(features)]             # <<<<<<<<<<<<<<
+ *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+ *                 features, correct)
+ */
+              __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_enumerate, __pyx_v_features); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1052, __pyx_L51_error)
+              __Pyx_GOTREF(__pyx_t_2);
+              if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
+                __pyx_t_1 = __pyx_t_2; __Pyx_INCREF(__pyx_t_1); __pyx_t_13 = 0;
                 __pyx_t_15 = NULL;
               } else {
-                __pyx_t_13 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_features); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1052, __pyx_L51_error)
-                __Pyx_GOTREF(__pyx_t_2);
-                __pyx_t_15 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1052, __pyx_L51_error)
+                __pyx_t_13 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1052, __pyx_L51_error)
+                __Pyx_GOTREF(__pyx_t_1);
+                __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1052, __pyx_L51_error)
               }
+              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               for (;;) {
                 if (likely(!__pyx_t_15)) {
-                  if (likely(PyList_CheckExact(__pyx_t_2))) {
-                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_2)) break;
+                  if (likely(PyList_CheckExact(__pyx_t_1))) {
+                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_1)) break;
                     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1052, __pyx_L51_error)
+                    __pyx_t_2 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1052, __pyx_L51_error)
                     #else
-                    __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1052, __pyx_L51_error)
-                    __Pyx_GOTREF(__pyx_t_1);
+                    __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1052, __pyx_L51_error)
+                    __Pyx_GOTREF(__pyx_t_2);
                     #endif
                   } else {
-                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
+                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
                     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1052, __pyx_L51_error)
+                    __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1052, __pyx_L51_error)
                     #else
-                    __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1052, __pyx_L51_error)
-                    __Pyx_GOTREF(__pyx_t_1);
+                    __pyx_t_2 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1052, __pyx_L51_error)
+                    __Pyx_GOTREF(__pyx_t_2);
                     #endif
                   }
                 } else {
-                  __pyx_t_1 = __pyx_t_15(__pyx_t_2);
-                  if (unlikely(!__pyx_t_1)) {
+                  __pyx_t_2 = __pyx_t_15(__pyx_t_1);
+                  if (unlikely(!__pyx_t_2)) {
                     PyObject* exc_type = PyErr_Occurred();
                     if (exc_type) {
                       if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -29604,73 +29557,58 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
                     }
                     break;
                   }
-                  __Pyx_GOTREF(__pyx_t_1);
+                  __Pyx_GOTREF(__pyx_t_2);
                 }
-                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_1);
-                __pyx_t_1 = 0;
-                __Pyx_INCREF(__pyx_t_12);
-                __Pyx_XDECREF_SET(__pyx_v_index, __pyx_t_12);
-                __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_t_12, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1052, __pyx_L51_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                __Pyx_DECREF(__pyx_t_12);
-                __pyx_t_12 = __pyx_t_1;
-                __pyx_t_1 = 0;
+                __Pyx_XDECREF_SET(__pyx_v_pair, __pyx_t_2);
+                __pyx_t_2 = 0;
 
-                /* "ViolaJones.py":1053
+                /* "ViolaJones.py":1051
+ *             # indexed_feature_table = list(enumerate(features))
  *             with open(foldername+"/indexed_feature_table.txt", "w") as f:
- *                 for index, item in enumerate(features):
- *                     f.write("Index %i->%s\n" % (index, item))             # <<<<<<<<<<<<<<
+ *                 [f.write("Index %i->%s\n" % pair)             # <<<<<<<<<<<<<<
+ *                  for pair in enumerate(features)]
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
- *                 features, correct)
  */
-                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1053, __pyx_L51_error)
+                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1051, __pyx_L51_error)
                 __Pyx_GOTREF(__pyx_t_7);
-                __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1053, __pyx_L51_error)
+                __pyx_t_6 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Index_i_s, __pyx_v_pair); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1051, __pyx_L51_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __Pyx_INCREF(__pyx_v_index);
-                __Pyx_GIVEREF(__pyx_v_index);
-                PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_index);
-                __Pyx_INCREF(__pyx_v_item);
-                __Pyx_GIVEREF(__pyx_v_item);
-                PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_v_item);
-                __pyx_t_17 = __Pyx_PyString_Format(__pyx_kp_s_Index_i_s, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1053, __pyx_L51_error)
-                __Pyx_GOTREF(__pyx_t_17);
-                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __pyx_t_6 = NULL;
+                __pyx_t_16 = NULL;
                 if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-                  __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
-                  if (likely(__pyx_t_6)) {
+                  __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_7);
+                  if (likely(__pyx_t_16)) {
                     PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-                    __Pyx_INCREF(__pyx_t_6);
+                    __Pyx_INCREF(__pyx_t_16);
                     __Pyx_INCREF(function);
                     __Pyx_DECREF_SET(__pyx_t_7, function);
                   }
                 }
-                __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_t_17) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_17);
-                __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1053, __pyx_L51_error)
-                __Pyx_GOTREF(__pyx_t_1);
+                __pyx_t_2 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_16, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6);
+                __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1051, __pyx_L51_error)
+                __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_12, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 1051, __pyx_L51_error)
+                __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
                 /* "ViolaJones.py":1052
- *             # indexed_feature_table = list(enumerate(features))
  *             with open(foldername+"/indexed_feature_table.txt", "w") as f:
- *                 for index, item in enumerate(features):             # <<<<<<<<<<<<<<
- *                     f.write("Index %i->%s\n" % (index, item))
+ *                 [f.write("Index %i->%s\n" % pair)
+ *                  for pair in enumerate(features)]             # <<<<<<<<<<<<<<
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
+ *                 features, correct)
  */
               }
-              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-              /* "ViolaJones.py":1051
- *                     f.write("%s\n" % item)
+              /* "ViolaJones.py":1050
+ *                 [f.write("%s\n" % item) for item in features]
  *             # indexed_feature_table = list(enumerate(features))
  *             with open(foldername+"/indexed_feature_table.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for index, item in enumerate(features):
- *                     f.write("Index %i->%s\n" % (index, item))
+ *                 [f.write("Index %i->%s\n" % pair)
+ *                  for pair in enumerate(features)]
  */
             }
             __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -29680,38 +29618,38 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L51_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_12, &__pyx_t_2, &__pyx_t_1) < 0) __PYX_ERR(0, 1051, __pyx_L53_except_error)
+              if (__Pyx_GetException(&__pyx_t_12, &__pyx_t_1, &__pyx_t_2) < 0) __PYX_ERR(0, 1050, __pyx_L53_except_error)
               __Pyx_GOTREF(__pyx_t_12);
-              __Pyx_GOTREF(__pyx_t_2);
               __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_12, __pyx_t_2, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1051, __pyx_L53_except_error)
+              __Pyx_GOTREF(__pyx_t_2);
+              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_12, __pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1050, __pyx_L53_except_error)
               __Pyx_GOTREF(__pyx_t_7);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1051, __pyx_L53_except_error)
-              __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (__pyx_t_5 < 0) __PYX_ERR(0, 1051, __pyx_L53_except_error)
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1050, __pyx_L53_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              if (__pyx_t_5 < 0) __PYX_ERR(0, 1050, __pyx_L53_except_error)
               __pyx_t_3 = ((!(__pyx_t_5 != 0)) != 0);
               if (__pyx_t_3) {
                 __Pyx_GIVEREF(__pyx_t_12);
-                __Pyx_GIVEREF(__pyx_t_2);
-                __Pyx_XGIVEREF(__pyx_t_1);
-                __Pyx_ErrRestoreWithState(__pyx_t_12, __pyx_t_2, __pyx_t_1);
-                __pyx_t_12 = 0; __pyx_t_2 = 0; __pyx_t_1 = 0; 
-                __PYX_ERR(0, 1051, __pyx_L53_except_error)
+                __Pyx_GIVEREF(__pyx_t_1);
+                __Pyx_XGIVEREF(__pyx_t_2);
+                __Pyx_ErrRestoreWithState(__pyx_t_12, __pyx_t_1, __pyx_t_2);
+                __pyx_t_12 = 0; __pyx_t_1 = 0; __pyx_t_2 = 0; 
+                __PYX_ERR(0, 1050, __pyx_L53_except_error)
               }
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               goto __pyx_L52_exception_handled;
             }
             __pyx_L53_except_error:;
@@ -29733,7 +29671,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             if (__pyx_t_10) {
               __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1051, __pyx_L1_error)
+              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1050, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_9);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             }
@@ -29748,53 +29686,53 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L64:;
       }
 
-      /* "ViolaJones.py":1054
- *                 for index, item in enumerate(features):
- *                     f.write("Index %i->%s\n" % (index, item))
+      /* "ViolaJones.py":1053
+ *                 [f.write("Index %i->%s\n" % pair)
+ *                  for pair in enumerate(features)]
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(             # <<<<<<<<<<<<<<
  *                 features, correct)
  *             with open(foldername+"/feature_stat.txt", "w") as f:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_label_features); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1054, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_label_features); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1053, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
 
-      /* "ViolaJones.py":1055
- *                     f.write("Index %i->%s\n" % (index, item))
+      /* "ViolaJones.py":1054
+ *                  for pair in enumerate(features)]
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
  *                 features, correct)             # <<<<<<<<<<<<<<
  *             with open(foldername+"/feature_stat.txt", "w") as f:
- *                 for row in feature_stat:
+ *                 [f.write("%s\n" % row) for row in feature_stat]
  */
       __pyx_t_12 = NULL;
       __pyx_t_11 = 0;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_2);
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_1);
         if (likely(__pyx_t_12)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
           __Pyx_INCREF(__pyx_t_12);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_2, function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
           __pyx_t_11 = 1;
         }
       }
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_2)) {
+      if (PyFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_12, __pyx_v_features, __pyx_v_correct};
-        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1054, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1053, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_GOTREF(__pyx_t_2);
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
         PyObject *__pyx_temp[3] = {__pyx_t_12, __pyx_v_features, __pyx_v_correct};
-        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1054, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1053, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __Pyx_GOTREF(__pyx_t_1);
+        __Pyx_GOTREF(__pyx_t_2);
       } else
       #endif
       {
-        __pyx_t_7 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1054, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1053, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         if (__pyx_t_12) {
           __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_12); __pyx_t_12 = NULL;
@@ -29805,63 +29743,63 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_INCREF(__pyx_v_correct);
         __Pyx_GIVEREF(__pyx_v_correct);
         PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_11, __pyx_v_correct);
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1054, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1053, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if ((likely(PyTuple_CheckExact(__pyx_t_1))) || (PyList_CheckExact(__pyx_t_1))) {
-        PyObject* sequence = __pyx_t_1;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      if ((likely(PyTuple_CheckExact(__pyx_t_2))) || (PyList_CheckExact(__pyx_t_2))) {
+        PyObject* sequence = __pyx_t_2;
         Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
         if (unlikely(size != 5)) {
           if (size > 5) __Pyx_RaiseTooManyValuesError(5);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 1054, __pyx_L1_error)
+          __PYX_ERR(0, 1053, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
-          __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0); 
+          __pyx_t_1 = PyTuple_GET_ITEM(sequence, 0); 
           __pyx_t_7 = PyTuple_GET_ITEM(sequence, 1); 
           __pyx_t_12 = PyTuple_GET_ITEM(sequence, 2); 
-          __pyx_t_17 = PyTuple_GET_ITEM(sequence, 3); 
-          __pyx_t_6 = PyTuple_GET_ITEM(sequence, 4); 
+          __pyx_t_6 = PyTuple_GET_ITEM(sequence, 3); 
+          __pyx_t_16 = PyTuple_GET_ITEM(sequence, 4); 
         } else {
-          __pyx_t_2 = PyList_GET_ITEM(sequence, 0); 
+          __pyx_t_1 = PyList_GET_ITEM(sequence, 0); 
           __pyx_t_7 = PyList_GET_ITEM(sequence, 1); 
           __pyx_t_12 = PyList_GET_ITEM(sequence, 2); 
-          __pyx_t_17 = PyList_GET_ITEM(sequence, 3); 
-          __pyx_t_6 = PyList_GET_ITEM(sequence, 4); 
+          __pyx_t_6 = PyList_GET_ITEM(sequence, 3); 
+          __pyx_t_16 = PyList_GET_ITEM(sequence, 4); 
         }
-        __Pyx_INCREF(__pyx_t_2);
+        __Pyx_INCREF(__pyx_t_1);
         __Pyx_INCREF(__pyx_t_7);
         __Pyx_INCREF(__pyx_t_12);
-        __Pyx_INCREF(__pyx_t_17);
         __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(__pyx_t_16);
         #else
         {
           Py_ssize_t i;
-          PyObject** temps[5] = {&__pyx_t_2,&__pyx_t_7,&__pyx_t_12,&__pyx_t_17,&__pyx_t_6};
+          PyObject** temps[5] = {&__pyx_t_1,&__pyx_t_7,&__pyx_t_12,&__pyx_t_6,&__pyx_t_16};
           for (i=0; i < 5; i++) {
-            PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(0, 1054, __pyx_L1_error)
+            PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(0, 1053, __pyx_L1_error)
             __Pyx_GOTREF(item);
             *(temps[i]) = item;
           }
         }
         #endif
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else {
         Py_ssize_t index = -1;
-        PyObject** temps[5] = {&__pyx_t_2,&__pyx_t_7,&__pyx_t_12,&__pyx_t_17,&__pyx_t_6};
-        __pyx_t_18 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 1054, __pyx_L1_error)
+        PyObject** temps[5] = {&__pyx_t_1,&__pyx_t_7,&__pyx_t_12,&__pyx_t_6,&__pyx_t_16};
+        __pyx_t_18 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 1053, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_18);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_t_19 = Py_TYPE(__pyx_t_18)->tp_iternext;
         for (index=0; index < 5; index++) {
           PyObject* item = __pyx_t_19(__pyx_t_18); if (unlikely(!item)) goto __pyx_L65_unpacking_failed;
           __Pyx_GOTREF(item);
           *(temps[index]) = item;
         }
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_19(__pyx_t_18), 5) < 0) __PYX_ERR(0, 1054, __pyx_L1_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_19(__pyx_t_18), 5) < 0) __PYX_ERR(0, 1053, __pyx_L1_error)
         __pyx_t_19 = NULL;
         __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
         goto __pyx_L66_unpacking_done;
@@ -29869,72 +29807,72 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
         __pyx_t_19 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 1054, __pyx_L1_error)
+        __PYX_ERR(0, 1053, __pyx_L1_error)
         __pyx_L66_unpacking_done:;
       }
 
-      /* "ViolaJones.py":1054
- *                 for index, item in enumerate(features):
- *                     f.write("Index %i->%s\n" % (index, item))
+      /* "ViolaJones.py":1053
+ *                 [f.write("Index %i->%s\n" % pair)
+ *                  for pair in enumerate(features)]
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(             # <<<<<<<<<<<<<<
  *                 features, correct)
  *             with open(foldername+"/feature_stat.txt", "w") as f:
  */
-      __Pyx_XDECREF_SET(__pyx_v_im_feature_label, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_im_feature_label, __pyx_t_1);
+      __pyx_t_1 = 0;
       __Pyx_XDECREF_SET(__pyx_v_feature_stat, __pyx_t_7);
       __pyx_t_7 = 0;
       __Pyx_XDECREF_SET(__pyx_v_y_list, __pyx_t_12);
       __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_pos_stat, __pyx_t_17);
-      __pyx_t_17 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_neg_stat, __pyx_t_6);
+      __Pyx_XDECREF_SET(__pyx_v_pos_stat, __pyx_t_6);
       __pyx_t_6 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_neg_stat, __pyx_t_16);
+      __pyx_t_16 = 0;
 
-      /* "ViolaJones.py":1056
+      /* "ViolaJones.py":1055
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
  *                 features, correct)
  *             with open(foldername+"/feature_stat.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for row in feature_stat:
- *                     f.write("%s\n" % row)
+ *                 [f.write("%s\n" % row) for row in feature_stat]
+ *             X_list, sorted_X_list = strong_classifier.apply_features(
  */
       /*with:*/ {
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1056, __pyx_L1_error) }
-        __pyx_t_1 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_feature_stat_txt); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1056, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1056, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1);
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1055, __pyx_L1_error) }
+        __pyx_t_2 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_feature_stat_txt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1055, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1055, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_2);
         __Pyx_INCREF(__pyx_n_s_w);
         __Pyx_GIVEREF(__pyx_n_s_w);
-        PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_n_s_w);
-        __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1056, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1056, __pyx_L1_error)
+        PyTuple_SET_ITEM(__pyx_t_16, 1, __pyx_n_s_w);
+        __pyx_t_2 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_16, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1055, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1055, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_17 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_enter); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1056, __pyx_L67_error)
-        __Pyx_GOTREF(__pyx_t_17);
+        __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1055, __pyx_L67_error)
+        __Pyx_GOTREF(__pyx_t_6);
         __pyx_t_12 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
-          __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_17);
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+          __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_6);
           if (likely(__pyx_t_12)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
             __Pyx_INCREF(__pyx_t_12);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_17, function);
+            __Pyx_DECREF_SET(__pyx_t_6, function);
           }
         }
-        __pyx_t_6 = (__pyx_t_12) ? __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_12) : __Pyx_PyObject_CallNoArg(__pyx_t_17);
+        __pyx_t_16 = (__pyx_t_12) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_12) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1056, __pyx_L67_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_17 = __pyx_t_6;
-        __pyx_t_6 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1055, __pyx_L67_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __pyx_t_6 = __pyx_t_16;
+        __pyx_t_16 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         /*try:*/ {
           {
             __Pyx_PyThreadState_declare
@@ -29944,103 +29882,91 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __Pyx_XGOTREF(__pyx_t_8);
             __Pyx_XGOTREF(__pyx_t_14);
             /*try:*/ {
-              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_17);
-              __pyx_t_17 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_6);
+              __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1057
+              /* "ViolaJones.py":1056
  *                 features, correct)
  *             with open(foldername+"/feature_stat.txt", "w") as f:
- *                 for row in feature_stat:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % row)
- *             X_list, sorted_X_list = strong_classifier.apply_features(
- */
-              if (likely(PyList_CheckExact(__pyx_v_feature_stat)) || PyTuple_CheckExact(__pyx_v_feature_stat)) {
-                __pyx_t_17 = __pyx_v_feature_stat; __Pyx_INCREF(__pyx_t_17); __pyx_t_13 = 0;
-                __pyx_t_15 = NULL;
-              } else {
-                __pyx_t_13 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_v_feature_stat); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1057, __pyx_L73_error)
-                __Pyx_GOTREF(__pyx_t_17);
-                __pyx_t_15 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1057, __pyx_L73_error)
-              }
-              for (;;) {
-                if (likely(!__pyx_t_15)) {
-                  if (likely(PyList_CheckExact(__pyx_t_17))) {
-                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_17)) break;
-                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_1 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1057, __pyx_L73_error)
-                    #else
-                    __pyx_t_1 = PySequence_ITEM(__pyx_t_17, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1057, __pyx_L73_error)
-                    __Pyx_GOTREF(__pyx_t_1);
-                    #endif
-                  } else {
-                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_17)) break;
-                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1057, __pyx_L73_error)
-                    #else
-                    __pyx_t_1 = PySequence_ITEM(__pyx_t_17, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1057, __pyx_L73_error)
-                    __Pyx_GOTREF(__pyx_t_1);
-                    #endif
-                  }
-                } else {
-                  __pyx_t_1 = __pyx_t_15(__pyx_t_17);
-                  if (unlikely(!__pyx_t_1)) {
-                    PyObject* exc_type = PyErr_Occurred();
-                    if (exc_type) {
-                      if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                      else __PYX_ERR(0, 1057, __pyx_L73_error)
-                    }
-                    break;
-                  }
-                  __Pyx_GOTREF(__pyx_t_1);
-                }
-                __Pyx_XDECREF_SET(__pyx_v_row, __pyx_t_1);
-                __pyx_t_1 = 0;
-
-                /* "ViolaJones.py":1058
- *             with open(foldername+"/feature_stat.txt", "w") as f:
- *                 for row in feature_stat:
- *                     f.write("%s\n" % row)             # <<<<<<<<<<<<<<
+ *                 [f.write("%s\n" % row) for row in feature_stat]             # <<<<<<<<<<<<<<
  *             X_list, sorted_X_list = strong_classifier.apply_features(
  *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
  */
-                __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1058, __pyx_L73_error)
-                __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_12 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_row); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1058, __pyx_L73_error)
+              __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1056, __pyx_L73_error)
+              __Pyx_GOTREF(__pyx_t_6);
+              if (likely(PyList_CheckExact(__pyx_v_feature_stat)) || PyTuple_CheckExact(__pyx_v_feature_stat)) {
+                __pyx_t_2 = __pyx_v_feature_stat; __Pyx_INCREF(__pyx_t_2); __pyx_t_13 = 0;
+                __pyx_t_15 = NULL;
+              } else {
+                __pyx_t_13 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_v_feature_stat); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1056, __pyx_L73_error)
+                __Pyx_GOTREF(__pyx_t_2);
+                __pyx_t_15 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1056, __pyx_L73_error)
+              }
+              for (;;) {
+                if (likely(!__pyx_t_15)) {
+                  if (likely(PyList_CheckExact(__pyx_t_2))) {
+                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_2)) break;
+                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+                    __pyx_t_16 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1056, __pyx_L73_error)
+                    #else
+                    __pyx_t_16 = PySequence_ITEM(__pyx_t_2, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1056, __pyx_L73_error)
+                    __Pyx_GOTREF(__pyx_t_16);
+                    #endif
+                  } else {
+                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
+                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+                    __pyx_t_16 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1056, __pyx_L73_error)
+                    #else
+                    __pyx_t_16 = PySequence_ITEM(__pyx_t_2, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1056, __pyx_L73_error)
+                    __Pyx_GOTREF(__pyx_t_16);
+                    #endif
+                  }
+                } else {
+                  __pyx_t_16 = __pyx_t_15(__pyx_t_2);
+                  if (unlikely(!__pyx_t_16)) {
+                    PyObject* exc_type = PyErr_Occurred();
+                    if (exc_type) {
+                      if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+                      else __PYX_ERR(0, 1056, __pyx_L73_error)
+                    }
+                    break;
+                  }
+                  __Pyx_GOTREF(__pyx_t_16);
+                }
+                __Pyx_XDECREF_SET(__pyx_v_row, __pyx_t_16);
+                __pyx_t_16 = 0;
+                __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1056, __pyx_L73_error)
                 __Pyx_GOTREF(__pyx_t_12);
-                __pyx_t_7 = NULL;
-                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-                  __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
-                  if (likely(__pyx_t_7)) {
-                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-                    __Pyx_INCREF(__pyx_t_7);
+                __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_row); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1056, __pyx_L73_error)
+                __Pyx_GOTREF(__pyx_t_7);
+                __pyx_t_1 = NULL;
+                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_12))) {
+                  __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_12);
+                  if (likely(__pyx_t_1)) {
+                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
+                    __Pyx_INCREF(__pyx_t_1);
                     __Pyx_INCREF(function);
-                    __Pyx_DECREF_SET(__pyx_t_6, function);
+                    __Pyx_DECREF_SET(__pyx_t_12, function);
                   }
                 }
-                __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_12) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_12);
-                __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+                __pyx_t_16 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_12, __pyx_t_1, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_7);
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+                if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1056, __pyx_L73_error)
+                __Pyx_GOTREF(__pyx_t_16);
                 __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1058, __pyx_L73_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-                /* "ViolaJones.py":1057
- *                 features, correct)
- *             with open(foldername+"/feature_stat.txt", "w") as f:
- *                 for row in feature_stat:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % row)
- *             X_list, sorted_X_list = strong_classifier.apply_features(
- */
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_16))) __PYX_ERR(0, 1056, __pyx_L73_error)
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
               }
-              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1056
+              /* "ViolaJones.py":1055
  *             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
  *                 features, correct)
  *             with open(foldername+"/feature_stat.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for row in feature_stat:
- *                     f.write("%s\n" % row)
+ *                 [f.write("%s\n" % row) for row in feature_stat]
+ *             X_list, sorted_X_list = strong_classifier.apply_features(
  */
             }
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -30050,39 +29976,39 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L73_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_17, &__pyx_t_1, &__pyx_t_6) < 0) __PYX_ERR(0, 1056, __pyx_L75_except_error)
-              __Pyx_GOTREF(__pyx_t_17);
-              __Pyx_GOTREF(__pyx_t_1);
+              if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_2, &__pyx_t_16) < 0) __PYX_ERR(0, 1055, __pyx_L75_except_error)
               __Pyx_GOTREF(__pyx_t_6);
-              __pyx_t_12 = PyTuple_Pack(3, __pyx_t_17, __pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1056, __pyx_L75_except_error)
+              __Pyx_GOTREF(__pyx_t_2);
+              __Pyx_GOTREF(__pyx_t_16);
+              __pyx_t_12 = PyTuple_Pack(3, __pyx_t_6, __pyx_t_2, __pyx_t_16); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1055, __pyx_L75_except_error)
               __Pyx_GOTREF(__pyx_t_12);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_12, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1056, __pyx_L75_except_error)
-              __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (__pyx_t_3 < 0) __PYX_ERR(0, 1056, __pyx_L75_except_error)
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1055, __pyx_L75_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              if (__pyx_t_3 < 0) __PYX_ERR(0, 1055, __pyx_L75_except_error)
               __pyx_t_5 = ((!(__pyx_t_3 != 0)) != 0);
               if (__pyx_t_5) {
-                __Pyx_GIVEREF(__pyx_t_17);
-                __Pyx_GIVEREF(__pyx_t_1);
-                __Pyx_XGIVEREF(__pyx_t_6);
-                __Pyx_ErrRestoreWithState(__pyx_t_17, __pyx_t_1, __pyx_t_6);
-                __pyx_t_17 = 0; __pyx_t_1 = 0; __pyx_t_6 = 0; 
-                __PYX_ERR(0, 1056, __pyx_L75_except_error)
+                __Pyx_GIVEREF(__pyx_t_6);
+                __Pyx_GIVEREF(__pyx_t_2);
+                __Pyx_XGIVEREF(__pyx_t_16);
+                __Pyx_ErrRestoreWithState(__pyx_t_6, __pyx_t_2, __pyx_t_16);
+                __pyx_t_6 = 0; __pyx_t_2 = 0; __pyx_t_16 = 0; 
+                __PYX_ERR(0, 1055, __pyx_L75_except_error)
               }
-              __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
               goto __pyx_L74_exception_handled;
             }
             __pyx_L75_except_error:;
@@ -30104,7 +30030,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             if (__pyx_t_10) {
               __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1056, __pyx_L1_error)
+              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1055, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_14);
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             }
@@ -30119,56 +30045,56 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L86:;
       }
 
-      /* "ViolaJones.py":1059
- *                 for row in feature_stat:
- *                     f.write("%s\n" % row)
+      /* "ViolaJones.py":1057
+ *             with open(foldername+"/feature_stat.txt", "w") as f:
+ *                 [f.write("%s\n" % row) for row in feature_stat]
  *             X_list, sorted_X_list = strong_classifier.apply_features(             # <<<<<<<<<<<<<<
  *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
  *             with open(foldername+"/X_list.txt", "w") as f:
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_apply_features); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1059, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_apply_features); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1057, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
 
-      /* "ViolaJones.py":1060
- *                     f.write("%s\n" % row)
+      /* "ViolaJones.py":1058
+ *                 [f.write("%s\n" % row) for row in feature_stat]
  *             X_list, sorted_X_list = strong_classifier.apply_features(
  *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in             # <<<<<<<<<<<<<<
  *             with open(foldername+"/X_list.txt", "w") as f:
- *                 for item in X_list:
+ *                 [f.write("%s\n" % item) for item in X_list]
  */
-      __pyx_t_17 = NULL;
+      __pyx_t_6 = NULL;
       __pyx_t_11 = 0;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_1);
-        if (likely(__pyx_t_17)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-          __Pyx_INCREF(__pyx_t_17);
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_1, function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
           __pyx_t_11 = 1;
         }
       }
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_1)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_17, __pyx_v_features, __pyx_v_ii_list};
-        __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1059, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __Pyx_GOTREF(__pyx_t_6);
+      if (PyFunction_Check(__pyx_t_2)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_features, __pyx_v_ii_list};
+        __pyx_t_16 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1057, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_16);
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_17, __pyx_v_features, __pyx_v_ii_list};
-        __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1059, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __Pyx_GOTREF(__pyx_t_6);
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_features, __pyx_v_ii_list};
+        __pyx_t_16 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1057, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_GOTREF(__pyx_t_16);
       } else
       #endif
       {
-        __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1059, __pyx_L1_error)
+        __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1057, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        if (__pyx_t_17) {
-          __Pyx_GIVEREF(__pyx_t_17); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_17); __pyx_t_17 = NULL;
+        if (__pyx_t_6) {
+          __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_6); __pyx_t_6 = NULL;
         }
         __Pyx_INCREF(__pyx_v_features);
         __Pyx_GIVEREF(__pyx_v_features);
@@ -30176,114 +30102,114 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_INCREF(__pyx_v_ii_list);
         __Pyx_GIVEREF(__pyx_v_ii_list);
         PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_11, __pyx_v_ii_list);
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1059, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1057, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if ((likely(PyTuple_CheckExact(__pyx_t_6))) || (PyList_CheckExact(__pyx_t_6))) {
-        PyObject* sequence = __pyx_t_6;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      if ((likely(PyTuple_CheckExact(__pyx_t_16))) || (PyList_CheckExact(__pyx_t_16))) {
+        PyObject* sequence = __pyx_t_16;
         Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
         if (unlikely(size != 2)) {
           if (size > 2) __Pyx_RaiseTooManyValuesError(2);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 1059, __pyx_L1_error)
+          __PYX_ERR(0, 1057, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
-          __pyx_t_1 = PyTuple_GET_ITEM(sequence, 0); 
+          __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0); 
           __pyx_t_12 = PyTuple_GET_ITEM(sequence, 1); 
         } else {
-          __pyx_t_1 = PyList_GET_ITEM(sequence, 0); 
+          __pyx_t_2 = PyList_GET_ITEM(sequence, 0); 
           __pyx_t_12 = PyList_GET_ITEM(sequence, 1); 
         }
-        __Pyx_INCREF(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_t_12);
         #else
-        __pyx_t_1 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1059, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_12 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1059, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1057, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_12 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1057, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         #endif
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_17 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1059, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_19 = Py_TYPE(__pyx_t_17)->tp_iternext;
-        index = 0; __pyx_t_1 = __pyx_t_19(__pyx_t_17); if (unlikely(!__pyx_t_1)) goto __pyx_L87_unpacking_failed;
-        __Pyx_GOTREF(__pyx_t_1);
-        index = 1; __pyx_t_12 = __pyx_t_19(__pyx_t_17); if (unlikely(!__pyx_t_12)) goto __pyx_L87_unpacking_failed;
+        __pyx_t_6 = PyObject_GetIter(__pyx_t_16); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1057, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __pyx_t_19 = Py_TYPE(__pyx_t_6)->tp_iternext;
+        index = 0; __pyx_t_2 = __pyx_t_19(__pyx_t_6); if (unlikely(!__pyx_t_2)) goto __pyx_L87_unpacking_failed;
+        __Pyx_GOTREF(__pyx_t_2);
+        index = 1; __pyx_t_12 = __pyx_t_19(__pyx_t_6); if (unlikely(!__pyx_t_12)) goto __pyx_L87_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_12);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_19(__pyx_t_17), 2) < 0) __PYX_ERR(0, 1059, __pyx_L1_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_19(__pyx_t_6), 2) < 0) __PYX_ERR(0, 1057, __pyx_L1_error)
         __pyx_t_19 = NULL;
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         goto __pyx_L88_unpacking_done;
         __pyx_L87_unpacking_failed:;
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __pyx_t_19 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 1059, __pyx_L1_error)
+        __PYX_ERR(0, 1057, __pyx_L1_error)
         __pyx_L88_unpacking_done:;
       }
 
-      /* "ViolaJones.py":1059
- *                 for row in feature_stat:
- *                     f.write("%s\n" % row)
+      /* "ViolaJones.py":1057
+ *             with open(foldername+"/feature_stat.txt", "w") as f:
+ *                 [f.write("%s\n" % row) for row in feature_stat]
  *             X_list, sorted_X_list = strong_classifier.apply_features(             # <<<<<<<<<<<<<<
  *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
  *             with open(foldername+"/X_list.txt", "w") as f:
  */
-      __Pyx_XDECREF_SET(__pyx_v_X_list, __pyx_t_1);
-      __pyx_t_1 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_X_list, __pyx_t_2);
+      __pyx_t_2 = 0;
       __Pyx_XDECREF_SET(__pyx_v_sorted_X_list, __pyx_t_12);
       __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1061
+      /* "ViolaJones.py":1059
  *             X_list, sorted_X_list = strong_classifier.apply_features(
  *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
  *             with open(foldername+"/X_list.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for item in X_list:
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in X_list]
+ *             with open(foldername+"/sorted_X_list.txt", "w") as f:
  */
       /*with:*/ {
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1061, __pyx_L1_error) }
-        __pyx_t_6 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_X_list_txt); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1061, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1061, __pyx_L1_error)
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1059, __pyx_L1_error) }
+        __pyx_t_16 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_X_list_txt); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1059, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1059, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_GIVEREF(__pyx_t_6);
-        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_6);
+        __Pyx_GIVEREF(__pyx_t_16);
+        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_16);
         __Pyx_INCREF(__pyx_n_s_w);
         __Pyx_GIVEREF(__pyx_n_s_w);
         PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_n_s_w);
-        __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_12, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1061, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_16 = 0;
+        __pyx_t_16 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_12, NULL); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1059, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1061, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_16, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1059, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_enter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1061, __pyx_L89_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_17 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_17)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_17);
+        __pyx_t_2 = __Pyx_PyObject_LookupSpecial(__pyx_t_16, __pyx_n_s_enter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1059, __pyx_L89_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_6 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_6)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_6);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
           }
         }
-        __pyx_t_12 = (__pyx_t_17) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_17) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1061, __pyx_L89_error)
+        __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1059, __pyx_L89_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __pyx_t_12;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_2 = __pyx_t_12;
         __pyx_t_12 = 0;
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         /*try:*/ {
           {
             __Pyx_PyThreadState_declare
@@ -30293,103 +30219,91 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __Pyx_XGOTREF(__pyx_t_8);
             __Pyx_XGOTREF(__pyx_t_9);
             /*try:*/ {
-              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_1);
-              __pyx_t_1 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_2);
+              __pyx_t_2 = 0;
 
-              /* "ViolaJones.py":1062
+              /* "ViolaJones.py":1060
  *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
  *             with open(foldername+"/X_list.txt", "w") as f:
- *                 for item in X_list:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in X_list]             # <<<<<<<<<<<<<<
  *             with open(foldername+"/sorted_X_list.txt", "w") as f:
+ *                 [f.write("%s\n" % item) for item in sorted_X_list]
  */
+              __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1060, __pyx_L95_error)
+              __Pyx_GOTREF(__pyx_t_2);
               if (likely(PyList_CheckExact(__pyx_v_X_list)) || PyTuple_CheckExact(__pyx_v_X_list)) {
-                __pyx_t_1 = __pyx_v_X_list; __Pyx_INCREF(__pyx_t_1); __pyx_t_13 = 0;
+                __pyx_t_16 = __pyx_v_X_list; __Pyx_INCREF(__pyx_t_16); __pyx_t_13 = 0;
                 __pyx_t_15 = NULL;
               } else {
-                __pyx_t_13 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_X_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1062, __pyx_L95_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1062, __pyx_L95_error)
+                __pyx_t_13 = -1; __pyx_t_16 = PyObject_GetIter(__pyx_v_X_list); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1060, __pyx_L95_error)
+                __Pyx_GOTREF(__pyx_t_16);
+                __pyx_t_15 = Py_TYPE(__pyx_t_16)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1060, __pyx_L95_error)
               }
               for (;;) {
                 if (likely(!__pyx_t_15)) {
-                  if (likely(PyList_CheckExact(__pyx_t_1))) {
-                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_1)) break;
+                  if (likely(PyList_CheckExact(__pyx_t_16))) {
+                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_16)) break;
                     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_6 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_6); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1062, __pyx_L95_error)
+                    __pyx_t_12 = PyList_GET_ITEM(__pyx_t_16, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1060, __pyx_L95_error)
                     #else
-                    __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1062, __pyx_L95_error)
-                    __Pyx_GOTREF(__pyx_t_6);
+                    __pyx_t_12 = PySequence_ITEM(__pyx_t_16, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1060, __pyx_L95_error)
+                    __Pyx_GOTREF(__pyx_t_12);
                     #endif
                   } else {
-                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
+                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_16)) break;
                     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_6); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1062, __pyx_L95_error)
+                    __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_16, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1060, __pyx_L95_error)
                     #else
-                    __pyx_t_6 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1062, __pyx_L95_error)
-                    __Pyx_GOTREF(__pyx_t_6);
+                    __pyx_t_12 = PySequence_ITEM(__pyx_t_16, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1060, __pyx_L95_error)
+                    __Pyx_GOTREF(__pyx_t_12);
                     #endif
                   }
                 } else {
-                  __pyx_t_6 = __pyx_t_15(__pyx_t_1);
-                  if (unlikely(!__pyx_t_6)) {
+                  __pyx_t_12 = __pyx_t_15(__pyx_t_16);
+                  if (unlikely(!__pyx_t_12)) {
                     PyObject* exc_type = PyErr_Occurred();
                     if (exc_type) {
                       if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                      else __PYX_ERR(0, 1062, __pyx_L95_error)
+                      else __PYX_ERR(0, 1060, __pyx_L95_error)
                     }
                     break;
                   }
-                  __Pyx_GOTREF(__pyx_t_6);
+                  __Pyx_GOTREF(__pyx_t_12);
                 }
-                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_6);
-                __pyx_t_6 = 0;
-
-                /* "ViolaJones.py":1063
- *             with open(foldername+"/X_list.txt", "w") as f:
- *                 for item in X_list:
- *                     f.write("%s\n" % item)             # <<<<<<<<<<<<<<
- *             with open(foldername+"/sorted_X_list.txt", "w") as f:
- *                 for item in sorted_X_list:
- */
-                __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1063, __pyx_L95_error)
-                __Pyx_GOTREF(__pyx_t_12);
-                __pyx_t_17 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1063, __pyx_L95_error)
-                __Pyx_GOTREF(__pyx_t_17);
-                __pyx_t_7 = NULL;
-                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_12))) {
-                  __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_12);
-                  if (likely(__pyx_t_7)) {
-                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
-                    __Pyx_INCREF(__pyx_t_7);
+                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_12);
+                __pyx_t_12 = 0;
+                __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1060, __pyx_L95_error)
+                __Pyx_GOTREF(__pyx_t_6);
+                __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1060, __pyx_L95_error)
+                __Pyx_GOTREF(__pyx_t_7);
+                __pyx_t_1 = NULL;
+                if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+                  __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
+                  if (likely(__pyx_t_1)) {
+                    PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+                    __Pyx_INCREF(__pyx_t_1);
                     __Pyx_INCREF(function);
-                    __Pyx_DECREF_SET(__pyx_t_12, function);
+                    __Pyx_DECREF_SET(__pyx_t_6, function);
                   }
                 }
-                __pyx_t_6 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_12, __pyx_t_7, __pyx_t_17) : __Pyx_PyObject_CallOneArg(__pyx_t_12, __pyx_t_17);
-                __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1063, __pyx_L95_error)
-                __Pyx_GOTREF(__pyx_t_6);
-                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+                __pyx_t_12 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_1, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7);
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+                if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1060, __pyx_L95_error)
+                __Pyx_GOTREF(__pyx_t_12);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-
-                /* "ViolaJones.py":1062
- *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
- *             with open(foldername+"/X_list.txt", "w") as f:
- *                 for item in X_list:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % item)
- *             with open(foldername+"/sorted_X_list.txt", "w") as f:
- */
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 1060, __pyx_L95_error)
+                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
               }
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "ViolaJones.py":1061
+              /* "ViolaJones.py":1059
  *             X_list, sorted_X_list = strong_classifier.apply_features(
  *                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
  *             with open(foldername+"/X_list.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for item in X_list:
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in X_list]
+ *             with open(foldername+"/sorted_X_list.txt", "w") as f:
  */
             }
             __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -30399,38 +30313,38 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L95_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_6, &__pyx_t_12) < 0) __PYX_ERR(0, 1061, __pyx_L97_except_error)
-              __Pyx_GOTREF(__pyx_t_1);
-              __Pyx_GOTREF(__pyx_t_6);
-              __Pyx_GOTREF(__pyx_t_12);
-              __pyx_t_17 = PyTuple_Pack(3, __pyx_t_1, __pyx_t_6, __pyx_t_12); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1061, __pyx_L97_except_error)
-              __Pyx_GOTREF(__pyx_t_17);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_17, NULL);
-              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1061, __pyx_L97_except_error)
+              if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_16, &__pyx_t_12) < 0) __PYX_ERR(0, 1059, __pyx_L97_except_error)
+              __Pyx_GOTREF(__pyx_t_2);
               __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (__pyx_t_5 < 0) __PYX_ERR(0, 1061, __pyx_L97_except_error)
+              __Pyx_GOTREF(__pyx_t_12);
+              __pyx_t_6 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_16, __pyx_t_12); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1059, __pyx_L97_except_error)
+              __Pyx_GOTREF(__pyx_t_6);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_6, NULL);
+              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+              __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1059, __pyx_L97_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              if (__pyx_t_5 < 0) __PYX_ERR(0, 1059, __pyx_L97_except_error)
               __pyx_t_3 = ((!(__pyx_t_5 != 0)) != 0);
               if (__pyx_t_3) {
-                __Pyx_GIVEREF(__pyx_t_1);
-                __Pyx_GIVEREF(__pyx_t_6);
+                __Pyx_GIVEREF(__pyx_t_2);
+                __Pyx_GIVEREF(__pyx_t_16);
                 __Pyx_XGIVEREF(__pyx_t_12);
-                __Pyx_ErrRestoreWithState(__pyx_t_1, __pyx_t_6, __pyx_t_12);
-                __pyx_t_1 = 0; __pyx_t_6 = 0; __pyx_t_12 = 0; 
-                __PYX_ERR(0, 1061, __pyx_L97_except_error)
+                __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_16, __pyx_t_12);
+                __pyx_t_2 = 0; __pyx_t_16 = 0; __pyx_t_12 = 0; 
+                __PYX_ERR(0, 1059, __pyx_L97_except_error)
               }
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
               goto __pyx_L96_exception_handled;
             }
@@ -30453,7 +30367,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             if (__pyx_t_10) {
               __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1061, __pyx_L1_error)
+              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1059, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_9);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             }
@@ -30468,49 +30382,49 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L108:;
       }
 
-      /* "ViolaJones.py":1064
- *                 for item in X_list:
- *                     f.write("%s\n" % item)
+      /* "ViolaJones.py":1061
+ *             with open(foldername+"/X_list.txt", "w") as f:
+ *                 [f.write("%s\n" % item) for item in X_list]
  *             with open(foldername+"/sorted_X_list.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for item in sorted_X_list:
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in sorted_X_list]
+ *             print("Prep Done")
  */
       /*with:*/ {
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1064, __pyx_L1_error) }
-        __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_sorted_X_list_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1064, __pyx_L1_error)
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1061, __pyx_L1_error) }
+        __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_sorted_X_list_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1061, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1064, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1061, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
         __Pyx_GIVEREF(__pyx_t_12);
-        PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_12);
+        PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_12);
         __Pyx_INCREF(__pyx_n_s_w);
         __Pyx_GIVEREF(__pyx_n_s_w);
-        PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_n_s_w);
+        PyTuple_SET_ITEM(__pyx_t_16, 1, __pyx_n_s_w);
         __pyx_t_12 = 0;
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_6, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1064, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_16, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1061, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1064, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1061, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_enter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1064, __pyx_L109_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_17 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_17)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_17);
+        __pyx_t_2 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_enter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1061, __pyx_L109_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_6 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_6)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_6);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
           }
         }
-        __pyx_t_6 = (__pyx_t_17) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_17) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1064, __pyx_L109_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __pyx_t_6;
-        __pyx_t_6 = 0;
+        __pyx_t_16 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+        if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1061, __pyx_L109_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_2 = __pyx_t_16;
+        __pyx_t_16 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         /*try:*/ {
           {
@@ -30521,103 +30435,91 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __Pyx_XGOTREF(__pyx_t_8);
             __Pyx_XGOTREF(__pyx_t_14);
             /*try:*/ {
-              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_1);
-              __pyx_t_1 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_2);
+              __pyx_t_2 = 0;
 
-              /* "ViolaJones.py":1065
- *                     f.write("%s\n" % item)
+              /* "ViolaJones.py":1062
+ *                 [f.write("%s\n" % item) for item in X_list]
  *             with open(foldername+"/sorted_X_list.txt", "w") as f:
- *                 for item in sorted_X_list:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % item)
- *             print("Prep Done")
- */
-              if (likely(PyList_CheckExact(__pyx_v_sorted_X_list)) || PyTuple_CheckExact(__pyx_v_sorted_X_list)) {
-                __pyx_t_1 = __pyx_v_sorted_X_list; __Pyx_INCREF(__pyx_t_1); __pyx_t_13 = 0;
-                __pyx_t_15 = NULL;
-              } else {
-                __pyx_t_13 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_sorted_X_list); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1065, __pyx_L115_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1065, __pyx_L115_error)
-              }
-              for (;;) {
-                if (likely(!__pyx_t_15)) {
-                  if (likely(PyList_CheckExact(__pyx_t_1))) {
-                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_1)) break;
-                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_12 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1065, __pyx_L115_error)
-                    #else
-                    __pyx_t_12 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1065, __pyx_L115_error)
-                    __Pyx_GOTREF(__pyx_t_12);
-                    #endif
-                  } else {
-                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
-                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                    __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1065, __pyx_L115_error)
-                    #else
-                    __pyx_t_12 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1065, __pyx_L115_error)
-                    __Pyx_GOTREF(__pyx_t_12);
-                    #endif
-                  }
-                } else {
-                  __pyx_t_12 = __pyx_t_15(__pyx_t_1);
-                  if (unlikely(!__pyx_t_12)) {
-                    PyObject* exc_type = PyErr_Occurred();
-                    if (exc_type) {
-                      if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                      else __PYX_ERR(0, 1065, __pyx_L115_error)
-                    }
-                    break;
-                  }
-                  __Pyx_GOTREF(__pyx_t_12);
-                }
-                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_12);
-                __pyx_t_12 = 0;
-
-                /* "ViolaJones.py":1066
- *             with open(foldername+"/sorted_X_list.txt", "w") as f:
- *                 for item in sorted_X_list:
- *                     f.write("%s\n" % item)             # <<<<<<<<<<<<<<
+ *                 [f.write("%s\n" % item) for item in sorted_X_list]             # <<<<<<<<<<<<<<
  *             print("Prep Done")
  *             print("Number of iterations to run is %i" % strong_classifier.T)
  */
-                __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1066, __pyx_L115_error)
+              __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1062, __pyx_L115_error)
+              __Pyx_GOTREF(__pyx_t_2);
+              if (likely(PyList_CheckExact(__pyx_v_sorted_X_list)) || PyTuple_CheckExact(__pyx_v_sorted_X_list)) {
+                __pyx_t_12 = __pyx_v_sorted_X_list; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+                __pyx_t_15 = NULL;
+              } else {
+                __pyx_t_13 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_v_sorted_X_list); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1062, __pyx_L115_error)
+                __Pyx_GOTREF(__pyx_t_12);
+                __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1062, __pyx_L115_error)
+              }
+              for (;;) {
+                if (likely(!__pyx_t_15)) {
+                  if (likely(PyList_CheckExact(__pyx_t_12))) {
+                    if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+                    __pyx_t_16 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1062, __pyx_L115_error)
+                    #else
+                    __pyx_t_16 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1062, __pyx_L115_error)
+                    __Pyx_GOTREF(__pyx_t_16);
+                    #endif
+                  } else {
+                    if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
+                    #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+                    __pyx_t_16 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1062, __pyx_L115_error)
+                    #else
+                    __pyx_t_16 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1062, __pyx_L115_error)
+                    __Pyx_GOTREF(__pyx_t_16);
+                    #endif
+                  }
+                } else {
+                  __pyx_t_16 = __pyx_t_15(__pyx_t_12);
+                  if (unlikely(!__pyx_t_16)) {
+                    PyObject* exc_type = PyErr_Occurred();
+                    if (exc_type) {
+                      if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+                      else __PYX_ERR(0, 1062, __pyx_L115_error)
+                    }
+                    break;
+                  }
+                  __Pyx_GOTREF(__pyx_t_16);
+                }
+                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_16);
+                __pyx_t_16 = 0;
+                __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1062, __pyx_L115_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_17 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1066, __pyx_L115_error)
-                __Pyx_GOTREF(__pyx_t_17);
-                __pyx_t_7 = NULL;
+                __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1062, __pyx_L115_error)
+                __Pyx_GOTREF(__pyx_t_7);
+                __pyx_t_1 = NULL;
                 if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-                  __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
-                  if (likely(__pyx_t_7)) {
+                  __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
+                  if (likely(__pyx_t_1)) {
                     PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-                    __Pyx_INCREF(__pyx_t_7);
+                    __Pyx_INCREF(__pyx_t_1);
                     __Pyx_INCREF(function);
                     __Pyx_DECREF_SET(__pyx_t_6, function);
                   }
                 }
-                __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_17) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_17);
-                __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-                if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1066, __pyx_L115_error)
-                __Pyx_GOTREF(__pyx_t_12);
+                __pyx_t_16 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_1, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7);
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+                if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1062, __pyx_L115_error)
+                __Pyx_GOTREF(__pyx_t_16);
                 __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-
-                /* "ViolaJones.py":1065
- *                     f.write("%s\n" % item)
- *             with open(foldername+"/sorted_X_list.txt", "w") as f:
- *                 for item in sorted_X_list:             # <<<<<<<<<<<<<<
- *                     f.write("%s\n" % item)
- *             print("Prep Done")
- */
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_16))) __PYX_ERR(0, 1062, __pyx_L115_error)
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
               }
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-              /* "ViolaJones.py":1064
- *                 for item in X_list:
- *                     f.write("%s\n" % item)
+              /* "ViolaJones.py":1061
+ *             with open(foldername+"/X_list.txt", "w") as f:
+ *                 [f.write("%s\n" % item) for item in X_list]
  *             with open(foldername+"/sorted_X_list.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 for item in sorted_X_list:
- *                     f.write("%s\n" % item)
+ *                 [f.write("%s\n" % item) for item in sorted_X_list]
+ *             print("Prep Done")
  */
             }
             __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -30627,39 +30529,39 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L115_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_12, &__pyx_t_6) < 0) __PYX_ERR(0, 1064, __pyx_L117_except_error)
-              __Pyx_GOTREF(__pyx_t_1);
+              if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_12, &__pyx_t_16) < 0) __PYX_ERR(0, 1061, __pyx_L117_except_error)
+              __Pyx_GOTREF(__pyx_t_2);
               __Pyx_GOTREF(__pyx_t_12);
-              __Pyx_GOTREF(__pyx_t_6);
-              __pyx_t_17 = PyTuple_Pack(3, __pyx_t_1, __pyx_t_12, __pyx_t_6); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1064, __pyx_L117_except_error)
-              __Pyx_GOTREF(__pyx_t_17);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_17, NULL);
-              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1064, __pyx_L117_except_error)
               __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (__pyx_t_3 < 0) __PYX_ERR(0, 1064, __pyx_L117_except_error)
+              __pyx_t_6 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_12, __pyx_t_16); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1061, __pyx_L117_except_error)
+              __Pyx_GOTREF(__pyx_t_6);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_6, NULL);
+              __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+              __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1061, __pyx_L117_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              if (__pyx_t_3 < 0) __PYX_ERR(0, 1061, __pyx_L117_except_error)
               __pyx_t_5 = ((!(__pyx_t_3 != 0)) != 0);
               if (__pyx_t_5) {
-                __Pyx_GIVEREF(__pyx_t_1);
+                __Pyx_GIVEREF(__pyx_t_2);
                 __Pyx_GIVEREF(__pyx_t_12);
-                __Pyx_XGIVEREF(__pyx_t_6);
-                __Pyx_ErrRestoreWithState(__pyx_t_1, __pyx_t_12, __pyx_t_6);
-                __pyx_t_1 = 0; __pyx_t_12 = 0; __pyx_t_6 = 0; 
-                __PYX_ERR(0, 1064, __pyx_L117_except_error)
+                __Pyx_XGIVEREF(__pyx_t_16);
+                __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_12, __pyx_t_16);
+                __pyx_t_2 = 0; __pyx_t_12 = 0; __pyx_t_16 = 0; 
+                __PYX_ERR(0, 1061, __pyx_L117_except_error)
               }
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-              __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+              __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
               goto __pyx_L116_exception_handled;
             }
             __pyx_L117_except_error:;
@@ -30681,7 +30583,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             if (__pyx_t_10) {
               __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1064, __pyx_L1_error)
+              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1061, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_14);
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             }
@@ -30696,31 +30598,31 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L128:;
       }
 
-      /* "ViolaJones.py":1067
- *                 for item in sorted_X_list:
- *                     f.write("%s\n" % item)
+      /* "ViolaJones.py":1063
+ *             with open(foldername+"/sorted_X_list.txt", "w") as f:
+ *                 [f.write("%s\n" % item) for item in sorted_X_list]
  *             print("Prep Done")             # <<<<<<<<<<<<<<
  *             print("Number of iterations to run is %i" % strong_classifier.T)
  *             """
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Prep_Done) < 0) __PYX_ERR(0, 1067, __pyx_L1_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Prep_Done) < 0) __PYX_ERR(0, 1063, __pyx_L1_error)
 
-      /* "ViolaJones.py":1068
- *                     f.write("%s\n" % item)
+      /* "ViolaJones.py":1064
+ *                 [f.write("%s\n" % item) for item in sorted_X_list]
  *             print("Prep Done")
  *             print("Number of iterations to run is %i" % strong_classifier.T)             # <<<<<<<<<<<<<<
  *             """
  *             Plot the sorted feature graphs OR
  */
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_T); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1068, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_12 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Number_of_iterations_to_run_is_i, __pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1068, __pyx_L1_error)
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_T); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1064, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __pyx_t_12 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Number_of_iterations_to_run_is_i, __pyx_t_16); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1064, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_12) < 0) __PYX_ERR(0, 1068, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      if (__Pyx_PrintOne(0, __pyx_t_12) < 0) __PYX_ERR(0, 1064, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1074
+      /* "ViolaJones.py":1070
  *             Plotting either 2880 sorted or 2880 not-sorted takes about 40+ minutes each
  *             """
  *             while True:             # <<<<<<<<<<<<<<
@@ -30729,58 +30631,58 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  */
       while (1) {
 
-        /* "ViolaJones.py":1075
+        /* "ViolaJones.py":1071
  *             """
  *             while True:
  *                 qr = input('Plot unsorted feature graphs? (y/n)\n')             # <<<<<<<<<<<<<<
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')
  */
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1075, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__13, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1071, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_XDECREF_SET(__pyx_v_qr, __pyx_t_12);
         __pyx_t_12 = 0;
 
-        /* "ViolaJones.py":1076
+        /* "ViolaJones.py":1072
  *             while True:
  *                 qr = input('Plot unsorted feature graphs? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:             # <<<<<<<<<<<<<<
  *                     print('Please answer with yes or no!')
  *                 else:
  */
-        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_v_qr, __pyx_kp_s__10, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1076, __pyx_L1_error)
+        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_v_qr, __pyx_kp_s__10, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1072, __pyx_L1_error)
         if (!__pyx_t_3) {
         } else {
           __pyx_t_5 = __pyx_t_3;
           goto __pyx_L132_bool_binop_done;
         }
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1076, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_lower); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1076, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_6)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_6);
+        __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1072, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_lower); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1072, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __pyx_t_16 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_16)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_16);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
           }
         }
-        __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1076, __pyx_L1_error)
+        __pyx_t_12 = (__pyx_t_16) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_16) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1072, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1076, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1072, __pyx_L1_error)
         if (__pyx_t_4) {
         } else {
           __pyx_t_3 = __pyx_t_4;
           goto __pyx_L134_bool_binop_done;
         }
-        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_n, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1076, __pyx_L1_error)
+        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_n, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1072, __pyx_L1_error)
         __pyx_t_3 = __pyx_t_4;
         __pyx_L134_bool_binop_done:;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -30789,16 +30691,16 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L132_bool_binop_done:;
         if (__pyx_t_5) {
 
-          /* "ViolaJones.py":1077
+          /* "ViolaJones.py":1073
  *                 qr = input('Plot unsorted feature graphs? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')             # <<<<<<<<<<<<<<
  *                 else:
  *                     break
  */
-          if (__Pyx_PrintOne(0, __pyx_kp_s_Please_answer_with_yes_or_no) < 0) __PYX_ERR(0, 1077, __pyx_L1_error)
+          if (__Pyx_PrintOne(0, __pyx_kp_s_Please_answer_with_yes_or_no) < 0) __PYX_ERR(0, 1073, __pyx_L1_error)
 
-          /* "ViolaJones.py":1076
+          /* "ViolaJones.py":1072
  *             while True:
  *                 qr = input('Plot unsorted feature graphs? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:             # <<<<<<<<<<<<<<
@@ -30808,7 +30710,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
           goto __pyx_L131;
         }
 
-        /* "ViolaJones.py":1079
+        /* "ViolaJones.py":1075
  *                     print('Please answer with yes or no!')
  *                 else:
  *                     break             # <<<<<<<<<<<<<<
@@ -30822,98 +30724,98 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       }
       __pyx_L130_break:;
 
-      /* "ViolaJones.py":1080
+      /* "ViolaJones.py":1076
  *                 else:
  *                     break
  *             if qr[0].lower() == 'y':             # <<<<<<<<<<<<<<
  *                 strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
  *             while True:
  */
-      if (unlikely(!__pyx_v_qr)) { __Pyx_RaiseUnboundLocalError("qr"); __PYX_ERR(0, 1080, __pyx_L1_error) }
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1080, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lower); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1080, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = NULL;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
-        if (likely(__pyx_t_1)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-          __Pyx_INCREF(__pyx_t_1);
+      if (unlikely(!__pyx_v_qr)) { __Pyx_RaiseUnboundLocalError("qr"); __PYX_ERR(0, 1076, __pyx_L1_error) }
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1076, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_lower); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1076, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = NULL;
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_16);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+          __Pyx_INCREF(__pyx_t_2);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_6, function);
+          __Pyx_DECREF_SET(__pyx_t_16, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1080, __pyx_L1_error)
+      __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_16);
+      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1076, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1080, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1076, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       if (__pyx_t_5) {
 
-        /* "ViolaJones.py":1081
+        /* "ViolaJones.py":1077
  *                     break
  *             if qr[0].lower() == 'y':
  *                 strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)             # <<<<<<<<<<<<<<
  *             while True:
  *                 qr = input('Plot value-sorted feature graphs? (y/n)\n')
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_plot_graphs); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1081, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = NULL;
+        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_plot_graphs); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1077, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_2 = NULL;
         __pyx_t_11 = 0;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-          __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
-          if (likely(__pyx_t_1)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-            __Pyx_INCREF(__pyx_t_1);
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
+          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_16);
+          if (likely(__pyx_t_2)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+            __Pyx_INCREF(__pyx_t_2);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_6, function);
+            __Pyx_DECREF_SET(__pyx_t_16, function);
             __pyx_t_11 = 1;
           }
         }
         #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[4] = {__pyx_t_1, __pyx_n_s_not_sorted, __pyx_v_X_list, __pyx_v_pos_stat};
-          __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1081, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (PyFunction_Check(__pyx_t_16)) {
+          PyObject *__pyx_temp[4] = {__pyx_t_2, __pyx_n_s_not_sorted, __pyx_v_X_list, __pyx_v_pos_stat};
+          __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1077, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_12);
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[4] = {__pyx_t_1, __pyx_n_s_not_sorted, __pyx_v_X_list, __pyx_v_pos_stat};
-          __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1081, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_16)) {
+          PyObject *__pyx_temp[4] = {__pyx_t_2, __pyx_n_s_not_sorted, __pyx_v_X_list, __pyx_v_pos_stat};
+          __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1077, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_12);
         } else
         #endif
         {
-          __pyx_t_17 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1081, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_17);
-          if (__pyx_t_1) {
-            __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_1); __pyx_t_1 = NULL;
+          __pyx_t_6 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1077, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          if (__pyx_t_2) {
+            __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __pyx_t_2 = NULL;
           }
           __Pyx_INCREF(__pyx_n_s_not_sorted);
           __Pyx_GIVEREF(__pyx_n_s_not_sorted);
-          PyTuple_SET_ITEM(__pyx_t_17, 0+__pyx_t_11, __pyx_n_s_not_sorted);
+          PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_11, __pyx_n_s_not_sorted);
           __Pyx_INCREF(__pyx_v_X_list);
           __Pyx_GIVEREF(__pyx_v_X_list);
-          PyTuple_SET_ITEM(__pyx_t_17, 1+__pyx_t_11, __pyx_v_X_list);
+          PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_11, __pyx_v_X_list);
           __Pyx_INCREF(__pyx_v_pos_stat);
           __Pyx_GIVEREF(__pyx_v_pos_stat);
-          PyTuple_SET_ITEM(__pyx_t_17, 2+__pyx_t_11, __pyx_v_pos_stat);
-          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_17, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1081, __pyx_L1_error)
+          PyTuple_SET_ITEM(__pyx_t_6, 2+__pyx_t_11, __pyx_v_pos_stat);
+          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_6, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1077, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         }
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-        /* "ViolaJones.py":1080
+        /* "ViolaJones.py":1076
  *                 else:
  *                     break
  *             if qr[0].lower() == 'y':             # <<<<<<<<<<<<<<
@@ -30922,7 +30824,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  */
       }
 
-      /* "ViolaJones.py":1082
+      /* "ViolaJones.py":1078
  *             if qr[0].lower() == 'y':
  *                 strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
  *             while True:             # <<<<<<<<<<<<<<
@@ -30931,58 +30833,58 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  */
       while (1) {
 
-        /* "ViolaJones.py":1083
+        /* "ViolaJones.py":1079
  *                 strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
  *             while True:
  *                 qr = input('Plot value-sorted feature graphs? (y/n)\n')             # <<<<<<<<<<<<<<
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')
  */
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1083, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1079, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_XDECREF_SET(__pyx_v_qr, __pyx_t_12);
         __pyx_t_12 = 0;
 
-        /* "ViolaJones.py":1084
+        /* "ViolaJones.py":1080
  *             while True:
  *                 qr = input('Plot value-sorted feature graphs? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:             # <<<<<<<<<<<<<<
  *                     print('Please answer with yes or no!')
  *                 else:
  */
-        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_qr, __pyx_kp_s__10, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1084, __pyx_L1_error)
+        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_qr, __pyx_kp_s__10, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1080, __pyx_L1_error)
         if (!__pyx_t_4) {
         } else {
           __pyx_t_5 = __pyx_t_4;
           goto __pyx_L140_bool_binop_done;
         }
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1084, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1080, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_lower); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1080, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_lower); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1084, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
-          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_17);
-          if (likely(__pyx_t_6)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
-            __Pyx_INCREF(__pyx_t_6);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __pyx_t_16 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+          __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_6);
+          if (likely(__pyx_t_16)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+            __Pyx_INCREF(__pyx_t_16);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_17, function);
+            __Pyx_DECREF_SET(__pyx_t_6, function);
           }
         }
-        __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_17);
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1084, __pyx_L1_error)
+        __pyx_t_12 = (__pyx_t_16) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_16) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
+        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1080, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_NE)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1084, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_NE)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1080, __pyx_L1_error)
         if (__pyx_t_3) {
         } else {
           __pyx_t_4 = __pyx_t_3;
           goto __pyx_L142_bool_binop_done;
         }
-        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_n, Py_NE)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1084, __pyx_L1_error)
+        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_n, Py_NE)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1080, __pyx_L1_error)
         __pyx_t_4 = __pyx_t_3;
         __pyx_L142_bool_binop_done:;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -30991,16 +30893,16 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L140_bool_binop_done:;
         if (__pyx_t_5) {
 
-          /* "ViolaJones.py":1085
+          /* "ViolaJones.py":1081
  *                 qr = input('Plot value-sorted feature graphs? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')             # <<<<<<<<<<<<<<
  *                 else:
  *                     break
  */
-          if (__Pyx_PrintOne(0, __pyx_kp_s_Please_answer_with_yes_or_no) < 0) __PYX_ERR(0, 1085, __pyx_L1_error)
+          if (__Pyx_PrintOne(0, __pyx_kp_s_Please_answer_with_yes_or_no) < 0) __PYX_ERR(0, 1081, __pyx_L1_error)
 
-          /* "ViolaJones.py":1084
+          /* "ViolaJones.py":1080
  *             while True:
  *                 qr = input('Plot value-sorted feature graphs? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:             # <<<<<<<<<<<<<<
@@ -31010,7 +30912,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
           goto __pyx_L139;
         }
 
-        /* "ViolaJones.py":1087
+        /* "ViolaJones.py":1083
  *                     print('Please answer with yes or no!')
  *                 else:
  *                     break             # <<<<<<<<<<<<<<
@@ -31024,106 +30926,106 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       }
       __pyx_L138_break:;
 
-      /* "ViolaJones.py":1088
+      /* "ViolaJones.py":1084
  *                 else:
  *                     break
  *             if qr[0].lower() == 'y':             # <<<<<<<<<<<<<<
  *                 strong_classifier.plot_sorted_graphs(
  *                     "sorted", sorted_X_list, pos_stat)
  */
-      if (unlikely(!__pyx_v_qr)) { __Pyx_RaiseUnboundLocalError("qr"); __PYX_ERR(0, 1088, __pyx_L1_error) }
-      __pyx_t_17 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1088, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_lower); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1088, __pyx_L1_error)
+      if (unlikely(!__pyx_v_qr)) { __Pyx_RaiseUnboundLocalError("qr"); __PYX_ERR(0, 1084, __pyx_L1_error) }
+      __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1084, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = NULL;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_6);
-        if (likely(__pyx_t_17)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-          __Pyx_INCREF(__pyx_t_17);
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_lower); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1084, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = NULL;
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_16);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_6, function);
+          __Pyx_DECREF_SET(__pyx_t_16, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_17) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_17) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
-      __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1088, __pyx_L1_error)
+      __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_16);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1084, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1088, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1084, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       if (__pyx_t_5) {
 
-        /* "ViolaJones.py":1089
+        /* "ViolaJones.py":1085
  *                     break
  *             if qr[0].lower() == 'y':
  *                 strong_classifier.plot_sorted_graphs(             # <<<<<<<<<<<<<<
  *                     "sorted", sorted_X_list, pos_stat)
  * 
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_plot_sorted_graphs); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1089, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_plot_sorted_graphs); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1085, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
 
-        /* "ViolaJones.py":1090
+        /* "ViolaJones.py":1086
  *             if qr[0].lower() == 'y':
  *                 strong_classifier.plot_sorted_graphs(
  *                     "sorted", sorted_X_list, pos_stat)             # <<<<<<<<<<<<<<
  * 
  *             """ Training here """
  */
-        __pyx_t_17 = NULL;
+        __pyx_t_6 = NULL;
         __pyx_t_11 = 0;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-          __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_6);
-          if (likely(__pyx_t_17)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-            __Pyx_INCREF(__pyx_t_17);
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
+          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_16);
+          if (likely(__pyx_t_6)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+            __Pyx_INCREF(__pyx_t_6);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_6, function);
+            __Pyx_DECREF_SET(__pyx_t_16, function);
             __pyx_t_11 = 1;
           }
         }
         #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[4] = {__pyx_t_17, __pyx_n_s_sorted, __pyx_v_sorted_X_list, __pyx_v_pos_stat};
-          __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1089, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+        if (PyFunction_Check(__pyx_t_16)) {
+          PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_n_s_sorted, __pyx_v_sorted_X_list, __pyx_v_pos_stat};
+          __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1085, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_12);
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[4] = {__pyx_t_17, __pyx_n_s_sorted, __pyx_v_sorted_X_list, __pyx_v_pos_stat};
-          __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1089, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_16)) {
+          PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_n_s_sorted, __pyx_v_sorted_X_list, __pyx_v_pos_stat};
+          __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1085, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
           __Pyx_GOTREF(__pyx_t_12);
         } else
         #endif
         {
-          __pyx_t_1 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1089, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          if (__pyx_t_17) {
-            __Pyx_GIVEREF(__pyx_t_17); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_17); __pyx_t_17 = NULL;
+          __pyx_t_2 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1085, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          if (__pyx_t_6) {
+            __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6); __pyx_t_6 = NULL;
           }
           __Pyx_INCREF(__pyx_n_s_sorted);
           __Pyx_GIVEREF(__pyx_n_s_sorted);
-          PyTuple_SET_ITEM(__pyx_t_1, 0+__pyx_t_11, __pyx_n_s_sorted);
+          PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_11, __pyx_n_s_sorted);
           __Pyx_INCREF(__pyx_v_sorted_X_list);
           __Pyx_GIVEREF(__pyx_v_sorted_X_list);
-          PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_11, __pyx_v_sorted_X_list);
+          PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_11, __pyx_v_sorted_X_list);
           __Pyx_INCREF(__pyx_v_pos_stat);
           __Pyx_GIVEREF(__pyx_v_pos_stat);
-          PyTuple_SET_ITEM(__pyx_t_1, 2+__pyx_t_11, __pyx_v_pos_stat);
-          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_1, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1089, __pyx_L1_error)
+          PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_11, __pyx_v_pos_stat);
+          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_2, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1085, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         }
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-        /* "ViolaJones.py":1088
+        /* "ViolaJones.py":1084
  *                 else:
  *                     break
  *             if qr[0].lower() == 'y':             # <<<<<<<<<<<<<<
@@ -31132,7 +31034,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  */
       }
 
-      /* "ViolaJones.py":1093
+      /* "ViolaJones.py":1089
  * 
  *             """ Training here """
  *             while True:             # <<<<<<<<<<<<<<
@@ -31141,58 +31043,58 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  */
       while (1) {
 
-        /* "ViolaJones.py":1094
+        /* "ViolaJones.py":1090
  *             """ Training here """
  *             while True:
  *                 qr = input('Train? (y/n)\n')             # <<<<<<<<<<<<<<
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')
  */
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1094, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1090, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_XDECREF_SET(__pyx_v_qr, __pyx_t_12);
         __pyx_t_12 = 0;
 
-        /* "ViolaJones.py":1095
+        /* "ViolaJones.py":1091
  *             while True:
  *                 qr = input('Train? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:             # <<<<<<<<<<<<<<
  *                     print('Please answer with yes or no!')
  *                 else:
  */
-        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_v_qr, __pyx_kp_s__10, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1095, __pyx_L1_error)
+        __pyx_t_3 = (__Pyx_PyString_Equals(__pyx_v_qr, __pyx_kp_s__10, Py_EQ)); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 1091, __pyx_L1_error)
         if (!__pyx_t_3) {
         } else {
           __pyx_t_5 = __pyx_t_3;
           goto __pyx_L148_bool_binop_done;
         }
-        __pyx_t_6 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1095, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_lower); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1095, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_6)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_6);
+        __pyx_t_16 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1091, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_lower); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1091, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __pyx_t_16 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_16)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_16);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
           }
         }
-        __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1095, __pyx_L1_error)
+        __pyx_t_12 = (__pyx_t_16) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_16) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1091, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1095, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1091, __pyx_L1_error)
         if (__pyx_t_4) {
         } else {
           __pyx_t_3 = __pyx_t_4;
           goto __pyx_L150_bool_binop_done;
         }
-        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_n, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1095, __pyx_L1_error)
+        __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_n, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1091, __pyx_L1_error)
         __pyx_t_3 = __pyx_t_4;
         __pyx_L150_bool_binop_done:;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -31201,16 +31103,16 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L148_bool_binop_done:;
         if (__pyx_t_5) {
 
-          /* "ViolaJones.py":1096
+          /* "ViolaJones.py":1092
  *                 qr = input('Train? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')             # <<<<<<<<<<<<<<
  *                 else:
  *                     break
  */
-          if (__Pyx_PrintOne(0, __pyx_kp_s_Please_answer_with_yes_or_no) < 0) __PYX_ERR(0, 1096, __pyx_L1_error)
+          if (__Pyx_PrintOne(0, __pyx_kp_s_Please_answer_with_yes_or_no) < 0) __PYX_ERR(0, 1092, __pyx_L1_error)
 
-          /* "ViolaJones.py":1095
+          /* "ViolaJones.py":1091
  *             while True:
  *                 qr = input('Train? (y/n)\n')
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:             # <<<<<<<<<<<<<<
@@ -31220,7 +31122,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
           goto __pyx_L147;
         }
 
-        /* "ViolaJones.py":1098
+        /* "ViolaJones.py":1094
  *                     print('Please answer with yes or no!')
  *                 else:
  *                     break             # <<<<<<<<<<<<<<
@@ -31234,146 +31136,146 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       }
       __pyx_L146_break:;
 
-      /* "ViolaJones.py":1099
+      /* "ViolaJones.py":1095
  *                 else:
  *                     break
  *             if qr[0].lower() == 'y':             # <<<<<<<<<<<<<<
  *                 weights = strong_classifier.initialize_weights(
  *                     feature_stat, y_list)
  */
-      if (unlikely(!__pyx_v_qr)) { __Pyx_RaiseUnboundLocalError("qr"); __PYX_ERR(0, 1099, __pyx_L1_error) }
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1099, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_lower); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1099, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = NULL;
-      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
-        if (likely(__pyx_t_1)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-          __Pyx_INCREF(__pyx_t_1);
+      if (unlikely(!__pyx_v_qr)) { __Pyx_RaiseUnboundLocalError("qr"); __PYX_ERR(0, 1095, __pyx_L1_error) }
+      __pyx_t_2 = __Pyx_GetItemInt(__pyx_v_qr, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1095, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_lower); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1095, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = NULL;
+      if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_16);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+          __Pyx_INCREF(__pyx_t_2);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_6, function);
+          __Pyx_DECREF_SET(__pyx_t_16, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1099, __pyx_L1_error)
+      __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_16);
+      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1095, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1099, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_12, __pyx_n_s_y, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1095, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       if (__pyx_t_5) {
 
-        /* "ViolaJones.py":1100
+        /* "ViolaJones.py":1096
  *                     break
  *             if qr[0].lower() == 'y':
  *                 weights = strong_classifier.initialize_weights(             # <<<<<<<<<<<<<<
  *                     feature_stat, y_list)
  *                 with open(foldername+"/weights.txt", "w") as f:
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_initialize_weights); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1100, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_initialize_weights); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1096, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
 
-        /* "ViolaJones.py":1101
+        /* "ViolaJones.py":1097
  *             if qr[0].lower() == 'y':
  *                 weights = strong_classifier.initialize_weights(
  *                     feature_stat, y_list)             # <<<<<<<<<<<<<<
  *                 with open(foldername+"/weights.txt", "w") as f:
- *                     for item in weights:
+ *                     [f.write("%s\n" % item) for item in weights]
  */
-        __pyx_t_1 = NULL;
+        __pyx_t_2 = NULL;
         __pyx_t_11 = 0;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-          __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_6);
-          if (likely(__pyx_t_1)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-            __Pyx_INCREF(__pyx_t_1);
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
+          __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_16);
+          if (likely(__pyx_t_2)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+            __Pyx_INCREF(__pyx_t_2);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_6, function);
+            __Pyx_DECREF_SET(__pyx_t_16, function);
             __pyx_t_11 = 1;
           }
         }
         #if CYTHON_FAST_PYCALL
-        if (PyFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_v_feature_stat, __pyx_v_y_list};
-          __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1100, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (PyFunction_Check(__pyx_t_16)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_feature_stat, __pyx_v_y_list};
+          __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1096, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_12);
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
-        if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-          PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_v_feature_stat, __pyx_v_y_list};
-          __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1100, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+        if (__Pyx_PyFastCFunction_Check(__pyx_t_16)) {
+          PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_feature_stat, __pyx_v_y_list};
+          __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1096, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
           __Pyx_GOTREF(__pyx_t_12);
         } else
         #endif
         {
-          __pyx_t_17 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1100, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_17);
-          if (__pyx_t_1) {
-            __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_1); __pyx_t_1 = NULL;
+          __pyx_t_6 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1096, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          if (__pyx_t_2) {
+            __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __pyx_t_2 = NULL;
           }
           __Pyx_INCREF(__pyx_v_feature_stat);
           __Pyx_GIVEREF(__pyx_v_feature_stat);
-          PyTuple_SET_ITEM(__pyx_t_17, 0+__pyx_t_11, __pyx_v_feature_stat);
+          PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_11, __pyx_v_feature_stat);
           __Pyx_INCREF(__pyx_v_y_list);
           __Pyx_GIVEREF(__pyx_v_y_list);
-          PyTuple_SET_ITEM(__pyx_t_17, 1+__pyx_t_11, __pyx_v_y_list);
-          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_17, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1100, __pyx_L1_error)
+          PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_11, __pyx_v_y_list);
+          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_6, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1096, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         }
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
         __Pyx_XDECREF_SET(__pyx_v_weights, __pyx_t_12);
         __pyx_t_12 = 0;
 
-        /* "ViolaJones.py":1102
+        /* "ViolaJones.py":1098
  *                 weights = strong_classifier.initialize_weights(
  *                     feature_stat, y_list)
  *                 with open(foldername+"/weights.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                     for item in weights:
- *                         f.write("%s\n" % item)
+ *                     [f.write("%s\n" % item) for item in weights]
+ *                 # Actually training below, which took 3 hours and 12 minutes
  */
         /*with:*/ {
-          if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1102, __pyx_L1_error) }
-          __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_weights_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1102, __pyx_L1_error)
+          if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1098, __pyx_L1_error) }
+          __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_weights_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1098, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1102, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_6);
+          __pyx_t_16 = PyTuple_New(2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1098, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_16);
           __Pyx_GIVEREF(__pyx_t_12);
-          PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_12);
+          PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_12);
           __Pyx_INCREF(__pyx_n_s_w);
           __Pyx_GIVEREF(__pyx_n_s_w);
-          PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_n_s_w);
+          PyTuple_SET_ITEM(__pyx_t_16, 1, __pyx_n_s_w);
           __pyx_t_12 = 0;
-          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_6, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1102, __pyx_L1_error)
+          __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_16, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1098, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1102, __pyx_L1_error)
+          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+          __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1098, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_17 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_enter); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1102, __pyx_L153_error)
-          __Pyx_GOTREF(__pyx_t_17);
-          __pyx_t_1 = NULL;
-          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
-            __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_17);
-            if (likely(__pyx_t_1)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
-              __Pyx_INCREF(__pyx_t_1);
+          __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1098, __pyx_L153_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          __pyx_t_2 = NULL;
+          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+            __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
+            if (likely(__pyx_t_2)) {
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+              __Pyx_INCREF(__pyx_t_2);
               __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_17, function);
+              __Pyx_DECREF_SET(__pyx_t_6, function);
             }
           }
-          __pyx_t_6 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_17);
-          __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-          if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1102, __pyx_L153_error)
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-          __pyx_t_17 = __pyx_t_6;
-          __pyx_t_6 = 0;
+          __pyx_t_16 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
+          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+          if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1098, __pyx_L153_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __pyx_t_6 = __pyx_t_16;
+          __pyx_t_16 = 0;
           __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
           /*try:*/ {
             {
@@ -31384,103 +31286,91 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               __Pyx_XGOTREF(__pyx_t_8);
               __Pyx_XGOTREF(__pyx_t_9);
               /*try:*/ {
-                __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_17);
-                __pyx_t_17 = 0;
+                __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_6);
+                __pyx_t_6 = 0;
 
-                /* "ViolaJones.py":1103
+                /* "ViolaJones.py":1099
  *                     feature_stat, y_list)
  *                 with open(foldername+"/weights.txt", "w") as f:
- *                     for item in weights:             # <<<<<<<<<<<<<<
- *                         f.write("%s\n" % item)
- *                 # Actually training below, which took 3 hours and 12 minutes
- */
-                if (likely(PyList_CheckExact(__pyx_v_weights)) || PyTuple_CheckExact(__pyx_v_weights)) {
-                  __pyx_t_17 = __pyx_v_weights; __Pyx_INCREF(__pyx_t_17); __pyx_t_13 = 0;
-                  __pyx_t_15 = NULL;
-                } else {
-                  __pyx_t_13 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_v_weights); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1103, __pyx_L159_error)
-                  __Pyx_GOTREF(__pyx_t_17);
-                  __pyx_t_15 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1103, __pyx_L159_error)
-                }
-                for (;;) {
-                  if (likely(!__pyx_t_15)) {
-                    if (likely(PyList_CheckExact(__pyx_t_17))) {
-                      if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_17)) break;
-                      #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                      __pyx_t_12 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1103, __pyx_L159_error)
-                      #else
-                      __pyx_t_12 = PySequence_ITEM(__pyx_t_17, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1103, __pyx_L159_error)
-                      __Pyx_GOTREF(__pyx_t_12);
-                      #endif
-                    } else {
-                      if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_17)) break;
-                      #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                      __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1103, __pyx_L159_error)
-                      #else
-                      __pyx_t_12 = PySequence_ITEM(__pyx_t_17, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1103, __pyx_L159_error)
-                      __Pyx_GOTREF(__pyx_t_12);
-                      #endif
-                    }
-                  } else {
-                    __pyx_t_12 = __pyx_t_15(__pyx_t_17);
-                    if (unlikely(!__pyx_t_12)) {
-                      PyObject* exc_type = PyErr_Occurred();
-                      if (exc_type) {
-                        if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                        else __PYX_ERR(0, 1103, __pyx_L159_error)
-                      }
-                      break;
-                    }
-                    __Pyx_GOTREF(__pyx_t_12);
-                  }
-                  __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_12);
-                  __pyx_t_12 = 0;
-
-                  /* "ViolaJones.py":1104
- *                 with open(foldername+"/weights.txt", "w") as f:
- *                     for item in weights:
- *                         f.write("%s\n" % item)             # <<<<<<<<<<<<<<
+ *                     [f.write("%s\n" % item) for item in weights]             # <<<<<<<<<<<<<<
  *                 # Actually training below, which took 3 hours and 12 minutes
  *                 # format = indexes, alphas, errors, weak_classifiers
  */
-                  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1104, __pyx_L159_error)
-                  __Pyx_GOTREF(__pyx_t_6);
-                  __pyx_t_1 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1104, __pyx_L159_error)
-                  __Pyx_GOTREF(__pyx_t_1);
-                  __pyx_t_7 = NULL;
-                  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
-                    __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
-                    if (likely(__pyx_t_7)) {
-                      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-                      __Pyx_INCREF(__pyx_t_7);
+                __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                __Pyx_GOTREF(__pyx_t_6);
+                if (likely(PyList_CheckExact(__pyx_v_weights)) || PyTuple_CheckExact(__pyx_v_weights)) {
+                  __pyx_t_12 = __pyx_v_weights; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+                  __pyx_t_15 = NULL;
+                } else {
+                  __pyx_t_13 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_v_weights); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                  __Pyx_GOTREF(__pyx_t_12);
+                  __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                }
+                for (;;) {
+                  if (likely(!__pyx_t_15)) {
+                    if (likely(PyList_CheckExact(__pyx_t_12))) {
+                      if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+                      #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+                      __pyx_t_16 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                      #else
+                      __pyx_t_16 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                      __Pyx_GOTREF(__pyx_t_16);
+                      #endif
+                    } else {
+                      if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
+                      #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+                      __pyx_t_16 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                      #else
+                      __pyx_t_16 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                      __Pyx_GOTREF(__pyx_t_16);
+                      #endif
+                    }
+                  } else {
+                    __pyx_t_16 = __pyx_t_15(__pyx_t_12);
+                    if (unlikely(!__pyx_t_16)) {
+                      PyObject* exc_type = PyErr_Occurred();
+                      if (exc_type) {
+                        if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+                        else __PYX_ERR(0, 1099, __pyx_L159_error)
+                      }
+                      break;
+                    }
+                    __Pyx_GOTREF(__pyx_t_16);
+                  }
+                  __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_16);
+                  __pyx_t_16 = 0;
+                  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                  __Pyx_GOTREF(__pyx_t_2);
+                  __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                  __Pyx_GOTREF(__pyx_t_7);
+                  __pyx_t_1 = NULL;
+                  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+                    __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
+                    if (likely(__pyx_t_1)) {
+                      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+                      __Pyx_INCREF(__pyx_t_1);
                       __Pyx_INCREF(function);
-                      __Pyx_DECREF_SET(__pyx_t_6, function);
+                      __Pyx_DECREF_SET(__pyx_t_2, function);
                     }
                   }
-                  __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_1);
-                  __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-                  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                  if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1104, __pyx_L159_error)
-                  __Pyx_GOTREF(__pyx_t_12);
-                  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                  __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-
-                  /* "ViolaJones.py":1103
- *                     feature_stat, y_list)
- *                 with open(foldername+"/weights.txt", "w") as f:
- *                     for item in weights:             # <<<<<<<<<<<<<<
- *                         f.write("%s\n" % item)
- *                 # Actually training below, which took 3 hours and 12 minutes
- */
+                  __pyx_t_16 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_7);
+                  __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+                  if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1099, __pyx_L159_error)
+                  __Pyx_GOTREF(__pyx_t_16);
+                  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+                  if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_16))) __PYX_ERR(0, 1099, __pyx_L159_error)
+                  __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
                 }
-                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+                __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-                /* "ViolaJones.py":1102
+                /* "ViolaJones.py":1098
  *                 weights = strong_classifier.initialize_weights(
  *                     feature_stat, y_list)
  *                 with open(foldername+"/weights.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                     for item in weights:
- *                         f.write("%s\n" % item)
+ *                     [f.write("%s\n" % item) for item in weights]
+ *                 # Actually training below, which took 3 hours and 12 minutes
  */
               }
               __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
@@ -31490,39 +31380,39 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               __pyx_L159_error:;
               __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-              __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+              __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
               __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
               __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
               /*except:*/ {
                 __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                if (__Pyx_GetException(&__pyx_t_17, &__pyx_t_12, &__pyx_t_6) < 0) __PYX_ERR(0, 1102, __pyx_L161_except_error)
-                __Pyx_GOTREF(__pyx_t_17);
-                __Pyx_GOTREF(__pyx_t_12);
+                if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_12, &__pyx_t_16) < 0) __PYX_ERR(0, 1098, __pyx_L161_except_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_1 = PyTuple_Pack(3, __pyx_t_17, __pyx_t_12, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1102, __pyx_L161_except_error)
-                __Pyx_GOTREF(__pyx_t_1);
-                __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_1, NULL);
-                __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-                if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1102, __pyx_L161_except_error)
+                __Pyx_GOTREF(__pyx_t_12);
                 __Pyx_GOTREF(__pyx_t_16);
-                __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-                if (__pyx_t_5 < 0) __PYX_ERR(0, 1102, __pyx_L161_except_error)
+                __pyx_t_2 = PyTuple_Pack(3, __pyx_t_6, __pyx_t_12, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1098, __pyx_L161_except_error)
+                __Pyx_GOTREF(__pyx_t_2);
+                __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_2, NULL);
+                __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+                __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+                if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1098, __pyx_L161_except_error)
+                __Pyx_GOTREF(__pyx_t_17);
+                __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+                if (__pyx_t_5 < 0) __PYX_ERR(0, 1098, __pyx_L161_except_error)
                 __pyx_t_4 = ((!(__pyx_t_5 != 0)) != 0);
                 if (__pyx_t_4) {
-                  __Pyx_GIVEREF(__pyx_t_17);
+                  __Pyx_GIVEREF(__pyx_t_6);
                   __Pyx_GIVEREF(__pyx_t_12);
-                  __Pyx_XGIVEREF(__pyx_t_6);
-                  __Pyx_ErrRestoreWithState(__pyx_t_17, __pyx_t_12, __pyx_t_6);
-                  __pyx_t_17 = 0; __pyx_t_12 = 0; __pyx_t_6 = 0; 
-                  __PYX_ERR(0, 1102, __pyx_L161_except_error)
+                  __Pyx_XGIVEREF(__pyx_t_16);
+                  __Pyx_ErrRestoreWithState(__pyx_t_6, __pyx_t_12, __pyx_t_16);
+                  __pyx_t_6 = 0; __pyx_t_12 = 0; __pyx_t_16 = 0; 
+                  __PYX_ERR(0, 1098, __pyx_L161_except_error)
                 }
-                __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-                __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
                 __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+                __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+                __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
                 goto __pyx_L160_exception_handled;
               }
               __pyx_L161_except_error:;
@@ -31544,7 +31434,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               if (__pyx_t_10) {
                 __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
                 __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-                if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1102, __pyx_L1_error)
+                if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1098, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_9);
                 __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
               }
@@ -31559,31 +31449,31 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
           __pyx_L172:;
         }
 
-        /* "ViolaJones.py":1107
+        /* "ViolaJones.py":1102
  *                 # Actually training below, which took 3 hours and 12 minutes
  *                 # format = indexes, alphas, errors, weak_classifiers
  *                 weak_classifier_list = strong_classifier.train(             # <<<<<<<<<<<<<<
  *                     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
  *                 with open("weak_classifier_list.pkl", 'wb') as f:
  */
-        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_train); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1107, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_strong_classifier, __pyx_n_s_train); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1102, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
 
-        /* "ViolaJones.py":1108
+        /* "ViolaJones.py":1103
  *                 # format = indexes, alphas, errors, weak_classifiers
  *                 weak_classifier_list = strong_classifier.train(
  *                     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)             # <<<<<<<<<<<<<<
  *                 with open("weak_classifier_list.pkl", 'wb') as f:
  *                     pickle.dump(weak_classifier_list, f)
  */
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1108, __pyx_L1_error) }
-        __pyx_t_17 = NULL;
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1103, __pyx_L1_error) }
+        __pyx_t_6 = NULL;
         __pyx_t_11 = 0;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_12))) {
-          __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_12);
-          if (likely(__pyx_t_17)) {
+          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_12);
+          if (likely(__pyx_t_6)) {
             PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
-            __Pyx_INCREF(__pyx_t_17);
+            __Pyx_INCREF(__pyx_t_6);
             __Pyx_INCREF(function);
             __Pyx_DECREF_SET(__pyx_t_12, function);
             __pyx_t_11 = 1;
@@ -31591,56 +31481,56 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         }
         #if CYTHON_FAST_PYCALL
         if (PyFunction_Check(__pyx_t_12)) {
-          PyObject *__pyx_temp[8] = {__pyx_t_17, __pyx_v_foldername, __pyx_v_weights, __pyx_v_sorted_X_list, __pyx_v_y_list, __pyx_v_pos_stat, __pyx_v_neg_stat, __pyx_v_features};
-          __pyx_t_6 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 7+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1107, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-          __Pyx_GOTREF(__pyx_t_6);
+          PyObject *__pyx_temp[8] = {__pyx_t_6, __pyx_v_foldername, __pyx_v_weights, __pyx_v_sorted_X_list, __pyx_v_y_list, __pyx_v_pos_stat, __pyx_v_neg_stat, __pyx_v_features};
+          __pyx_t_16 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 7+__pyx_t_11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1102, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_GOTREF(__pyx_t_16);
         } else
         #endif
         #if CYTHON_FAST_PYCCALL
         if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
-          PyObject *__pyx_temp[8] = {__pyx_t_17, __pyx_v_foldername, __pyx_v_weights, __pyx_v_sorted_X_list, __pyx_v_y_list, __pyx_v_pos_stat, __pyx_v_neg_stat, __pyx_v_features};
-          __pyx_t_6 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 7+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1107, __pyx_L1_error)
-          __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-          __Pyx_GOTREF(__pyx_t_6);
+          PyObject *__pyx_temp[8] = {__pyx_t_6, __pyx_v_foldername, __pyx_v_weights, __pyx_v_sorted_X_list, __pyx_v_y_list, __pyx_v_pos_stat, __pyx_v_neg_stat, __pyx_v_features};
+          __pyx_t_16 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 7+__pyx_t_11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1102, __pyx_L1_error)
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_GOTREF(__pyx_t_16);
         } else
         #endif
         {
-          __pyx_t_1 = PyTuple_New(7+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1107, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          if (__pyx_t_17) {
-            __Pyx_GIVEREF(__pyx_t_17); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_17); __pyx_t_17 = NULL;
+          __pyx_t_2 = PyTuple_New(7+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1102, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          if (__pyx_t_6) {
+            __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6); __pyx_t_6 = NULL;
           }
           __Pyx_INCREF(__pyx_v_foldername);
           __Pyx_GIVEREF(__pyx_v_foldername);
-          PyTuple_SET_ITEM(__pyx_t_1, 0+__pyx_t_11, __pyx_v_foldername);
+          PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_11, __pyx_v_foldername);
           __Pyx_INCREF(__pyx_v_weights);
           __Pyx_GIVEREF(__pyx_v_weights);
-          PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_11, __pyx_v_weights);
+          PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_11, __pyx_v_weights);
           __Pyx_INCREF(__pyx_v_sorted_X_list);
           __Pyx_GIVEREF(__pyx_v_sorted_X_list);
-          PyTuple_SET_ITEM(__pyx_t_1, 2+__pyx_t_11, __pyx_v_sorted_X_list);
+          PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_11, __pyx_v_sorted_X_list);
           __Pyx_INCREF(__pyx_v_y_list);
           __Pyx_GIVEREF(__pyx_v_y_list);
-          PyTuple_SET_ITEM(__pyx_t_1, 3+__pyx_t_11, __pyx_v_y_list);
+          PyTuple_SET_ITEM(__pyx_t_2, 3+__pyx_t_11, __pyx_v_y_list);
           __Pyx_INCREF(__pyx_v_pos_stat);
           __Pyx_GIVEREF(__pyx_v_pos_stat);
-          PyTuple_SET_ITEM(__pyx_t_1, 4+__pyx_t_11, __pyx_v_pos_stat);
+          PyTuple_SET_ITEM(__pyx_t_2, 4+__pyx_t_11, __pyx_v_pos_stat);
           __Pyx_INCREF(__pyx_v_neg_stat);
           __Pyx_GIVEREF(__pyx_v_neg_stat);
-          PyTuple_SET_ITEM(__pyx_t_1, 5+__pyx_t_11, __pyx_v_neg_stat);
+          PyTuple_SET_ITEM(__pyx_t_2, 5+__pyx_t_11, __pyx_v_neg_stat);
           __Pyx_INCREF(__pyx_v_features);
           __Pyx_GIVEREF(__pyx_v_features);
-          PyTuple_SET_ITEM(__pyx_t_1, 6+__pyx_t_11, __pyx_v_features);
-          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_1, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1107, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+          PyTuple_SET_ITEM(__pyx_t_2, 6+__pyx_t_11, __pyx_v_features);
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_2, NULL); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1102, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         }
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_weak_classifier_list, __pyx_t_6);
-        __pyx_t_6 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_weak_classifier_list, __pyx_t_16);
+        __pyx_t_16 = 0;
 
-        /* "ViolaJones.py":1109
+        /* "ViolaJones.py":1104
  *                 weak_classifier_list = strong_classifier.train(
  *                     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
  *                 with open("weak_classifier_list.pkl", 'wb') as f:             # <<<<<<<<<<<<<<
@@ -31648,30 +31538,30 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *         elif run == 1:
  */
         /*with:*/ {
-          __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1109, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1109, __pyx_L1_error)
+          __pyx_t_16 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__16, NULL); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1104, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_16, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1104, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_10);
-          __pyx_t_1 = __Pyx_PyObject_LookupSpecial(__pyx_t_6, __pyx_n_s_enter); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1109, __pyx_L173_error)
-          __Pyx_GOTREF(__pyx_t_1);
-          __pyx_t_17 = NULL;
-          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-            __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_1);
-            if (likely(__pyx_t_17)) {
-              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-              __Pyx_INCREF(__pyx_t_17);
+          __pyx_t_2 = __Pyx_PyObject_LookupSpecial(__pyx_t_16, __pyx_n_s_enter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1104, __pyx_L173_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __pyx_t_6 = NULL;
+          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+            __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_2);
+            if (likely(__pyx_t_6)) {
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+              __Pyx_INCREF(__pyx_t_6);
               __Pyx_INCREF(function);
-              __Pyx_DECREF_SET(__pyx_t_1, function);
+              __Pyx_DECREF_SET(__pyx_t_2, function);
             }
           }
-          __pyx_t_12 = (__pyx_t_17) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_17) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
-          __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-          if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1109, __pyx_L173_error)
+          __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+          __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+          if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1104, __pyx_L173_error)
           __Pyx_GOTREF(__pyx_t_12);
-          __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-          __pyx_t_1 = __pyx_t_12;
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = __pyx_t_12;
           __pyx_t_12 = 0;
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
           /*try:*/ {
             {
               __Pyx_PyThreadState_declare
@@ -31681,28 +31571,28 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               __Pyx_XGOTREF(__pyx_t_8);
               __Pyx_XGOTREF(__pyx_t_14);
               /*try:*/ {
-                __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_1);
-                __pyx_t_1 = 0;
+                __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_2);
+                __pyx_t_2 = 0;
 
-                /* "ViolaJones.py":1110
+                /* "ViolaJones.py":1105
  *                     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
  *                 with open("weak_classifier_list.pkl", 'wb') as f:
  *                     pickle.dump(weak_classifier_list, f)             # <<<<<<<<<<<<<<
  *         elif run == 1:
  *             """ Generate Alpha-Error Graph """
  */
-                __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_pickle); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1110, __pyx_L179_error)
-                __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_dump); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1110, __pyx_L179_error)
+                __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_pickle); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1105, __pyx_L179_error)
+                __Pyx_GOTREF(__pyx_t_16);
+                __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_dump); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1105, __pyx_L179_error)
                 __Pyx_GOTREF(__pyx_t_12);
-                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                __pyx_t_6 = NULL;
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                __pyx_t_16 = NULL;
                 __pyx_t_11 = 0;
                 if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_12))) {
-                  __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_12);
-                  if (likely(__pyx_t_6)) {
+                  __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_12);
+                  if (likely(__pyx_t_16)) {
                     PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
-                    __Pyx_INCREF(__pyx_t_6);
+                    __Pyx_INCREF(__pyx_t_16);
                     __Pyx_INCREF(function);
                     __Pyx_DECREF_SET(__pyx_t_12, function);
                     __pyx_t_11 = 1;
@@ -31710,40 +31600,40 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
                 }
                 #if CYTHON_FAST_PYCALL
                 if (PyFunction_Check(__pyx_t_12)) {
-                  PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_weak_classifier_list, __pyx_v_f};
-                  __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1110, __pyx_L179_error)
-                  __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-                  __Pyx_GOTREF(__pyx_t_1);
+                  PyObject *__pyx_temp[3] = {__pyx_t_16, __pyx_v_weak_classifier_list, __pyx_v_f};
+                  __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1105, __pyx_L179_error)
+                  __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+                  __Pyx_GOTREF(__pyx_t_2);
                 } else
                 #endif
                 #if CYTHON_FAST_PYCCALL
                 if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
-                  PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_weak_classifier_list, __pyx_v_f};
-                  __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1110, __pyx_L179_error)
-                  __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-                  __Pyx_GOTREF(__pyx_t_1);
+                  PyObject *__pyx_temp[3] = {__pyx_t_16, __pyx_v_weak_classifier_list, __pyx_v_f};
+                  __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1105, __pyx_L179_error)
+                  __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+                  __Pyx_GOTREF(__pyx_t_2);
                 } else
                 #endif
                 {
-                  __pyx_t_17 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1110, __pyx_L179_error)
-                  __Pyx_GOTREF(__pyx_t_17);
-                  if (__pyx_t_6) {
-                    __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_17, 0, __pyx_t_6); __pyx_t_6 = NULL;
+                  __pyx_t_6 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1105, __pyx_L179_error)
+                  __Pyx_GOTREF(__pyx_t_6);
+                  if (__pyx_t_16) {
+                    __Pyx_GIVEREF(__pyx_t_16); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_16); __pyx_t_16 = NULL;
                   }
                   __Pyx_INCREF(__pyx_v_weak_classifier_list);
                   __Pyx_GIVEREF(__pyx_v_weak_classifier_list);
-                  PyTuple_SET_ITEM(__pyx_t_17, 0+__pyx_t_11, __pyx_v_weak_classifier_list);
+                  PyTuple_SET_ITEM(__pyx_t_6, 0+__pyx_t_11, __pyx_v_weak_classifier_list);
                   __Pyx_INCREF(__pyx_v_f);
                   __Pyx_GIVEREF(__pyx_v_f);
-                  PyTuple_SET_ITEM(__pyx_t_17, 1+__pyx_t_11, __pyx_v_f);
-                  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_17, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1110, __pyx_L179_error)
-                  __Pyx_GOTREF(__pyx_t_1);
-                  __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+                  PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_11, __pyx_v_f);
+                  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_6, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1105, __pyx_L179_error)
+                  __Pyx_GOTREF(__pyx_t_2);
+                  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
                 }
                 __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-                /* "ViolaJones.py":1109
+                /* "ViolaJones.py":1104
  *                 weak_classifier_list = strong_classifier.train(
  *                     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
  *                 with open("weak_classifier_list.pkl", 'wb') as f:             # <<<<<<<<<<<<<<
@@ -31758,39 +31648,39 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               __pyx_L179_error:;
               __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-              __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+              __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
               __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
               __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
               /*except:*/ {
                 __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-                if (__Pyx_GetException(&__pyx_t_1, &__pyx_t_12, &__pyx_t_17) < 0) __PYX_ERR(0, 1109, __pyx_L181_except_error)
-                __Pyx_GOTREF(__pyx_t_1);
+                if (__Pyx_GetException(&__pyx_t_2, &__pyx_t_12, &__pyx_t_6) < 0) __PYX_ERR(0, 1104, __pyx_L181_except_error)
+                __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_GOTREF(__pyx_t_12);
-                __Pyx_GOTREF(__pyx_t_17);
-                __pyx_t_6 = PyTuple_Pack(3, __pyx_t_1, __pyx_t_12, __pyx_t_17); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1109, __pyx_L181_except_error)
                 __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_6, NULL);
-                __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1109, __pyx_L181_except_error)
+                __pyx_t_16 = PyTuple_Pack(3, __pyx_t_2, __pyx_t_12, __pyx_t_6); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1104, __pyx_L181_except_error)
                 __Pyx_GOTREF(__pyx_t_16);
-                __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_16);
+                __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_16, NULL);
+                __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
                 __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-                if (__pyx_t_4 < 0) __PYX_ERR(0, 1109, __pyx_L181_except_error)
+                if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1104, __pyx_L181_except_error)
+                __Pyx_GOTREF(__pyx_t_17);
+                __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+                __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+                if (__pyx_t_4 < 0) __PYX_ERR(0, 1104, __pyx_L181_except_error)
                 __pyx_t_5 = ((!(__pyx_t_4 != 0)) != 0);
                 if (__pyx_t_5) {
-                  __Pyx_GIVEREF(__pyx_t_1);
+                  __Pyx_GIVEREF(__pyx_t_2);
                   __Pyx_GIVEREF(__pyx_t_12);
-                  __Pyx_XGIVEREF(__pyx_t_17);
-                  __Pyx_ErrRestoreWithState(__pyx_t_1, __pyx_t_12, __pyx_t_17);
-                  __pyx_t_1 = 0; __pyx_t_12 = 0; __pyx_t_17 = 0; 
-                  __PYX_ERR(0, 1109, __pyx_L181_except_error)
+                  __Pyx_XGIVEREF(__pyx_t_6);
+                  __Pyx_ErrRestoreWithState(__pyx_t_2, __pyx_t_12, __pyx_t_6);
+                  __pyx_t_2 = 0; __pyx_t_12 = 0; __pyx_t_6 = 0; 
+                  __PYX_ERR(0, 1104, __pyx_L181_except_error)
                 }
-                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
                 __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-                __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+                __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
                 goto __pyx_L180_exception_handled;
               }
               __pyx_L181_except_error:;
@@ -31812,7 +31702,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
               if (__pyx_t_10) {
                 __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
                 __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-                if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1109, __pyx_L1_error)
+                if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1104, __pyx_L1_error)
                 __Pyx_GOTREF(__pyx_t_14);
                 __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
               }
@@ -31827,7 +31717,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
           __pyx_L190:;
         }
 
-        /* "ViolaJones.py":1099
+        /* "ViolaJones.py":1095
  *                 else:
  *                     break
  *             if qr[0].lower() == 'y':             # <<<<<<<<<<<<<<
@@ -31837,7 +31727,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       }
 
       /* "ViolaJones.py":1031
- *                     "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
+ *                     "/home/ben/git/Viola-Jones-Eye-Detection/%s already exists" % foldername)
  *         start_time = datetime.now()
  *         if run == 0:             # <<<<<<<<<<<<<<
  *             """ PREP """
@@ -31846,103 +31736,427 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       goto __pyx_L24;
     }
 
-    /* "ViolaJones.py":1111
+    /* "ViolaJones.py":1106
  *                 with open("weak_classifier_list.pkl", 'wb') as f:
  *                     pickle.dump(weak_classifier_list, f)
  *         elif run == 1:             # <<<<<<<<<<<<<<
  *             """ Generate Alpha-Error Graph """
  *             print("Generating Alpha-Error Graph")
  */
-    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1111, __pyx_L1_error) }
-    __pyx_t_17 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1111, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_17);
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_17); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1111, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1106, __pyx_L1_error) }
+    __pyx_t_6 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_1, 1, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1106, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1106, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (__pyx_t_5) {
 
-      /* "ViolaJones.py":1113
+      /* "ViolaJones.py":1108
  *         elif run == 1:
  *             """ Generate Alpha-Error Graph """
  *             print("Generating Alpha-Error Graph")             # <<<<<<<<<<<<<<
  *             alphas = [float(line.rstrip('\n'))
  *                       for line in open(foldername+"/alphas.txt")]
  */
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Generating_Alpha_Error_Graph) < 0) __PYX_ERR(0, 1113, __pyx_L1_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Generating_Alpha_Error_Graph) < 0) __PYX_ERR(0, 1108, __pyx_L1_error)
 
-      /* "ViolaJones.py":1114
+      /* "ViolaJones.py":1109
  *             """ Generate Alpha-Error Graph """
  *             print("Generating Alpha-Error Graph")
  *             alphas = [float(line.rstrip('\n'))             # <<<<<<<<<<<<<<
  *                       for line in open(foldername+"/alphas.txt")]
  *             errors = [float(line.rstrip('\n'))
  */
-      __pyx_t_17 = PyList_New(0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1114, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
+      __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1109, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
 
-      /* "ViolaJones.py":1115
+      /* "ViolaJones.py":1110
  *             print("Generating Alpha-Error Graph")
  *             alphas = [float(line.rstrip('\n'))
  *                       for line in open(foldername+"/alphas.txt")]             # <<<<<<<<<<<<<<
  *             errors = [float(line.rstrip('\n'))
  *                       for line in open(foldername+"/errs.txt")]
  */
-      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1115, __pyx_L1_error) }
-      __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_alphas_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1115, __pyx_L1_error)
+      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1110, __pyx_L1_error) }
+      __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_alphas_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_open, __pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1115, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_open, __pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1110, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
-        __pyx_t_12 = __pyx_t_1; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+      if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
+        __pyx_t_12 = __pyx_t_2; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
         __pyx_t_15 = NULL;
       } else {
-        __pyx_t_13 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1115, __pyx_L1_error)
+        __pyx_t_13 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1110, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1115, __pyx_L1_error)
+        __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1110, __pyx_L1_error)
       }
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       for (;;) {
         if (likely(!__pyx_t_15)) {
           if (likely(PyList_CheckExact(__pyx_t_12))) {
             if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1115, __pyx_L1_error)
+            __pyx_t_2 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1110, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1115, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1110, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_2);
             #endif
           } else {
             if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1115, __pyx_L1_error)
+            __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1110, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1115, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_1);
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1110, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_2);
             #endif
           }
         } else {
-          __pyx_t_1 = __pyx_t_15(__pyx_t_12);
-          if (unlikely(!__pyx_t_1)) {
+          __pyx_t_2 = __pyx_t_15(__pyx_t_12);
+          if (unlikely(!__pyx_t_2)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 1115, __pyx_L1_error)
+              else __PYX_ERR(0, 1110, __pyx_L1_error)
             }
             break;
           }
-          __Pyx_GOTREF(__pyx_t_1);
+          __Pyx_GOTREF(__pyx_t_2);
         }
-        __Pyx_XDECREF_SET(__pyx_v_line, __pyx_t_1);
-        __pyx_t_1 = 0;
+        __Pyx_XDECREF_SET(__pyx_v_line, __pyx_t_2);
+        __pyx_t_2 = 0;
 
-        /* "ViolaJones.py":1114
+        /* "ViolaJones.py":1109
  *             """ Generate Alpha-Error Graph """
  *             print("Generating Alpha-Error Graph")
  *             alphas = [float(line.rstrip('\n'))             # <<<<<<<<<<<<<<
  *                       for line in open(foldername+"/alphas.txt")]
  *             errors = [float(line.rstrip('\n'))
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1114, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1109, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_7 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_16))) {
+          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_16);
+          if (likely(__pyx_t_7)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+            __Pyx_INCREF(__pyx_t_7);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_16, function);
+          }
+        }
+        __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_16, __pyx_t_7, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_kp_s__17);
+        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1109, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __pyx_t_16 = __Pyx_PyNumber_Float(__pyx_t_2); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1109, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_16))) __PYX_ERR(0, 1109, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+
+        /* "ViolaJones.py":1110
+ *             print("Generating Alpha-Error Graph")
+ *             alphas = [float(line.rstrip('\n'))
+ *                       for line in open(foldername+"/alphas.txt")]             # <<<<<<<<<<<<<<
+ *             errors = [float(line.rstrip('\n'))
+ *                       for line in open(foldername+"/errs.txt")]
+ */
+      }
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_alphas, ((PyObject*)__pyx_t_6));
+      __pyx_t_6 = 0;
+
+      /* "ViolaJones.py":1111
+ *             alphas = [float(line.rstrip('\n'))
+ *                       for line in open(foldername+"/alphas.txt")]
+ *             errors = [float(line.rstrip('\n'))             # <<<<<<<<<<<<<<
+ *                       for line in open(foldername+"/errs.txt")]
+ *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
+ */
+      __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1111, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+
+      /* "ViolaJones.py":1112
+ *                       for line in open(foldername+"/alphas.txt")]
+ *             errors = [float(line.rstrip('\n'))
+ *                       for line in open(foldername+"/errs.txt")]             # <<<<<<<<<<<<<<
+ *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
+ *             sum_alphas, sum_betas, sum_errors = sum(
+ */
+      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1112, __pyx_L1_error) }
+      __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_errs_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1112, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_16 = __Pyx_PyObject_CallOneArg(__pyx_builtin_open, __pyx_t_12); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1112, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      if (likely(PyList_CheckExact(__pyx_t_16)) || PyTuple_CheckExact(__pyx_t_16)) {
+        __pyx_t_12 = __pyx_t_16; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+        __pyx_t_15 = NULL;
+      } else {
+        __pyx_t_13 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_16); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1112, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_12);
+        __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1112, __pyx_L1_error)
+      }
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      for (;;) {
+        if (likely(!__pyx_t_15)) {
+          if (likely(PyList_CheckExact(__pyx_t_12))) {
+            if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+            __pyx_t_16 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1112, __pyx_L1_error)
+            #else
+            __pyx_t_16 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1112, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_16);
+            #endif
+          } else {
+            if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
+            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+            __pyx_t_16 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_16); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1112, __pyx_L1_error)
+            #else
+            __pyx_t_16 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1112, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_16);
+            #endif
+          }
+        } else {
+          __pyx_t_16 = __pyx_t_15(__pyx_t_12);
+          if (unlikely(!__pyx_t_16)) {
+            PyObject* exc_type = PyErr_Occurred();
+            if (exc_type) {
+              if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+              else __PYX_ERR(0, 1112, __pyx_L1_error)
+            }
+            break;
+          }
+          __Pyx_GOTREF(__pyx_t_16);
+        }
+        __Pyx_XDECREF_SET(__pyx_v_line, __pyx_t_16);
+        __pyx_t_16 = 0;
+
+        /* "ViolaJones.py":1111
+ *             alphas = [float(line.rstrip('\n'))
+ *                       for line in open(foldername+"/alphas.txt")]
+ *             errors = [float(line.rstrip('\n'))             # <<<<<<<<<<<<<<
+ *                       for line in open(foldername+"/errs.txt")]
+ *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
+ */
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1111, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_7 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_7)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_7);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
+          }
+        }
+        __pyx_t_16 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_7, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s__17);
+        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+        if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1111, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_2 = __Pyx_PyNumber_Float(__pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1111, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 1111, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+        /* "ViolaJones.py":1112
+ *                       for line in open(foldername+"/alphas.txt")]
+ *             errors = [float(line.rstrip('\n'))
+ *                       for line in open(foldername+"/errs.txt")]             # <<<<<<<<<<<<<<
+ *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
+ *             sum_alphas, sum_betas, sum_errors = sum(
+ */
+      }
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_errors, ((PyObject*)__pyx_t_6));
+      __pyx_t_6 = 0;
+
+      /* "ViolaJones.py":1113
+ *             errors = [float(line.rstrip('\n'))
+ *                       for line in open(foldername+"/errs.txt")]
+ *             betas = [er/(1-er) if er < 1 else 15 for er in errors]             # <<<<<<<<<<<<<<
+ *             sum_alphas, sum_betas, sum_errors = sum(
+ *                 alphas), sum(betas), sum(errors)
+ */
+      __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1113, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_12 = __pyx_v_errors; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+      for (;;) {
+        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1113, __pyx_L1_error)
+        #else
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1113, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        #endif
+        __Pyx_XDECREF_SET(__pyx_v_er, __pyx_t_2);
+        __pyx_t_2 = 0;
+        __pyx_t_16 = PyObject_RichCompare(__pyx_v_er, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1113, __pyx_L1_error)
+        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1113, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (__pyx_t_5) {
+          __pyx_t_16 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_v_er, 1, 0, 0); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1113, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __pyx_t_7 = __Pyx_PyNumber_Divide(__pyx_v_er, __pyx_t_16); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1113, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_7);
+          __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+          __pyx_t_2 = __pyx_t_7;
+          __pyx_t_7 = 0;
+        } else {
+          __Pyx_INCREF(__pyx_int_15);
+          __pyx_t_2 = __pyx_int_15;
+        }
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 1113, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_betas, ((PyObject*)__pyx_t_6));
+      __pyx_t_6 = 0;
+
+      /* "ViolaJones.py":1114
+ *                       for line in open(foldername+"/errs.txt")]
+ *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
+ *             sum_alphas, sum_betas, sum_errors = sum(             # <<<<<<<<<<<<<<
+ *                 alphas), sum(betas), sum(errors)
+ *             # print(sum_alphas, sum_betas, sum_errors)
+ */
+      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_alphas); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1114, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+
+      /* "ViolaJones.py":1115
+ *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
+ *             sum_alphas, sum_betas, sum_errors = sum(
+ *                 alphas), sum(betas), sum(errors)             # <<<<<<<<<<<<<<
+ *             # print(sum_alphas, sum_betas, sum_errors)
+ *             normalized_alphas = [ii/sum_alphas for ii in alphas]
+ */
+      __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_betas); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1115, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_errors); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1115, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_XDECREF_SET(__pyx_v_sum_alphas, __pyx_t_6);
+      __pyx_t_6 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_sum_betas, __pyx_t_12);
+      __pyx_t_12 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_sum_errors, __pyx_t_2);
+      __pyx_t_2 = 0;
+
+      /* "ViolaJones.py":1117
+ *                 alphas), sum(betas), sum(errors)
+ *             # print(sum_alphas, sum_betas, sum_errors)
+ *             normalized_alphas = [ii/sum_alphas for ii in alphas]             # <<<<<<<<<<<<<<
+ *             normalized_betas = [ii/sum_betas for ii in betas]
+ *             normalized_errors = [ii/sum_errors for ii in errors]
+ */
+      __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1117, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_12 = __pyx_v_alphas; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+      for (;;) {
+        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_6 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_6); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1117, __pyx_L1_error)
+        #else
+        __pyx_t_6 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        #endif
+        __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_6);
+        __pyx_t_6 = 0;
+        __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_v_ii, __pyx_v_sum_alphas); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1117, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1117, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_normalized_alphas, ((PyObject*)__pyx_t_2));
+      __pyx_t_2 = 0;
+
+      /* "ViolaJones.py":1118
+ *             # print(sum_alphas, sum_betas, sum_errors)
+ *             normalized_alphas = [ii/sum_alphas for ii in alphas]
+ *             normalized_betas = [ii/sum_betas for ii in betas]             # <<<<<<<<<<<<<<
+ *             normalized_errors = [ii/sum_errors for ii in errors]
+ *             with open(foldername+"/normalized_alphas.txt", "w") as f:
+ */
+      __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1118, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_12 = __pyx_v_betas; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+      for (;;) {
+        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_6 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_6); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1118, __pyx_L1_error)
+        #else
+        __pyx_t_6 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1118, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        #endif
+        __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_6);
+        __pyx_t_6 = 0;
+        __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_v_ii, __pyx_v_sum_betas); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1118, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1118, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_normalized_betas, ((PyObject*)__pyx_t_2));
+      __pyx_t_2 = 0;
+
+      /* "ViolaJones.py":1119
+ *             normalized_alphas = [ii/sum_alphas for ii in alphas]
+ *             normalized_betas = [ii/sum_betas for ii in betas]
+ *             normalized_errors = [ii/sum_errors for ii in errors]             # <<<<<<<<<<<<<<
+ *             with open(foldername+"/normalized_alphas.txt", "w") as f:
+ *                 [f.write("%s\n" % item) for item in normalized_alphas]
+ */
+      __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1119, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_12 = __pyx_v_errors; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
+      for (;;) {
+        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_6 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_6); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1119, __pyx_L1_error)
+        #else
+        __pyx_t_6 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1119, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        #endif
+        __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_6);
+        __pyx_t_6 = 0;
+        __pyx_t_6 = __Pyx_PyNumber_Divide(__pyx_v_ii, __pyx_v_sum_errors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1119, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1119, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      }
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_normalized_errors, ((PyObject*)__pyx_t_2));
+      __pyx_t_2 = 0;
+
+      /* "ViolaJones.py":1120
+ *             normalized_betas = [ii/sum_betas for ii in betas]
+ *             normalized_errors = [ii/sum_errors for ii in errors]
+ *             with open(foldername+"/normalized_alphas.txt", "w") as f:             # <<<<<<<<<<<<<<
+ *                 [f.write("%s\n" % item) for item in normalized_alphas]
+ *             with open(foldername+"/normalized_betas.txt", "w") as f:
+ */
+      /*with:*/ {
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1120, __pyx_L1_error) }
+        __pyx_t_2 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_normalized_alphas_txt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_12);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_2);
+        __Pyx_INCREF(__pyx_n_s_w);
+        __Pyx_GIVEREF(__pyx_n_s_w);
+        PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_n_s_w);
+        __pyx_t_2 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_12, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_10);
+        __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1120, __pyx_L203_error)
         __Pyx_GOTREF(__pyx_t_6);
         __pyx_t_7 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
@@ -31954,338 +32168,14 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __Pyx_DECREF_SET(__pyx_t_6, function);
           }
         }
-        __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_kp_s__17);
+        __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1114, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyNumber_Float(__pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1114, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_17, (PyObject*)__pyx_t_6))) __PYX_ERR(0, 1114, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-
-        /* "ViolaJones.py":1115
- *             print("Generating Alpha-Error Graph")
- *             alphas = [float(line.rstrip('\n'))
- *                       for line in open(foldername+"/alphas.txt")]             # <<<<<<<<<<<<<<
- *             errors = [float(line.rstrip('\n'))
- *                       for line in open(foldername+"/errs.txt")]
- */
-      }
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_alphas, ((PyObject*)__pyx_t_17));
-      __pyx_t_17 = 0;
-
-      /* "ViolaJones.py":1116
- *             alphas = [float(line.rstrip('\n'))
- *                       for line in open(foldername+"/alphas.txt")]
- *             errors = [float(line.rstrip('\n'))             # <<<<<<<<<<<<<<
- *                       for line in open(foldername+"/errs.txt")]
- *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
- */
-      __pyx_t_17 = PyList_New(0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1116, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-
-      /* "ViolaJones.py":1117
- *                       for line in open(foldername+"/alphas.txt")]
- *             errors = [float(line.rstrip('\n'))
- *                       for line in open(foldername+"/errs.txt")]             # <<<<<<<<<<<<<<
- *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
- *             sum_alphas, sum_betas, sum_errors = sum(
- */
-      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1117, __pyx_L1_error) }
-      __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_errs_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_builtin_open, __pyx_t_12); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1117, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
-        __pyx_t_12 = __pyx_t_6; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
-        __pyx_t_15 = NULL;
-      } else {
-        __pyx_t_13 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1117, __pyx_L1_error)
+        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1120, __pyx_L203_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_15 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1117, __pyx_L1_error)
-      }
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      for (;;) {
-        if (likely(!__pyx_t_15)) {
-          if (likely(PyList_CheckExact(__pyx_t_12))) {
-            if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
-            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_6); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1117, __pyx_L1_error)
-            #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1117, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_6);
-            #endif
-          } else {
-            if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
-            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_6); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1117, __pyx_L1_error)
-            #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1117, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_6);
-            #endif
-          }
-        } else {
-          __pyx_t_6 = __pyx_t_15(__pyx_t_12);
-          if (unlikely(!__pyx_t_6)) {
-            PyObject* exc_type = PyErr_Occurred();
-            if (exc_type) {
-              if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 1117, __pyx_L1_error)
-            }
-            break;
-          }
-          __Pyx_GOTREF(__pyx_t_6);
-        }
-        __Pyx_XDECREF_SET(__pyx_v_line, __pyx_t_6);
-        __pyx_t_6 = 0;
-
-        /* "ViolaJones.py":1116
- *             alphas = [float(line.rstrip('\n'))
- *                       for line in open(foldername+"/alphas.txt")]
- *             errors = [float(line.rstrip('\n'))             # <<<<<<<<<<<<<<
- *                       for line in open(foldername+"/errs.txt")]
- *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
- */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1116, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_7 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_7)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_7);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
-          }
-        }
-        __pyx_t_6 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_7, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s__17);
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1116, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyNumber_Float(__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1116, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_17, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 1116, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-        /* "ViolaJones.py":1117
- *                       for line in open(foldername+"/alphas.txt")]
- *             errors = [float(line.rstrip('\n'))
- *                       for line in open(foldername+"/errs.txt")]             # <<<<<<<<<<<<<<
- *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
- *             sum_alphas, sum_betas, sum_errors = sum(
- */
-      }
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_errors, ((PyObject*)__pyx_t_17));
-      __pyx_t_17 = 0;
-
-      /* "ViolaJones.py":1118
- *             errors = [float(line.rstrip('\n'))
- *                       for line in open(foldername+"/errs.txt")]
- *             betas = [er/(1-er) if er < 1 else 15 for er in errors]             # <<<<<<<<<<<<<<
- *             sum_alphas, sum_betas, sum_errors = sum(
- *                 alphas), sum(betas), sum(errors)
- */
-      __pyx_t_17 = PyList_New(0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1118, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_12 = __pyx_v_errors; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
-      for (;;) {
-        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
-        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1118, __pyx_L1_error)
-        #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1118, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        #endif
-        __Pyx_XDECREF_SET(__pyx_v_er, __pyx_t_1);
-        __pyx_t_1 = 0;
-        __pyx_t_6 = PyObject_RichCompare(__pyx_v_er, __pyx_int_1, Py_LT); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1118, __pyx_L1_error)
-        __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1118, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (__pyx_t_5) {
-          __pyx_t_6 = __Pyx_PyInt_SubtractCObj(__pyx_int_1, __pyx_v_er, 1, 0, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1118, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_7 = __Pyx_PyNumber_Divide(__pyx_v_er, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1118, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_7);
-          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-          __pyx_t_1 = __pyx_t_7;
-          __pyx_t_7 = 0;
-        } else {
-          __Pyx_INCREF(__pyx_int_15);
-          __pyx_t_1 = __pyx_int_15;
-        }
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_17, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 1118, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_betas, ((PyObject*)__pyx_t_17));
-      __pyx_t_17 = 0;
-
-      /* "ViolaJones.py":1119
- *                       for line in open(foldername+"/errs.txt")]
- *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
- *             sum_alphas, sum_betas, sum_errors = sum(             # <<<<<<<<<<<<<<
- *                 alphas), sum(betas), sum(errors)
- *             # print(sum_alphas, sum_betas, sum_errors)
- */
-      __pyx_t_17 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_alphas); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1119, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-
-      /* "ViolaJones.py":1120
- *             betas = [er/(1-er) if er < 1 else 15 for er in errors]
- *             sum_alphas, sum_betas, sum_errors = sum(
- *                 alphas), sum(betas), sum(errors)             # <<<<<<<<<<<<<<
- *             # print(sum_alphas, sum_betas, sum_errors)
- *             normalized_alphas = [ii/sum_alphas for ii in alphas]
- */
-      __pyx_t_12 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_betas); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1120, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_v_errors); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1120, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __Pyx_XDECREF_SET(__pyx_v_sum_alphas, __pyx_t_17);
-      __pyx_t_17 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_sum_betas, __pyx_t_12);
-      __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_sum_errors, __pyx_t_1);
-      __pyx_t_1 = 0;
-
-      /* "ViolaJones.py":1122
- *                 alphas), sum(betas), sum(errors)
- *             # print(sum_alphas, sum_betas, sum_errors)
- *             normalized_alphas = [ii/sum_alphas for ii in alphas]             # <<<<<<<<<<<<<<
- *             normalized_betas = [ii/sum_betas for ii in betas]
- *             normalized_errors = [ii/sum_errors for ii in errors]
- */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1122, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_12 = __pyx_v_alphas; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
-      for (;;) {
-        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
-        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_17 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_17); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1122, __pyx_L1_error)
-        #else
-        __pyx_t_17 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1122, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        #endif
-        __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_17);
-        __pyx_t_17 = 0;
-        __pyx_t_17 = __Pyx_PyNumber_Divide(__pyx_v_ii, __pyx_v_sum_alphas); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1122, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_17))) __PYX_ERR(0, 1122, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_normalized_alphas, ((PyObject*)__pyx_t_1));
-      __pyx_t_1 = 0;
-
-      /* "ViolaJones.py":1123
- *             # print(sum_alphas, sum_betas, sum_errors)
- *             normalized_alphas = [ii/sum_alphas for ii in alphas]
- *             normalized_betas = [ii/sum_betas for ii in betas]             # <<<<<<<<<<<<<<
- *             normalized_errors = [ii/sum_errors for ii in errors]
- *             with open(foldername+"/normalized_alphas.txt", "w") as f:
- */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1123, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_12 = __pyx_v_betas; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
-      for (;;) {
-        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
-        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_17 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_17); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1123, __pyx_L1_error)
-        #else
-        __pyx_t_17 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1123, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        #endif
-        __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_17);
-        __pyx_t_17 = 0;
-        __pyx_t_17 = __Pyx_PyNumber_Divide(__pyx_v_ii, __pyx_v_sum_betas); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1123, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_17))) __PYX_ERR(0, 1123, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_normalized_betas, ((PyObject*)__pyx_t_1));
-      __pyx_t_1 = 0;
-
-      /* "ViolaJones.py":1124
- *             normalized_alphas = [ii/sum_alphas for ii in alphas]
- *             normalized_betas = [ii/sum_betas for ii in betas]
- *             normalized_errors = [ii/sum_errors for ii in errors]             # <<<<<<<<<<<<<<
- *             with open(foldername+"/normalized_alphas.txt", "w") as f:
- *                 [f.write("%s\n" % item) for item in normalized_alphas]
- */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1124, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_12 = __pyx_v_errors; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
-      for (;;) {
-        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
-        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_17 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_17); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1124, __pyx_L1_error)
-        #else
-        __pyx_t_17 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1124, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        #endif
-        __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_17);
-        __pyx_t_17 = 0;
-        __pyx_t_17 = __Pyx_PyNumber_Divide(__pyx_v_ii, __pyx_v_sum_errors); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1124, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_17))) __PYX_ERR(0, 1124, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      }
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_normalized_errors, ((PyObject*)__pyx_t_1));
-      __pyx_t_1 = 0;
-
-      /* "ViolaJones.py":1125
- *             normalized_betas = [ii/sum_betas for ii in betas]
- *             normalized_errors = [ii/sum_errors for ii in errors]
- *             with open(foldername+"/normalized_alphas.txt", "w") as f:             # <<<<<<<<<<<<<<
- *                 [f.write("%s\n" % item) for item in normalized_alphas]
- *             with open(foldername+"/normalized_betas.txt", "w") as f:
- */
-      /*with:*/ {
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1125, __pyx_L1_error) }
-        __pyx_t_1 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_normalized_alphas_txt); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1125, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1125, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_1);
-        __Pyx_INCREF(__pyx_n_s_w);
-        __Pyx_GIVEREF(__pyx_n_s_w);
-        PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_n_s_w);
-        __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1125, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1125, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_17 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_enter); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1125, __pyx_L203_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_7 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
-          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_17);
-          if (likely(__pyx_t_7)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
-            __Pyx_INCREF(__pyx_t_7);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_17, function);
-          }
-        }
-        __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_17);
-        __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1125, __pyx_L203_error)
-        __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_17 = __pyx_t_12;
+        __pyx_t_6 = __pyx_t_12;
         __pyx_t_12 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         /*try:*/ {
           {
             __Pyx_PyThreadState_declare
@@ -32295,56 +32185,56 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __Pyx_XGOTREF(__pyx_t_8);
             __Pyx_XGOTREF(__pyx_t_9);
             /*try:*/ {
-              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_17);
-              __pyx_t_17 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_6);
+              __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1126
+              /* "ViolaJones.py":1121
  *             normalized_errors = [ii/sum_errors for ii in errors]
  *             with open(foldername+"/normalized_alphas.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_alphas]             # <<<<<<<<<<<<<<
  *             with open(foldername+"/normalized_betas.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_betas]
  */
-              __pyx_t_17 = PyList_New(0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1126, __pyx_L209_error)
-              __Pyx_GOTREF(__pyx_t_17);
-              __pyx_t_1 = __pyx_v_normalized_alphas; __Pyx_INCREF(__pyx_t_1); __pyx_t_13 = 0;
+              __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1121, __pyx_L209_error)
+              __Pyx_GOTREF(__pyx_t_6);
+              __pyx_t_2 = __pyx_v_normalized_alphas; __Pyx_INCREF(__pyx_t_2); __pyx_t_13 = 0;
               for (;;) {
-                if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_1)) break;
+                if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_2)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_12 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1126, __pyx_L209_error)
+                __pyx_t_12 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1121, __pyx_L209_error)
                 #else
-                __pyx_t_12 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1126, __pyx_L209_error)
+                __pyx_t_12 = PySequence_ITEM(__pyx_t_2, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1121, __pyx_L209_error)
                 __Pyx_GOTREF(__pyx_t_12);
                 #endif
                 __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_12);
                 __pyx_t_12 = 0;
-                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1126, __pyx_L209_error)
+                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1121, __pyx_L209_error)
                 __Pyx_GOTREF(__pyx_t_7);
-                __pyx_t_6 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1126, __pyx_L209_error)
-                __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_2 = NULL;
+                __pyx_t_16 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1121, __pyx_L209_error)
+                __Pyx_GOTREF(__pyx_t_16);
+                __pyx_t_1 = NULL;
                 if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-                  __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-                  if (likely(__pyx_t_2)) {
+                  __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_7);
+                  if (likely(__pyx_t_1)) {
                     PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-                    __Pyx_INCREF(__pyx_t_2);
+                    __Pyx_INCREF(__pyx_t_1);
                     __Pyx_INCREF(function);
                     __Pyx_DECREF_SET(__pyx_t_7, function);
                   }
                 }
-                __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6);
-                __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1126, __pyx_L209_error)
+                __pyx_t_12 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_1, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_16);
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1121, __pyx_L209_error)
                 __Pyx_GOTREF(__pyx_t_12);
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-                if (unlikely(__Pyx_ListComp_Append(__pyx_t_17, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 1126, __pyx_L209_error)
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 1121, __pyx_L209_error)
                 __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
               }
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1125
+              /* "ViolaJones.py":1120
  *             normalized_betas = [ii/sum_betas for ii in betas]
  *             normalized_errors = [ii/sum_errors for ii in errors]
  *             with open(foldername+"/normalized_alphas.txt", "w") as f:             # <<<<<<<<<<<<<<
@@ -32359,38 +32249,38 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L209_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_17, &__pyx_t_1, &__pyx_t_12) < 0) __PYX_ERR(0, 1125, __pyx_L211_except_error)
-              __Pyx_GOTREF(__pyx_t_17);
-              __Pyx_GOTREF(__pyx_t_1);
+              if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_2, &__pyx_t_12) < 0) __PYX_ERR(0, 1120, __pyx_L211_except_error)
+              __Pyx_GOTREF(__pyx_t_6);
+              __Pyx_GOTREF(__pyx_t_2);
               __Pyx_GOTREF(__pyx_t_12);
-              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_17, __pyx_t_1, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1125, __pyx_L211_except_error)
+              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_6, __pyx_t_2, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1120, __pyx_L211_except_error)
               __Pyx_GOTREF(__pyx_t_7);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1125, __pyx_L211_except_error)
-              __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (__pyx_t_5 < 0) __PYX_ERR(0, 1125, __pyx_L211_except_error)
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1120, __pyx_L211_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              if (__pyx_t_5 < 0) __PYX_ERR(0, 1120, __pyx_L211_except_error)
               __pyx_t_4 = ((!(__pyx_t_5 != 0)) != 0);
               if (__pyx_t_4) {
-                __Pyx_GIVEREF(__pyx_t_17);
-                __Pyx_GIVEREF(__pyx_t_1);
+                __Pyx_GIVEREF(__pyx_t_6);
+                __Pyx_GIVEREF(__pyx_t_2);
                 __Pyx_XGIVEREF(__pyx_t_12);
-                __Pyx_ErrRestoreWithState(__pyx_t_17, __pyx_t_1, __pyx_t_12);
-                __pyx_t_17 = 0; __pyx_t_1 = 0; __pyx_t_12 = 0; 
-                __PYX_ERR(0, 1125, __pyx_L211_except_error)
+                __Pyx_ErrRestoreWithState(__pyx_t_6, __pyx_t_2, __pyx_t_12);
+                __pyx_t_6 = 0; __pyx_t_2 = 0; __pyx_t_12 = 0; 
+                __PYX_ERR(0, 1120, __pyx_L211_except_error)
               }
-              __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
               goto __pyx_L210_exception_handled;
             }
@@ -32413,7 +32303,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             if (__pyx_t_10) {
               __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1125, __pyx_L1_error)
+              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1120, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_9);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             }
@@ -32428,7 +32318,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L222:;
       }
 
-      /* "ViolaJones.py":1127
+      /* "ViolaJones.py":1122
  *             with open(foldername+"/normalized_alphas.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_alphas]
  *             with open(foldername+"/normalized_betas.txt", "w") as f:             # <<<<<<<<<<<<<<
@@ -32436,41 +32326,41 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *             with open(foldername+"/normalized_errs.txt", "w") as f:
  */
       /*with:*/ {
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1127, __pyx_L1_error) }
-        __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_normalized_betas_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1127, __pyx_L1_error)
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1122, __pyx_L1_error) }
+        __pyx_t_12 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_normalized_betas_txt); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1122, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1127, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1122, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GIVEREF(__pyx_t_12);
-        PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_12);
+        PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_12);
         __Pyx_INCREF(__pyx_n_s_w);
         __Pyx_GIVEREF(__pyx_n_s_w);
-        PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_n_s_w);
+        PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_w);
         __pyx_t_12 = 0;
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_1, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1127, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_2, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1122, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1127, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1122, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_17 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_enter); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1127, __pyx_L223_error)
-        __Pyx_GOTREF(__pyx_t_17);
+        __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_12, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1122, __pyx_L223_error)
+        __Pyx_GOTREF(__pyx_t_6);
         __pyx_t_7 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
-          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_17);
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
           if (likely(__pyx_t_7)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
             __Pyx_INCREF(__pyx_t_7);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_17, function);
+            __Pyx_DECREF_SET(__pyx_t_6, function);
           }
         }
-        __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_17);
+        __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1127, __pyx_L223_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_17 = __pyx_t_1;
-        __pyx_t_1 = 0;
+        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1122, __pyx_L223_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __pyx_t_6 = __pyx_t_2;
+        __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         /*try:*/ {
           {
@@ -32481,56 +32371,56 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __Pyx_XGOTREF(__pyx_t_8);
             __Pyx_XGOTREF(__pyx_t_14);
             /*try:*/ {
-              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_17);
-              __pyx_t_17 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_6);
+              __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1128
+              /* "ViolaJones.py":1123
  *                 [f.write("%s\n" % item) for item in normalized_alphas]
  *             with open(foldername+"/normalized_betas.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_betas]             # <<<<<<<<<<<<<<
  *             with open(foldername+"/normalized_errs.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_errors]
  */
-              __pyx_t_17 = PyList_New(0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1128, __pyx_L229_error)
-              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1123, __pyx_L229_error)
+              __Pyx_GOTREF(__pyx_t_6);
               __pyx_t_12 = __pyx_v_normalized_betas; __Pyx_INCREF(__pyx_t_12); __pyx_t_13 = 0;
               for (;;) {
                 if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_12)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_1 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1128, __pyx_L229_error)
+                __pyx_t_2 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_13); __Pyx_INCREF(__pyx_t_2); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1123, __pyx_L229_error)
                 #else
-                __pyx_t_1 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1128, __pyx_L229_error)
-                __Pyx_GOTREF(__pyx_t_1);
+                __pyx_t_2 = PySequence_ITEM(__pyx_t_12, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1123, __pyx_L229_error)
+                __Pyx_GOTREF(__pyx_t_2);
                 #endif
-                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_1);
-                __pyx_t_1 = 0;
-                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1128, __pyx_L229_error)
+                __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_2);
+                __pyx_t_2 = 0;
+                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1123, __pyx_L229_error)
                 __Pyx_GOTREF(__pyx_t_7);
-                __pyx_t_6 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1128, __pyx_L229_error)
-                __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_2 = NULL;
+                __pyx_t_16 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1123, __pyx_L229_error)
+                __Pyx_GOTREF(__pyx_t_16);
+                __pyx_t_1 = NULL;
                 if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-                  __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-                  if (likely(__pyx_t_2)) {
+                  __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_7);
+                  if (likely(__pyx_t_1)) {
                     PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-                    __Pyx_INCREF(__pyx_t_2);
+                    __Pyx_INCREF(__pyx_t_1);
                     __Pyx_INCREF(function);
                     __Pyx_DECREF_SET(__pyx_t_7, function);
                   }
                 }
-                __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6);
-                __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1128, __pyx_L229_error)
-                __Pyx_GOTREF(__pyx_t_1);
+                __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_1, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_16);
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1123, __pyx_L229_error)
+                __Pyx_GOTREF(__pyx_t_2);
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-                if (unlikely(__Pyx_ListComp_Append(__pyx_t_17, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 1128, __pyx_L229_error)
-                __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 1123, __pyx_L229_error)
+                __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
               }
               __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1127
+              /* "ViolaJones.py":1122
  *             with open(foldername+"/normalized_alphas.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_alphas]
  *             with open(foldername+"/normalized_betas.txt", "w") as f:             # <<<<<<<<<<<<<<
@@ -32545,39 +32435,39 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L229_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_17, &__pyx_t_12, &__pyx_t_1) < 0) __PYX_ERR(0, 1127, __pyx_L231_except_error)
-              __Pyx_GOTREF(__pyx_t_17);
+              if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_12, &__pyx_t_2) < 0) __PYX_ERR(0, 1122, __pyx_L231_except_error)
+              __Pyx_GOTREF(__pyx_t_6);
               __Pyx_GOTREF(__pyx_t_12);
-              __Pyx_GOTREF(__pyx_t_1);
-              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_17, __pyx_t_12, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1127, __pyx_L231_except_error)
+              __Pyx_GOTREF(__pyx_t_2);
+              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_6, __pyx_t_12, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1122, __pyx_L231_except_error)
               __Pyx_GOTREF(__pyx_t_7);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1127, __pyx_L231_except_error)
-              __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (__pyx_t_4 < 0) __PYX_ERR(0, 1127, __pyx_L231_except_error)
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1122, __pyx_L231_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              if (__pyx_t_4 < 0) __PYX_ERR(0, 1122, __pyx_L231_except_error)
               __pyx_t_5 = ((!(__pyx_t_4 != 0)) != 0);
               if (__pyx_t_5) {
-                __Pyx_GIVEREF(__pyx_t_17);
+                __Pyx_GIVEREF(__pyx_t_6);
                 __Pyx_GIVEREF(__pyx_t_12);
-                __Pyx_XGIVEREF(__pyx_t_1);
-                __Pyx_ErrRestoreWithState(__pyx_t_17, __pyx_t_12, __pyx_t_1);
-                __pyx_t_17 = 0; __pyx_t_12 = 0; __pyx_t_1 = 0; 
-                __PYX_ERR(0, 1127, __pyx_L231_except_error)
+                __Pyx_XGIVEREF(__pyx_t_2);
+                __Pyx_ErrRestoreWithState(__pyx_t_6, __pyx_t_12, __pyx_t_2);
+                __pyx_t_6 = 0; __pyx_t_12 = 0; __pyx_t_2 = 0; 
+                __PYX_ERR(0, 1122, __pyx_L231_except_error)
               }
-              __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+              __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               goto __pyx_L230_exception_handled;
             }
             __pyx_L231_except_error:;
@@ -32599,7 +32489,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             if (__pyx_t_10) {
               __pyx_t_14 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1127, __pyx_L1_error)
+              if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 1122, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_14);
               __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
             }
@@ -32614,7 +32504,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L242:;
       }
 
-      /* "ViolaJones.py":1129
+      /* "ViolaJones.py":1124
  *             with open(foldername+"/normalized_betas.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_betas]
  *             with open(foldername+"/normalized_errs.txt", "w") as f:             # <<<<<<<<<<<<<<
@@ -32622,42 +32512,42 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *             gp.c('plot \
  */
       /*with:*/ {
-        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1129, __pyx_L1_error) }
-        __pyx_t_1 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_normalized_errs_txt); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1129, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1129, __pyx_L1_error)
+        if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1124, __pyx_L1_error) }
+        __pyx_t_2 = PyNumber_Add(__pyx_v_foldername, __pyx_kp_s_normalized_errs_txt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1124, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_12 = PyTuple_New(2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1124, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_1);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_2);
         __Pyx_INCREF(__pyx_n_s_w);
         __Pyx_GIVEREF(__pyx_n_s_w);
         PyTuple_SET_ITEM(__pyx_t_12, 1, __pyx_n_s_w);
-        __pyx_t_1 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1129, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = 0;
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_t_12, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1124, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1129, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_exit); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 1124, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        __pyx_t_17 = __Pyx_PyObject_LookupSpecial(__pyx_t_1, __pyx_n_s_enter); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1129, __pyx_L243_error)
-        __Pyx_GOTREF(__pyx_t_17);
+        __pyx_t_6 = __Pyx_PyObject_LookupSpecial(__pyx_t_2, __pyx_n_s_enter); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1124, __pyx_L243_error)
+        __Pyx_GOTREF(__pyx_t_6);
         __pyx_t_7 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_17))) {
-          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_17);
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+          __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
           if (likely(__pyx_t_7)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
             __Pyx_INCREF(__pyx_t_7);
             __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_17, function);
+            __Pyx_DECREF_SET(__pyx_t_6, function);
           }
         }
-        __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_17);
+        __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
         __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1129, __pyx_L243_error)
+        if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1124, __pyx_L243_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-        __pyx_t_17 = __pyx_t_12;
+        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __pyx_t_6 = __pyx_t_12;
         __pyx_t_12 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         /*try:*/ {
           {
             __Pyx_PyThreadState_declare
@@ -32667,56 +32557,56 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __Pyx_XGOTREF(__pyx_t_8);
             __Pyx_XGOTREF(__pyx_t_9);
             /*try:*/ {
-              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_17);
-              __pyx_t_17 = 0;
+              __Pyx_XDECREF_SET(__pyx_v_f, __pyx_t_6);
+              __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1130
+              /* "ViolaJones.py":1125
  *                 [f.write("%s\n" % item) for item in normalized_betas]
  *             with open(foldername+"/normalized_errs.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_errors]             # <<<<<<<<<<<<<<
  *             gp.c('plot \
  *                 "%s/normalized_alphas.txt" title "alpha" with linespoints, \
  */
-              __pyx_t_17 = PyList_New(0); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1130, __pyx_L249_error)
-              __Pyx_GOTREF(__pyx_t_17);
-              __pyx_t_1 = __pyx_v_normalized_errors; __Pyx_INCREF(__pyx_t_1); __pyx_t_13 = 0;
+              __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1125, __pyx_L249_error)
+              __Pyx_GOTREF(__pyx_t_6);
+              __pyx_t_2 = __pyx_v_normalized_errors; __Pyx_INCREF(__pyx_t_2); __pyx_t_13 = 0;
               for (;;) {
-                if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_1)) break;
+                if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_2)) break;
                 #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-                __pyx_t_12 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1130, __pyx_L249_error)
+                __pyx_t_12 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_13); __Pyx_INCREF(__pyx_t_12); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1125, __pyx_L249_error)
                 #else
-                __pyx_t_12 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1130, __pyx_L249_error)
+                __pyx_t_12 = PySequence_ITEM(__pyx_t_2, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1125, __pyx_L249_error)
                 __Pyx_GOTREF(__pyx_t_12);
                 #endif
                 __Pyx_XDECREF_SET(__pyx_v_item, __pyx_t_12);
                 __pyx_t_12 = 0;
-                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1130, __pyx_L249_error)
+                __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_f, __pyx_n_s_write); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1125, __pyx_L249_error)
                 __Pyx_GOTREF(__pyx_t_7);
-                __pyx_t_6 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1130, __pyx_L249_error)
-                __Pyx_GOTREF(__pyx_t_6);
-                __pyx_t_2 = NULL;
+                __pyx_t_16 = __Pyx_PyString_FormatSafe(__pyx_kp_s_s, __pyx_v_item); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1125, __pyx_L249_error)
+                __Pyx_GOTREF(__pyx_t_16);
+                __pyx_t_1 = NULL;
                 if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-                  __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
-                  if (likely(__pyx_t_2)) {
+                  __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_7);
+                  if (likely(__pyx_t_1)) {
                     PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-                    __Pyx_INCREF(__pyx_t_2);
+                    __Pyx_INCREF(__pyx_t_1);
                     __Pyx_INCREF(function);
                     __Pyx_DECREF_SET(__pyx_t_7, function);
                   }
                 }
-                __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6);
-                __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-                __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-                if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1130, __pyx_L249_error)
+                __pyx_t_12 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_1, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_16);
+                __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+                __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+                if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1125, __pyx_L249_error)
                 __Pyx_GOTREF(__pyx_t_12);
                 __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-                if (unlikely(__Pyx_ListComp_Append(__pyx_t_17, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 1130, __pyx_L249_error)
+                if (unlikely(__Pyx_ListComp_Append(__pyx_t_6, (PyObject*)__pyx_t_12))) __PYX_ERR(0, 1125, __pyx_L249_error)
                 __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
               }
-              __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+              __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-              /* "ViolaJones.py":1129
+              /* "ViolaJones.py":1124
  *             with open(foldername+"/normalized_betas.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_betas]
  *             with open(foldername+"/normalized_errs.txt", "w") as f:             # <<<<<<<<<<<<<<
@@ -32731,38 +32621,38 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             __pyx_L249_error:;
             __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
             __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-            __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+            __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
             __Pyx_XDECREF(__pyx_t_18); __pyx_t_18 = 0;
             __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
             __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
             __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
             /*except:*/ {
               __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
-              if (__Pyx_GetException(&__pyx_t_17, &__pyx_t_1, &__pyx_t_12) < 0) __PYX_ERR(0, 1129, __pyx_L251_except_error)
-              __Pyx_GOTREF(__pyx_t_17);
-              __Pyx_GOTREF(__pyx_t_1);
+              if (__Pyx_GetException(&__pyx_t_6, &__pyx_t_2, &__pyx_t_12) < 0) __PYX_ERR(0, 1124, __pyx_L251_except_error)
+              __Pyx_GOTREF(__pyx_t_6);
+              __Pyx_GOTREF(__pyx_t_2);
               __Pyx_GOTREF(__pyx_t_12);
-              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_17, __pyx_t_1, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1129, __pyx_L251_except_error)
+              __pyx_t_7 = PyTuple_Pack(3, __pyx_t_6, __pyx_t_2, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1124, __pyx_L251_except_error)
               __Pyx_GOTREF(__pyx_t_7);
-              __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
+              __pyx_t_17 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_7, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
               __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-              if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1129, __pyx_L251_except_error)
-              __Pyx_GOTREF(__pyx_t_16);
-              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_16);
-              __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
-              if (__pyx_t_5 < 0) __PYX_ERR(0, 1129, __pyx_L251_except_error)
+              if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1124, __pyx_L251_except_error)
+              __Pyx_GOTREF(__pyx_t_17);
+              __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_17);
+              __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+              if (__pyx_t_5 < 0) __PYX_ERR(0, 1124, __pyx_L251_except_error)
               __pyx_t_4 = ((!(__pyx_t_5 != 0)) != 0);
               if (__pyx_t_4) {
-                __Pyx_GIVEREF(__pyx_t_17);
-                __Pyx_GIVEREF(__pyx_t_1);
+                __Pyx_GIVEREF(__pyx_t_6);
+                __Pyx_GIVEREF(__pyx_t_2);
                 __Pyx_XGIVEREF(__pyx_t_12);
-                __Pyx_ErrRestoreWithState(__pyx_t_17, __pyx_t_1, __pyx_t_12);
-                __pyx_t_17 = 0; __pyx_t_1 = 0; __pyx_t_12 = 0; 
-                __PYX_ERR(0, 1129, __pyx_L251_except_error)
+                __Pyx_ErrRestoreWithState(__pyx_t_6, __pyx_t_2, __pyx_t_12);
+                __pyx_t_6 = 0; __pyx_t_2 = 0; __pyx_t_12 = 0; 
+                __PYX_ERR(0, 1124, __pyx_L251_except_error)
               }
-              __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-              __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+              __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+              __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
               __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
               goto __pyx_L250_exception_handled;
             }
@@ -32785,7 +32675,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
             if (__pyx_t_10) {
               __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_tuple__2, NULL);
               __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1129, __pyx_L1_error)
+              if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 1124, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_9);
               __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
             }
@@ -32800,472 +32690,102 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __pyx_L262:;
       }
 
-      /* "ViolaJones.py":1131
+      /* "ViolaJones.py":1126
  *             with open(foldername+"/normalized_errs.txt", "w") as f:
  *                 [f.write("%s\n" % item) for item in normalized_errors]
  *             gp.c('plot \             # <<<<<<<<<<<<<<
  *                 "%s/normalized_alphas.txt" title "alpha" with linespoints, \
  *                 "%s/normalized_betas.txt" title "beta" with linespoints, \
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_gp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1131, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_c); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1131, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_gp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_c); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "ViolaJones.py":1134
+      /* "ViolaJones.py":1129
  *                 "%s/normalized_alphas.txt" title "alpha" with linespoints, \
  *                 "%s/normalized_betas.txt" title "beta" with linespoints, \
  *                 "%s/normalized_errs.txt" title "error" with linespoints ' % (foldername, foldername, foldername))             # <<<<<<<<<<<<<<
  *             gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
  *             gp.c('set xlabel "Image Index" ')
  */
-      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1134, __pyx_L1_error) }
-      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1134, __pyx_L1_error) }
-      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1134, __pyx_L1_error) }
-      __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1134, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
+      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1129, __pyx_L1_error) }
+      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1129, __pyx_L1_error) }
+      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1129, __pyx_L1_error) }
+      __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1129, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_v_foldername);
       __Pyx_GIVEREF(__pyx_v_foldername);
-      PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_foldername);
+      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_foldername);
       __Pyx_INCREF(__pyx_v_foldername);
       __Pyx_GIVEREF(__pyx_v_foldername);
-      PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_foldername);
+      PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_foldername);
       __Pyx_INCREF(__pyx_v_foldername);
       __Pyx_GIVEREF(__pyx_v_foldername);
-      PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_foldername);
-      __pyx_t_7 = __Pyx_PyString_Format(__pyx_kp_s_plot_s_normalized_alphas_txt_tit, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1134, __pyx_L1_error)
+      PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_v_foldername);
+      __pyx_t_7 = __Pyx_PyString_Format(__pyx_kp_s_plot_s_normalized_alphas_txt_tit, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1129, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_17))) {
-        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_17);
-        if (likely(__pyx_t_1)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
-          __Pyx_INCREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+          __Pyx_INCREF(__pyx_t_2);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_17, function);
+          __Pyx_DECREF_SET(__pyx_t_6, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_17, __pyx_t_1, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_7);
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_2, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_7);
+      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1131, __pyx_L1_error)
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1135
+      /* "ViolaJones.py":1130
  *                 "%s/normalized_betas.txt" title "beta" with linespoints, \
  *                 "%s/normalized_errs.txt" title "error" with linespoints ' % (foldername, foldername, foldername))
  *             gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')             # <<<<<<<<<<<<<<
  *             gp.c('set xlabel "Image Index" ')
  *             gp.c('set ylabel "Feature Value" ')
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_gp); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1135, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_c); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1135, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_gp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1130, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_c); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = NULL;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_7);
-        if (likely(__pyx_t_17)) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
+        if (likely(__pyx_t_6)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-          __Pyx_INCREF(__pyx_t_17);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_7, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_17) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_17, __pyx_kp_s_set_title_Alpha_Beta_Error_Graph) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_kp_s_set_title_Alpha_Beta_Error_Graph);
-      __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1135, __pyx_L1_error)
+      __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_kp_s_set_title_Alpha_Beta_Error_Graph) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_kp_s_set_title_Alpha_Beta_Error_Graph);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1130, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1136
+      /* "ViolaJones.py":1131
  *                 "%s/normalized_errs.txt" title "error" with linespoints ' % (foldername, foldername, foldername))
  *             gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
  *             gp.c('set xlabel "Image Index" ')             # <<<<<<<<<<<<<<
  *             gp.c('set ylabel "Feature Value" ')
  *             clf_indexes = [line.rstrip('\n')
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_gp); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1136, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_gp); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_c); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1136, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_c); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1131, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_17))) {
-        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_17);
-        if (likely(__pyx_t_7)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
-          __Pyx_INCREF(__pyx_t_7);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_17, function);
-        }
-      }
-      __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_17, __pyx_t_7, __pyx_kp_s_set_xlabel_Image_Index) : __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_kp_s_set_xlabel_Image_Index);
-      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1136, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-
-      /* "ViolaJones.py":1137
- *             gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
- *             gp.c('set xlabel "Image Index" ')
- *             gp.c('set ylabel "Feature Value" ')             # <<<<<<<<<<<<<<
- *             clf_indexes = [line.rstrip('\n')
- *                            for line in open("output/final_clf_indexes.txt")]
- */
-      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_gp); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1137, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_c); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1137, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_7);
-        if (likely(__pyx_t_17)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-          __Pyx_INCREF(__pyx_t_17);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_7, function);
-        }
-      }
-      __pyx_t_12 = (__pyx_t_17) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_17, __pyx_kp_s_set_ylabel_Feature_Value) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_kp_s_set_ylabel_Feature_Value);
-      __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1137, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-
-      /* "ViolaJones.py":1138
- *             gp.c('set xlabel "Image Index" ')
- *             gp.c('set ylabel "Feature Value" ')
- *             clf_indexes = [line.rstrip('\n')             # <<<<<<<<<<<<<<
- *                            for line in open("output/final_clf_indexes.txt")]
- *             xtics = 'set xtics add ('
- */
-      __pyx_t_12 = PyList_New(0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1138, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-
-      /* "ViolaJones.py":1139
- *             gp.c('set ylabel "Feature Value" ')
- *             clf_indexes = [line.rstrip('\n')
- *                            for line in open("output/final_clf_indexes.txt")]             # <<<<<<<<<<<<<<
- *             xtics = 'set xtics add ('
- *             for index, index_label in enumerate(clf_indexes):
- */
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1139, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_7);
-      if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
-        __pyx_t_17 = __pyx_t_7; __Pyx_INCREF(__pyx_t_17); __pyx_t_13 = 0;
-        __pyx_t_15 = NULL;
-      } else {
-        __pyx_t_13 = -1; __pyx_t_17 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1139, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
-        __pyx_t_15 = Py_TYPE(__pyx_t_17)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1139, __pyx_L1_error)
-      }
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      for (;;) {
-        if (likely(!__pyx_t_15)) {
-          if (likely(PyList_CheckExact(__pyx_t_17))) {
-            if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_17)) break;
-            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_7 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1139, __pyx_L1_error)
-            #else
-            __pyx_t_7 = PySequence_ITEM(__pyx_t_17, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1139, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_7);
-            #endif
-          } else {
-            if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_17)) break;
-            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_17, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1139, __pyx_L1_error)
-            #else
-            __pyx_t_7 = PySequence_ITEM(__pyx_t_17, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1139, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_7);
-            #endif
-          }
-        } else {
-          __pyx_t_7 = __pyx_t_15(__pyx_t_17);
-          if (unlikely(!__pyx_t_7)) {
-            PyObject* exc_type = PyErr_Occurred();
-            if (exc_type) {
-              if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 1139, __pyx_L1_error)
-            }
-            break;
-          }
-          __Pyx_GOTREF(__pyx_t_7);
-        }
-        __Pyx_XDECREF_SET(__pyx_v_line, __pyx_t_7);
-        __pyx_t_7 = 0;
-
-        /* "ViolaJones.py":1138
- *             gp.c('set xlabel "Image Index" ')
- *             gp.c('set ylabel "Feature Value" ')
- *             clf_indexes = [line.rstrip('\n')             # <<<<<<<<<<<<<<
- *                            for line in open("output/final_clf_indexes.txt")]
- *             xtics = 'set xtics add ('
- */
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1138, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_6 = NULL;
-        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
-          __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
-          if (likely(__pyx_t_6)) {
-            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-            __Pyx_INCREF(__pyx_t_6);
-            __Pyx_INCREF(function);
-            __Pyx_DECREF_SET(__pyx_t_1, function);
-          }
-        }
-        __pyx_t_7 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s__17);
-        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1138, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_12, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 1138, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-
-        /* "ViolaJones.py":1139
- *             gp.c('set ylabel "Feature Value" ')
- *             clf_indexes = [line.rstrip('\n')
- *                            for line in open("output/final_clf_indexes.txt")]             # <<<<<<<<<<<<<<
- *             xtics = 'set xtics add ('
- *             for index, index_label in enumerate(clf_indexes):
- */
-      }
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_clf_indexes, ((PyObject*)__pyx_t_12));
-      __pyx_t_12 = 0;
-
-      /* "ViolaJones.py":1140
- *             clf_indexes = [line.rstrip('\n')
- *                            for line in open("output/final_clf_indexes.txt")]
- *             xtics = 'set xtics add ('             # <<<<<<<<<<<<<<
- *             for index, index_label in enumerate(clf_indexes):
- *                 xtics += '"' + index_label + '" ' + str(index)
- */
-      __Pyx_INCREF(__pyx_kp_s_set_xtics_add);
-      __Pyx_XDECREF_SET(__pyx_v_xtics, __pyx_kp_s_set_xtics_add);
-
-      /* "ViolaJones.py":1141
- *                            for line in open("output/final_clf_indexes.txt")]
- *             xtics = 'set xtics add ('
- *             for index, index_label in enumerate(clf_indexes):             # <<<<<<<<<<<<<<
- *                 xtics += '"' + index_label + '" ' + str(index)
- *                 if index != (len(clf_indexes) - 1):
- */
-      __Pyx_INCREF(__pyx_int_0);
-      __pyx_t_12 = __pyx_int_0;
-      __pyx_t_17 = __pyx_v_clf_indexes; __Pyx_INCREF(__pyx_t_17); __pyx_t_13 = 0;
-      for (;;) {
-        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_17)) break;
-        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_17, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1141, __pyx_L1_error)
-        #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_17, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1141, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        #endif
-        __Pyx_XDECREF_SET(__pyx_v_index_label, __pyx_t_7);
-        __pyx_t_7 = 0;
-        __Pyx_INCREF(__pyx_t_12);
-        __Pyx_XDECREF_SET(__pyx_v_index, __pyx_t_12);
-        __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_t_12, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1141, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_12);
-        __pyx_t_12 = __pyx_t_7;
-        __pyx_t_7 = 0;
-
-        /* "ViolaJones.py":1142
- *             xtics = 'set xtics add ('
- *             for index, index_label in enumerate(clf_indexes):
- *                 xtics += '"' + index_label + '" ' + str(index)             # <<<<<<<<<<<<<<
- *                 if index != (len(clf_indexes) - 1):
- *                     xtics += ','
- */
-        __pyx_t_7 = PyNumber_Add(__pyx_kp_s__19, __pyx_v_index_label); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1142, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_1 = PyNumber_Add(__pyx_t_7, __pyx_kp_s__20); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1142, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1142, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_6 = PyNumber_Add(__pyx_t_1, __pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1142, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_v_xtics, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1142, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __Pyx_DECREF_SET(__pyx_v_xtics, __pyx_t_7);
-        __pyx_t_7 = 0;
-
-        /* "ViolaJones.py":1143
- *             for index, index_label in enumerate(clf_indexes):
- *                 xtics += '"' + index_label + '" ' + str(index)
- *                 if index != (len(clf_indexes) - 1):             # <<<<<<<<<<<<<<
- *                     xtics += ','
- *             xtics += ') rotate'
- */
-        __pyx_t_20 = PyList_GET_SIZE(__pyx_v_clf_indexes); if (unlikely(__pyx_t_20 == ((Py_ssize_t)-1))) __PYX_ERR(0, 1143, __pyx_L1_error)
-        __pyx_t_7 = PyInt_FromSsize_t((__pyx_t_20 - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1143, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_6 = PyObject_RichCompare(__pyx_v_index, __pyx_t_7, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1143, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1143, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (__pyx_t_4) {
-
-          /* "ViolaJones.py":1144
- *                 xtics += '"' + index_label + '" ' + str(index)
- *                 if index != (len(clf_indexes) - 1):
- *                     xtics += ','             # <<<<<<<<<<<<<<
- *             xtics += ') rotate'
- *             gp.c(xtics)
- */
-          __pyx_t_6 = PyNumber_InPlaceAdd(__pyx_v_xtics, __pyx_kp_s__21); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1144, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_6);
-          __Pyx_DECREF_SET(__pyx_v_xtics, __pyx_t_6);
-          __pyx_t_6 = 0;
-
-          /* "ViolaJones.py":1143
- *             for index, index_label in enumerate(clf_indexes):
- *                 xtics += '"' + index_label + '" ' + str(index)
- *                 if index != (len(clf_indexes) - 1):             # <<<<<<<<<<<<<<
- *                     xtics += ','
- *             xtics += ') rotate'
- */
-        }
-
-        /* "ViolaJones.py":1141
- *                            for line in open("output/final_clf_indexes.txt")]
- *             xtics = 'set xtics add ('
- *             for index, index_label in enumerate(clf_indexes):             # <<<<<<<<<<<<<<
- *                 xtics += '"' + index_label + '" ' + str(index)
- *                 if index != (len(clf_indexes) - 1):
- */
-      }
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-
-      /* "ViolaJones.py":1145
- *                 if index != (len(clf_indexes) - 1):
- *                     xtics += ','
- *             xtics += ') rotate'             # <<<<<<<<<<<<<<
- *             gp.c(xtics)
- *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
- */
-      __pyx_t_12 = PyNumber_InPlaceAdd(__pyx_v_xtics, __pyx_kp_s_rotate_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1145, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF_SET(__pyx_v_xtics, __pyx_t_12);
-      __pyx_t_12 = 0;
-
-      /* "ViolaJones.py":1146
- *                     xtics += ','
- *             xtics += ') rotate'
- *             gp.c(xtics)             # <<<<<<<<<<<<<<
- *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
- *         elif run == 2:
- */
-      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_gp); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1146, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_c); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1146, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_6);
-        if (likely(__pyx_t_17)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-          __Pyx_INCREF(__pyx_t_17);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_6, function);
-        }
-      }
-      __pyx_t_12 = (__pyx_t_17) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_17, __pyx_v_xtics) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_v_xtics);
-      __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1146, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-
-      /* "ViolaJones.py":1147
- *             xtics += ') rotate'
- *             gp.c(xtics)
- *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)             # <<<<<<<<<<<<<<
- *         elif run == 2:
- *             """ Since alpha-error-graph already generated and saved, just load again """
- */
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_gp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1147, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_17 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_c); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1147, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1147, __pyx_L1_error) }
-      __pyx_t_6 = __Pyx_PyString_FormatSafe(__pyx_kp_s_save_s_alpha_beta_error_dat, __pyx_v_foldername); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1147, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_7 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_17))) {
-        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_17);
-        if (likely(__pyx_t_7)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_17);
-          __Pyx_INCREF(__pyx_t_7);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_17, function);
-        }
-      }
-      __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_17, __pyx_t_7, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_17, __pyx_t_6);
-      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1147, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-
-      /* "ViolaJones.py":1111
- *                 with open("weak_classifier_list.pkl", 'wb') as f:
- *                     pickle.dump(weak_classifier_list, f)
- *         elif run == 1:             # <<<<<<<<<<<<<<
- *             """ Generate Alpha-Error Graph """
- *             print("Generating Alpha-Error Graph")
- */
-      goto __pyx_L24;
-    }
-
-    /* "ViolaJones.py":1148
- *             gp.c(xtics)
- *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
- *         elif run == 2:             # <<<<<<<<<<<<<<
- *             """ Since alpha-error-graph already generated and saved, just load again """
- *             gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
- */
-    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1148, __pyx_L1_error) }
-    __pyx_t_12 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1148, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1148, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    if (__pyx_t_4) {
-
-      /* "ViolaJones.py":1150
- *         elif run == 2:
- *             """ Since alpha-error-graph already generated and saved, just load again """
- *             gp.c('load "%s/alpha_beta_error.dat" ' % foldername)             # <<<<<<<<<<<<<<
- *         elif run == 3:
- *             """ Test if Strong Classifier actually works (After training is done) """
- */
-      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_gp); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1150, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_c); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1150, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1150, __pyx_L1_error) }
-      __pyx_t_17 = __Pyx_PyString_FormatSafe(__pyx_kp_s_load_s_alpha_beta_error_dat, __pyx_v_foldername); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1150, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
       __pyx_t_7 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
         __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
@@ -33276,15 +32796,385 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
           __Pyx_DECREF_SET(__pyx_t_6, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_17) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_17);
+      __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_kp_s_set_xlabel_Image_Index) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_kp_s_set_xlabel_Image_Index);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1150, __pyx_L1_error)
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1148
+      /* "ViolaJones.py":1132
+ *             gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
+ *             gp.c('set xlabel "Image Index" ')
+ *             gp.c('set ylabel "Feature Value" ')             # <<<<<<<<<<<<<<
+ *             clf_indexes = [line.rstrip('\n')
+ *                            for line in open("output/final_clf_indexes.txt")]
+ */
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_gp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1132, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_c); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1132, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_7, function);
+        }
+      }
+      __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_kp_s_set_ylabel_Feature_Value) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_kp_s_set_ylabel_Feature_Value);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1132, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+
+      /* "ViolaJones.py":1133
+ *             gp.c('set xlabel "Image Index" ')
+ *             gp.c('set ylabel "Feature Value" ')
+ *             clf_indexes = [line.rstrip('\n')             # <<<<<<<<<<<<<<
+ *                            for line in open("output/final_clf_indexes.txt")]
+ *             xtics = 'set xtics add ('
+ */
+      __pyx_t_12 = PyList_New(0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1133, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+
+      /* "ViolaJones.py":1134
+ *             gp.c('set ylabel "Feature Value" ')
+ *             clf_indexes = [line.rstrip('\n')
+ *                            for line in open("output/final_clf_indexes.txt")]             # <<<<<<<<<<<<<<
+ *             xtics = 'set xtics add ('
+ *             for index, index_label in enumerate(clf_indexes):
+ */
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_open, __pyx_tuple__18, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1134, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
+        __pyx_t_6 = __pyx_t_7; __Pyx_INCREF(__pyx_t_6); __pyx_t_13 = 0;
+        __pyx_t_15 = NULL;
+      } else {
+        __pyx_t_13 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1134, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __pyx_t_15 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1134, __pyx_L1_error)
+      }
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      for (;;) {
+        if (likely(!__pyx_t_15)) {
+          if (likely(PyList_CheckExact(__pyx_t_6))) {
+            if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_6)) break;
+            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+            __pyx_t_7 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1134, __pyx_L1_error)
+            #else
+            __pyx_t_7 = PySequence_ITEM(__pyx_t_6, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1134, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_7);
+            #endif
+          } else {
+            if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
+            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+            __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1134, __pyx_L1_error)
+            #else
+            __pyx_t_7 = PySequence_ITEM(__pyx_t_6, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1134, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_7);
+            #endif
+          }
+        } else {
+          __pyx_t_7 = __pyx_t_15(__pyx_t_6);
+          if (unlikely(!__pyx_t_7)) {
+            PyObject* exc_type = PyErr_Occurred();
+            if (exc_type) {
+              if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+              else __PYX_ERR(0, 1134, __pyx_L1_error)
+            }
+            break;
+          }
+          __Pyx_GOTREF(__pyx_t_7);
+        }
+        __Pyx_XDECREF_SET(__pyx_v_line, __pyx_t_7);
+        __pyx_t_7 = 0;
+
+        /* "ViolaJones.py":1133
+ *             gp.c('set xlabel "Image Index" ')
+ *             gp.c('set ylabel "Feature Value" ')
+ *             clf_indexes = [line.rstrip('\n')             # <<<<<<<<<<<<<<
+ *                            for line in open("output/final_clf_indexes.txt")]
+ *             xtics = 'set xtics add ('
+ */
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_line, __pyx_n_s_rstrip); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1133, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __pyx_t_16 = NULL;
+        if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
+          __pyx_t_16 = PyMethod_GET_SELF(__pyx_t_2);
+          if (likely(__pyx_t_16)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+            __Pyx_INCREF(__pyx_t_16);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_2, function);
+          }
+        }
+        __pyx_t_7 = (__pyx_t_16) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_16, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s__17);
+        __Pyx_XDECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1133, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_12, (PyObject*)__pyx_t_7))) __PYX_ERR(0, 1133, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+
+        /* "ViolaJones.py":1134
+ *             gp.c('set ylabel "Feature Value" ')
+ *             clf_indexes = [line.rstrip('\n')
+ *                            for line in open("output/final_clf_indexes.txt")]             # <<<<<<<<<<<<<<
+ *             xtics = 'set xtics add ('
+ *             for index, index_label in enumerate(clf_indexes):
+ */
+      }
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_clf_indexes, ((PyObject*)__pyx_t_12));
+      __pyx_t_12 = 0;
+
+      /* "ViolaJones.py":1135
+ *             clf_indexes = [line.rstrip('\n')
+ *                            for line in open("output/final_clf_indexes.txt")]
+ *             xtics = 'set xtics add ('             # <<<<<<<<<<<<<<
+ *             for index, index_label in enumerate(clf_indexes):
+ *                 xtics += '"' + index_label + '" ' + str(index)
+ */
+      __Pyx_INCREF(__pyx_kp_s_set_xtics_add);
+      __Pyx_XDECREF_SET(__pyx_v_xtics, __pyx_kp_s_set_xtics_add);
+
+      /* "ViolaJones.py":1136
+ *                            for line in open("output/final_clf_indexes.txt")]
+ *             xtics = 'set xtics add ('
+ *             for index, index_label in enumerate(clf_indexes):             # <<<<<<<<<<<<<<
+ *                 xtics += '"' + index_label + '" ' + str(index)
+ *                 if index != (len(clf_indexes) - 1):
+ */
+      __Pyx_INCREF(__pyx_int_0);
+      __pyx_t_12 = __pyx_int_0;
+      __pyx_t_6 = __pyx_v_clf_indexes; __Pyx_INCREF(__pyx_t_6); __pyx_t_13 = 0;
+      for (;;) {
+        if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_6)) break;
+        #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1136, __pyx_L1_error)
+        #else
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_6, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1136, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        #endif
+        __Pyx_XDECREF_SET(__pyx_v_index_label, __pyx_t_7);
+        __pyx_t_7 = 0;
+        __Pyx_INCREF(__pyx_t_12);
+        __Pyx_XDECREF_SET(__pyx_v_index, __pyx_t_12);
+        __pyx_t_7 = __Pyx_PyInt_AddObjC(__pyx_t_12, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1136, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_12);
+        __pyx_t_12 = __pyx_t_7;
+        __pyx_t_7 = 0;
+
+        /* "ViolaJones.py":1137
+ *             xtics = 'set xtics add ('
+ *             for index, index_label in enumerate(clf_indexes):
+ *                 xtics += '"' + index_label + '" ' + str(index)             # <<<<<<<<<<<<<<
+ *                 if index != (len(clf_indexes) - 1):
+ *                     xtics += ','
+ */
+        __pyx_t_7 = PyNumber_Add(__pyx_kp_s__19, __pyx_v_index_label); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1137, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_2 = PyNumber_Add(__pyx_t_7, __pyx_kp_s__20); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1137, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_index); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1137, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_16 = PyNumber_Add(__pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1137, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_7 = PyNumber_InPlaceAdd(__pyx_v_xtics, __pyx_t_16); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1137, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        __Pyx_DECREF_SET(__pyx_v_xtics, __pyx_t_7);
+        __pyx_t_7 = 0;
+
+        /* "ViolaJones.py":1138
+ *             for index, index_label in enumerate(clf_indexes):
+ *                 xtics += '"' + index_label + '" ' + str(index)
+ *                 if index != (len(clf_indexes) - 1):             # <<<<<<<<<<<<<<
+ *                     xtics += ','
+ *             xtics += ') rotate'
+ */
+        __pyx_t_20 = PyList_GET_SIZE(__pyx_v_clf_indexes); if (unlikely(__pyx_t_20 == ((Py_ssize_t)-1))) __PYX_ERR(0, 1138, __pyx_L1_error)
+        __pyx_t_7 = PyInt_FromSsize_t((__pyx_t_20 - 1)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1138, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_7);
+        __pyx_t_16 = PyObject_RichCompare(__pyx_v_index, __pyx_t_7, Py_NE); __Pyx_XGOTREF(__pyx_t_16); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1138, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+        __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_16); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1138, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+        if (__pyx_t_4) {
+
+          /* "ViolaJones.py":1139
+ *                 xtics += '"' + index_label + '" ' + str(index)
+ *                 if index != (len(clf_indexes) - 1):
+ *                     xtics += ','             # <<<<<<<<<<<<<<
+ *             xtics += ') rotate'
+ *             gp.c(xtics)
+ */
+          __pyx_t_16 = PyNumber_InPlaceAdd(__pyx_v_xtics, __pyx_kp_s__21); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1139, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_16);
+          __Pyx_DECREF_SET(__pyx_v_xtics, __pyx_t_16);
+          __pyx_t_16 = 0;
+
+          /* "ViolaJones.py":1138
+ *             for index, index_label in enumerate(clf_indexes):
+ *                 xtics += '"' + index_label + '" ' + str(index)
+ *                 if index != (len(clf_indexes) - 1):             # <<<<<<<<<<<<<<
+ *                     xtics += ','
+ *             xtics += ') rotate'
+ */
+        }
+
+        /* "ViolaJones.py":1136
+ *                            for line in open("output/final_clf_indexes.txt")]
+ *             xtics = 'set xtics add ('
+ *             for index, index_label in enumerate(clf_indexes):             # <<<<<<<<<<<<<<
+ *                 xtics += '"' + index_label + '" ' + str(index)
+ *                 if index != (len(clf_indexes) - 1):
+ */
+      }
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+
+      /* "ViolaJones.py":1140
+ *                 if index != (len(clf_indexes) - 1):
+ *                     xtics += ','
+ *             xtics += ') rotate'             # <<<<<<<<<<<<<<
+ *             gp.c(xtics)
+ *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
+ */
+      __pyx_t_12 = PyNumber_InPlaceAdd(__pyx_v_xtics, __pyx_kp_s_rotate_2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1140, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF_SET(__pyx_v_xtics, __pyx_t_12);
+      __pyx_t_12 = 0;
+
+      /* "ViolaJones.py":1141
+ *                     xtics += ','
+ *             xtics += ') rotate'
+ *             gp.c(xtics)             # <<<<<<<<<<<<<<
+ *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
+ *         elif run == 2:
+ */
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_gp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1141, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_c); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1141, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_16))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_16);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+          __Pyx_INCREF(__pyx_t_6);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_16, function);
+        }
+      }
+      __pyx_t_12 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_16, __pyx_t_6, __pyx_v_xtics) : __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_v_xtics);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1141, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+
+      /* "ViolaJones.py":1142
+ *             xtics += ') rotate'
+ *             gp.c(xtics)
+ *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)             # <<<<<<<<<<<<<<
+ *         elif run == 2:
+ *             """ Since alpha-error-graph already generated and saved, just load again """
+ */
+      __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_gp); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1142, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_c); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1142, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1142, __pyx_L1_error) }
+      __pyx_t_16 = __Pyx_PyString_FormatSafe(__pyx_kp_s_save_s_alpha_beta_error_dat, __pyx_v_foldername); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1142, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __pyx_t_7 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+          __Pyx_INCREF(__pyx_t_7);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_6, function);
+        }
+      }
+      __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_7, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_16);
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1142, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+
+      /* "ViolaJones.py":1106
+ *                 with open("weak_classifier_list.pkl", 'wb') as f:
+ *                     pickle.dump(weak_classifier_list, f)
+ *         elif run == 1:             # <<<<<<<<<<<<<<
+ *             """ Generate Alpha-Error Graph """
+ *             print("Generating Alpha-Error Graph")
+ */
+      goto __pyx_L24;
+    }
+
+    /* "ViolaJones.py":1143
+ *             gp.c(xtics)
+ *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
+ *         elif run == 2:             # <<<<<<<<<<<<<<
+ *             """ Since alpha-error-graph already generated and saved, just load again """
+ *             gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
+ */
+    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1143, __pyx_L1_error) }
+    __pyx_t_12 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1143, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_12);
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1143, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+    if (__pyx_t_4) {
+
+      /* "ViolaJones.py":1145
+ *         elif run == 2:
+ *             """ Since alpha-error-graph already generated and saved, just load again """
+ *             gp.c('load "%s/alpha_beta_error.dat" ' % foldername)             # <<<<<<<<<<<<<<
+ *         elif run == 3:
+ *             """ Test if Strong Classifier actually works (After training is done) """
+ */
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_gp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1145, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_c); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1145, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_v_foldername)) { __Pyx_RaiseUnboundLocalError("foldername"); __PYX_ERR(0, 1145, __pyx_L1_error) }
+      __pyx_t_6 = __Pyx_PyString_FormatSafe(__pyx_kp_s_load_s_alpha_beta_error_dat, __pyx_v_foldername); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1145, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_7 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_16))) {
+        __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_16);
+        if (likely(__pyx_t_7)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+          __Pyx_INCREF(__pyx_t_7);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_16, function);
+        }
+      }
+      __pyx_t_12 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_16, __pyx_t_7, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_6);
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1145, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+
+      /* "ViolaJones.py":1143
  *             gp.c(xtics)
  *             gp.c('save "%s/alpha_beta_error.dat" ' % foldername)
  *         elif run == 2:             # <<<<<<<<<<<<<<
@@ -33294,94 +33184,94 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       goto __pyx_L24;
     }
 
-    /* "ViolaJones.py":1151
+    /* "ViolaJones.py":1146
  *             """ Since alpha-error-graph already generated and saved, just load again """
  *             gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
  *         elif run == 3:             # <<<<<<<<<<<<<<
  *             """ Test if Strong Classifier actually works (After training is done) """
  *             foldername = input(
  */
-    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1151, __pyx_L1_error) }
-    __pyx_t_12 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1151, __pyx_L1_error)
+    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1146, __pyx_L1_error) }
+    __pyx_t_12 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_3, 3, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1146, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1151, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_12); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1146, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     if (__pyx_t_4) {
 
-      /* "ViolaJones.py":1153
+      /* "ViolaJones.py":1148
  *         elif run == 3:
  *             """ Test if Strong Classifier actually works (After training is done) """
  *             foldername = input(             # <<<<<<<<<<<<<<
  *                 "Folder to retrieve strong classifier data from?\n")
  *             # test_path = 'test_images/'
  */
-      __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1153, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__22, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1148, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_XDECREF_SET(__pyx_v_foldername, __pyx_t_12);
       __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1156
+      /* "ViolaJones.py":1151
  *                 "Folder to retrieve strong classifier data from?\n")
  *             # test_path = 'test_images/'
  *             test_path = input("Path to images? (Include '/' at end)\n")             # <<<<<<<<<<<<<<
  *             index_count, hit_list, indexed_features = test(
  *                 foldername, test_path)
  */
-      __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1156, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_input, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1151, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_XDECREF_SET(__pyx_v_test_path, __pyx_t_12);
       __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1157
+      /* "ViolaJones.py":1152
  *             # test_path = 'test_images/'
  *             test_path = input("Path to images? (Include '/' at end)\n")
  *             index_count, hit_list, indexed_features = test(             # <<<<<<<<<<<<<<
  *                 foldername, test_path)
  *             print("\nMin index-count at %s" %
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_test); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1157, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_test); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1152, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
 
-      /* "ViolaJones.py":1158
+      /* "ViolaJones.py":1153
  *             test_path = input("Path to images? (Include '/' at end)\n")
  *             index_count, hit_list, indexed_features = test(
  *                 foldername, test_path)             # <<<<<<<<<<<<<<
  *             print("\nMin index-count at %s" %
  *                   (min(index_count, key=lambda ii: ii[2])[2]))
  */
-      __pyx_t_17 = NULL;
+      __pyx_t_6 = NULL;
       __pyx_t_11 = 0;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_6))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_6);
-        if (likely(__pyx_t_17)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
-          __Pyx_INCREF(__pyx_t_17);
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_16))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_16);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_6, function);
+          __Pyx_DECREF_SET(__pyx_t_16, function);
           __pyx_t_11 = 1;
         }
       }
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_6)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_17, __pyx_v_foldername, __pyx_v_test_path};
-        __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1157, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+      if (PyFunction_Check(__pyx_t_16)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_foldername, __pyx_v_test_path};
+        __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1152, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_12);
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_17, __pyx_v_foldername, __pyx_v_test_path};
-        __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1157, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_16)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_v_foldername, __pyx_v_test_path};
+        __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1152, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_12);
       } else
       #endif
       {
-        __pyx_t_7 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1157, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1152, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        if (__pyx_t_17) {
-          __Pyx_GIVEREF(__pyx_t_17); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_17); __pyx_t_17 = NULL;
+        if (__pyx_t_6) {
+          __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __pyx_t_6 = NULL;
         }
         __Pyx_INCREF(__pyx_v_foldername);
         __Pyx_GIVEREF(__pyx_v_foldername);
@@ -33389,252 +33279,285 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_INCREF(__pyx_v_test_path);
         __Pyx_GIVEREF(__pyx_v_test_path);
         PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_11, __pyx_v_test_path);
-        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_7, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1157, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_7, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1152, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       }
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       if ((likely(PyTuple_CheckExact(__pyx_t_12))) || (PyList_CheckExact(__pyx_t_12))) {
         PyObject* sequence = __pyx_t_12;
         Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
         if (unlikely(size != 3)) {
           if (size > 3) __Pyx_RaiseTooManyValuesError(3);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 1157, __pyx_L1_error)
+          __PYX_ERR(0, 1152, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
-          __pyx_t_6 = PyTuple_GET_ITEM(sequence, 0); 
+          __pyx_t_16 = PyTuple_GET_ITEM(sequence, 0); 
           __pyx_t_7 = PyTuple_GET_ITEM(sequence, 1); 
-          __pyx_t_17 = PyTuple_GET_ITEM(sequence, 2); 
+          __pyx_t_6 = PyTuple_GET_ITEM(sequence, 2); 
         } else {
-          __pyx_t_6 = PyList_GET_ITEM(sequence, 0); 
+          __pyx_t_16 = PyList_GET_ITEM(sequence, 0); 
           __pyx_t_7 = PyList_GET_ITEM(sequence, 1); 
-          __pyx_t_17 = PyList_GET_ITEM(sequence, 2); 
+          __pyx_t_6 = PyList_GET_ITEM(sequence, 2); 
         }
-        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(__pyx_t_16);
         __Pyx_INCREF(__pyx_t_7);
-        __Pyx_INCREF(__pyx_t_17);
+        __Pyx_INCREF(__pyx_t_6);
         #else
-        __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1157, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1157, __pyx_L1_error)
+        __pyx_t_16 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1152, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __pyx_t_7 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1152, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_17 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1157, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_17);
+        __pyx_t_6 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1152, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
         #endif
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_1 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1157, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1152, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __pyx_t_19 = Py_TYPE(__pyx_t_1)->tp_iternext;
-        index = 0; __pyx_t_6 = __pyx_t_19(__pyx_t_1); if (unlikely(!__pyx_t_6)) goto __pyx_L268_unpacking_failed;
-        __Pyx_GOTREF(__pyx_t_6);
-        index = 1; __pyx_t_7 = __pyx_t_19(__pyx_t_1); if (unlikely(!__pyx_t_7)) goto __pyx_L268_unpacking_failed;
+        __pyx_t_19 = Py_TYPE(__pyx_t_2)->tp_iternext;
+        index = 0; __pyx_t_16 = __pyx_t_19(__pyx_t_2); if (unlikely(!__pyx_t_16)) goto __pyx_L268_unpacking_failed;
+        __Pyx_GOTREF(__pyx_t_16);
+        index = 1; __pyx_t_7 = __pyx_t_19(__pyx_t_2); if (unlikely(!__pyx_t_7)) goto __pyx_L268_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_7);
-        index = 2; __pyx_t_17 = __pyx_t_19(__pyx_t_1); if (unlikely(!__pyx_t_17)) goto __pyx_L268_unpacking_failed;
-        __Pyx_GOTREF(__pyx_t_17);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_19(__pyx_t_1), 3) < 0) __PYX_ERR(0, 1157, __pyx_L1_error)
+        index = 2; __pyx_t_6 = __pyx_t_19(__pyx_t_2); if (unlikely(!__pyx_t_6)) goto __pyx_L268_unpacking_failed;
+        __Pyx_GOTREF(__pyx_t_6);
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_19(__pyx_t_2), 3) < 0) __PYX_ERR(0, 1152, __pyx_L1_error)
         __pyx_t_19 = NULL;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         goto __pyx_L269_unpacking_done;
         __pyx_L268_unpacking_failed:;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __pyx_t_19 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 1157, __pyx_L1_error)
+        __PYX_ERR(0, 1152, __pyx_L1_error)
         __pyx_L269_unpacking_done:;
       }
 
-      /* "ViolaJones.py":1157
+      /* "ViolaJones.py":1152
  *             # test_path = 'test_images/'
  *             test_path = input("Path to images? (Include '/' at end)\n")
  *             index_count, hit_list, indexed_features = test(             # <<<<<<<<<<<<<<
  *                 foldername, test_path)
  *             print("\nMin index-count at %s" %
  */
-      __Pyx_XDECREF_SET(__pyx_v_index_count, __pyx_t_6);
-      __pyx_t_6 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_index_count, __pyx_t_16);
+      __pyx_t_16 = 0;
       __Pyx_XDECREF_SET(__pyx_v_hit_list, __pyx_t_7);
       __pyx_t_7 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_indexed_features, __pyx_t_17);
-      __pyx_t_17 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_indexed_features, __pyx_t_6);
+      __pyx_t_6 = 0;
 
-      /* "ViolaJones.py":1160
+      /* "ViolaJones.py":1155
  *                 foldername, test_path)
  *             print("\nMin index-count at %s" %
  *                   (min(index_count, key=lambda ii: ii[2])[2]))             # <<<<<<<<<<<<<<
  *             print("Max index-count at %s" %
  *                   (max(index_count, key=lambda ii: ii[2])[2]))
  */
-      __pyx_t_12 = PyTuple_New(1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1160, __pyx_L1_error)
+      __pyx_t_12 = PyTuple_New(1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1155, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_INCREF(__pyx_v_index_count);
       __Pyx_GIVEREF(__pyx_v_index_count);
       PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_v_index_count);
-      __pyx_t_17 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1160, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10ViolaJones_4main_lambda12, 0, __pyx_n_s_main_locals_lambda, NULL, __pyx_n_s_ViolaJones, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1160, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1155, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_7 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10ViolaJones_4main_lambda12, 0, __pyx_n_s_main_locals_lambda, NULL, __pyx_n_s_ViolaJones, __pyx_d, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1155, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      if (PyDict_SetItem(__pyx_t_17, __pyx_n_s_key, __pyx_t_7) < 0) __PYX_ERR(0, 1160, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_key, __pyx_t_7) < 0) __PYX_ERR(0, 1155, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_min, __pyx_t_12, __pyx_t_17); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1160, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_min, __pyx_t_12, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1155, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = __Pyx_GetItemInt(__pyx_t_7, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1160, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_7, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1155, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "ViolaJones.py":1159
+      /* "ViolaJones.py":1154
  *             index_count, hit_list, indexed_features = test(
  *                 foldername, test_path)
  *             print("\nMin index-count at %s" %             # <<<<<<<<<<<<<<
  *                   (min(index_count, key=lambda ii: ii[2])[2]))
  *             print("Max index-count at %s" %
  */
-      __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Min_index_count_at_s, __pyx_t_17); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1159, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Min_index_count_at_s, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 1159, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 1154, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "ViolaJones.py":1162
+      /* "ViolaJones.py":1157
  *                   (min(index_count, key=lambda ii: ii[2])[2]))
  *             print("Max index-count at %s" %
  *                   (max(index_count, key=lambda ii: ii[2])[2]))             # <<<<<<<<<<<<<<
  *             print("Avg index-count at %s" %
- *                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+ *                   math.floor(statistics.mean([ii[2] for ii in index_count])))
  */
-      __pyx_t_7 = PyTuple_New(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1162, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1157, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_v_index_count);
       __Pyx_GIVEREF(__pyx_v_index_count);
       PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_v_index_count);
-      __pyx_t_17 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1162, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_12 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10ViolaJones_4main_1lambda13, 0, __pyx_n_s_main_locals_lambda, NULL, __pyx_n_s_ViolaJones, __pyx_d, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1162, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1157, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_12 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10ViolaJones_4main_1lambda13, 0, __pyx_n_s_main_locals_lambda, NULL, __pyx_n_s_ViolaJones, __pyx_d, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1157, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      if (PyDict_SetItem(__pyx_t_17, __pyx_n_s_key, __pyx_t_12) < 0) __PYX_ERR(0, 1162, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_key, __pyx_t_12) < 0) __PYX_ERR(0, 1157, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_max, __pyx_t_7, __pyx_t_17); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1162, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_Call(__pyx_builtin_max, __pyx_t_7, __pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1157, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __pyx_t_17 = __Pyx_GetItemInt(__pyx_t_12, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1162, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_12, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1157, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1161
+      /* "ViolaJones.py":1156
  *             print("\nMin index-count at %s" %
  *                   (min(index_count, key=lambda ii: ii[2])[2]))
  *             print("Max index-count at %s" %             # <<<<<<<<<<<<<<
  *                   (max(index_count, key=lambda ii: ii[2])[2]))
  *             print("Avg index-count at %s" %
  */
-      __pyx_t_12 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Max_index_count_at_s, __pyx_t_17); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1161, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Max_index_count_at_s, __pyx_t_6); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1156, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_12) < 0) __PYX_ERR(0, 1161, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (__Pyx_PrintOne(0, __pyx_t_12) < 0) __PYX_ERR(0, 1156, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-      /* "ViolaJones.py":1164
+      /* "ViolaJones.py":1159
  *                   (max(index_count, key=lambda ii: ii[2])[2]))
  *             print("Avg index-count at %s" %
- *                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))             # <<<<<<<<<<<<<<
+ *                   math.floor(statistics.mean([ii[2] for ii in index_count])))             # <<<<<<<<<<<<<<
  *             bboxes = bbox(foldername, hit_list, indexed_features, 2)
  *             draw_bbox(bboxes, test_path, test_path+"bbox/img")
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_17, __pyx_n_s_math); if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_17, __pyx_n_s_floor); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1164, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_math); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1159, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_floor); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1159, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_statistics); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_mean); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_CyFunction_NewEx(&__pyx_mdef_10ViolaJones_4main_2lambda14, 0, __pyx_n_s_main_locals_lambda, NULL, __pyx_n_s_ViolaJones, __pyx_d, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1164, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_statistics); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1159, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_16, __pyx_n_s_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1159, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_GIVEREF(__pyx_t_6);
-      PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6);
-      __Pyx_INCREF(__pyx_v_index_count);
-      __Pyx_GIVEREF(__pyx_v_index_count);
-      PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_v_index_count);
-      __pyx_t_6 = 0;
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_map, __pyx_t_2, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PySequence_List(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
-        if (likely(__pyx_t_6)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-          __Pyx_INCREF(__pyx_t_6);
-          __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_1, function);
-        }
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __pyx_t_16 = PyList_New(0); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1159, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
+      if (likely(PyList_CheckExact(__pyx_v_index_count)) || PyTuple_CheckExact(__pyx_v_index_count)) {
+        __pyx_t_1 = __pyx_v_index_count; __Pyx_INCREF(__pyx_t_1); __pyx_t_13 = 0;
+        __pyx_t_15 = NULL;
+      } else {
+        __pyx_t_13 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_v_index_count); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1159, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_15 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 1159, __pyx_L1_error)
       }
-      __pyx_t_17 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2);
-      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 1164, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_17);
+      for (;;) {
+        if (likely(!__pyx_t_15)) {
+          if (likely(PyList_CheckExact(__pyx_t_1))) {
+            if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_1)) break;
+            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+            __pyx_t_18 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_18); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1159, __pyx_L1_error)
+            #else
+            __pyx_t_18 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 1159, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_18);
+            #endif
+          } else {
+            if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
+            #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+            __pyx_t_18 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_13); __Pyx_INCREF(__pyx_t_18); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 1159, __pyx_L1_error)
+            #else
+            __pyx_t_18 = PySequence_ITEM(__pyx_t_1, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 1159, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_18);
+            #endif
+          }
+        } else {
+          __pyx_t_18 = __pyx_t_15(__pyx_t_1);
+          if (unlikely(!__pyx_t_18)) {
+            PyObject* exc_type = PyErr_Occurred();
+            if (exc_type) {
+              if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
+              else __PYX_ERR(0, 1159, __pyx_L1_error)
+            }
+            break;
+          }
+          __Pyx_GOTREF(__pyx_t_18);
+        }
+        __Pyx_XDECREF_SET(__pyx_v_ii, __pyx_t_18);
+        __pyx_t_18 = 0;
+        __pyx_t_18 = __Pyx_GetItemInt(__pyx_v_ii, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 1159, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_18);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_16, (PyObject*)__pyx_t_18))) __PYX_ERR(0, 1159, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
+      }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
-        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_7);
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
+        __pyx_t_1 = PyMethod_GET_SELF(__pyx_t_2);
         if (likely(__pyx_t_1)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
           __Pyx_INCREF(__pyx_t_1);
+          __Pyx_INCREF(function);
+          __Pyx_DECREF_SET(__pyx_t_2, function);
+        }
+      }
+      __pyx_t_6 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_t_16) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_16);
+      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 1159, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_6);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __pyx_t_2 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
+        __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_7);
+        if (likely(__pyx_t_2)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+          __Pyx_INCREF(__pyx_t_2);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_7, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_1, __pyx_t_17) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_17);
-      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __Pyx_DECREF(__pyx_t_17); __pyx_t_17 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1164, __pyx_L1_error)
+      __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6);
+      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1159, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "ViolaJones.py":1163
+      /* "ViolaJones.py":1158
  *             print("Max index-count at %s" %
  *                   (max(index_count, key=lambda ii: ii[2])[2]))
  *             print("Avg index-count at %s" %             # <<<<<<<<<<<<<<
- *                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+ *                   math.floor(statistics.mean([ii[2] for ii in index_count])))
  *             bboxes = bbox(foldername, hit_list, indexed_features, 2)
  */
-      __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Avg_index_count_at_s, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1163, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyString_FormatSafe(__pyx_kp_s_Avg_index_count_at_s, __pyx_t_12); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 1163, __pyx_L1_error)
+      if (__Pyx_PrintOne(0, __pyx_t_7) < 0) __PYX_ERR(0, 1158, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "ViolaJones.py":1165
+      /* "ViolaJones.py":1160
  *             print("Avg index-count at %s" %
- *                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+ *                   math.floor(statistics.mean([ii[2] for ii in index_count])))
  *             bboxes = bbox(foldername, hit_list, indexed_features, 2)             # <<<<<<<<<<<<<<
  *             draw_bbox(bboxes, test_path, test_path+"bbox/img")
  *         elif run == 4:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_bbox); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1165, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_bbox); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1160, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_17 = NULL;
+      __pyx_t_6 = NULL;
       __pyx_t_11 = 0;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_12))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_12);
-        if (likely(__pyx_t_17)) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_12);
+        if (likely(__pyx_t_6)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
-          __Pyx_INCREF(__pyx_t_17);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_12, function);
           __pyx_t_11 = 1;
@@ -33642,64 +33565,64 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       }
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_12)) {
-        PyObject *__pyx_temp[5] = {__pyx_t_17, __pyx_v_foldername, __pyx_v_hit_list, __pyx_v_indexed_features, __pyx_int_2};
-        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 4+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1165, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+        PyObject *__pyx_temp[5] = {__pyx_t_6, __pyx_v_foldername, __pyx_v_hit_list, __pyx_v_indexed_features, __pyx_int_2};
+        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 4+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1160, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_7);
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
-        PyObject *__pyx_temp[5] = {__pyx_t_17, __pyx_v_foldername, __pyx_v_hit_list, __pyx_v_indexed_features, __pyx_int_2};
-        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 4+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1165, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+        PyObject *__pyx_temp[5] = {__pyx_t_6, __pyx_v_foldername, __pyx_v_hit_list, __pyx_v_indexed_features, __pyx_int_2};
+        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 4+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1160, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_7);
       } else
       #endif
       {
-        __pyx_t_1 = PyTuple_New(4+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1165, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        if (__pyx_t_17) {
-          __Pyx_GIVEREF(__pyx_t_17); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_17); __pyx_t_17 = NULL;
+        __pyx_t_2 = PyTuple_New(4+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1160, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
+        if (__pyx_t_6) {
+          __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_6); __pyx_t_6 = NULL;
         }
         __Pyx_INCREF(__pyx_v_foldername);
         __Pyx_GIVEREF(__pyx_v_foldername);
-        PyTuple_SET_ITEM(__pyx_t_1, 0+__pyx_t_11, __pyx_v_foldername);
+        PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_11, __pyx_v_foldername);
         __Pyx_INCREF(__pyx_v_hit_list);
         __Pyx_GIVEREF(__pyx_v_hit_list);
-        PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_11, __pyx_v_hit_list);
+        PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_11, __pyx_v_hit_list);
         __Pyx_INCREF(__pyx_v_indexed_features);
         __Pyx_GIVEREF(__pyx_v_indexed_features);
-        PyTuple_SET_ITEM(__pyx_t_1, 2+__pyx_t_11, __pyx_v_indexed_features);
+        PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_11, __pyx_v_indexed_features);
         __Pyx_INCREF(__pyx_int_2);
         __Pyx_GIVEREF(__pyx_int_2);
-        PyTuple_SET_ITEM(__pyx_t_1, 3+__pyx_t_11, __pyx_int_2);
-        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_1, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1165, __pyx_L1_error)
+        PyTuple_SET_ITEM(__pyx_t_2, 3+__pyx_t_11, __pyx_int_2);
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1160, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_XDECREF_SET(__pyx_v_bboxes, __pyx_t_7);
       __pyx_t_7 = 0;
 
-      /* "ViolaJones.py":1166
- *                   (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+      /* "ViolaJones.py":1161
+ *                   math.floor(statistics.mean([ii[2] for ii in index_count])))
  *             bboxes = bbox(foldername, hit_list, indexed_features, 2)
  *             draw_bbox(bboxes, test_path, test_path+"bbox/img")             # <<<<<<<<<<<<<<
  *         elif run == 4:
  *             """ Timing how long it took to execute this last iteration """
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_draw_bbox); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1166, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_draw_bbox); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1161, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_1 = PyNumber_Add(__pyx_v_test_path, __pyx_kp_s_bbox_img); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1166, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_17 = NULL;
+      __pyx_t_2 = PyNumber_Add(__pyx_v_test_path, __pyx_kp_s_bbox_img); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1161, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_6 = NULL;
       __pyx_t_11 = 0;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_12))) {
-        __pyx_t_17 = PyMethod_GET_SELF(__pyx_t_12);
-        if (likely(__pyx_t_17)) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_12);
+        if (likely(__pyx_t_6)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
-          __Pyx_INCREF(__pyx_t_17);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_12, function);
           __pyx_t_11 = 1;
@@ -33707,45 +33630,45 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       }
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_12)) {
-        PyObject *__pyx_temp[4] = {__pyx_t_17, __pyx_v_bboxes, __pyx_v_test_path, __pyx_t_1};
-        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1166, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+        PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_bboxes, __pyx_v_test_path, __pyx_t_2};
+        __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1161, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
-        PyObject *__pyx_temp[4] = {__pyx_t_17, __pyx_v_bboxes, __pyx_v_test_path, __pyx_t_1};
-        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1166, __pyx_L1_error)
-        __Pyx_XDECREF(__pyx_t_17); __pyx_t_17 = 0;
+        PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_v_bboxes, __pyx_v_test_path, __pyx_t_2};
+        __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_11, 3+__pyx_t_11); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1161, __pyx_L1_error)
+        __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else
       #endif
       {
-        __pyx_t_2 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1166, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        if (__pyx_t_17) {
-          __Pyx_GIVEREF(__pyx_t_17); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_17); __pyx_t_17 = NULL;
+        __pyx_t_16 = PyTuple_New(3+__pyx_t_11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1161, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        if (__pyx_t_6) {
+          __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_t_6); __pyx_t_6 = NULL;
         }
         __Pyx_INCREF(__pyx_v_bboxes);
         __Pyx_GIVEREF(__pyx_v_bboxes);
-        PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_11, __pyx_v_bboxes);
+        PyTuple_SET_ITEM(__pyx_t_16, 0+__pyx_t_11, __pyx_v_bboxes);
         __Pyx_INCREF(__pyx_v_test_path);
         __Pyx_GIVEREF(__pyx_v_test_path);
-        PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_11, __pyx_v_test_path);
-        __Pyx_GIVEREF(__pyx_t_1);
-        PyTuple_SET_ITEM(__pyx_t_2, 2+__pyx_t_11, __pyx_t_1);
-        __pyx_t_1 = 0;
-        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1166, __pyx_L1_error)
+        PyTuple_SET_ITEM(__pyx_t_16, 1+__pyx_t_11, __pyx_v_test_path);
+        __Pyx_GIVEREF(__pyx_t_2);
+        PyTuple_SET_ITEM(__pyx_t_16, 2+__pyx_t_11, __pyx_t_2);
+        __pyx_t_2 = 0;
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_16, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1161, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
       }
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "ViolaJones.py":1151
+      /* "ViolaJones.py":1146
  *             """ Since alpha-error-graph already generated and saved, just load again """
  *             gp.c('load "%s/alpha_beta_error.dat" ' % foldername)
  *         elif run == 3:             # <<<<<<<<<<<<<<
@@ -33755,61 +33678,61 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       goto __pyx_L24;
     }
 
-    /* "ViolaJones.py":1167
+    /* "ViolaJones.py":1162
  *             bboxes = bbox(foldername, hit_list, indexed_features, 2)
  *             draw_bbox(bboxes, test_path, test_path+"bbox/img")
  *         elif run == 4:             # <<<<<<<<<<<<<<
  *             """ Timing how long it took to execute this last iteration """
  *             duration = datetime.now() - start_time
  */
-    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1167, __pyx_L1_error) }
-    __pyx_t_7 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_4, 4, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1167, __pyx_L1_error)
+    if (unlikely(!__pyx_v_run)) { __Pyx_RaiseUnboundLocalError("run"); __PYX_ERR(0, 1162, __pyx_L1_error) }
+    __pyx_t_7 = __Pyx_PyInt_EqObjC(__pyx_v_run, __pyx_int_4, 4, 0); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1162, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1167, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 1162, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (__pyx_t_4) {
 
-      /* "ViolaJones.py":1169
+      /* "ViolaJones.py":1164
  *         elif run == 4:
  *             """ Timing how long it took to execute this last iteration """
  *             duration = datetime.now() - start_time             # <<<<<<<<<<<<<<
  *             print('\n%s %s %s\n' %
  *                   ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_datetime); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1169, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_datetime); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1164, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_now); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1169, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_16 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_now); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1164, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_12 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
-        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_2);
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_16))) {
+        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_16);
         if (likely(__pyx_t_12)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
           __Pyx_INCREF(__pyx_t_12);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_2, function);
+          __Pyx_DECREF_SET(__pyx_t_16, function);
         }
       }
-      __pyx_t_7 = (__pyx_t_12) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_12) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+      __pyx_t_7 = (__pyx_t_12) ? __Pyx_PyObject_CallOneArg(__pyx_t_16, __pyx_t_12) : __Pyx_PyObject_CallNoArg(__pyx_t_16);
       __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1169, __pyx_L1_error)
+      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1164, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_Subtract(__pyx_t_7, __pyx_v_start_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1169, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+      __pyx_t_16 = PyNumber_Subtract(__pyx_t_7, __pyx_v_start_time); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1164, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_duration, __pyx_t_2);
-      __pyx_t_2 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_duration, __pyx_t_16);
+      __pyx_t_16 = 0;
 
-      /* "ViolaJones.py":1171
+      /* "ViolaJones.py":1166
  *             duration = datetime.now() - start_time
  *             print('\n%s %s %s\n' %
  *                   ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))             # <<<<<<<<<<<<<<
  *             break
  *             # return
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_strfdelta); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1171, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_strfdelta); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1166, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __pyx_t_12 = NULL;
       __pyx_t_11 = 0;
@@ -33826,62 +33749,62 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_7)) {
         PyObject *__pyx_temp[3] = {__pyx_t_12, __pyx_v_duration, __pyx_kp_s_H_M_S_F};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1171, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1166, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_GOTREF(__pyx_t_16);
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_7)) {
         PyObject *__pyx_temp[3] = {__pyx_t_12, __pyx_v_duration, __pyx_kp_s_H_M_S_F};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1171, __pyx_L1_error)
+        __pyx_t_16 = __Pyx_PyCFunction_FastCall(__pyx_t_7, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1166, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
-        __Pyx_GOTREF(__pyx_t_2);
+        __Pyx_GOTREF(__pyx_t_16);
       } else
       #endif
       {
-        __pyx_t_1 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1171, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_2 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1166, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_2);
         if (__pyx_t_12) {
-          __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_12); __pyx_t_12 = NULL;
+          __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_12); __pyx_t_12 = NULL;
         }
         __Pyx_INCREF(__pyx_v_duration);
         __Pyx_GIVEREF(__pyx_v_duration);
-        PyTuple_SET_ITEM(__pyx_t_1, 0+__pyx_t_11, __pyx_v_duration);
+        PyTuple_SET_ITEM(__pyx_t_2, 0+__pyx_t_11, __pyx_v_duration);
         __Pyx_INCREF(__pyx_kp_s_H_M_S_F);
         __Pyx_GIVEREF(__pyx_kp_s_H_M_S_F);
-        PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_11, __pyx_kp_s_H_M_S_F);
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1171, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        PyTuple_SET_ITEM(__pyx_t_2, 1+__pyx_t_11, __pyx_kp_s_H_M_S_F);
+        __pyx_t_16 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_2, NULL); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1166, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_16);
+        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       }
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1171, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1166, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_INCREF(__pyx_kp_s_b_2);
       __Pyx_GIVEREF(__pyx_kp_s_b_2);
       PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_s_b_2);
-      __Pyx_GIVEREF(__pyx_t_2);
-      PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_2);
+      __Pyx_GIVEREF(__pyx_t_16);
+      PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_16);
       __Pyx_INCREF(__pyx_kp_s_b_2);
       __Pyx_GIVEREF(__pyx_kp_s_b_2);
       PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_kp_s_b_2);
-      __pyx_t_2 = 0;
+      __pyx_t_16 = 0;
 
-      /* "ViolaJones.py":1170
+      /* "ViolaJones.py":1165
  *             """ Timing how long it took to execute this last iteration """
  *             duration = datetime.now() - start_time
  *             print('\n%s %s %s\n' %             # <<<<<<<<<<<<<<
  *                   ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
  *             break
  */
-      __pyx_t_2 = __Pyx_PyString_Format(__pyx_kp_s_s_s_s, __pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1170, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      __pyx_t_16 = __Pyx_PyString_Format(__pyx_kp_s_s_s_s, __pyx_t_7); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1165, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_16);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 1170, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+      if (__Pyx_PrintOne(0, __pyx_t_16) < 0) __PYX_ERR(0, 1165, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
 
-      /* "ViolaJones.py":1172
+      /* "ViolaJones.py":1167
  *             print('\n%s %s %s\n' %
  *                   ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
  *             break             # <<<<<<<<<<<<<<
@@ -33890,7 +33813,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  */
       goto __pyx_L4_break;
 
-      /* "ViolaJones.py":1167
+      /* "ViolaJones.py":1162
  *             bboxes = bbox(foldername, hit_list, indexed_features, 2)
  *             draw_bbox(bboxes, test_path, test_path+"bbox/img")
  *         elif run == 4:             # <<<<<<<<<<<<<<
@@ -33899,7 +33822,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  */
     }
 
-    /* "ViolaJones.py":1175
+    /* "ViolaJones.py":1170
  *             # return
  *         else:
  *             print("Invalid input, try again")             # <<<<<<<<<<<<<<
@@ -33907,54 +33830,23 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
  *         duration = datetime.now() - start_time
  */
     /*else*/ {
-      if (__Pyx_PrintOne(0, __pyx_kp_s_Invalid_input_try_again) < 0) __PYX_ERR(0, 1175, __pyx_L1_error)
+      if (__Pyx_PrintOne(0, __pyx_kp_s_Invalid_input_try_again) < 0) __PYX_ERR(0, 1170, __pyx_L1_error)
     }
     __pyx_L24:;
 
-    /* "ViolaJones.py":1177
+    /* "ViolaJones.py":1172
  *             print("Invalid input, try again")
  *         """ Timing how long it took to execute this iteration """
  *         duration = datetime.now() - start_time             # <<<<<<<<<<<<<<
  *         print('\n%s %s %s\n' %
  *               ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_datetime); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1177, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_datetime); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 1172, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_now); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1177, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_now); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1172, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
-    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
-      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_1);
-      if (likely(__pyx_t_7)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
-        __Pyx_INCREF(__pyx_t_7);
-        __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_1, function);
-      }
-    }
-    __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
-    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1177, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Subtract(__pyx_t_2, __pyx_v_start_time); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1177, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_duration, __pyx_t_1);
-    __pyx_t_1 = 0;
-
-    /* "ViolaJones.py":1179
- *         duration = datetime.now() - start_time
- *         print('\n%s %s %s\n' %
- *               ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))             # <<<<<<<<<<<<<<
- * 
- * 
- */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_strfdelta); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1179, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = NULL;
-    __pyx_t_11 = 0;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
       __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_2);
       if (likely(__pyx_t_7)) {
@@ -33962,27 +33854,58 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
         __Pyx_INCREF(__pyx_t_7);
         __Pyx_INCREF(function);
         __Pyx_DECREF_SET(__pyx_t_2, function);
+      }
+    }
+    __pyx_t_16 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
+    __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+    if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1172, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_16);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_t_2 = PyNumber_Subtract(__pyx_t_16, __pyx_v_start_time); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1172, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_duration, __pyx_t_2);
+    __pyx_t_2 = 0;
+
+    /* "ViolaJones.py":1174
+ *         duration = datetime.now() - start_time
+ *         print('\n%s %s %s\n' %
+ *               ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+    __Pyx_GetModuleGlobalName(__pyx_t_16, __pyx_n_s_strfdelta); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1174, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_16);
+    __pyx_t_7 = NULL;
+    __pyx_t_11 = 0;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_16))) {
+      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_16);
+      if (likely(__pyx_t_7)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_16);
+        __Pyx_INCREF(__pyx_t_7);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_16, function);
         __pyx_t_11 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_2)) {
+    if (PyFunction_Check(__pyx_t_16)) {
       PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_v_duration, __pyx_kp_s_H_M_S_F};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1179, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1174, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_16)) {
       PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_v_duration, __pyx_kp_s_H_M_S_F};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1179, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_16, __pyx_temp+1-__pyx_t_11, 2+__pyx_t_11); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1174, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1179, __pyx_L1_error)
+      __pyx_t_12 = PyTuple_New(2+__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 1174, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       if (__pyx_t_7) {
         __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_12, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -33993,35 +33916,35 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
       __Pyx_INCREF(__pyx_kp_s_H_M_S_F);
       __Pyx_GIVEREF(__pyx_kp_s_H_M_S_F);
       PyTuple_SET_ITEM(__pyx_t_12, 1+__pyx_t_11, __pyx_kp_s_H_M_S_F);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_12, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1179, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_16, __pyx_t_12, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1174, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     }
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyTuple_New(3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1179, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+    __pyx_t_16 = PyTuple_New(3); if (unlikely(!__pyx_t_16)) __PYX_ERR(0, 1174, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_16);
     __Pyx_INCREF(__pyx_kp_s_b_2);
     __Pyx_GIVEREF(__pyx_kp_s_b_2);
-    PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_kp_s_b_2);
-    __Pyx_GIVEREF(__pyx_t_1);
-    PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_16, 0, __pyx_kp_s_b_2);
+    __Pyx_GIVEREF(__pyx_t_2);
+    PyTuple_SET_ITEM(__pyx_t_16, 1, __pyx_t_2);
     __Pyx_INCREF(__pyx_kp_s_b_2);
     __Pyx_GIVEREF(__pyx_kp_s_b_2);
-    PyTuple_SET_ITEM(__pyx_t_2, 2, __pyx_kp_s_b_2);
-    __pyx_t_1 = 0;
+    PyTuple_SET_ITEM(__pyx_t_16, 2, __pyx_kp_s_b_2);
+    __pyx_t_2 = 0;
 
-    /* "ViolaJones.py":1178
+    /* "ViolaJones.py":1173
  *         """ Timing how long it took to execute this iteration """
  *         duration = datetime.now() - start_time
  *         print('\n%s %s %s\n' %             # <<<<<<<<<<<<<<
  *               ('-'*3, strfdelta(duration, '%H:%M:%S.%F'), '-'*3))
  * 
  */
-    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_s_s_s, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1178, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_2 = __Pyx_PyString_Format(__pyx_kp_s_s_s_s, __pyx_t_16); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1173, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __Pyx_DECREF(__pyx_t_16); __pyx_t_16 = 0;
+    if (__Pyx_PrintOne(0, __pyx_t_2) < 0) __PYX_ERR(0, 1173, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 1178, __pyx_L1_error)
-    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __pyx_L4_break:;
 
@@ -34042,7 +33965,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_12);
-  __Pyx_XDECREF(__pyx_t_17);
+  __Pyx_XDECREF(__pyx_t_16);
   __Pyx_XDECREF(__pyx_t_18);
   __Pyx_AddTraceback("ViolaJones.main", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
@@ -34061,14 +33984,11 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_XDECREF(__pyx_v_ii_list);
   __Pyx_XDECREF(__pyx_v_features);
   __Pyx_XDECREF(__pyx_v_f);
-  __Pyx_XDECREF(__pyx_v_item);
-  __Pyx_XDECREF(__pyx_v_index);
   __Pyx_XDECREF(__pyx_v_im_feature_label);
   __Pyx_XDECREF(__pyx_v_feature_stat);
   __Pyx_XDECREF(__pyx_v_y_list);
   __Pyx_XDECREF(__pyx_v_pos_stat);
   __Pyx_XDECREF(__pyx_v_neg_stat);
-  __Pyx_XDECREF(__pyx_v_row);
   __Pyx_XDECREF(__pyx_v_X_list);
   __Pyx_XDECREF(__pyx_v_sorted_X_list);
   __Pyx_XDECREF(__pyx_v_qr);
@@ -34085,6 +34005,7 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_XDECREF(__pyx_v_normalized_errors);
   __Pyx_XDECREF(__pyx_v_clf_indexes);
   __Pyx_XDECREF(__pyx_v_xtics);
+  __Pyx_XDECREF(__pyx_v_index);
   __Pyx_XDECREF(__pyx_v_index_label);
   __Pyx_XDECREF(__pyx_v_test_path);
   __Pyx_XDECREF(__pyx_v_index_count);
@@ -34092,6 +34013,9 @@ static PyObject *__pyx_pf_10ViolaJones_22main(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_XDECREF(__pyx_v_indexed_features);
   __Pyx_XDECREF(__pyx_v_bboxes);
   __Pyx_XDECREF(__pyx_v_duration);
+  __Pyx_XDECREF(__pyx_v_item);
+  __Pyx_XDECREF(__pyx_v_pair);
+  __Pyx_XDECREF(__pyx_v_row);
   __Pyx_XDECREF(__pyx_v_line);
   __Pyx_XDECREF(__pyx_v_er);
   __Pyx_XDECREF(__pyx_v_ii);
@@ -34593,8 +34517,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_Combined_pdf, __pyx_k_Combined_pdf, sizeof(__pyx_k_Combined_pdf), 0, 0, 1, 0},
   {&__pyx_n_s_D, __pyx_k_D, sizeof(__pyx_k_D), 0, 0, 1, 1},
   {&__pyx_kp_s_DATA_SAVED, __pyx_k_DATA_SAVED, sizeof(__pyx_k_DATA_SAVED), 0, 0, 1, 0},
-  {&__pyx_kp_s_D_Ben_Wang_OneDrive_NeuronBasic, __pyx_k_D_Ben_Wang_OneDrive_NeuronBasic, sizeof(__pyx_k_D_Ben_Wang_OneDrive_NeuronBasic), 0, 0, 1, 0},
-  {&__pyx_kp_s_D_Ben_Wang_OneDrive_NeuronBasic_2, __pyx_k_D_Ben_Wang_OneDrive_NeuronBasic_2, sizeof(__pyx_k_D_Ben_Wang_OneDrive_NeuronBasic_2), 0, 0, 1, 0},
   {&__pyx_n_s_DeltaTemplate, __pyx_k_DeltaTemplate, sizeof(__pyx_k_DeltaTemplate), 0, 0, 1, 1},
   {&__pyx_kp_s_ERROR_Best_error_should_never_re, __pyx_k_ERROR_Best_error_should_never_re, sizeof(__pyx_k_ERROR_Best_error_should_never_re), 0, 0, 1, 0},
   {&__pyx_kp_s_ERROR_Classifier_index_and_X_lis, __pyx_k_ERROR_Classifier_index_and_X_lis, sizeof(__pyx_k_ERROR_Classifier_index_and_X_lis), 0, 0, 1, 0},
@@ -34868,6 +34790,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_hit_list_txt, __pyx_k_hit_list_txt, sizeof(__pyx_k_hit_list_txt), 0, 0, 1, 0},
   {&__pyx_n_s_hits, __pyx_k_hits, sizeof(__pyx_k_hits), 0, 0, 1, 1},
   {&__pyx_kp_s_home_ben_git_Viola_Jones_Eye_De, __pyx_k_home_ben_git_Viola_Jones_Eye_De, sizeof(__pyx_k_home_ben_git_Viola_Jones_Eye_De), 0, 0, 1, 0},
+  {&__pyx_kp_s_home_ben_git_Viola_Jones_Eye_De_2, __pyx_k_home_ben_git_Viola_Jones_Eye_De_2, sizeof(__pyx_k_home_ben_git_Viola_Jones_Eye_De_2), 0, 0, 1, 0},
   {&__pyx_n_s_hours, __pyx_k_hours, sizeof(__pyx_k_hours), 0, 0, 1, 1},
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
   {&__pyx_kp_s_i_s, __pyx_k_i_s, sizeof(__pyx_k_i_s), 0, 0, 1, 0},
@@ -35176,8 +35099,8 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_reversed = __Pyx_GetBuiltinName(__pyx_n_s_reversed); if (!__pyx_builtin_reversed) __PYX_ERR(0, 547, __pyx_L1_error)
   __pyx_builtin_zip = __Pyx_GetBuiltinName(__pyx_n_s_zip); if (!__pyx_builtin_zip) __PYX_ERR(0, 833, __pyx_L1_error)
   __pyx_builtin_input = __Pyx_GetBuiltinName(__pyx_n_s_input); if (!__pyx_builtin_input) __PYX_ERR(0, 1009, __pyx_L1_error)
-  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 1160, __pyx_L1_error)
-  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 1162, __pyx_L1_error)
+  __pyx_builtin_min = __Pyx_GetBuiltinName(__pyx_n_s_min); if (!__pyx_builtin_min) __PYX_ERR(0, 1155, __pyx_L1_error)
+  __pyx_builtin_max = __Pyx_GetBuiltinName(__pyx_n_s_max); if (!__pyx_builtin_max) __PYX_ERR(0, 1157, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -35286,80 +35209,80 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__12);
   __Pyx_GIVEREF(__pyx_tuple__12);
 
-  /* "ViolaJones.py":1075
+  /* "ViolaJones.py":1071
  *             """
  *             while True:
  *                 qr = input('Plot unsorted feature graphs? (y/n)\n')             # <<<<<<<<<<<<<<
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')
  */
-  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Plot_unsorted_feature_graphs_y_n); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 1075, __pyx_L1_error)
+  __pyx_tuple__13 = PyTuple_Pack(1, __pyx_kp_s_Plot_unsorted_feature_graphs_y_n); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 1071, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
 
-  /* "ViolaJones.py":1083
+  /* "ViolaJones.py":1079
  *                 strong_classifier.plot_graphs("not_sorted", X_list, pos_stat)
  *             while True:
  *                 qr = input('Plot value-sorted feature graphs? (y/n)\n')             # <<<<<<<<<<<<<<
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Plot_value_sorted_feature_graphs); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 1083, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_Plot_value_sorted_feature_graphs); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 1079, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "ViolaJones.py":1094
+  /* "ViolaJones.py":1090
  *             """ Training here """
  *             while True:
  *                 qr = input('Train? (y/n)\n')             # <<<<<<<<<<<<<<
  *                 if qr == '' or not qr[0].lower() in ['y', 'n']:
  *                     print('Please answer with yes or no!')
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Train_y_n); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 1094, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Train_y_n); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 1090, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "ViolaJones.py":1109
+  /* "ViolaJones.py":1104
  *                 weak_classifier_list = strong_classifier.train(
  *                     foldername, weights, sorted_X_list, y_list, pos_stat, neg_stat, features)
  *                 with open("weak_classifier_list.pkl", 'wb') as f:             # <<<<<<<<<<<<<<
  *                     pickle.dump(weak_classifier_list, f)
  *         elif run == 1:
  */
-  __pyx_tuple__16 = PyTuple_Pack(2, __pyx_kp_s_weak_classifier_list_pkl_2, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 1109, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(2, __pyx_kp_s_weak_classifier_list_pkl_2, __pyx_n_s_wb); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 1104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
 
-  /* "ViolaJones.py":1139
+  /* "ViolaJones.py":1134
  *             gp.c('set ylabel "Feature Value" ')
  *             clf_indexes = [line.rstrip('\n')
  *                            for line in open("output/final_clf_indexes.txt")]             # <<<<<<<<<<<<<<
  *             xtics = 'set xtics add ('
  *             for index, index_label in enumerate(clf_indexes):
  */
-  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_output_final_clf_indexes_txt); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 1139, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(1, __pyx_kp_s_output_final_clf_indexes_txt); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 1134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
 
-  /* "ViolaJones.py":1153
+  /* "ViolaJones.py":1148
  *         elif run == 3:
  *             """ Test if Strong Classifier actually works (After training is done) """
  *             foldername = input(             # <<<<<<<<<<<<<<
  *                 "Folder to retrieve strong classifier data from?\n")
  *             # test_path = 'test_images/'
  */
-  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_Folder_to_retrieve_strong_classi); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 1153, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(1, __pyx_kp_s_Folder_to_retrieve_strong_classi); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 1148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "ViolaJones.py":1156
+  /* "ViolaJones.py":1151
  *                 "Folder to retrieve strong classifier data from?\n")
  *             # test_path = 'test_images/'
  *             test_path = input("Path to images? (Include '/' at end)\n")             # <<<<<<<<<<<<<<
  *             index_count, hit_list, indexed_features = test(
  *                 foldername, test_path)
  */
-  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_Path_to_images_Include_at_end); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 1156, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(1, __pyx_kp_s_Path_to_images_Include_at_end); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 1151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
 
@@ -35859,10 +35782,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     """ RUNNING HERE, basic menu incliuded """
  *     while True:
  */
-  __pyx_tuple__110 = PyTuple_Pack(48, __pyx_n_s_run, __pyx_n_s_foldername, __pyx_n_s_e, __pyx_n_s_start_time, __pyx_n_s_image_path, __pyx_n_s_metadata_path, __pyx_n_s_strong_classifier, __pyx_n_s_minmax, __pyx_n_s_correct, __pyx_n_s_image_list, __pyx_n_s_normalized_list, __pyx_n_s_ii_list, __pyx_n_s_features, __pyx_n_s_f, __pyx_n_s_item, __pyx_n_s_index, __pyx_n_s_im_feature_label, __pyx_n_s_feature_stat, __pyx_n_s_y_list, __pyx_n_s_pos_stat, __pyx_n_s_neg_stat, __pyx_n_s_row, __pyx_n_s_X_list, __pyx_n_s_sorted_X_list, __pyx_n_s_qr, __pyx_n_s_weights, __pyx_n_s_weak_classifier_list, __pyx_n_s_alphas, __pyx_n_s_errors, __pyx_n_s_betas, __pyx_n_s_sum_alphas, __pyx_n_s_sum_betas, __pyx_n_s_sum_errors, __pyx_n_s_normalized_alphas, __pyx_n_s_normalized_betas, __pyx_n_s_normalized_errors, __pyx_n_s_clf_indexes, __pyx_n_s_xtics, __pyx_n_s_index_label, __pyx_n_s_test_path, __pyx_n_s_index_count, __pyx_n_s_hit_list, __pyx_n_s_indexed_features, __pyx_n_s_bboxes, __pyx_n_s_duration, __pyx_n_s_line, __pyx_n_s_er, __pyx_n_s_ii); if (unlikely(!__pyx_tuple__110)) __PYX_ERR(0, 1005, __pyx_L1_error)
+  __pyx_tuple__110 = PyTuple_Pack(49, __pyx_n_s_run, __pyx_n_s_foldername, __pyx_n_s_e, __pyx_n_s_start_time, __pyx_n_s_image_path, __pyx_n_s_metadata_path, __pyx_n_s_strong_classifier, __pyx_n_s_minmax, __pyx_n_s_correct, __pyx_n_s_image_list, __pyx_n_s_normalized_list, __pyx_n_s_ii_list, __pyx_n_s_features, __pyx_n_s_f, __pyx_n_s_im_feature_label, __pyx_n_s_feature_stat, __pyx_n_s_y_list, __pyx_n_s_pos_stat, __pyx_n_s_neg_stat, __pyx_n_s_X_list, __pyx_n_s_sorted_X_list, __pyx_n_s_qr, __pyx_n_s_weights, __pyx_n_s_weak_classifier_list, __pyx_n_s_alphas, __pyx_n_s_errors, __pyx_n_s_betas, __pyx_n_s_sum_alphas, __pyx_n_s_sum_betas, __pyx_n_s_sum_errors, __pyx_n_s_normalized_alphas, __pyx_n_s_normalized_betas, __pyx_n_s_normalized_errors, __pyx_n_s_clf_indexes, __pyx_n_s_xtics, __pyx_n_s_index, __pyx_n_s_index_label, __pyx_n_s_test_path, __pyx_n_s_index_count, __pyx_n_s_hit_list, __pyx_n_s_indexed_features, __pyx_n_s_bboxes, __pyx_n_s_duration, __pyx_n_s_item, __pyx_n_s_pair, __pyx_n_s_row, __pyx_n_s_line, __pyx_n_s_er, __pyx_n_s_ii); if (unlikely(!__pyx_tuple__110)) __PYX_ERR(0, 1005, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__110);
   __Pyx_GIVEREF(__pyx_tuple__110);
-  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(0, 0, 48, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__110, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_ViolaJones_py, __pyx_n_s_main_2, 1005, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 1005, __pyx_L1_error)
+  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(0, 0, 49, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__110, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_ViolaJones_py, __pyx_n_s_main_2, 1005, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 1005, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -37177,34 +37100,34 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_main_2, __pyx_t_1) < 0) __PYX_ERR(0, 1005, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "ViolaJones.py":1182
+  /* "ViolaJones.py":1177
  * 
  * 
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
  *     main()
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1182, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_main, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1182, __pyx_L1_error)
+  __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_n_s_main, Py_EQ)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 1177, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_5) {
 
-    /* "ViolaJones.py":1183
+    /* "ViolaJones.py":1178
  * 
  * if __name__ == "__main__":
  *     main()             # <<<<<<<<<<<<<<
  * 
  * """ Timing how long it took to execute in total """
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_main_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1183, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_main_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1183, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "ViolaJones.py":1182
+    /* "ViolaJones.py":1177
  * 
  * 
  * if __name__ == "__main__":             # <<<<<<<<<<<<<<
@@ -37213,42 +37136,42 @@ if (!__Pyx_RefNanny) {
  */
   }
 
-  /* "ViolaJones.py":1186
+  /* "ViolaJones.py":1181
  * 
  * """ Timing how long it took to execute in total """
  * duration = datetime.now() - start             # <<<<<<<<<<<<<<
  * print('\n%s Total Duration %s %s' %
  *       ('-'*5, strfdelta(duration, '%H:%M:%S.%F'), '-'*5))
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_datetime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1186, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_datetime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_now); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1186, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_now); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1186, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_start); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1186, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_start); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyNumber_Subtract(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1186, __pyx_L1_error)
+  __pyx_t_2 = PyNumber_Subtract(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1181, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_duration, __pyx_t_2) < 0) __PYX_ERR(0, 1186, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_duration, __pyx_t_2) < 0) __PYX_ERR(0, 1181, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "ViolaJones.py":1188
+  /* "ViolaJones.py":1183
  * duration = datetime.now() - start
  * print('\n%s Total Duration %s %s' %
  *       ('-'*5, strfdelta(duration, '%H:%M:%S.%F'), '-'*5))             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_strfdelta); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_strfdelta); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_duration); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_duration); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
@@ -37256,11 +37179,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_GIVEREF(__pyx_kp_s_H_M_S_F);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_s_H_M_S_F);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1183, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_kp_s_b_3);
   __Pyx_GIVEREF(__pyx_kp_s_b_3);
@@ -37272,17 +37195,17 @@ if (!__Pyx_RefNanny) {
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_s_b_3);
   __pyx_t_1 = 0;
 
-  /* "ViolaJones.py":1187
+  /* "ViolaJones.py":1182
  * """ Timing how long it took to execute in total """
  * duration = datetime.now() - start
  * print('\n%s Total Duration %s %s' %             # <<<<<<<<<<<<<<
  *       ('-'*5, strfdelta(duration, '%H:%M:%S.%F'), '-'*5))
  * 
  */
-  __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_s_Total_Duration_s_s, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1187, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_s_Total_Duration_s_s, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 1187, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_t_1) < 0) __PYX_ERR(0, 1182, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "ViolaJones.py":1

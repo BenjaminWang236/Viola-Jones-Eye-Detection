@@ -888,6 +888,7 @@ def test(foldername, test_path):
     weak_classifier_list = []
     with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
         weak_classifier_list = pickle.load(f)
+    print("Weak clf loaded:", weak_classifier_list)
     indexed_features = [(clf.index, clf.feature)
                         for clf in weak_classifier_list[3]]
     with open(foldername+'/clf_ordered_features.txt', 'w') as f:
@@ -990,16 +991,13 @@ def draw_bbox(bboxes, input_path, output_folder):
     for i in range(len(image_list)):
         start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
         # print(i, "\t", start_x, start_y, end_x, end_y)
-        # Top row
+        # Top row/ Bottom row/ Left col/ Right col:
         image_list[i][start_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
-        # Bottom row
         image_list[i][end_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
-        # Left/Right Column
-        for j in range(start_y, end_y+1):
-            image_list[i][j][start_x] = 255
-            image_list[i][j][end_x] = 255
+        image_list[i][start_y:end_y+1][start_x] = [255]*(end_y+1-start_y)
+        image_list[i][start_y:end_y+1][end_x] = [255]*(end_y+1-start_y)
         filename = output_folder + str(i+1) + ".bmp"
-        imageio.imwrite(filename, image_list[i])
+    imageio.imwrite(filename, image_list)
 
 
 def main():
@@ -1019,14 +1017,14 @@ def main():
                 try:
                     # Making Folder if not exists
                     os.makedirs(
-                        "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s" % foldername)
+                        "/home/ben/git/Viola-Jones-Eye-Detection/%s" % foldername)
                     print("Makedir called for %s" % foldername)
                 except FileExistsError as e:
                     print(e)
                     pass
             else:
                 print(
-                    "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection%s already exists" % foldername)
+                    "/home/ben/git/Viola-Jones-Eye-Detection/%s already exists" % foldername)
         start_time = datetime.now()
         if run == 0:
             """ PREP """
@@ -1048,7 +1046,8 @@ def main():
                 [f.write("%s\n" % item) for item in features]
             # indexed_feature_table = list(enumerate(features))
             with open(foldername+"/indexed_feature_table.txt", "w") as f:
-                [f.write("Index %i->%s\n" % pair) for pair in enumerate(features)]
+                [f.write("Index %i->%s\n" % pair)
+                 for pair in enumerate(features)]
             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
                 features, correct)
             with open(foldername+"/feature_stat.txt", "w") as f:
