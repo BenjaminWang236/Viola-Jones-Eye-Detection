@@ -1010,8 +1010,9 @@ def main():
             else:
                 break
         if run not in [3, 4]:
-            foldername = input("Folder to save to?\n")
-            if not os.path.exists('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s' % foldername):
+            foldername = input("Folder to save to/retrieve data from?\n")
+            # if not os.path.exists('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/%s' % foldername):
+            if not os.path.exists('/home/ben/git/Viola-Jones-Eye-Detection/%s' % foldername):
                 try:
                     # Making Folder if not exists
                     os.makedirs(
@@ -1129,9 +1130,9 @@ def main():
                 for item in normalized_errors:
                     f.write("%s\n" % item)
             gp.c('plot \
-                "output/normalized_alphas.txt" title "alpha" with linespoints, \
-                "output/normalized_betas.txt" title "beta" with linespoints, \
-                "output/normalized_errs.txt" title "error" with linespoints ')
+                "%s/normalized_alphas.txt" title "alpha" with linespoints, \
+                "%s/normalized_betas.txt" title "beta" with linespoints, \
+                "%s/normalized_errs.txt" title "error" with linespoints ' % (foldername, foldername, foldername))
             gp.c('set title "Alpha-Beta-Error Graph (Linespoints)" ')
             gp.c('set xlabel "Image Index" ')
             gp.c('set ylabel "Feature Value" ')

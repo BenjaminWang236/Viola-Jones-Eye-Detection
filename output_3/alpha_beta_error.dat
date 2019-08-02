@@ -164,6 +164,6 @@ set fontpath
 set psdir
 set fit brief errorvariables nocovariancevariables errorscaling prescale nowrap v5
 GNUTERM = "wxt"
-## Last datafile plotted: "output/normalized_errs.txt"
-plot                 "output/normalized_alphas.txt" title "alpha" with linespoints,                 "output/normalized_betas.txt" title "beta" with linespoints,                 "output/normalized_errs.txt" title "error" with linespoints
+## Last datafile plotted: "output_3/normalized_errs.txt"
+plot                 "output_3/normalized_alphas.txt" title "alpha" with linespoints,                 "output_3/normalized_betas.txt" title "beta" with linespoints,                 "output_3/normalized_errs.txt" title "error" with linespoints
 #    EOF
