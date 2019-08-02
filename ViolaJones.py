@@ -1123,13 +1123,10 @@ def main():
             normalized_betas = [ii/sum_betas for ii in betas]
             normalized_errors = [ii/sum_errors for ii in errors]
             with open(foldername+"/normalized_alphas.txt", "w") as f:
-                for item in normalized_alphas:
-                    f.write("%s\n" % item)
+                [f.write("%s\n" % item) for item in normalized_alphas]
             with open(foldername+"/normalized_betas.txt", "w") as f:
-                for item in normalized_betas:
-                    f.write("%s\n" % item)
+                [f.write("%s\n" % item) for item in normalized_betas]
             with open(foldername+"/normalized_errs.txt", "w") as f:
-                # for item in normalized_errors:
                 [f.write("%s\n" % item) for item in normalized_errors]
             gp.c('plot \
                 "%s/normalized_alphas.txt" title "alpha" with linespoints, \
