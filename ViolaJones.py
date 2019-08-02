@@ -888,13 +888,13 @@ def test(foldername, test_path):
     weak_classifier_list = []
     with open(foldername+"/weak_classifier_list.pkl", "rb") as f:
         weak_classifier_list = pickle.load(f)
-    print("Weak clf loaded:", weak_classifier_list)
+    # print("Weak clf loaded:", weak_classifier_list)
     indexed_features = [(clf.index, clf.feature)
                         for clf in weak_classifier_list[3]]
     with open(foldername+'/clf_ordered_features.txt', 'w') as f:
         for item in indexed_features:
             f.write("%i->%s\n" % (item[0], item[1]))
-    sorted_indexed_features = sorted(indexed_features, key=lambda ii: ii[0])
+    # sorted_indexed_features = sorted(indexed_features, key=lambda ii: ii[0])
     with open(foldername+"/clfs.txt", "w") as f:
         for item in weak_classifier_list:
             f.write("%s\n" % item)
@@ -908,7 +908,8 @@ def test(foldername, test_path):
     test_list = glob_image(test_path)
     normalized_test_list = max_normalize(test_list)
     ii_test_list = integral_image(normalized_test_list)
-
+    # print("Length of test_list %i, norm_list %i, ii_list %i" %
+    #       (len(test_list), len(normalized_test_list), len(ii_test_list)))
     alphas = weak_classifier_list[1]
     for i in range(0, 15):
         if alphas[i] >= 15.0:
@@ -985,19 +986,20 @@ def bbox(foldername, hit_list, indexed_features, offset):
     return bboxes
 
 
-def draw_bbox(bboxes, input_path, output_folder):
+def draw_bbox(bboxes, input_path):
     """ Draw the rectangular bounding box on each input image and save to new directory without overriding original images """
     image_list = glob_image(input_path)
     for i in range(len(image_list)):
         start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
-        # print(i, "\t", start_x, start_y, end_x, end_y)
+        print(i, "\t", start_x, start_y, end_x, end_y)
+        print(image_list[i])
         # Top row/ Bottom row/ Left col/ Right col:
         image_list[i][start_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
         image_list[i][end_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
-        image_list[i][start_y:end_y+1][start_x] = [255]*(end_y+1-start_y)
-        image_list[i][start_y:end_y+1][end_x] = [255]*(end_y+1-start_y)
-        filename = output_folder + str(i+1) + ".bmp"
-    imageio.imwrite(filename, image_list)
+        image_list[i][start_y:end_y+1, start_x] = [255]*(end_y+1-start_y)
+        image_list[i][start_y:end_y+1, end_x] = [255]*(end_y+1-start_y)
+        # filename = output_folder + str(i+1) + ".bmp"
+    imageio.mimwrite(input_path+"bbox", image_list)
 
 
 def main():
@@ -1156,7 +1158,8 @@ def main():
             print("Avg index-count at %s" %
                   math.floor(statistics.mean([ii[2] for ii in index_count])))
             bboxes = bbox(foldername, hit_list, indexed_features, 2)
-            draw_bbox(bboxes, test_path, test_path+"bbox/img")
+            # draw_bbox(bboxes, test_path, test_path+"bbox/img")
+            draw_bbox(bboxes, test_path)
         elif run == 4:
             """ Timing how long it took to execute this last iteration """
             duration = datetime.now() - start_time
