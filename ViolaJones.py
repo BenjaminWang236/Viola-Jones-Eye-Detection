@@ -10,7 +10,7 @@ import sys
 import time
 from datetime import datetime, timedelta
 from string import Template
-
+import imageio
 import pickle
 import statistics
 import matplotlib as mpl
@@ -22,6 +22,7 @@ import PIL
 import PyGnuplot as gp
 import numpy as np
 import seaborn as sns
+import PyPDF2 as p
 
 
 start = datetime.now()
@@ -1114,15 +1115,13 @@ def main():
                       for line in open(foldername+"/alphas.txt")]
             errors = [float(line.rstrip('\n'))
                       for line in open(foldername+"/errs.txt")]
-            # betas = list(map(lambda ii: ii / (1 - ii)
-            #                  if ii < 1 else 15, errors))
-            betas = [ er/(1-er) if er < 1 else 15 for er in errors]
+            betas = [er/(1-er) if er < 1 else 15 for er in errors]
             sum_alphas, sum_betas, sum_errors = sum(
                 alphas), sum(betas), sum(errors)
-            print(sum_alphas, sum_betas, sum_errors)
-            normalized_alphas = list(map(lambda ii: ii/sum_alphas, alphas))
-            normalized_betas = list(map(lambda ii: ii/sum_betas, betas))
-            normalized_errors = list(map(lambda ii: ii/sum_errors, errors))
+            # print(sum_alphas, sum_betas, sum_errors)
+            normalized_alphas = [ii/sum_alphas for ii in alphas]
+            normalized_betas = [ii/sum_betas for ii in betas]
+            normalized_errors = [ii/sum_errors for ii in errors]
             with open(foldername+"/normalized_alphas.txt", "w") as f:
                 for item in normalized_alphas:
                     f.write("%s\n" % item)
@@ -1130,8 +1129,8 @@ def main():
                 for item in normalized_betas:
                     f.write("%s\n" % item)
             with open(foldername+"/normalized_errs.txt", "w") as f:
-                for item in normalized_errors:
-                    f.write("%s\n" % item)
+                # for item in normalized_errors:
+                [f.write("%s\n" % item) for item in normalized_errors]
             gp.c('plot \
                 "%s/normalized_alphas.txt" title "alpha" with linespoints, \
                 "%s/normalized_betas.txt" title "beta" with linespoints, \
