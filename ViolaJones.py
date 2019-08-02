@@ -1114,8 +1114,9 @@ def main():
                       for line in open(foldername+"/alphas.txt")]
             errors = [float(line.rstrip('\n'))
                       for line in open(foldername+"/errs.txt")]
-            betas = list(map(lambda ii: ii / (1 - ii)
-                             if ii < 1 else 15, errors))
+            # betas = list(map(lambda ii: ii / (1 - ii)
+            #                  if ii < 1 else 15, errors))
+            betas = [ er/(1-er) if er < 1 else 15 for er in errors]
             sum_alphas, sum_betas, sum_errors = sum(
                 alphas), sum(betas), sum(errors)
             print(sum_alphas, sum_betas, sum_errors)
