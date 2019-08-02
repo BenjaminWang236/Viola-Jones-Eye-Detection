@@ -1045,25 +1045,20 @@ def main():
             print("Number of features generated is %i" % len(features))
             strong_classifier.T = len(features)
             with open(foldername+"/feature_table.txt", "w") as f:
-                for item in features:
-                    f.write("%s\n" % item)
+                [f.write("%s\n" % item) for item in features]
             # indexed_feature_table = list(enumerate(features))
             with open(foldername+"/indexed_feature_table.txt", "w") as f:
-                for index, item in enumerate(features):
-                    f.write("Index %i->%s\n" % (index, item))
+                [f.write("Index %i->%s\n" % pair) for pair in enumerate(features)]
             im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
                 features, correct)
             with open(foldername+"/feature_stat.txt", "w") as f:
-                for row in feature_stat:
-                    f.write("%s\n" % row)
+                [f.write("%s\n" % row) for row in feature_stat]
             X_list, sorted_X_list = strong_classifier.apply_features(
                 features, ii_list)   # X_list is already positive_X list because only useful features were passed in
             with open(foldername+"/X_list.txt", "w") as f:
-                for item in X_list:
-                    f.write("%s\n" % item)
+                [f.write("%s\n" % item) for item in X_list]
             with open(foldername+"/sorted_X_list.txt", "w") as f:
-                for item in sorted_X_list:
-                    f.write("%s\n" % item)
+                [f.write("%s\n" % item) for item in sorted_X_list]
             print("Prep Done")
             print("Number of iterations to run is %i" % strong_classifier.T)
             """
@@ -1100,8 +1095,7 @@ def main():
                 weights = strong_classifier.initialize_weights(
                     feature_stat, y_list)
                 with open(foldername+"/weights.txt", "w") as f:
-                    for item in weights:
-                        f.write("%s\n" % item)
+                    [f.write("%s\n" % item) for item in weights]
                 # Actually training below, which took 3 hours and 12 minutes
                 # format = indexes, alphas, errors, weak_classifiers
                 weak_classifier_list = strong_classifier.train(
@@ -1161,7 +1155,7 @@ def main():
             print("Max index-count at %s" %
                   (max(index_count, key=lambda ii: ii[2])[2]))
             print("Avg index-count at %s" %
-                  (math.floor(statistics.mean(list(map(lambda ii: ii[2], index_count))))))
+                  math.floor(statistics.mean([ii[2] for ii in index_count])))
             bboxes = bbox(foldername, hit_list, indexed_features, 2)
             draw_bbox(bboxes, test_path, test_path+"bbox/img")
         elif run == 4:
