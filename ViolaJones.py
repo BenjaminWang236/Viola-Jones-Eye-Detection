@@ -85,6 +85,16 @@ def strfdelta(tdelta, fmt):
     return t.substitute(**d)
 
 
+def saver(file_path, list_to_save):
+    """ 
+    Save a list/nested list to specified file with its full path as input
+    Note: Might have problem with nested loops sometimes, but mostly works
+    """
+    with open(file_path, "w") as f:
+        for item in list_to_save:
+            f.write("%s\n" % item)
+
+
 def read_metadata(path):
     """ Read BIP bin file of image metadata and reorganize them into 4x1 for each image """
     with open(path, "rb") as f:
@@ -424,7 +434,7 @@ class ViolaJones:
                 start_end[2] >= correct[0]+correct[2] and
                 start_end[3] >= correct[1]+correct[3])
 
-    def label_features(self, feature, correct_list):
+    def label_features(self, foldername, feature, correct_list):
         """ For each feature compare it to each sample image provided and the correct bounding box and label """
         features = []   # Feature is only build once, so duplicate for each of the images
         for x in range(len(correct_list)):
@@ -456,24 +466,24 @@ class ViolaJones:
                 pos_stat.append([x, temp_pos])
             if temp_neg:    # If not empty
                 neg_stat.append([x, temp_neg])
-        with open("output/all_features.txt", "w") as f:
-            [f.write("%s\n" % item) for item in features]
-        with open("output/y_list.txt", "w") as f:
-            [f.write("%s\n" % item) for item in y_list]
-        with open("output/positive_indexes.txt", "w") as f:
-            [f.write("%s\n" % item) for item in pos_stat]
-        with open("output/negative_indexes.txt", "w") as f:
-            [f.write("%s\n" % item) for item in neg_stat]
+        # with open("output/all_features.txt", "w") as f:
+        #     [f.write("%s\n" % item) for item in features]
+        # with open("output/y_list.txt", "w") as f:
+        #     [f.write("%s\n" % item) for item in y_list]
+        # with open("output/positive_indexes.txt", "w") as f:
+        #     [f.write("%s\n" % item) for item in pos_stat]
+        # with open("output/negative_indexes.txt", "w") as f:
+        #     [f.write("%s\n" % item) for item in neg_stat]
+        saver(foldername+"/all_features.txt", features)
+        saver(foldername+"/y_list.txt", y_list)
+        saver(foldername+"/positive_indexes.txt", pos_stat)
+        saver(foldername+"/negative_indexes.txt", neg_stat)
         return features, stat, y_list, pos_stat, neg_stat
 
     def apply_features(self, features, ii_list):
         """ Apply each feature to the integral images generated from the samples and save result X list to file """
         X, sorted_X = [], []
         for index, f in enumerate(features):
-            # positive_regions, negative_regions = f.haar_pos, f.haar_neg
-            # applied_X = list(map(lambda data: sum([pos.compute_feature(data)
-            #                                        for pos in positive_regions]) - sum([neg.compute_feature(data)
-            #                                                                             for neg in negative_regions]), ii_list))
             applied_X = [sum([pos.compute_feature(data) for pos in f.haar_pos]) - sum(
                 [neg.compute_feature(data) for neg in f.haar_neg]) for data in ii_list]
             X.append([index,  applied_X])
@@ -504,10 +514,10 @@ class ViolaJones:
         # For each feature, sorted_list is [[img_index, feature_value], [],...]
         for index, sorted_list in (sorted_indexed_X):
             """ Splice feature values in half by 0.0, both thresholds start searching at 0+-, feature score does reach 0 quite often """
-            below_zero = list(filter(lambda ii: ii[1] < 0, sorted_list))
-            below_indexes = list(map(lambda ii: ii[0], below_zero))
-            above_zero = list(filter(lambda ii: ii[1] > 0, sorted_list))
-            above_indexes = list(map(lambda ii: ii[0], above_zero))
+            below_zero = [ii for ii in sorted_list if ii[1] <= 0]
+            below_indexes = [ii[0] for ii in below_zero]
+            above_zero = [ii for ii in sorted_list if ii[1] > 0]
+            above_indexes = [ii[0] for ii in above_zero]
             below_positives, below_negatives, above_positives, above_negatives = 0, 0, 0, 0
             for positive_index, positive_sample_indexes in pos_stat:
                 if positive_index > index:
@@ -621,7 +631,7 @@ class ViolaJones:
 
     def normalize_weights(self, weights):
         """ Normalize the weights as described in step 1 of original paper """
-        total_weights = sum(list(map(lambda ii: sum(ii[1]), weights)))
+        total_weights = sum([sum(row[1]) for row in weights])
         print("Total weights across all feature and all samples: %s" %
               total_weights)
         """ Using nested-for loops is faster by 1.3 seconds with size of 20 """
@@ -715,10 +725,11 @@ class ViolaJones:
             # print("2/3.) Starting finding gini-thresholds and calculating errors")
             best_thresholds, classifiers = self.find_gini_thresholds(
                 sorted_X_list, y_list, pos_stat, neg_stat, features)
-
+            print("Finding Thresholds done")
             # Apply the classifier to find its error (epsilon) as min-error of all errors from all samples applied to
             clf_errors, useful_clf_errors, best_error_index, best_error, best_accuracy = self.apply_classifiers(
                 sorted_X_list, y_list, classifiers, normalized_weights, max_normalized_weights)
+            print("Applying classifiers done")
             # print("Best error of this round found at index %s with value %s" %
             #       (best_error_index, best_error))
             # print("With accuracy of %s" % best_accuracy)
@@ -736,7 +747,7 @@ class ViolaJones:
             """ Step 4.5, Store the best classifier and its alpha
             Keep note of the best classifier(s) already found so they won't be chosen again in future rounds/iterations 
             """
-            big_number = sys.float_info.max
+            # big_number = sys.float_info.max
             # print("Closest to positive infinit: %s" % big_number)
             # print(big_number == 1.7976931348623157e+308)
             alpha = 0
@@ -1037,8 +1048,8 @@ def main():
             with open(foldername+"/indexed_feature_table.txt", "w") as f:
                 [f.write("Index %i->%s\n" % pair)
                  for pair in enumerate(features)]
-            im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(
-                features, correct)
+            im_feature_label, feature_stat, y_list, pos_stat, neg_stat = strong_classifier.label_features(foldername,
+                                                                                                          features, correct)
             with open(foldername+"/feature_stat.txt", "w") as f:
                 [f.write("%s\n" % row) for row in feature_stat]
             X_list, sorted_X_list = strong_classifier.apply_features(
