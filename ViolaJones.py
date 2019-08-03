@@ -61,7 +61,11 @@ start = datetime.now()
         Updating weight done
 
         Strong Classifier training completed as above
-        Verification and drawing bounding box on sample images WIP
+        Verification and drawing bounding box on sample images done
+
+
+        Algorithm Implementation (1st iteration) DONE as above
+        Optimizing for speedy-training with list comprehension and Cython WIP
 """
 
 
@@ -85,12 +89,15 @@ def read_metadata(path):
     """ Read BIP bin file of image metadata and reorganize them into 4x1 for each image """
     with open(path, "rb") as f:
         fileContent = np.fromfile(f, dtype=np.uint8)
-    reorganized = []
-    # Metadata stored in BIP format so re-organizing here into [y, x, width, height]
-    for x in range(0, int(len(fileContent)/4)):
-        reorganized.append([fileContent[x], fileContent[x+50],
-                            fileContent[x+100], fileContent[x+150]])
-    return reorganized
+    # reorganized = []
+    # # Metadata stored in BIP format so re-organizing here into [y, x, width, height]
+    # for x in range(0, int(len(fileContent)/4)):
+    #     reorganized.append([fileContent[x], fileContent[x+50],
+    #                         fileContent[x+100], fileContent[x+150]])
+    return [(fileContent[x],
+             fileContent[x+int(len(fileContent)/4)],
+             fileContent[x+2*int(len(fileContent)/4)],
+             fileContent[x+3*int(len(fileContent)/4)]) for x in range(int(len(fileContent)/4))]
 
 
 def min_max_eye(path):
@@ -119,34 +126,29 @@ def import_image(path):
 
 
 def glob_image(path):
-    image_list, sorted_filenames = [], natsort.natsorted(
-        glob.glob(path+"*.bmp"))
-    for filename in sorted_filenames:
-        # print(filename)
-        image_list.append(imageio.imread(filename))
-    return image_list
+    return [imageio.imread(filename) for filename in natsort.natsorted(glob.glob(path+"*.bmp"))]
 
 
 def max_normalize(image_list):
     """ normalizing function to 0-1 image, need multiply each normalized pixel by 16 bits (2 byte per pixel) to keep precision """
-    normalized_list, count = [], 0
-    for im in image_list:
-        normalized_image = np.zeros(im.shape)
-        image_max = np.max(im)
-        normalized_image = im/image_max    # Normalizing
-        # 18 bits to be precise, so losing 2 bits of precision here
-        normalized_image *= pow(2, 16)
-        normalized_list.append(normalized_image)
-        filename = "normalized_images/normalized_" + str(count) + ".txt"
-        np.savetxt(filename, normalized_image)
-        count += 1
-    return normalized_list
+    # normalized_list, count = [], 0
+    # for im in image_list:
+    #     normalized_image = np.zeros(im.shape)
+    #     image_max = np.max(im)
+    #     normalized_image = im/image_max    # Normalizing
+    #     # 18 bits to be precise, so losing 2 bits of precision here
+    #     normalized_image *= pow(2, 16)
+    #     normalized_list.append(normalized_image)
+    #     filename = "normalized_images/normalized_" + str(count) + ".txt"
+    #     np.savetxt(filename, normalized_image)
+    #     count += 1
+    return [im/np.max(im)*pow(2, 16) for im in image_list]
 
 
 def integral_image(image_list):
     """ Generate the integral image which will save computing time later in the algorithm """
     ii_list = []
-    count = 0
+    # count = 0
     for image in image_list:
         ii = np.zeros(image.shape)
         s = np.zeros(image.shape)
@@ -156,9 +158,9 @@ def integral_image(image_list):
                     image[y][x] if (y-1 >= 0) else image[y][x]
                 ii[y][x] = ii[y][x-1] + s[y][x] if (x-1 >= 0) else s[y][x]
         ii_list.append(ii)
-        filename = "integral_image/integral_" + str(count) + ".txt"
-        np.savetxt(filename, ii)
-        count += 1
+        # filename = "integral_image/integral_" + str(count) + ".txt"
+        # np.savetxt(filename, ii)
+        # count += 1
     return ii_list
 
 
@@ -900,9 +902,8 @@ def test(foldername, test_path):
             f.write("%s\n" % item)
     with open(foldername+"/alpha_error_clf.txt", "w") as f:
         # format = indexes, alphas, errors, weak_classifiers
-        for i in range(len(weak_classifier_list[0])):
-            f.write("Index %i:\tAlpha %s\tError %s\n" % (
-                weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i]))
+        [f.write("Index %i:\tAlpha %s\tError %s\n" % (
+            weak_classifier_list[0][i], weak_classifier_list[1][i], weak_classifier_list[2][i])) for i in range(len(weak_classifier_list[0]))]
     # test_path = 'data/database0/testing_set/testing'
     # test_list = import_image(test_path)
     test_list = glob_image(test_path)
@@ -914,7 +915,7 @@ def test(foldername, test_path):
     for i in range(0, 15):
         if alphas[i] >= 15.0:
             print("Setting %i to 15" % i)
-            alphas[i] = 15
+            alphas[i] = 15.0
 
     alpha_sum = sum(alphas)
     print("Alpha sum %f" % alpha_sum)
@@ -941,11 +942,9 @@ def test(foldername, test_path):
             counter.append([index+1, 0, len(weak_classifier_list[3]), total])
             print("Image %i NEGATIVE" % (index+1))
     with open(foldername+"/hit_list.txt", "w") as f:
-        for item in hits:
-            f.write("%s\n" % item)
+        [f.write("%s\n" % item) for item in hits]
     with open(foldername+"/index_count.txt", "w") as f:
-        for item in counter:
-            f.write("%s\n" % item)
+        [f.write("%s\n" % item) for item in counter]
     return counter, hits, indexed_features
 
 
@@ -987,12 +986,12 @@ def bbox(foldername, hit_list, indexed_features, offset):
 
 
 def draw_bbox(bboxes, input_path):
-    """ Draw the rectangular bounding box on each input image and save to new directory without overriding original images """
+    """ 
+    Draw the rectangular bounding box on each input image and save to new directory without overriding original images 
+    """
     image_list = glob_image(input_path)
     for i in range(len(image_list)):
         start_x, start_y, end_x, end_y = bboxes[i][1][0], bboxes[i][1][1], bboxes[i][1][2], bboxes[i][1][3]
-        # print(i, "\t", start_x, start_y, end_x, end_y)
-        # print(image_list[i])
         # Top row/ Bottom row/ Left col/ Right col:
         image_list[i][start_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
         image_list[i][end_y][start_x:end_x+1] = [255]*(end_x+1-start_x)
@@ -1000,7 +999,6 @@ def draw_bbox(bboxes, input_path):
         image_list[i][start_y:end_y+1, end_x] = [255]*(end_y+1-start_y)
         filename = input_path + "bbox/bb" + str(i+1) + ".bmp"
         imageio.imwrite(filename, image_list[i])
-    # imageio.mimwrite(input_path+"bbox/bb_imgs.bmp", image_list)
 
 
 def main():
