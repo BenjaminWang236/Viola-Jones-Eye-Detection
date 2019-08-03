@@ -109,23 +109,14 @@ def min_max_eye(path):
     # Currently in BIP format, which is useful for extracing min-max as below:
     """ Actually in [horizontal-X*50], [vertical-Y*50], [width*50], [height*50] """
     ret = []
-    for x in range(0, 200, 50):
-        ret.append(fileContent[x:x+50].min())
-        ret.append(fileContent[x:x+50].max())
+    for x in range(0, len(fileContent), int(len(fileContent)/4)):
+        ret.append(fileContent[x:x+int(len(fileContent)/4)].min())
+        ret.append(fileContent[x:x+int(len(fileContent)/4)].max())
     return ret
 
 
-def import_image(path):
-    """ Given the path to the folder containing the images, import all images and return them as a list """
-    image_list = []
-    num_images = len(list(glob.glob(path+"*.bmp")))
-    for i in range(1, num_images+1):
-        filename = path+str(i)+'.bmp'
-        image_list.append(imageio.imread(filename))
-    return image_list
-
-
 def glob_image(path):
+    """ Given the path to the folder containing the images, import all images and return them as a list """
     return [imageio.imread(filename) for filename in natsort.natsorted(glob.glob(path+"*.bmp"))]
 
 
@@ -185,8 +176,7 @@ class RectangleRegion:
         b = ii[self.y][self.x+self.width]
         c = ii[self.y+self.height][self.x]
         d = ii[self.y+self.height][self.x+self.width]
-        val = d + a - (c + b)
-        return val
+        return d + a - (c + b)
 
 
 class Feature:
@@ -467,27 +457,25 @@ class ViolaJones:
             if temp_neg:    # If not empty
                 neg_stat.append([x, temp_neg])
         with open("output/all_features.txt", "w") as f:
-            for item in features:
-                f.write("%s\n" % item)
+            [f.write("%s\n" % item) for item in features]
         with open("output/y_list.txt", "w") as f:
-            for item in y_list:
-                f.write("%s\n" % item)
+            [f.write("%s\n" % item) for item in y_list]
         with open("output/positive_indexes.txt", "w") as f:
-            for item in pos_stat:
-                f.write("%s\n" % item)
+            [f.write("%s\n" % item) for item in pos_stat]
         with open("output/negative_indexes.txt", "w") as f:
-            for item in neg_stat:
-                f.write("%s\n" % item)
+            [f.write("%s\n" % item) for item in neg_stat]
         return features, stat, y_list, pos_stat, neg_stat
 
     def apply_features(self, features, ii_list):
         """ Apply each feature to the integral images generated from the samples and save result X list to file """
         X, sorted_X = [], []
         for index, f in enumerate(features):
-            positive_regions, negative_regions = f.haar_pos, f.haar_neg
-            applied_X = list(map(lambda data: sum([pos.compute_feature(data)
-                                                   for pos in positive_regions]) - sum([neg.compute_feature(data)
-                                                                                        for neg in negative_regions]), ii_list))
+            # positive_regions, negative_regions = f.haar_pos, f.haar_neg
+            # applied_X = list(map(lambda data: sum([pos.compute_feature(data)
+            #                                        for pos in positive_regions]) - sum([neg.compute_feature(data)
+            #                                                                             for neg in negative_regions]), ii_list))
+            applied_X = [sum([pos.compute_feature(data) for pos in f.haar_pos]) - sum(
+                [neg.compute_feature(data) for neg in f.haar_neg]) for data in ii_list]
             X.append([index,  applied_X])
             sorted_X.append(
                 [index, sorted(list(enumerate(applied_X)), key=lambda ii: ii[1])])
@@ -1036,7 +1024,7 @@ def main():
             minmax = min_max_eye(metadata_path)
             print(minmax)
             correct = read_metadata(metadata_path)
-            image_list = import_image(image_path)
+            image_list = glob_image(image_path)
             normalized_list = max_normalize(image_list)
             ii_list = integral_image(normalized_list)
             features = strong_classifier.build_features_minmax(
