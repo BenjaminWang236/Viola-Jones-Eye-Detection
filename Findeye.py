@@ -5,6 +5,7 @@ import os.path
 import shutil
 import cv2
 import datetime
+from datetime import datetime, timedelta
 from timer import *
 
 start = datetime.now()
@@ -32,7 +33,7 @@ while os.path.exists(path_o):
    shutil.rmtree(path_o)
 
 # os.mkdir(path_o)
-for retry in range(100):
+for retry in range(1000):
     try:
         os.mkdir(path_o)
         break
@@ -107,7 +108,7 @@ while os.path.exists(path_copy):
    shutil.rmtree(path_copy)
 
 # os.mkdir(path_copy)
-for retry in range(100):
+for retry in range(1000):
     try:
         os.mkdir(path_copy)
         break
@@ -148,7 +149,7 @@ while os.path.exists(target_path):
    shutil.rmtree(target_path)
 
 # os.mkdir(target_path)
-for retry in range(100):
+for retry in range(1000):
     try:
         os.mkdir(target_path)
         break
@@ -188,7 +189,7 @@ while os.path.exists(path_o):
    shutil.rmtree(path_o)
 
 # os.mkdir(path_o)
-for retry in range(100):
+for retry in range(1000):
     try:
         os.mkdir(path_o)
         break
