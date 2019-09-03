@@ -19,7 +19,7 @@ start = datetime.now()
 #img = cv2.imread('C:/PythonApplication1/PythonApplication1/test.jpg')
 #img = cv2.imread('C:/PythonApplication1/PythonApplication1/img_1.bmp')
 
-# path = 'C:/CPP/ViolaJones'
+# path = 'C:/CPP/ViolaJones/'
 path = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/'
 
 
