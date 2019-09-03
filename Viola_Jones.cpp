@@ -15,12 +15,10 @@ using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
 
-// string WorkFolder = "C:/CPP/Viola_Jones/";
-string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
+string WorkFolder = "C:/CPP/Viola_Jones/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-// string TrainFolder = "trainimg/";
-string TrainFolder = "trainimg3/";
+string TrainFolder = "trainimg/";
 string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
@@ -649,11 +647,15 @@ void BuildFeatureThreshold(string FeatureListFilename, string FeatureImageFilena
 		ofstream FeatureImage(FeatureidFilename.c_str());
 #endif
 		ImageFeature.clear();
-		for (int img = 0; img < img_cnt; img++)
+		FeatureList.clear();
+		FeatureList.seekg(fid * sizeof(FeatureValue), ios::beg);
+		FeatureList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+		ImageFeature.push_back(Feature_tmp);
+		FeatureImageList.write((char*)& Feature_tmp, sizeof(FeatureValue));
+		for (int img = 1; img < img_cnt; img++)
 		{
-			FeatureList.clear();
-			FeatureList.seekg(0, ios::beg);
-			for (int i = 0; i <= img * FeatureLen + fid; i++) FeatureList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+			FeatureList.seekg((FeatureLen - 1) * sizeof(FeatureValue), ios::cur);
+			FeatureList.read((char*)& Feature_tmp, sizeof(FeatureValue));
 			ImageFeature.push_back(Feature_tmp);
 			FeatureImageList.write((char*)& Feature_tmp, sizeof(FeatureValue));
 

@@ -4,6 +4,10 @@ import os
 import os.path
 import shutil
 import cv2
+import datetime
+from timer import *
+
+start = datetime.now()
 
 ###########################################################################
 # Read in images and find eyes in them using openCV's cascade classifier
@@ -235,3 +239,11 @@ with open(path_o + 'eye_point_data.txt', 'w') as eye_point:
         eye_point.write(json.dumps(eyetable))
 
 path_o = path_o[:-1]
+
+
+
+
+""" Timing how long it took to execute in total """
+duration = datetime.now() - start
+print('\n%s Total Duration %s %s' %
+      ('-'*5, strfdelta(duration, '%H:%M:%S.%F'), '-'*5))
