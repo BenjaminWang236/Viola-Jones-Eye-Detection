@@ -2,6 +2,7 @@
     "svg.preview.background": "black",
     "python.pythonPath": "C:\\Users\\Ben Wang\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",
     "files.associations": {
-        "python.h": "c"
+        "python.h": "c",
+        "iostream": "cpp"
     }
 }
