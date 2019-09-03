@@ -19,7 +19,8 @@ using namespace std;
 string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-string TrainFolder = "trainimg/";
+// string TrainFolder = "trainimg/";
+string TrainFolder = "trainimg3/";
 string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
