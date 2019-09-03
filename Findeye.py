@@ -14,11 +14,11 @@ import json
 #img = cv2.imread('C:/PythonApplication1/PythonApplication1/img_1.bmp')
 
 # path = 'C:/CPP/ViolaJones'
-# path = ''
+path = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/'
 
 
-path_i = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg/'
-path_o = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg1/'
+path_i = path + 'trainimg/'
+path_o = path + 'trainimg1/'
 list = os.listdir(path_i)
 img_cnt = len(list)
 eyetable = []
@@ -86,9 +86,9 @@ nouse = input('Please review images in ' + path_o + ', then press ENTER key.....
 # without the deleted images that didn't pass inspection
 ###########################################################################
 
-path_exist = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg1/'
-path_source = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg/'
-path_copy = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg2/'
+path_exist = path + 'trainimg1/'
+path_source = path + 'trainimg/'
+path_copy = path + 'trainimg2/'
 
 list = os.listdir(path_exist)
 img_cnt = len(list)
@@ -128,8 +128,8 @@ for file_idx in range(0,img_cnt,1):
 # Renaming to consecutive order and save to new folder for future use
 ###########################################################################
 
-source_path = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg2/'
-target_path = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg3/'
+source_path = path + 'trainimg2/'
+target_path = path + 'trainimg3/'
 
 list = os.listdir(source_path)
 img_cnt = len(list)
@@ -173,8 +173,8 @@ for file_idx in range(0,img_cnt,1):
 ###########################################################################
 
 
-path_i = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg3/'
-path_o = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg1/'
+path_i = path + 'trainimg3/'
+path_o = path + 'trainimg1/'
 list = os.listdir(path_i)
 img_cnt = len(list)
 eyetable = []
