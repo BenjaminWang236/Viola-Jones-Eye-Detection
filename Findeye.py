@@ -1,8 +1,9 @@
 
-import os, os.path
+import json
+import os
+import os.path
 import shutil
 import cv2
-import json
 
 ###########################################################################
 # Read in images and find eyes in them using openCV's cascade classifier
