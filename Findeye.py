@@ -2,8 +2,11 @@
 import os, os.path
 import shutil
 import cv2
-# import cv2.cv2 as cv2
 import json
+
+###########################################################################
+# Read in images and find eyes in them using openCV's cascade classifier
+###########################################################################
 
 # Read the input image
 #img = cv2.imread('C:/PythonApplication1/PythonApplication1/test.jpg')
@@ -68,6 +71,8 @@ path_o = path_o[:-1]
 
 nouse = input('Please review images in ' + path_o + ', then press ENTER key..........')
 
+###########################################################################
+# Saving images that passed ^ in trainimg1
 ###########################################################################
 
 path_exist = 'C:/CPP/ViolaJones/trainimg1/'
