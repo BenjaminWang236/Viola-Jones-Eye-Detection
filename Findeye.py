@@ -108,6 +108,8 @@ for file_idx in range(0,img_cnt,1):
         no_use = []
 
 ###########################################################################
+# Renaming to consecutive order
+###########################################################################
 
 source_path = 'C:/CPP/ViolaJones/trainimg2/'
 target_path = 'C:/CPP/ViolaJones/trainimg3/'
@@ -143,6 +145,8 @@ for file_idx in range(0,img_cnt,1):
         no_use = []
 
 
+###########################################################################
+# Perform the find eye operation again after aboves sorted unwanteds
 ###########################################################################
 
 
