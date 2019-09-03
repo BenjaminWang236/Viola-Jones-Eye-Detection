@@ -6,23 +6,33 @@ import json
 
 ###########################################################################
 # Read in images and find eyes in them using openCV's cascade classifier
+# and save result with eyes marked to trainimg1
 ###########################################################################
 
 # Read the input image
 #img = cv2.imread('C:/PythonApplication1/PythonApplication1/test.jpg')
 #img = cv2.imread('C:/PythonApplication1/PythonApplication1/img_1.bmp')
 
+# path = 'C:/CPP/ViolaJones'
+# path = ''
 
-path_i = 'C:/CPP/ViolaJones/trainimg/'
-path_o = 'C:/CPP/ViolaJones/trainimg1/'
+
+path_i = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg/'
+path_o = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg1/'
 list = os.listdir(path_i)
 img_cnt = len(list)
 eyetable = []
 
-if os.path.exists(path_o):
+while os.path.exists(path_o):
    shutil.rmtree(path_o)
 
-os.mkdir(path_o)
+# os.mkdir(path_o)
+for retry in range(100):
+    try:
+        os.mkdir(path_o)
+        break
+    except:
+        print( "mkdir failed, retrying...", retry )
 
 for file_idx in range(0,img_cnt,1):
 
@@ -36,7 +46,7 @@ for file_idx in range(0,img_cnt,1):
     img = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
 
     #face_cascade = cv2.CascadeClassifier('C:/PythonApplication1/PythonApplication1/haarcascade_frontalface_default.xml')
-    eye_cascade = cv2.CascadeClassifier('C:/PythonApplication1/PythonApplication1/haarcascade_eye.xml')
+    eye_cascade = cv2.CascadeClassifier('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/haarcascade_eye.xml')
 
     eyes = eye_cascade.detectMultiScale(img, 1.01, 1)
 
@@ -72,12 +82,13 @@ path_o = path_o[:-1]
 nouse = input('Please review images in ' + path_o + ', then press ENTER key..........')
 
 ###########################################################################
-# Saving images that passed ^ in trainimg1
+# Based on manual evaluation of eye-marked images, retrieve the originals
+# without the deleted images that didn't pass inspection
 ###########################################################################
 
-path_exist = 'C:/CPP/ViolaJones/trainimg1/'
-path_source = 'C:/CPP/ViolaJones/trainimg/'
-path_copy = 'C:/CPP/ViolaJones/trainimg2/'
+path_exist = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg1/'
+path_source = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg/'
+path_copy = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg2/'
 
 list = os.listdir(path_exist)
 img_cnt = len(list)
@@ -87,10 +98,16 @@ while os.path.exists(trainimg):
     img_cnt = img_cnt + 1
     trainimg = path_exist + 'trainimg_'+ str(img_cnt) + '.bmp'
 
-if os.path.exists(path_copy):
+while os.path.exists(path_copy):
    shutil.rmtree(path_copy)
 
-os.mkdir(path_copy)
+# os.mkdir(path_copy)
+for retry in range(100):
+    try:
+        os.mkdir(path_copy)
+        break
+    except:
+        print( "mkdir failed, retrying...", retry )
 
 for file_idx in range(0,img_cnt,1):
     trainimg = path_exist + 'trainimg_'+ str(file_idx) + '.bmp'
@@ -108,11 +125,11 @@ for file_idx in range(0,img_cnt,1):
         no_use = []
 
 ###########################################################################
-# Renaming to consecutive order
+# Renaming to consecutive order and save to new folder for future use
 ###########################################################################
 
-source_path = 'C:/CPP/ViolaJones/trainimg2/'
-target_path = 'C:/CPP/ViolaJones/trainimg3/'
+source_path = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg2/'
+target_path = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg3/'
 
 list = os.listdir(source_path)
 img_cnt = len(list)
@@ -122,10 +139,16 @@ while os.path.exists(source):
     img_cnt = img_cnt + 1
     source = source_path + 'trainimg_'+ str(img_cnt) + '.bmp'
 
-if os.path.exists(target_path):
+while os.path.exists(target_path):
    shutil.rmtree(target_path)
 
-os.mkdir(target_path)
+# os.mkdir(target_path)
+for retry in range(100):
+    try:
+        os.mkdir(target_path)
+        break
+    except:
+        print( "mkdir failed, retrying...", retry )
 
 
 i = 0
@@ -150,16 +173,22 @@ for file_idx in range(0,img_cnt,1):
 ###########################################################################
 
 
-path_i = 'C:/CPP/ViolaJones/trainimg3/'
-path_o = 'C:/CPP/ViolaJones/trainimg1/'
+path_i = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg3/'
+path_o = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/test/trainimg1/'
 list = os.listdir(path_i)
 img_cnt = len(list)
 eyetable = []
 
-if os.path.exists(path_o):
+while os.path.exists(path_o):
    shutil.rmtree(path_o)
 
-os.mkdir(path_o)
+# os.mkdir(path_o)
+for retry in range(100):
+    try:
+        os.mkdir(path_o)
+        break
+    except:
+        print( "mkdir failed, retrying...", retry)
 
 for file_idx in range(0,img_cnt,1):
 
@@ -173,7 +202,7 @@ for file_idx in range(0,img_cnt,1):
     img = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
 
     #face_cascade = cv2.CascadeClassifier('C:/PythonApplication1/PythonApplication1/haarcascade_frontalface_default.xml')
-    eye_cascade = cv2.CascadeClassifier('C:/PythonApplication1/PythonApplication1/haarcascade_eye.xml')
+    eye_cascade = cv2.CascadeClassifier('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/haarcascade_eye.xml')
 
     eyes = eye_cascade.detectMultiScale(img, 1.01, 1)
 

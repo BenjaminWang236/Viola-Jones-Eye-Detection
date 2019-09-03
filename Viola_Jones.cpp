@@ -613,10 +613,11 @@ void AllImageFeature(vector <TableList> FeatureLoc, int** img, int** integral,
 	}
 }
 
-void BuildFeatureThreshold(string FeatureListFilename, vector <TableList> FeatureLoc,
+void BuildFeatureThreshold(string FeatureListFilename, string FeatureImageFilename, vector <TableList> FeatureLoc,
 	                       vector <FeatureThreshold>& ThresholdTable, int img_cnt)
 {
 	ifstream FeatureList(FeatureListFilename.c_str(), std::ifstream::binary);
+	ofstream FeatureImageList(FeatureImageFilename.c_str(), std::ofstream::binary);
 	vector <FeatureValue> ImageFeature;
 	FeatureValue Feature_tmp;
 	vector <int> thp, thn;
@@ -624,31 +625,28 @@ void BuildFeatureThreshold(string FeatureListFilename, vector <TableList> Featur
 	int file_id = 0;
 	for (int fid = 0; fid < FeatureLen; fid++)
 	{
-		//#ifdef DEBUG
-		string FeatureImageFilename = WorkFolder + "Feature" + to_string(file_id) + ".txt";
-		ofstream FeatureImage(FeatureImageFilename.c_str());
-		//#endif
+#ifdef DEBUG
+		string FeatureidFilename = WorkFolder + "Feature" + to_string(file_id) + ".txt";
+		ofstream FeatureImage(FeatureidFilename.c_str());
+#endif
 		ImageFeature.clear();
 		for (int img = 0; img < img_cnt; img++)
 		{
 			FeatureList.clear();
 			FeatureList.seekg(0, ios::beg);
 			for (int i = 0; i <= img * FeatureLen + fid; i++) FeatureList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-
-			/*
-			FeatureList >> Feature_tmp.box.id >> Feature_tmp.box.xs >> Feature_tmp.box.ys
-				>> Feature_tmp.box.xe >> Feature_tmp.box.ye >> Feature_tmp.fv >> Feature_tmp.hit;
-			*/
 			ImageFeature.push_back(Feature_tmp);
+			FeatureImageList.write((char*)& Feature_tmp, sizeof(FeatureValue));
 
-//#ifdef DEBUG
+#ifdef DEBUG
 			FeatureImage << Feature_tmp.box.id << "	" << Feature_tmp.box.xs << "	" << Feature_tmp.box.ys << "	"
 				<< Feature_tmp.box.xe << "	" << Feature_tmp.box.ye << "	" << Feature_tmp.fv << "	" << Feature_tmp.hit  << endl;
-//#endif
+#endif
 		}
-		//#ifdef DEBUG
+#ifdef DEBUG
+		file_id++;
 		FeatureImage.close();
-		//#endif
+#endif
 
 		int totalhit = 0;
 		int totalsample = 0;
@@ -698,15 +696,15 @@ void BuildFeatureThreshold(string FeatureListFilename, vector <TableList> Featur
 		}
 		thp.push_back(save);
 	}
+	FeatureImageList.close();
 
+	ifstream FeatureImageList1(FeatureImageFilename.c_str(), std::ifstream::binary);
 	for (int fid = 0; fid < FeatureLen; fid++)
 	{
 		ImageFeature.clear();
 		for (int img = 0; img < img_cnt; img++)
 		{
-			FeatureList.clear();
-			FeatureList.seekg(0, ios::beg);
-			for (int i = 0; i <= img * FeatureLen + fid; i++) FeatureList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+			FeatureImageList1.read((char*)& Feature_tmp, sizeof(FeatureValue));
 			ImageFeature.push_back(Feature_tmp);
 		}
 		int totalhit = 0;
@@ -758,6 +756,8 @@ void BuildFeatureThreshold(string FeatureListFilename, vector <TableList> Featur
 		}
 		thn.push_back(save);
 	}
+	FeatureList.close();
+	FeatureImageList1.close();
 
 	FeatureThreshold vtmp;
 	for (int fid = 0; fid < FeatureLen; fid++)
@@ -768,37 +768,19 @@ void BuildFeatureThreshold(string FeatureListFilename, vector <TableList> Featur
 		vtmp.thn = thn[fid];
 		ThresholdTable.push_back(vtmp);
 	}
-
-	FeatureList.close();
 }
 
-void BuildThresholdHit(string FeatureListFilename, int** ThresholdHit, vector <FeatureThreshold> ThresholdTable, int img_cnt)
+void BuildThresholdHit(string FeatureImageFilename, int** ThresholdHit, vector <FeatureThreshold> ThresholdTable, int img_cnt)
 {
-	ifstream FeatureList(FeatureListFilename.c_str());
-	string line;
-	vector <FeatureValue> ImageFeature;
+	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
 	FeatureValue Feature_tmp;
 	for (int fid = 0; fid < ThresholdTable.size(); fid++)
 	{
-		ImageFeature.clear();
 		for (int img = 0; img < img_cnt; img++)
 		{
-			FeatureList.clear();
-			FeatureList.seekg(0, ios::beg);
-			for (int i = 0; i < img * ThresholdTable.size() + fid; i++) getline(FeatureList, line);
-
-			FeatureList >> Feature_tmp.box.id >> Feature_tmp.box.xs >> Feature_tmp.box.ys
-				>> Feature_tmp.box.xe >> Feature_tmp.box.ye >> Feature_tmp.fv >> Feature_tmp.hit;
-
-			ImageFeature.push_back(Feature_tmp);
-		}
-
-		for (int img = 0; img < img_cnt; img++)
-		{
-			if ((ImageFeature[img].fv < ThresholdTable[fid].thp &&
-				 ImageFeature[img].fv > ThresholdTable[fid].thn) || 
-				(ImageFeature[img].fv >= 0 && ThresholdTable[fid].thp == 0) ||
-				(ImageFeature[img].fv <= 0 && ThresholdTable[fid].thn == 0))
+			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+			if ((Feature_tmp.fv < ThresholdTable[fid].thp && Feature_tmp.fv > ThresholdTable[fid].thn) ||
+				(Feature_tmp.fv >= 0 && ThresholdTable[fid].thp == 0) || (Feature_tmp.fv <= 0 && ThresholdTable[fid].thn == 0))
 				ThresholdHit[fid][img] = 0;
 			else
 				ThresholdHit[fid][img] = 1;
@@ -850,8 +832,10 @@ void normWeights(vector <FeatureValue> ImageFeature, double** weights,
 }
 
 TrainOut train(std::ofstream &TableOut, double** weights, int** ThresholdHit,
-	           vector <FeatureValue> ImageFeature, vector <FeatureThreshold> ThresholdTable)
+	string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable)
 {
+	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
+	FeatureValue Feature_tmp;
 	vector <double> featureError;
 	double alpha;
 	for (int fid = 0; fid < ThresholdTable.size(); fid++)
@@ -859,7 +843,8 @@ TrainOut train(std::ofstream &TableOut, double** weights, int** ThresholdHit,
 		double sum = 0;
 		for (int img = 0; img < img_cnt; img++)
 		{
-			if (ThresholdHit[fid][img] != ImageFeature[img * ThresholdTable.size() + fid].hit)
+			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+			if (ThresholdHit[fid][img] != Feature_tmp.hit)
 			{
 				sum += weights[fid][img];
 			}
@@ -894,13 +879,18 @@ TrainOut train(std::ofstream &TableOut, double** weights, int** ThresholdHit,
 	return tmp;
 }
 
-void updateWeights(double** weights, int** ThresholdHit, vector <FeatureValue> ImageFeature, vector <FeatureThreshold> ThresholdTable, int img_cnt, int minIndex, double beta)
+void updateWeights(double** weights, int** ThresholdHit, string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable, int img_cnt, int minIndex, double beta)
 {
+	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
+	FeatureValue Feature_tmp;
+	for (int fid = 0; fid < ThresholdTable.size() * minIndex; fid++) FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+
 	for (int img = 0; img < img_cnt; img++)
 	{
-		if (ImageFeature[img * ThresholdTable.size() + minIndex].hit == ThresholdHit[minIndex][img])
-			weights[minIndex][img] *= beta;
+		FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+		if (Feature_tmp.hit == ThresholdHit[minIndex][img]) weights[minIndex][img] *= beta;
 	}
+	FeatureImageList.close();
 }
 
 int main()
@@ -934,7 +924,7 @@ int main()
 	vector <TableList> FeatureLoc;
 	BuildFeatureLoc(FeatureLoc, LeftMinMax, RightMinMax, imgsizeW);
 
-	string FeatureListFilename = WorkFolder + "ImageFeature.txt";
+	string FeatureListFilename = WorkFolder + "ImageFeature.bin";
 	ofstream FeatureList(FeatureListFilename.c_str(), std::ofstream::binary);
 
 	vector <FeatureValue> ImageFeature;
@@ -983,17 +973,20 @@ int main()
 			<< ImageFeature[i].box.ys << "	" << ImageFeature[i].box.xe << "	"
 			<< ImageFeature[i].box.ye << "	" << ImageFeature[i].fv << "	" << ImageFeature[i].hit << endl;
 		FeatureTable.close();
-		#endif
+#endif
 	}
 	FeatureList.close();
+	for (int i = 0; i < imgsizeH; i++) free(img[i]); free(img);
+	for (int i = 0; i < imgsizeH; i++) free(integral[i]); free(integral);
 
 #ifdef DEBUG
 	Image.close();
 	Normal.close();
 	Integral.close();
 #endif
+	string FeatureImageFilename = WorkFolder + "FeatureImage.bin";
 	vector <FeatureThreshold> ThresholdTable;
-	BuildFeatureThreshold(FeatureListFilename, FeatureLoc, ThresholdTable, img_cnt);
+	BuildFeatureThreshold(FeatureListFilename, FeatureImageFilename, FeatureLoc, ThresholdTable, img_cnt);
 
 //#ifdef DEBUG
 	string ThresholdTableFilename = WorkFolder + "ThresholdList.txt";
@@ -1013,7 +1006,7 @@ int main()
 	int** ThresholdHit = (int**)malloc(sizeof(int) * ThresholdTable.size());
 	for (int i = 0; i < ThresholdTable.size(); i++) ThresholdHit[i] = (int*)malloc(sizeof(int) * img_cnt);
 
-	BuildThresholdHit(FeatureListFilename, ThresholdHit, ThresholdTable, img_cnt);
+	BuildThresholdHit(FeatureImageFilename, ThresholdHit, ThresholdTable, img_cnt);
 
 //#ifdef DEBUG
 	string ThresholdHitFilename = WorkFolder + "ThresholdHitList.txt";
@@ -1038,14 +1031,13 @@ int main()
 	for (int i = 0; i < ThresholdTable.size(); i++)
 	{
 		normWeights(ImageFeature, weights, ThresholdTable, img_cnt);
-		TrainOut minidx_beta = train(TableOut, weights, ThresholdHit, ImageFeature, ThresholdTable);
-		updateWeights(weights, ThresholdHit, ImageFeature, ThresholdTable, img_cnt, minidx_beta.minidx, minidx_beta.beta);
+		TrainOut minidx_beta = train(TableOut, weights, ThresholdHit, FeatureImageFilename, ThresholdTable);
+		updateWeights(weights, ThresholdHit, FeatureImageFilename, ThresholdTable, img_cnt, minidx_beta.minidx, minidx_beta.beta);
 	}
 
-	//	string bmpdest = WorkFolder + OutputFolder + ImgPrefix + to_string(file_id) + ".bmp";
+//	string bmpdest = WorkFolder + OutputFolder + ImgPrefix + to_string(file_id) + ".bmp";
 //	WriteBMP256(bmpdest, imgsizeW, imgsizeH, offset, img, BMP256Header);
-	file_id = 0;
-
-
+	for (int i = 0; i < ThresholdTable.size(); i++) free(weights[i]); free(weights);
+	for (int i = 0; i < ThresholdTable.size(); i++) free(ThresholdHit[i]); free(ThresholdHit);
 }
 
