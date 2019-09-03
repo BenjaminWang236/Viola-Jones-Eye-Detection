@@ -15,7 +15,8 @@ using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
 
-string WorkFolder = "C:/CPP/Viola_Jones/";
+// string WorkFolder = "C:/CPP/Viola_Jones/";
+string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
 string TrainFolder = "trainimg/";
