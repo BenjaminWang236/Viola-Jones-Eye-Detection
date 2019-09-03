@@ -5,5 +5,6 @@
         "python.h": "c",
         "iostream": "cpp",
         "iosfwd": "cpp"
-    }
+    },
+    "git.ignoreLimitWarning": true
 }
