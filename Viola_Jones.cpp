@@ -15,12 +15,11 @@
 using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
-// #define DEBUG
 
-string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
+string WorkFolder = "C:/CPP/Viola_Jones/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-string TrainFolder = "trainimg3/";
+string TrainFolder = "trainimg/";
 string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
@@ -793,7 +792,7 @@ void BuildFeatureThreshold(string FeatureListFilename, string FeatureImageFilena
 	}
 }
 
-void BuildThresholdHit(string FeatureImageFilename, int** ThresholdHit, vector <FeatureThreshold> ThresholdTable, int img_cnt)
+void BuildThresholdHit(string FeatureImageFilename, vector <int>& ThresholdHit, vector <FeatureThreshold> ThresholdTable, int img_cnt)
 {
 	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
 	FeatureValue Feature_tmp;
@@ -804,29 +803,38 @@ void BuildThresholdHit(string FeatureImageFilename, int** ThresholdHit, vector <
 			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
 			if ((Feature_tmp.fv < ThresholdTable[fid].thp && Feature_tmp.fv > ThresholdTable[fid].thn) ||
 				(Feature_tmp.fv >= 0 && ThresholdTable[fid].thp == 0) || (Feature_tmp.fv <= 0 && ThresholdTable[fid].thn == 0))
-				ThresholdHit[fid][img] = 0;
+				ThresholdHit.push_back(0);
 			else
-				ThresholdHit[fid][img] = 1;
+				ThresholdHit.push_back(1);
 		}
 	}
 }
 
 
-void initWeights(vector <FeatureValue> ImageFeature, double** weights,
+void initWeights(string FeatureImageFilename, double** weights,
 	             vector <FeatureThreshold> ThresholdTable, int img_cnt)
 {
+	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
+	FeatureValue Feature_tmp;
+	vector <FeatureValue> ImageFeature;
 	for (int fid = 0; fid < ThresholdTable.size(); fid++)
 	{
+		ImageFeature.clear();
+		for (int img = 0; img < img_cnt; img++)
+		{
+			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+			ImageFeature.push_back(Feature_tmp);
+		}
 		int negcnt = 0;
 		int poscnt = 0;
 		for (int img = 0; img < img_cnt; img++)
 		{
-			if (ImageFeature[img * ThresholdTable.size() + fid].hit == 0) negcnt++;
+			if (ImageFeature[img].hit == 0) negcnt++;
 			else poscnt++;
 		}
 		for (int img = 0; img < img_cnt; img++)
 		{
-			if (ImageFeature[img * ThresholdTable.size() + fid].hit == 0)
+			if (ImageFeature[img].hit == 0)
 			{
 				if (poscnt == 0) weights[fid][img] = 1.0 / negcnt;
 				else weights[fid][img] = 1.0 / (negcnt * 2);
@@ -840,8 +848,7 @@ void initWeights(vector <FeatureValue> ImageFeature, double** weights,
 	}
 }
 
-void normWeights(vector <FeatureValue> ImageFeature, double** weights,
-	             vector <FeatureThreshold> ThresholdTable, int img_cnt)
+void normWeights(double** weights, vector <FeatureThreshold> ThresholdTable, int img_cnt)
 {
 	double weightSum = 0;
 	for (int f = 0; f < ThresholdTable.size(); f++)
@@ -854,20 +861,21 @@ void normWeights(vector <FeatureValue> ImageFeature, double** weights,
 	}
 }
 
-TrainOut train(std::ofstream &TableOut, double** weights, int** ThresholdHit,
+TrainOut train(std::ofstream &TableOut, double** weights, vector <int> ThresholdHit,
 	string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable)
 {
 	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
 	FeatureValue Feature_tmp;
 	vector <double> featureError;
 	double alpha;
-	for (int fid = 0; fid < ThresholdTable.size(); fid++)
+	int FeatureLen = ThresholdTable.size();
+	for (int fid = 0; fid < FeatureLen; fid++)
 	{
 		double sum = 0;
 		for (int img = 0; img < img_cnt; img++)
 		{
 			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-			if (ThresholdHit[fid][img] != Feature_tmp.hit)
+			if (ThresholdHit[fid * FeatureLen + img] != Feature_tmp.hit)
 			{
 				sum += weights[fid][img];
 			}
@@ -902,16 +910,18 @@ TrainOut train(std::ofstream &TableOut, double** weights, int** ThresholdHit,
 	return tmp;
 }
 
-void updateWeights(double** weights, int** ThresholdHit, string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable, int img_cnt, int minIndex, double beta)
+void updateWeights(double** weights, vector <int> ThresholdHit, string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable, int img_cnt, int minIndex, double beta)
 {
 	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
 	FeatureValue Feature_tmp;
-	for (int fid = 0; fid < ThresholdTable.size() * minIndex; fid++) FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
+	int FeatureLen = ThresholdTable.size();
+
+	FeatureImageList.seekg(minIndex * img_cnt * sizeof(FeatureValue), ios::beg);
 
 	for (int img = 0; img < img_cnt; img++)
 	{
 		FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-		if (Feature_tmp.hit == ThresholdHit[minIndex][img]) weights[minIndex][img] *= beta;
+		if (Feature_tmp.hit == ThresholdHit[minIndex * FeatureLen + img]) weights[minIndex][img] *= beta;
 	}
 	FeatureImageList.close();
 }
@@ -1012,7 +1022,7 @@ int main()
 	vector <FeatureThreshold> ThresholdTable;
 	BuildFeatureThreshold(FeatureListFilename, FeatureImageFilename, FeatureLoc, ThresholdTable, img_cnt);
 
-//#ifdef DEBUG
+#ifdef DEBUG
 	string ThresholdTableFilename = WorkFolder + "ThresholdList.txt";
 	ofstream ThresholdList(ThresholdTableFilename.c_str());
 	for (int i = 0; i < ThresholdTable.size();i++)
@@ -1022,30 +1032,32 @@ int main()
 			<< ThresholdTable[i].box.ye << "	" << ThresholdTable[i].thp << "	" << ThresholdTable[i].thn << endl;
 	}
 	ThresholdList.close();
-//#endif
+#endif
 
 	double** weights = (double**)malloc(sizeof(double) * ThresholdTable.size());
 	for (int i = 0; i < ThresholdTable.size(); i++) weights[i] = (double*)malloc(sizeof(double) * img_cnt);
 
+	/*
 	int** ThresholdHit = (int**)malloc(sizeof(int) * ThresholdTable.size());
 	for (int i = 0; i < ThresholdTable.size(); i++) ThresholdHit[i] = (int*)malloc(sizeof(int) * img_cnt);
-
+*/
+	vector <int> ThresholdHit;
 	BuildThresholdHit(FeatureImageFilename, ThresholdHit, ThresholdTable, img_cnt);
 
 //#ifdef DEBUG
 	string ThresholdHitFilename = WorkFolder + "ThresholdHitList.txt";
 	ofstream ThresholdHitList(ThresholdHitFilename.c_str());
-	for (int i = 0; i < img_cnt; i++)
+	for (int fid = 0; fid < ThresholdTable.size(); fid++)
 	{
-		for (int col = 0; col < ThresholdTable.size(); col++)
+		for (int imgid = 0; imgid < img_cnt; imgid++)
 		{
-			ThresholdHitList << ThresholdHit[col][i] << "	";
+			ThresholdHitList << ThresholdHit[fid * ThresholdTable.size() + imgid] << "	";
 		}
 		ThresholdHitList << endl;
 	}
 //#endif
 
-	initWeights(ImageFeature, weights, ThresholdTable, img_cnt);
+	initWeights(FeatureImageFilename, weights, ThresholdTable, img_cnt);
 
 	string OutputTable = WorkFolder + "TrainTable.txt";
 	ofstream TableOut(OutputTable.c_str());
@@ -1054,7 +1066,7 @@ int main()
 
 	for (int i = 0; i < ThresholdTable.size(); i++)
 	{
-		normWeights(ImageFeature, weights, ThresholdTable, img_cnt);
+		normWeights(weights, ThresholdTable, img_cnt);
 		TrainOut minidx_beta = train(TableOut, weights, ThresholdHit, FeatureImageFilename, ThresholdTable);
 		updateWeights(weights, ThresholdHit, FeatureImageFilename, ThresholdTable, img_cnt, minidx_beta.minidx, minidx_beta.beta);
 	}
@@ -1062,11 +1074,12 @@ int main()
 //	string bmpdest = WorkFolder + OutputFolder + ImgPrefix + to_string(file_id) + ".bmp";
 //	WriteBMP256(bmpdest, imgsizeW, imgsizeH, offset, img, BMP256Header);
 	for (int i = 0; i < ThresholdTable.size(); i++) free(weights[i]); free(weights);
-	for (int i = 0; i < ThresholdTable.size(); i++) free(ThresholdHit[i]); free(ThresholdHit);
-
-
 
 	auto end = std::chrono::high_resolution_clock::now();
-	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end-start);
-	cout << "--- " << "Execution time: " << duration.count() << " microseconds" << " ---" << endl;
+	auto duration = end-start;
+	// auto microsec = std::chrono::duration_cast<std::chrono::microseconds>(duration);
+	cout << "--- " << "Execution time: " << (std::chrono::duration_cast<std::chrono::microseconds>(duration)).count() << " microseconds" << " ---" << endl;
+	cout << "--- " << "Execution time: " << (std::chrono::duration_cast<std::chrono::hours>(duration)).count() << "::" << (std::chrono::duration_cast<std::chrono::minutes>(duration)).count() << "::"
+	<< (std::chrono::duration_cast<std::chrono::seconds>(duration)).count() << ":: " << (std::chrono::duration_cast<std::chrono::milliseconds>(duration)).count() << endl;
 }
+
