@@ -15,7 +15,6 @@
 using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
-// #define DEBUG
 
 string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
@@ -876,7 +875,7 @@ TrainOut train(std::ofstream &TableOut, double** weights, vector <int> Threshold
 		for (int img = 0; img < img_cnt; img++)
 		{
 			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-			if (ThresholdHit[fid * FeatureLen + img] != Feature_tmp.hit)
+			if (ThresholdHit[fid * img_cnt + img] != Feature_tmp.hit)
 			{
 				sum += weights[fid][img];
 			}
@@ -922,7 +921,7 @@ void updateWeights(double** weights, vector <int> ThresholdHit, string FeatureIm
 	for (int img = 0; img < img_cnt; img++)
 	{
 		FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-		if (Feature_tmp.hit == ThresholdHit[minIndex * FeatureLen + img]) weights[minIndex][img] *= beta;
+		if (Feature_tmp.hit == ThresholdHit[minIndex * img_cnt + img]) weights[minIndex][img] *= beta;
 	}
 	FeatureImageList.close();
 }
@@ -959,6 +958,7 @@ int main()
 
 	vector <TableList> FeatureLoc;
 	BuildFeatureLoc(FeatureLoc, LeftMinMax, RightMinMax, imgsizeW);
+	LeftMinMax.clear(); RightMinMax.clear();
 
 	string FeatureListFilename = WorkFolder + "ImageFeature.bin";
 	ofstream FeatureList(FeatureListFilename.c_str(), std::ofstream::binary);
@@ -1046,18 +1046,19 @@ int main()
 	vector <int> ThresholdHit;
 	BuildThresholdHit(FeatureImageFilename, ThresholdHit, ThresholdTable, img_cnt);
 
-#ifdef DEBUG
+//#ifdef DEBUG
 	string ThresholdHitFilename = WorkFolder + "ThresholdHitList.txt";
 	ofstream ThresholdHitList(ThresholdHitFilename.c_str());
 	for (int fid = 0; fid < ThresholdTable.size(); fid++)
 	{
 		for (int imgid = 0; imgid < img_cnt; imgid++)
 		{
-			ThresholdHitList << ThresholdHit[fid * ThresholdTable.size() + imgid] << "	";
+			ThresholdHitList << ThresholdHit[fid * img_cnt + imgid] << "	";
 		}
 		ThresholdHitList << endl;
 	}
-#endif
+	ThresholdHitList.close();
+//#endif
 
 	initWeights(FeatureImageFilename, weights, ThresholdTable, img_cnt);
 
