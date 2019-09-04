@@ -16,10 +16,10 @@ using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
 
-string WorkFolder = "C:/CPP/Viola_Jones/";
+string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-string TrainFolder = "trainimg/";
+string TrainFolder = "trainimg3/";
 string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
@@ -907,7 +907,8 @@ TrainOut train(std::ofstream& TableOut, double** weights, vector <int> Threshold
 			<< "	" << ThresholdTable[index].box.ye
 			<< "	" << ThresholdTable[index].thp
 			<< "	" << ThresholdTable[index].thn
-			<< "	" << alpha;
+			<< "	" << alpha
+			<< "    " << endl;
 	}
 
 /*
@@ -1113,5 +1114,7 @@ int main()
 	cout << "--- " << "Execution time: " << duration0.count() << " microseconds" << " ---" << endl;
 	cout << "--- " << "Execution time: " << (std::chrono::duration_cast<std::chrono::hours>(duration)).count() << "::" << (std::chrono::duration_cast<std::chrono::minutes>(duration)).count() << "::"
 	<< (std::chrono::duration_cast<std::chrono::seconds>(duration)).count() << ":: " << (std::chrono::duration_cast<std::chrono::milliseconds>(duration)).count() << endl;
+
+	return 0;
 }
 

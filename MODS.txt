@@ -1,7 +1,7 @@
 #include <chrono>
 
-string WorkFolder = "C:/CPP/Viola_Jones/";
-string TrainFolder = "trainimg/";
+string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
+string TrainFolder = "trainimg3/";
 
 void integralAll(int** image, int** integral, int width, int height)
 {
