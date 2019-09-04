@@ -612,7 +612,7 @@ void AllImageFeature(vector <TableList> FeatureLoc, int** img, int** integral,
 
 		vtmp.hit = 0;
 		j = 0;
-		while (j < imgcnt && LeftTable[j].id != k) j++;
+		while (j < imgcnt && j < LeftTable.size() && LeftTable[j].id != k) j++;
 		if (LeftTable[j].id == k &&
 			vtmp.box.xs >= LeftTable[j].xs &&
 			vtmp.box.ys >= LeftTable[j].ys &&
@@ -620,7 +620,7 @@ void AllImageFeature(vector <TableList> FeatureLoc, int** img, int** integral,
 			vtmp.box.ye <= LeftTable[j].ye) vtmp.hit = 1;
 
 		j = 0;
-		while (j < imgcnt && RightTable[j].id != k) j++;
+		while (j < imgcnt && j < RightTable.size() && RightTable[j].id != k) j++;
 		if (RightTable[j].id == k && vtmp.hit == 0 &&
 			vtmp.box.xs >= RightTable[j].xs &&
 			vtmp.box.ys >= RightTable[j].ys &&
