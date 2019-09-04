@@ -1,0 +1,33 @@
+#include <chrono>
+
+string WorkFolder = "C:/CPP/Viola_Jones/";
+string TrainFolder = "trainimg/";
+
+void integralAll(int** image, int** integral, int width, int height)
+{
+	// int** rowsum = (int**)malloc(sizeof(int) * height);
+	// for (int i = 0; i < height; i++) rowsum[i] = (int*)malloc(sizeof(int) * width);
+	int** rowsum = new int*[height];
+	for(int i = 0; i < height; i++) rowsum[i] = new int[width];
+
+	for (int row = 0; row < height; row++)
+	{
+		for (int col = 0; col < width; col++)
+		{
+			rowsum[row][col] = (col-1 >= 0) ? rowsum[row][col-1] + image[row][col] : image[row][col];
+			integral[row][col] = (row-1 >= 0) ? integral[row-1][col] + rowsum[row][col] : rowsum[row][col];
+		}
+	}
+}
+
+auto start = std::chrono::high_resolution_clock::now();
+cout << "Started counting" << endl;
+
+cout << "Finished counting" << endl;
+	auto end = std::chrono::high_resolution_clock::now();
+	auto duration0 = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+	auto duration = end-start;
+	// auto microsec = std::chrono::duration_cast<std::chrono::microseconds>(duration);
+	cout << "--- " << "Execution time: " << duration0.count() << " microseconds" << " ---" << endl;
+	cout << "--- " << "Execution time: " << (std::chrono::duration_cast<std::chrono::hours>(duration)).count() << "::" << (std::chrono::duration_cast<std::chrono::minutes>(duration)).count() << "::"
+	<< (std::chrono::duration_cast<std::chrono::seconds>(duration)).count() << ":: " << (std::chrono::duration_cast<std::chrono::milliseconds>(duration)).count() << endl;

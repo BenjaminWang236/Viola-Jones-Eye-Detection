@@ -6,7 +6,7 @@
 #include <sstream>
 #include <cmath>
 #include <algorithm>    
-#include <array> 
+//#include <array> 
 #include <iomanip>      // std::setw
 #include <chrono>
 
@@ -16,10 +16,10 @@ using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
 
-string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
+string WorkFolder = "C:/CPP/Viola_Jones/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-string TrainFolder = "trainimg3/";
+string TrainFolder = "trainimg/";
 string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
@@ -808,6 +808,7 @@ void BuildThresholdHit(string FeatureImageFilename, vector <int>& ThresholdHit, 
 				ThresholdHit.push_back(1);
 		}
 	}
+	FeatureImageList.close();
 }
 
 
@@ -836,16 +837,17 @@ void initWeights(string FeatureImageFilename, double** weights,
 		{
 			if (ImageFeature[img].hit == 0)
 			{
-				if (poscnt == 0) weights[fid][img] = 1.0 / negcnt;
-				else weights[fid][img] = 1.0 / (negcnt * 2);
+				if (poscnt == 0) weights[fid][img] = 1.0 / double(negcnt);
+				else weights[fid][img] = 1.0 / double(negcnt * 2);
 			}
 			else
 			{
-				if (negcnt == 0) weights[fid][img] = 1.0 / (poscnt);
-				else weights[fid][img] = 1.0 / (poscnt * 2);
+				if (negcnt == 0) weights[fid][img] = 1.0 / double(poscnt);
+				else weights[fid][img] = 1.0 / double(poscnt * 2);
 			}
 		}
 	}
+	FeatureImageList.close();
 }
 
 void normWeights(double** weights, vector <FeatureThreshold> ThresholdTable, int img_cnt)
@@ -855,14 +857,15 @@ void normWeights(double** weights, vector <FeatureThreshold> ThresholdTable, int
 	{
 		for (int i = 0; i < img_cnt; i++) weightSum += weights[f][i];
 	}
+	if (weightSum == 0) weightSum = 1.0;
 	for (int f = 0; f < ThresholdTable.size(); f++)
 	{
 		for (int i = 0; i < img_cnt; i++) weights[f][i] /= weightSum;
 	}
 }
 
-TrainOut train(std::ofstream &TableOut, double** weights, vector <int> ThresholdHit,
-	string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable)
+TrainOut train(std::ofstream& TableOut, double** weights, vector <int> ThresholdHit,
+	string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable, vector <int> MinIndex)
 {
 	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
 	FeatureValue Feature_tmp;
@@ -880,15 +883,34 @@ TrainOut train(std::ofstream &TableOut, double** weights, vector <int> Threshold
 				sum += weights[fid][img];
 			}
 		}
+		for (int i = 0; i < MinIndex.size(); i++)
+		{
+			if (fid == MinIndex[i]) sum = 100.0;
+		}
 		featureError.push_back(sum);
 	}
+	FeatureImageList.close();
+
 	int index = std::min_element(featureError.begin(), featureError.end()) - featureError.begin();
 	double minError = *std::min_element(featureError.begin(), featureError.end());
 
-	double beta = minError / (1 - minError);
+	double beta = minError / (1.0 - minError);
 	if (beta == 0) alpha = 50;
 	else alpha = log(1 / beta);
 
+	if (TableOut.is_open() )
+	{
+		TableOut << index << "	" << index % 4
+			<< "	" << ThresholdTable[index].box.xs
+			<< "	" << ThresholdTable[index].box.ys
+			<< "	" << ThresholdTable[index].box.xe
+			<< "	" << ThresholdTable[index].box.ye
+			<< "	" << ThresholdTable[index].thp
+			<< "	" << ThresholdTable[index].thn
+			<< "	" << alpha;
+	}
+
+/*
 	TableOut << setw(5) << index << setw(4) << index % 4
 		<< setw(6) << ThresholdTable[index].box.xs
 		<< setw(6) << ThresholdTable[index].box.ys
@@ -897,13 +919,13 @@ TrainOut train(std::ofstream &TableOut, double** weights, vector <int> Threshold
 		<< setw(12) << ThresholdTable[index].thp
 		<< setw(12) << ThresholdTable[index].thn
 		<< setw(12) << alpha;
-
-
-/*	fprintf(TableOut, "%5d %4d %6d %6d %4d %4d %12d %12d %12f\n",
+*/
+/*
+	fprintf(TableOut, "%5d %4d %6d %6d %4d %4d %12d %12d %12f\n",
 		index, index % 4, ThresholdTable[index].box.xs, ThresholdTable[index].box.ys,
 		ThresholdTable[index].box.xe, ThresholdTable[index].box.ye,
-		ThresholdTable[index].thp, ThresholdTable[index].thn, alpha);*/
-
+		ThresholdTable[index].thp, ThresholdTable[index].thn, alpha);
+		*/
 	TrainOut tmp;
 	tmp.beta = beta;
 	tmp.minidx = index;
@@ -966,8 +988,11 @@ int main()
 	vector <FeatureValue> ImageFeature;
 	for (int k = 0; k < img_cnt; k++)
 	{
+		stringstream ss;
+		ss << file_id;
+		string bmpsource = WorkFolder + TrainFolder + ImgPrefix + ss.str() + ".bmp";
 		file_id++;
-		string bmpsource = WorkFolder + TrainFolder + ImgPrefix + to_string(file_id) + ".bmp";
+
 		int avg = ReadBMP256(bmpsource, imgsizeW, imgsizeH, offset, img);
 
 #ifdef DEBUG
@@ -1014,6 +1039,7 @@ int main()
 	FeatureList.close();
 	for (int i = 0; i < imgsizeH; i++) free(img[i]); free(img);
 	for (int i = 0; i < imgsizeH; i++) free(integral[i]); free(integral);
+	LeftTable.clear(); RightTable.clear(); ImageFeature.clear();
 
 #ifdef DEBUG
 	Image.close();
@@ -1023,6 +1049,7 @@ int main()
 	string FeatureImageFilename = WorkFolder + "FeatureImage.bin";
 	vector <FeatureThreshold> ThresholdTable;
 	BuildFeatureThreshold(FeatureListFilename, FeatureImageFilename, FeatureLoc, ThresholdTable, img_cnt);
+	FeatureLoc.clear();
 
 #ifdef DEBUG
 	string ThresholdTableFilename = WorkFolder + "ThresholdList.txt";
@@ -1039,14 +1066,10 @@ int main()
 	double** weights = (double**)malloc(sizeof(double) * ThresholdTable.size());
 	for (int i = 0; i < ThresholdTable.size(); i++) weights[i] = (double*)malloc(sizeof(double) * img_cnt);
 
-	/*
-	int** ThresholdHit = (int**)malloc(sizeof(int) * ThresholdTable.size());
-	for (int i = 0; i < ThresholdTable.size(); i++) ThresholdHit[i] = (int*)malloc(sizeof(int) * img_cnt);
-*/
 	vector <int> ThresholdHit;
 	BuildThresholdHit(FeatureImageFilename, ThresholdHit, ThresholdTable, img_cnt);
 
-//#ifdef DEBUG
+#ifdef DEBUG
 	string ThresholdHitFilename = WorkFolder + "ThresholdHitList.txt";
 	ofstream ThresholdHitList(ThresholdHitFilename.c_str());
 	for (int fid = 0; fid < ThresholdTable.size(); fid++)
@@ -1058,25 +1081,29 @@ int main()
 		ThresholdHitList << endl;
 	}
 	ThresholdHitList.close();
-//#endif
+#endif
 
 	initWeights(FeatureImageFilename, weights, ThresholdTable, img_cnt);
 
 	string OutputTable = WorkFolder + "TrainTable.txt";
 	ofstream TableOut(OutputTable.c_str());
 
+	vector <int> MinIndex;
+
 	TableOut << "INDEX TYPE XSTART YSTART XEND YEND THRESHOLD_P THRESHOLD_N Alpha" << endl;
 
 	for (int i = 0; i < ThresholdTable.size(); i++)
 	{
 		normWeights(weights, ThresholdTable, img_cnt);
-		TrainOut minidx_beta = train(TableOut, weights, ThresholdHit, FeatureImageFilename, ThresholdTable);
+		TrainOut minidx_beta = train(TableOut, weights, ThresholdHit, FeatureImageFilename, ThresholdTable, MinIndex);
+		MinIndex.push_back(minidx_beta.minidx);
 		updateWeights(weights, ThresholdHit, FeatureImageFilename, ThresholdTable, img_cnt, minidx_beta.minidx, minidx_beta.beta);
 	}
 
 //	string bmpdest = WorkFolder + OutputFolder + ImgPrefix + to_string(file_id) + ".bmp";
 //	WriteBMP256(bmpdest, imgsizeW, imgsizeH, offset, img, BMP256Header);
 	for (int i = 0; i < ThresholdTable.size(); i++) free(weights[i]); free(weights);
+	ThresholdTable.clear(); ThresholdHit.clear();
 
 	cout << "Finished counting" << endl;
 	auto end = std::chrono::high_resolution_clock::now();
