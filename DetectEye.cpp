@@ -16,8 +16,8 @@ using namespace std;
 #define DEBUG_FEATURE
 
 string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
-// string ImageFolder = "total/";
-string ImageFolder = "trainimg3/";
+string ImageFolder = "total/";
+// string ImageFolder = "trainimg3/";
 string ImgOutFolder = "detected/";
 
 int img_cnt = 10, imgsizeW = 32, imgsizeH = 32;
