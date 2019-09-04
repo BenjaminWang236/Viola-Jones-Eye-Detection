@@ -15,6 +15,7 @@
 using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
+// #define DEBUG
 
 string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
@@ -929,6 +930,7 @@ void updateWeights(double** weights, vector <int> ThresholdHit, string FeatureIm
 int main()
 {
 	auto start = std::chrono::high_resolution_clock::now();
+	cout << "Started counting" << endl;
 #ifdef DEBUG
 	string ImageFilename = WorkFolder + "Image.txt";
 	ofstream Image(ImageFilename.c_str());
@@ -1044,7 +1046,7 @@ int main()
 	vector <int> ThresholdHit;
 	BuildThresholdHit(FeatureImageFilename, ThresholdHit, ThresholdTable, img_cnt);
 
-//#ifdef DEBUG
+#ifdef DEBUG
 	string ThresholdHitFilename = WorkFolder + "ThresholdHitList.txt";
 	ofstream ThresholdHitList(ThresholdHitFilename.c_str());
 	for (int fid = 0; fid < ThresholdTable.size(); fid++)
@@ -1055,7 +1057,7 @@ int main()
 		}
 		ThresholdHitList << endl;
 	}
-//#endif
+#endif
 
 	initWeights(FeatureImageFilename, weights, ThresholdTable, img_cnt);
 
@@ -1075,10 +1077,12 @@ int main()
 //	WriteBMP256(bmpdest, imgsizeW, imgsizeH, offset, img, BMP256Header);
 	for (int i = 0; i < ThresholdTable.size(); i++) free(weights[i]); free(weights);
 
+	cout << "Finished counting" << endl;
 	auto end = std::chrono::high_resolution_clock::now();
+	auto duration0 = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 	auto duration = end-start;
 	// auto microsec = std::chrono::duration_cast<std::chrono::microseconds>(duration);
-	cout << "--- " << "Execution time: " << (std::chrono::duration_cast<std::chrono::microseconds>(duration)).count() << " microseconds" << " ---" << endl;
+	cout << "--- " << "Execution time: " << duration0.count() << " microseconds" << " ---" << endl;
 	cout << "--- " << "Execution time: " << (std::chrono::duration_cast<std::chrono::hours>(duration)).count() << "::" << (std::chrono::duration_cast<std::chrono::minutes>(duration)).count() << "::"
 	<< (std::chrono::duration_cast<std::chrono::seconds>(duration)).count() << ":: " << (std::chrono::duration_cast<std::chrono::milliseconds>(duration)).count() << endl;
 }
