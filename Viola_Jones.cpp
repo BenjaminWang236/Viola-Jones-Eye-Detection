@@ -8,17 +8,19 @@
 #include <algorithm>    
 #include <array> 
 #include <iomanip>      // std::setw
+#include <chrono>
 
 //#include <Magick++.h>
 
 using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
+// #define DEBUG
 
-string WorkFolder = "C:/CPP/Viola_Jones/";
+string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-string TrainFolder = "trainimg/";
+string TrainFolder = "trainimg3/";
 string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
@@ -916,6 +918,7 @@ void updateWeights(double** weights, int** ThresholdHit, string FeatureImageFile
 
 int main()
 {
+	auto start = std::chrono::high_resolution_clock::now();
 #ifdef DEBUG
 	string ImageFilename = WorkFolder + "Image.txt";
 	ofstream Image(ImageFilename.c_str());
@@ -1060,5 +1063,10 @@ int main()
 //	WriteBMP256(bmpdest, imgsizeW, imgsizeH, offset, img, BMP256Header);
 	for (int i = 0; i < ThresholdTable.size(); i++) free(weights[i]); free(weights);
 	for (int i = 0; i < ThresholdTable.size(); i++) free(ThresholdHit[i]); free(ThresholdHit);
-}
 
+
+
+	auto end = std::chrono::high_resolution_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end-start);
+	cout << "--- " << "Execution time: " << duration.count() << " microseconds" << " ---" << endl;
+}
