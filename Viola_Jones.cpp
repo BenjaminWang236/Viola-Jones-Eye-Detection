@@ -23,7 +23,7 @@ string TrainFolder = "trainimg3/";
 string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
-int imgsizeW = 32, imgsizeH = 32, img_cnt = 2929;
+int imgsizeW = 32, imgsizeH = 32, img_cnt = 500;
 
 struct TableList {
 	int id;
