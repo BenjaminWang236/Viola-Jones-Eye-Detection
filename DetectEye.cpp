@@ -15,9 +15,8 @@ using namespace std;
 //using namespace Magick;
 #define DEBUG_FEATURE
 
-string WorkFolder = "D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
+string WorkFolder = "C:/CPP/Viola_Jones/";
 string ImageFolder = "total/";
-// string ImageFolder = "trainimg3/";
 string ImgOutFolder = "detected/";
 
 int img_cnt = 10, imgsizeW = 32, imgsizeH = 32;
@@ -135,6 +134,8 @@ void normalize(int width, int height, int** image, int** nml, int normal, int ke
 
 void integralAll(int** image, int** integral, int width, int height)
 {
+	// int** rowsum = (int**)malloc(sizeof(int) * height);
+	// for (int i = 0; i < height; i++) rowsum[i] = (int*)malloc(sizeof(int) * width);
 	int** rowsum = new int* [height];
 	for (int i = 0; i < height; i++) rowsum[i] = new int[width];
 
@@ -262,11 +263,12 @@ void GetTrainTable(string filename, vector <FeatureList>& FeatureTable)
 	TrainTable.close();
 }
 
-TableList DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTable, int** integral)
+vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTable, int** integral, int imgsizeW)
 {
 	int fv;
-	vector <int> xsmin, ysmin, xemax, yemax;
-	TableList final_box;
+	vector <int> xsminLeft, ysminLeft, xemaxLeft, yemaxLeft, xsminRight, ysminRight, xemaxRight, yemaxRight;
+	TableList box;
+	vector <TableList> final_box;
 	for (int i = 0; i < FeatureTable.size(); i++)
 	{
 		if (FeatureTable[i].box.id % 4 == 0) fv = Type0(FeatureTable[i].box, integral);
@@ -278,11 +280,20 @@ TableList DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTable, int**
 			(fv >= 0 && FeatureTable[i].thp == 0) ||
 			(fv <= 0 && FeatureTable[i].thn == 0)))
 		{
-			xsmin.push_back(FeatureTable[i].box.xs);
-			ysmin.push_back(FeatureTable[i].box.ys);
-			xemax.push_back(FeatureTable[i].box.xe);
-			yemax.push_back(FeatureTable[i].box.ye);
-
+			if (FeatureTable[i].box.xs < (3 + imgsizeW / 4) && FeatureTable[i].box.xe < (6 + imgsizeW / 2))
+			{
+				xsminLeft.push_back(FeatureTable[i].box.xs);
+				ysminLeft.push_back(FeatureTable[i].box.ys);
+				xemaxLeft.push_back(FeatureTable[i].box.xe);
+				yemaxLeft.push_back(FeatureTable[i].box.ye);
+			}
+			else
+			{
+				xsminRight.push_back(FeatureTable[i].box.xs);
+				ysminRight.push_back(FeatureTable[i].box.ys);
+				xemaxRight.push_back(FeatureTable[i].box.xe);
+				yemaxRight.push_back(FeatureTable[i].box.ye);
+			}
 			if (TableOut.is_open())
 			{
 				TableOut << FeatureTable[i].box.id << "	" << FeatureTable[i].box.id % 4
@@ -297,19 +308,32 @@ TableList DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTable, int**
 		}
 	}
 
-	if (xsmin.size() == 0) final_box.id = 0;
+	if (xsminLeft.size() == 0) box.id = 0;
 	else
 	{
-		final_box.id = 1;
-		final_box.xs = *std::min_element(xsmin.begin(), xsmin.end());
-		final_box.ys = *std::min_element(ysmin.begin(), ysmin.end());
-		final_box.xe = *std::max_element(xemax.begin(), xemax.end());
-		final_box.ye = *std::max_element(yemax.begin(), yemax.end());
+		box.id = 1;
+		box.xs = *std::min_element(xsminLeft.begin(), xsminLeft.end());
+		box.ys = *std::min_element(ysminLeft.begin(), ysminLeft.end());
+		box.xe = *std::max_element(xemaxLeft.begin(), xemaxLeft.end());
+		box.ye = *std::max_element(yemaxLeft.begin(), yemaxLeft.end());
 	}
+	final_box.push_back(box);
+
+	if (xsminRight.size() == 0) box.id = 0;
+	else
+	{
+		box.id = 1;
+		box.xs = *std::min_element(xsminRight.begin(), xsminRight.end());
+		box.ys = *std::min_element(ysminRight.begin(), ysminRight.end());
+		box.xe = *std::max_element(xemaxRight.begin(), xemaxRight.end());
+		box.ye = *std::max_element(yemaxRight.begin(), yemaxRight.end());
+	}
+	final_box.push_back(box);
 	return final_box;
 }
 
 bool alphaLargeSmall(FeatureList i, FeatureList j) { return (i.alpha > j.alpha); }
+bool idEqual(FeatureList i, FeatureList j) { return (i.box.id == j.box.id); }
 
 void WriteTrainTable(string infilename, string outfilename)
 {
@@ -318,9 +342,7 @@ void WriteTrainTable(string infilename, string outfilename)
 	string line;
 	int index;
 	FeatureList Table_tmp;
-	vector <FeatureList> FeatureTable0, FeatureTable;
-	vector <int> fid;
-	vector <double> alpha;
+	vector <FeatureList> FeatureTable;
 
 	if (inTable.is_open())
 	{
@@ -331,11 +353,10 @@ void WriteTrainTable(string infilename, string outfilename)
 			inTable >> Table_tmp.box.id >> index >> Table_tmp.box.xs >> Table_tmp.box.ys
 				>> Table_tmp.box.xe >> Table_tmp.box.ye >> Table_tmp.thp >> Table_tmp.thn >> Table_tmp.alpha;
 
-			if ((std::find(fid.begin(), fid.end(), Table_tmp.box.id) == fid.end()) || FeatureTable.size() == 0)
-			{
-				fid.push_back(Table_tmp.box.id);
-				FeatureTable.push_back(Table_tmp);
-			}
+			vector<FeatureList> searchlist; searchlist.push_back(Table_tmp);
+			vector<FeatureList>::iterator flag = std::search(FeatureTable.begin(), FeatureTable.end(), searchlist.begin(), searchlist.end(), idEqual);
+			if (flag  == FeatureTable.end() || FeatureTable.size() == 0) FeatureTable.push_back(Table_tmp);
+	
 		}
 	}
 
@@ -366,18 +387,7 @@ int main()
 	char* header = ReadBMP256Size(bmpsource, &imgsizeW, &imgsizeH, &offset);
 	char* BMP256Header = new char[offset];
 	for (int i = 0; i < offset; i++) BMP256Header[i] = header[i];
-
-
-	int** img = new int* [imgsizeH];
-	for (int i = 0; i < imgsizeH; i++) img[i] = new int[imgsizeW];
-
-	int** nml = new int* [imgsizeH];
-	for (int i = 0; i < imgsizeH; i++) nml[i] = new int[imgsizeW];
-
-	int** integral = new int* [imgsizeH];
-	for (int i = 0; i < imgsizeH; i++) integral[i] = new int[imgsizeW];
 	
-	/*
 	int** img = (int**)malloc(sizeof(int) * imgsizeH);
 	for (int i = 0; i < imgsizeH; i++) img[i] = (int*)malloc(sizeof(int) * imgsizeW);
 
@@ -386,8 +396,11 @@ int main()
 
 	int** integral = (int**)malloc(sizeof(int) * imgsizeH);
 	for (int i = 0; i < imgsizeH; i++) integral[i] = (int*)malloc(sizeof(int) * imgsizeW);
+	/*
+	int** img = new int[imgsizeH][imgsizeW];
+	int** nml = new int[imgsizeH][imgsizeW];
+	int** integral = new int[imgsizeH][imgsizeW];
 	*/
-
 	string TrainTablefilename = WorkFolder + "TrainTable.txt";
 	vector <FeatureList> FeatureTable;
 	GetTrainTable(TrainTablefilename, FeatureTable);
@@ -408,9 +421,9 @@ int main()
 		normalize(imgsizeW, imgsizeH, img, nml, avg, 8); //keep 8 bits of floating point
 		integralAll(nml, integral, imgsizeW, imgsizeH);
 
-		TableList final_box = DetectEye(TableOut, FeatureTable, integral);
+		vector <TableList> final_box = DetectEye(TableOut, FeatureTable, integral, imgsizeW);
 
-		makeBox(final_box, img);
+		makeBox(final_box[0], img); makeBox(final_box[1], img);
 		WriteBMP256(bmpoutput, imgsizeW, imgsizeH, offset, img, BMP256Header);
 	}
 
