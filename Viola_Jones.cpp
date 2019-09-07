@@ -34,8 +34,9 @@ int imgsizeW = 32, imgsizeH = 32, img_cnt = 100;
 
 int main(int argc, char** argv)
 {
+	cout << "Number of arguments received is: " << argc << endl;
 	auto start = std::chrono::high_resolution_clock::now();
-	cout << "Started counting" << endl;
+	// cout << "Started counting" << endl;
 
 #ifdef DEBUG
 	string ImageFilename = WorkFolder + "Image.txt";
@@ -53,7 +54,6 @@ int main(int argc, char** argv)
 
 	if (argc != 6)
 	{
-		// 0 1 0 79 80
 		cout << "BuildFeatureOnly TrainOnly Start End Total";
 		return 0;
 	}
@@ -76,6 +76,7 @@ int main(int argc, char** argv)
 		}
 
 		img_start = atoi(argv[3]); img_end = atoi(argv[4]); img_cnt = atoi(argv[5]);
+		// cout << "received(3-5): " << img_start << ", " << img_end << ", " << img_cnt << endl;
 		
 		for (int i = 0; i < argc; i++) cout << " " << argv[i] << " ";
 		cout << endl;
@@ -176,9 +177,10 @@ int main(int argc, char** argv)
 #endif
 			ImageFeature.clear();
 			AllImageFeature(FeatureLoc, img, integral, ImageFeature, k, img_cnt, LeftTable, RightTable);
-			for (int i = 0; i < ImageFeature.size();i++) FeatureList.write((char*)& ImageFeature[i], sizeof(FeatureValue));
+			//for (int i = 0; i < ImageFeature.size();i++) FeatureList.write((char*)& ImageFeature[i], sizeof(FeatureValue));
+			FeatureList.write((char*)& ImageFeature[0], ImageFeature.size() * sizeof(FeatureValue));
 
-#ifdef DEBUG	
+#ifdef DEBUG
 			string FeaturetableFilename = WorkFolder + "Image" + to_string(k) + "Feature.txt";
 			ofstream FeatureTable(FeaturetableFilename.c_str());
 			for (int i = 0; i < ImageFeature.size();i++)
@@ -275,7 +277,7 @@ int main(int argc, char** argv)
 }
 
 
-// /*main*/
+
 // int main()
 // {
 // 	auto start = std::chrono::high_resolution_clock::now();
@@ -445,4 +447,3 @@ int main(int argc, char** argv)
 
 // 	return 0;
 // }
-

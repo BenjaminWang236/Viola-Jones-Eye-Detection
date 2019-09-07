@@ -19,12 +19,7 @@ void normalize(int width, int height, int** image, int normal, int keep)
 	int mul = 0x01 << keep;
 	for (int row = 0; row < height; row++)
 	{
-		for (int col = 0; col < width; col++)
-		{
-			int p = image[row][col];
-			int q = image[row][col] * mul / normal;
-			image[row][col] = image[row][col] * mul / normal;
-		}
+		for (int col = 0; col < width; col++) image[row][col] = image[row][col] * mul / normal;
 	}
 }
 
@@ -32,15 +27,15 @@ void integralAll(int** image, int** integral, int width, int height)
 {
 	// int** rowsum = (int**)malloc(sizeof(int) * height);
 	// for (int i = 0; i < height; i++) rowsum[i] = (int*)malloc(sizeof(int) * width);
-	int** rowsum = new int*[height];
-	for(int i = 0; i < height; i++) rowsum[i] = new int[width];
+	int** rowsum = new int* [height];
+	for (int i = 0; i < height; i++) rowsum[i] = new int[width];
 
 	for (int row = 0; row < height; row++)
 	{
 		for (int col = 0; col < width; col++)
 		{
-			rowsum[row][col] = (col-1 >= 0) ? rowsum[row][col-1] + image[row][col] : image[row][col];
-			integral[row][col] = (row-1 >= 0) ? integral[row-1][col] + rowsum[row][col] : rowsum[row][col];
+			rowsum[row][col] = (col - 1 >= 0) ? rowsum[row][col - 1] + image[row][col] : image[row][col];
+			integral[row][col] = (row - 1 >= 0) ? integral[row - 1][col] + rowsum[row][col] : rowsum[row][col];
 		}
 	}
 }

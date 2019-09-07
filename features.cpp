@@ -51,27 +51,6 @@ void BuildFeatureLoc(vector <TableList>& FeatureLoc, vector <TableList> LeftMinM
 									Table_tmp.ye = ye - (ye - ys) * yediv / yblock;
 									FeatureLoc.push_back(Table_tmp);
 									id++;
-
-									/*
-									same = false;
-									for (int i = 0; i < FeatureLoc.size();i++)
-									{
-										if (Table_tmp.xs == FeatureLoc[i].xs &&
-											Table_tmp.ys == FeatureLoc[i].ys &&
-											Table_tmp.xe == FeatureLoc[i].xe &&
-											Table_tmp.ye == FeatureLoc[i].ye)
-										{
-											same = true;
-											break;
-										}
-									}
-									if (!same)
-									{
-										Table_tmp.id = id;
-										FeatureLoc.push_back(Table_tmp);
-										id++;
-									}
-									*/
 								}
 							}
 						} 
@@ -114,27 +93,6 @@ void BuildFeatureLoc(vector <TableList>& FeatureLoc, vector <TableList> LeftMinM
 
 									FeatureLoc.push_back(Table_tmp);
 									id++;
-
-									/*
-									same = false;
-									for (int i = 0; i < FeatureLoc.size();i++)
-									{
-										if (Table_tmp.xs == FeatureLoc[i].xs &&
-											Table_tmp.ys == FeatureLoc[i].ys &&
-											Table_tmp.xe == FeatureLoc[i].xe &&
-											Table_tmp.ye == FeatureLoc[i].ye)
-										{
-											same = true;
-											break;
-										}
-									}
-									if (!same)
-									{
-										Table_tmp.id = id;
-										FeatureLoc.push_back(Table_tmp);
-										id++;
-									}
-									*/
 								}
 							}
 						}
@@ -206,17 +164,14 @@ int Type3(TableList box, int** integral)
 
 /*For each image get its features*/
 void AllImageFeature(vector <TableList> FeatureLoc, int** img, int** integral, 
-	                 vector <FeatureValue> &ImageFeature, int k, int imgcnt, 
+	                 vector <FeatureValue> &ImageFeature, int k, int img_cnt, 
 	                 vector <TableList> LeftTable, vector <TableList> RightTable)
 {
 	FeatureValue vtmp;
 	int j;
 	for (int i = 0; i < FeatureLoc.size() * 4; i++)
 	{
-		vtmp.box.xs = FeatureLoc[i / 4].xs;
-		vtmp.box.ys = FeatureLoc[i / 4].ys;
-		vtmp.box.xe = FeatureLoc[i / 4].xe;
-		vtmp.box.ye = FeatureLoc[i / 4].ye;
+		vtmp.box = FeatureLoc[i / 4];
 		vtmp.box.id = k;
 		if (i % 4 == 0) vtmp.fv = Type0(FeatureLoc[i / 4], integral);
 		else if (i % 4 == 1) vtmp.fv = Type1(FeatureLoc[i / 4], integral);
@@ -225,22 +180,22 @@ void AllImageFeature(vector <TableList> FeatureLoc, int** img, int** integral,
 
 		vtmp.hit = 0;
 		j = 0;
-		while (j < imgcnt && j < LeftTable.size() && LeftTable[j].id != k) j++;
-		if (LeftTable[j].id == k &&
+		while (j < img_cnt && j < LeftTable.size() && LeftTable[j].id != k) j++;
+		if (j < LeftTable.size() && LeftTable[j].id == k &&
 			vtmp.box.xs >= LeftTable[j].xs &&
 			vtmp.box.ys >= LeftTable[j].ys &&
 			vtmp.box.xe <= LeftTable[j].xe &&
 			vtmp.box.ye <= LeftTable[j].ye) vtmp.hit = 1;
 
 		j = 0;
-		while (j < imgcnt && j < RightTable.size() && RightTable[j].id != k) j++;
-		if (RightTable[j].id == k && vtmp.hit == 0 &&
+		while (j < img_cnt && j < RightTable.size() && RightTable[j].id != k) j++;
+		if (j < RightTable.size() && RightTable[j].id == k && vtmp.hit == 0 &&
 			vtmp.box.xs >= RightTable[j].xs &&
 			vtmp.box.ys >= RightTable[j].ys &&
 			vtmp.box.xe <= RightTable[j].xe &&
 			vtmp.box.ye <= RightTable[j].ye) vtmp.hit = 1;
 
-		ImageFeature.push_back(vtmp);
+ 		ImageFeature.push_back(vtmp);
 	}
 }
 
@@ -251,30 +206,32 @@ void BuildFeatureImage(string FeatureListFilename, string FeatureImageFilename, 
 	ofstream FeatureImageList(FeatureImageFilename.c_str(), std::ofstream::binary);
 	FeatureValue Feature_tmp;
 	int FeatureLen = FeatureLoc.size() * 4;
-#ifdef DEBUG
-	int file_id = 0;
-#endif
+
 	for (int fid = 0; fid < FeatureLen; fid++)
 	{
 #ifdef DEBUG
-		string FeatureidFilename = WorkFolder + "Feature" + to_string(file_id) + ".txt";
+		stringstream ss;
+		ss << fid;
+		string FeatureidFilename = WorkFolder + "Feature" + ss.str() + ".txt";
 		ofstream FeatureImage(FeatureidFilename.c_str());
 #endif
 		FeatureList.clear();
 		FeatureList.seekg(fid * sizeof(FeatureValue), ios::beg);
-		FeatureList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-		FeatureImageList.write((char*)& Feature_tmp, sizeof(FeatureValue));
-		for (int img = img_start + 1; img < img_end; img++)
+
+		for (int img = img_start; img < img_end; img++)
 		{
-			FeatureList.seekg((FeatureLen - 1) * sizeof(FeatureValue), ios::cur);
 			FeatureList.read((char*)& Feature_tmp, sizeof(FeatureValue));
 			FeatureImageList.write((char*)& Feature_tmp, sizeof(FeatureValue));
+			FeatureList.seekg((FeatureLen - 1) * sizeof(FeatureValue), ios::cur);
 
 #ifdef DEBUG
 			FeatureImage << Feature_tmp.box.id << "	" << Feature_tmp.box.xs << "	" << Feature_tmp.box.ys << "	"
 				<< Feature_tmp.box.xe << "	" << Feature_tmp.box.ye << "	" << Feature_tmp.fv << "	" << Feature_tmp.hit << endl;
 #endif
 		}
+#ifdef DEBUG
+		FeatureImage.close();
+#endif
 	}
 }
 
@@ -286,10 +243,41 @@ void MergeFeatureImage(string OldFeatureImageFilename, string NewFeatureImageFil
 	string AllFeatureImageFilename = OldFeatureImageFilename + "All";
 	ofstream outFeatureImage(AllFeatureImageFilename.c_str(), std::ofstream::binary);
 	FeatureValue Feature_tmp;
+	vector <FeatureValue> Feature_tmp0(img_start), Feature_tmp1(img_end - img_start);
+
 	int FeatureLen = FeatureLoc.size() * 4;
 
 	for (int fid = 0; fid < FeatureLen; fid++)
 	{
+#ifdef DEBUG
+		stringstream ss;
+		ss << fid;
+		string FeatureidFilename = WorkFolder + "MFeature" + ss.str() + ".txt";
+		ofstream FeatureImage(FeatureidFilename.c_str());
+#endif
+
+		FeatureImage0.read((char*)& Feature_tmp0[0], sizeof(FeatureValue) * img_start);
+		outFeatureImage.write((char*)& Feature_tmp0[0], sizeof(FeatureValue) * img_start);
+
+#ifdef DEBUG
+		for (int img = 0; img < img_start; img++)
+		{
+			FeatureImage << Feature_tmp0[img].box.id << "	" << Feature_tmp0[img].box.xs << "	" << Feature_tmp0[img].box.ys << "	"
+				<< Feature_tmp0[img].box.xe << "	" << Feature_tmp0[img].box.ye << "	" << Feature_tmp0[img].fv << "	" << Feature_tmp0[img].hit << endl;
+		}
+#endif
+		FeatureImage1.read((char*)& Feature_tmp1[0], sizeof(FeatureValue) * (img_end - img_start));
+		outFeatureImage.write((char*)& Feature_tmp1[0], sizeof(FeatureValue) * (img_end - img_start));
+
+#ifdef DEBUG
+		for (int img = img_start; img < img_end; img++)
+		{
+				FeatureImage << Feature_tmp1[img - img_start].box.id << "	" << Feature_tmp1[img - img_start].box.xs << "	" << Feature_tmp1[img - img_start].box.ys << "	"
+				<< Feature_tmp1[img - img_start].box.xe << "	" << Feature_tmp1[img - img_start].box.ye << "	" << Feature_tmp1[img - img_start].fv << "	" << Feature_tmp1[img - img_start].hit << endl;
+		}
+		FeatureImage.close();
+#endif
+		/*
 		for (int img = 0; img < img_start; img++)
 		{
 			FeatureImage0.read((char*)& Feature_tmp, sizeof(FeatureValue));
@@ -300,5 +288,9 @@ void MergeFeatureImage(string OldFeatureImageFilename, string NewFeatureImageFil
 			FeatureImage1.read((char*)& Feature_tmp, sizeof(FeatureValue));
 			outFeatureImage.write((char*)& Feature_tmp, sizeof(FeatureValue));
 		}
+		*/
 	}
+	FeatureImage0.close(); 
+	FeatureImage1.close(); 
+	outFeatureImage.close();
 }

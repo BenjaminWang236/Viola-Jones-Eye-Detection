@@ -57,8 +57,7 @@ TrainOut train(std::ofstream& TableOut, double** weights, vector <int> Threshold
 			<< "	" << ThresholdTable[index].box.ye
 			<< "	" << ThresholdTable[index].thp
 			<< "	" << ThresholdTable[index].thn
-			<< "	" << alpha
-			<< "    " << endl;
+			<< "	" << alpha << endl;
 	}
 
 /*

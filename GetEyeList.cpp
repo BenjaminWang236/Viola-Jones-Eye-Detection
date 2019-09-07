@@ -12,7 +12,7 @@
 #include "features.h"
 
 using namespace std;
-#define DEBUG_FEATURE
+#define DEBUG_IMGFEATURE
 
 void GetEyeList(string filename, vector <TableList> &LeftTable, vector <TableList> &RightTable, vector <TableList> &LeftMinMax, vector <TableList> &RightMinMax, int imgsizeW) {
 	
