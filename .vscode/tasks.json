@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "g++.exe build active file",
-            "command": "C:\\MinGW64\\mingw32\\bin\\g++.exe",
+            "command": "C:/MinGW/bin/g++.exe",
             "args": [
                 "-g",
                 "${file}",
@@ -11,7 +11,35 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "C:\\MinGW64\\mingw32\\bin"
+                "cwd": "C:/MinGW/bin/"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "C:/MinGW/bin/gcc.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:/MinGW/bin"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "cpp.exe build active file",
+            "command": "C:\\MinGW\\bin\\cpp.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW\\bin"
             }
         }
     ],
