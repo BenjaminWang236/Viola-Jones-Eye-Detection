@@ -1,6 +1,6 @@
 {
     "svg.preview.background": "black",
-    "python.pythonPath": "C:\\Users\\Ben Wang\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",
+    "python.pythonPath": "C:\\Users\\infin\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
     "files.associations": {
         "python.h": "c",
         "iostream": "cpp",

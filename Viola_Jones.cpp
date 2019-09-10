@@ -6,7 +6,7 @@
 #include <sstream>
 #include <cmath>
 #include <algorithm>
-// #include <iomanip>      // std::setw
+#include <iterator>
 #include <chrono>
 
 #include "features.h"
@@ -17,13 +17,12 @@
 #include "Weights.h"
 #include "Train.h"
 
-//#include <Magick++.h>
-
 using namespace std;
-//using namespace Magick;
+using namespace std::chrono;
 #define DEBUG_FEATURE
 
-string WorkFolder = "C:/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
+// string WorkFolder = "E:/GitHub/Viola-Jones-Eye-Detection/";
+string WorkFolder = "/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
 string TrainFolder = "trainimg3/";
@@ -34,58 +33,59 @@ int imgsizeW = 32, imgsizeH = 32, img_cnt = 100;
 
 int main(int argc, char** argv)
 {
-	cout << "Number of arguments received is: " << argc << endl;
-	auto start = std::chrono::high_resolution_clock::now();
-	// cout << "Started counting" << endl;
-
+	auto start = high_resolution_clock::now();
 #ifdef DEBUG
-	string ImageFilename = WorkFolder + "Image.txt";
+	string ImageFilename = WorkDrive + WorkFolder + "Image.txt";
 	ofstream Image(ImageFilename.c_str());
-	string NormalFilename = WorkFolder + "Normal.txt";
+	string NormalFilename = WorkDrive + WorkFolder + "Normal.txt";
 	ofstream Normal(NormalFilename.c_str());
-	string IntegralFilename = WorkFolder + "Integral.txt";
+	string IntegralFilename = WorkDrive + WorkFolder + "Integral.txt";
 	ofstream Integral(IntegralFilename.c_str());
 #endif
-	int img_cnt = 10;
+	string WorkDrive = "C:";
 
 	int img_start = 20, img_end = 29;
+	int img_cnt = img_end - img_start + 1;
+
 	bool BuildImageFeatureOnly = true;
 	bool FromBuildFeatureThreshold = false;
 
 	if (argc != 6)
 	{
-		cout << "BuildFeatureOnly TrainOnly Start End Total";
+		cout << "WorkDrive BuildFeatureOnly TrainOnly Start End";
 		return 0;
 	}
 	else
 	{
-		if(atoi(argv[1]) == 1) BuildImageFeatureOnly = true;
-		else if (atoi(argv[1]) == 0) BuildImageFeatureOnly = false;
+		WorkDrive = argv[1];
+
+		if(atoi(argv[2]) == 1) BuildImageFeatureOnly = true;
+		else if (atoi(argv[2]) == 0) BuildImageFeatureOnly = false;
 		else 
 		{
 			cout << "BuildFeatureOnly TrainOnly Start End Total";
 			return 0;
 		}
 
-		if (atoi(argv[2]) == 1) FromBuildFeatureThreshold = true;
-		else if (atoi(argv[2]) == 0) FromBuildFeatureThreshold = false;
+		if (atoi(argv[3]) == 1) FromBuildFeatureThreshold = true;
+		else if (atoi(argv[3]) == 0) FromBuildFeatureThreshold = false;
 		else
 		{
 			cout << "BuildFeatureOnly TrainOnly Start End Total";
 			return 0;
 		}
 
-		img_start = atoi(argv[3]); img_end = atoi(argv[4]); img_cnt = atoi(argv[5]);
-		// cout << "received(3-5): " << img_start << ", " << img_end << ", " << img_cnt << endl;
+		img_start = atoi(argv[4]); img_end = atoi(argv[5]); img_cnt = img_end - img_start + 1;
 		
 		for (int i = 0; i < argc; i++) cout << " " << argv[i] << " ";
 		cout << endl;
 	}
 
 	int imgsizeW, imgsizeH, offset;
-	string bmpsource = WorkFolder + TrainFolder + ImgPrefix + "1.bmp";
+	string bmpsource = WorkDrive + WorkFolder + TrainFolder + ImgPrefix + "1.bmp";
 
-	char* header = ReadBMP256Size(bmpsource, &imgsizeW, &imgsizeH, &offset);
+	vector<char> header;
+	header = ReadBMP256Size(bmpsource, &imgsizeW, &imgsizeH, &offset);
 	char* BMP256Header = new char[offset];
 	for (int i = 0; i < offset; i++) BMP256Header[i] = header[i];
 
@@ -95,7 +95,7 @@ int main(int argc, char** argv)
 	int** integral = (int**)malloc(sizeof(int) * imgsizeH);
 	for (int i = 0; i < imgsizeH; i++) integral[i] = (int*)malloc(sizeof(int) * imgsizeW);
 
-	string SourceEyeTable = WorkFolder + SourceEyeTableFilename;
+	string SourceEyeTable = WorkDrive + WorkFolder + SourceEyeTableFilename;
 	vector <TableList> LeftTable, RightTable, LeftMinMax, RightMinMax;
 	GetEyeList(SourceEyeTable, LeftTable, RightTable, LeftMinMax, RightMinMax, imgsizeW);
 
@@ -110,10 +110,8 @@ int main(int argc, char** argv)
 	{
 		stringstream ss;
 		ss << img_start << "_" << img_end;
-		FeatureListFilename = WorkFolder + "ImageFeature" + ss.str() + ".bin";
-		FeatureImageFilename = WorkFolder + "FeatureImage" + ss.str() + ".bin";
-		OldFeatureImageFilename = WorkFolder + "FeatureImage.bin";
-		img_end++;
+		FeatureImageFilename = WorkDrive + WorkFolder + "FeatureImage" + ss.str() + ".bin";
+		OldFeatureImageFilename = WorkDrive + WorkFolder + "FeatureImage.bin";
 		cout << "After this program finished, Please ...." << endl;
 		cout << "del " << OldFeatureImageFilename << endl;
 		cout << "move " << OldFeatureImageFilename << "All " << OldFeatureImageFilename << endl;
@@ -123,28 +121,25 @@ int main(int argc, char** argv)
 	} 
 	else
 	{
-		img_start = 0; 
-		img_end = img_cnt; 
-		FeatureListFilename = WorkFolder + "ImageFeature.bin";
-		FeatureImageFilename = WorkFolder + "FeatureImage.bin";
+		FeatureImageFilename = WorkDrive + WorkFolder + "FeatureImage.bin";
 
 		if (FromBuildFeatureThreshold)
 		{
 			cout << "Make sure do below copy file before training................." << endl;
-			cout << "copy " << FeatureImageFilename << " " << WorkFolder + "AllFeatureImage.bin" << endl;
+			cout << "copy " << FeatureImageFilename << " " << WorkDrive + WorkFolder + "AllFeatureImage.bin" << endl;
 			cout << "Or......" << endl;
-			cout << "cp " << FeatureImageFilename << " " << WorkFolder + "AllFeatureImage.bin" << endl;
+			cout << "cp " << FeatureImageFilename << " " << WorkDrive + WorkFolder + "AllFeatureImage.bin" << endl;
 		}
 	}
 
 	if (!FromBuildFeatureThreshold)
 	{
-		ofstream FeatureList(FeatureListFilename.c_str(), std::ofstream::binary);
-		for (int k = img_start; k < img_end; k++)
+		cout << "Calculate image : ";
+		for (int k = img_start; k <= img_end; k++)
 		{
 			stringstream ss;
 			ss << k;
-			string bmpsource = WorkFolder + TrainFolder + ImgPrefix + ss.str() + ".bmp";
+			string bmpsource = WorkDrive + WorkFolder + TrainFolder + ImgPrefix + ss.str() + ".bmp";
 
 			int avg = ReadBMP256(bmpsource, imgsizeW, imgsizeH, offset, img);
 
@@ -177,11 +172,14 @@ int main(int argc, char** argv)
 #endif
 			ImageFeature.clear();
 			AllImageFeature(FeatureLoc, img, integral, ImageFeature, k, img_cnt, LeftTable, RightTable);
-			//for (int i = 0; i < ImageFeature.size();i++) FeatureList.write((char*)& ImageFeature[i], sizeof(FeatureValue));
+			FeatureListFilename = WorkDrive + WorkFolder + "ImageFeature" + ss.str() + ".bin";
+			ofstream FeatureList(FeatureListFilename.c_str(), std::ofstream::binary);
 			FeatureList.write((char*)& ImageFeature[0], ImageFeature.size() * sizeof(FeatureValue));
+			FeatureList.close();
+			cout << k << " ";
 
 #ifdef DEBUG
-			string FeaturetableFilename = WorkFolder + "Image" + to_string(k) + "Feature.txt";
+			string FeaturetableFilename = WorkDrive + WorkFolder + "Image" + to_string(k) + "Feature.txt";
 			ofstream FeatureTable(FeaturetableFilename.c_str());
 			for (int i = 0; i < ImageFeature.size();i++)
 				FeatureTable << ImageFeature[i].box.id << "	" << ImageFeature[i].box.xs << "	"
@@ -190,7 +188,7 @@ int main(int argc, char** argv)
 			FeatureTable.close();
 #endif
 		}
-		FeatureList.close();
+		cout << endl;
 		for (int i = 0; i < imgsizeH; i++) free(img[i]); free(img);
 		for (int i = 0; i < imgsizeH; i++) free(integral[i]); free(integral);
 		LeftTable.clear(); RightTable.clear(); ImageFeature.clear();
@@ -200,18 +198,32 @@ int main(int argc, char** argv)
 	Normal.close();
 	Integral.close();
 #endif
-	if (!FromBuildFeatureThreshold) BuildFeatureImage(FeatureListFilename, FeatureImageFilename, FeatureLoc, img_start, img_end);
+	FeatureListFilename = WorkDrive + WorkFolder + "ImageFeature";
+	if (!FromBuildFeatureThreshold)
+	{
+		BuildFeatureImage(FeatureListFilename, FeatureImageFilename, FeatureLoc, img_start, img_end);
+
+		for (int i = img_start; i <= img_end; i++)
+		{
+			stringstream ss;
+			ss << i;
+			string FeatureListFilename0 = FeatureListFilename + ss.str() + ".bin";
+			std::remove(FeatureListFilename0.c_str());
+		}
+	}
 	if (BuildImageFeatureOnly) MergeFeatureImage(OldFeatureImageFilename, FeatureImageFilename, FeatureLoc, img_start, img_end);
+
+	cout << "Finding Threshold......." << endl;
 
 	if (!BuildImageFeatureOnly || FromBuildFeatureThreshold)
 	{
-		if(FromBuildFeatureThreshold) FeatureImageFilename = WorkFolder + "AllFeatureImage.bin";
+		if(FromBuildFeatureThreshold) FeatureImageFilename = WorkDrive + WorkFolder + "AllFeatureImage.bin";
 		vector <FeatureThreshold> ThresholdTable;
 		BuildFeatureThreshold(FeatureImageFilename, FeatureLoc, ThresholdTable, img_cnt);
 		FeatureLoc.clear();
 
 #ifdef DEBUG
-		string ThresholdTableFilename = WorkFolder + "ThresholdList.txt";
+		string ThresholdTableFilename = WorkDrive + WorkFolder + "ThresholdList.txt";
 		ofstream ThresholdList(ThresholdTableFilename.c_str());
 		for (int i = 0; i < ThresholdTable.size();i++)
 		{
@@ -221,15 +233,17 @@ int main(int argc, char** argv)
 		}
 		ThresholdList.close();
 #endif
+		int FeatureLen = ThresholdTable.size();
 
-		double** weights = (double**)malloc(sizeof(double) * ThresholdTable.size());
-		for (int i = 0; i < ThresholdTable.size(); i++) weights[i] = (double*)malloc(sizeof(double) * img_cnt);
+		//double** weights = (double**)malloc(sizeof(double) * ThresholdTable.size());
+		//for (int i = 0; i < ThresholdTable.size(); i++) weights[i] = (double*)malloc(sizeof(double) * img_cnt);
 
-		vector <int> ThresholdHit;
-		BuildThresholdHit(FeatureImageFilename, ThresholdHit, ThresholdTable, img_cnt);
+//		vector <int> ThresholdHit;
+		string ThresholdHitFilename = WorkDrive + WorkFolder + "ThresholdHit.bin";
+		BuildThresholdHit(FeatureImageFilename, ThresholdHitFilename, ThresholdTable, img_cnt);
 
 #ifdef DEBUG
-		string ThresholdHitFilename = WorkFolder + "ThresholdHitList.txt";
+		string ThresholdHitFilename = WorkDrive + WorkFolder + "ThresholdHitList.txt";
 		ofstream ThresholdHitList(ThresholdHitFilename.c_str());
 		for (int fid = 0; fid < ThresholdTable.size(); fid++)
 		{
@@ -241,31 +255,38 @@ int main(int argc, char** argv)
 		}
 		ThresholdHitList.close();
 #endif
+		string Weight0Filename = WorkDrive + WorkFolder + "Weight0.bin";
+		string WeightNormalFilename = WorkDrive + WorkFolder + "Weight.bin";
+		initWeights(FeatureImageFilename, Weight0Filename, FeatureLen, img_cnt);
 
-		initWeights(FeatureImageFilename, weights, ThresholdTable, img_cnt);
-
-		string OutputTable = WorkFolder + "TrainTable.txt";
+		string OutputTable = WorkDrive + WorkFolder + "TrainTable.txt";
 		ofstream TableOut(OutputTable.c_str());
 
 		vector <int> MinIndex;
 
 		TableOut << "INDEX TYPE XSTART YSTART XEND YEND THRESHOLD_P THRESHOLD_N Alpha" << endl;
 
-		for (int i = 0; i < ThresholdTable.size(); i++)
+		cout << " Training on : ";
+		for (int i = 0; i < FeatureLen; i++)
 		{
-			normWeights(weights, ThresholdTable, img_cnt);
-			TrainOut minidx_beta = train(TableOut, weights, ThresholdHit, FeatureImageFilename, ThresholdTable, MinIndex, img_cnt);
+			if(i==522)
+			{
+				int qq = 1;
+			}
+			normWeights(Weight0Filename, WeightNormalFilename, FeatureLen, img_cnt);
+			TrainOut minidx_beta = train(TableOut, WeightNormalFilename, ThresholdHitFilename, FeatureImageFilename, ThresholdTable, MinIndex, img_cnt);
 			MinIndex.push_back(minidx_beta.minidx);
-			updateWeights(weights, ThresholdHit, FeatureImageFilename, ThresholdTable, img_cnt, minidx_beta.minidx, minidx_beta.beta);
+			updateWeights(Weight0Filename, WeightNormalFilename, ThresholdHitFilename, FeatureImageFilename, FeatureLen, img_cnt, minidx_beta.minidx, minidx_beta.beta);
+			//if (i % 1000 == 0 || i == FeatureLen - 1) cout << i << " ";
+			cout << i << " ";
 		}
-
-		for (int i = 0; i < ThresholdTable.size(); i++) free(weights[i]); free(weights);
-		ThresholdTable.clear(); ThresholdHit.clear();
+		cout << endl;
+		ThresholdTable.clear();
 	}
 
-	auto end = std::chrono::high_resolution_clock::now();
-	auto duration = end-start;
-	cout << "--- " << "Execution time: " << (std::chrono::duration_cast<std::chrono::minutes>(duration)).count() << " minutes" << endl;
+	auto end = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(end-start);
+	cout << "--- Execution time: "<< format_duration((long) duration.count()) << " (" << duration.count() << " microseconds) ---" << endl;
 	
 	return 0;
 

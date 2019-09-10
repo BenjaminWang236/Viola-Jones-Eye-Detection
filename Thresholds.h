@@ -15,4 +15,4 @@
 void BuildFeatureThreshold(std::string, std::vector <TableList>, std::vector <FeatureThreshold>&, int);
 
 /*For each feature find its hit (0 or 1) if greater or equal to positive threshold and less than or equal to negative threshold across all (imgcnt) images*/
-void BuildThresholdHit(std::string, std::vector <int>&, std::vector <FeatureThreshold>, int);
+void BuildThresholdHit(std::string, std::string, std::vector <FeatureThreshold>, int);

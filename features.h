@@ -22,7 +22,7 @@ struct TableList {
 
 /*Feature with its basic box, feature value and hit(0 or 1)*/
 struct FeatureValue {
-	TableList box;
+	//TableList box;
 	/*Feature value*/
 	int fv;
 	/*Number of hits*/

@@ -40,7 +40,7 @@ void integralAll(int** image, int** integral, int width, int height)
 	}
 }
 
-void makeBox(vector <int> box, int** img, int imgcnt)
+/*void makeBox(vector <int> box, int** img, int imgcnt)
 {
 	int startX = box[imgcnt * 4];
 	int startY = box[imgcnt * 4 + 1];
@@ -57,7 +57,7 @@ void makeBox(vector <int> box, int** img, int imgcnt)
 		img[col][startX] = 255;
 		img[col][endX] = 255;
 	}
-}
+}*/
 
 /*unsigned int getIntegral(int** image, int cornerWidth, int cornerHeight)
 {

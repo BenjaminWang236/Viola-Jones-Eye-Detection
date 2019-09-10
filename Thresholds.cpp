@@ -17,19 +17,30 @@ using namespace std;
 void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> FeatureLoc,
 	                       vector <FeatureThreshold>& ThresholdTable, int img_cnt)
 {
-	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ofstream::binary);
-	vector <FeatureValue> ImageFeature;
-	FeatureValue Feature_tmp;
+	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
+	FeatureValue* ImageFeature = new FeatureValue[img_cnt * 1000];
+//	vector <FeatureValue> ImageFeature(img_cnt);
+//	FeatureValue Feature_tmp;
 	vector <int> thp, thn;
 	int FeatureLen = FeatureLoc.size() * 4;
+	cout << "Finding Plus Threshold : ";
+
+	int file_size = 0;
+	while (file_size != sizeof(FeatureValue) * FeatureLen * img_cnt)
+	{
+		FeatureImageList.seekg(0, ios::end);
+		file_size = FeatureImageList.tellg();
+		FeatureImageList.clear();
+		FeatureImageList.seekg(0, ios_base::beg);
+	}
+
 	for (int fid = 0; fid < FeatureLen; fid++)
 	{
-		ImageFeature.clear();
-		for (int img = 0; img < img_cnt; img++)
-		{
-			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-			ImageFeature.push_back(Feature_tmp);
-		}
+		if (fid % 100000 == 0 || fid == FeatureLen - 1) cout << fid << " ";
+
+		if((fid % 1000 == 0) && ((FeatureLen - fid) / 1000 > 0)) FeatureImageList.read((char*)& ImageFeature[0], sizeof(FeatureValue) * img_cnt * 1000);
+		else if((fid % 1000 == 0) && ((FeatureLen - fid) / 1000 == 0)) FeatureImageList.read((char*)& ImageFeature[0], sizeof(FeatureValue) * img_cnt * (FeatureLen % 1000));
+	
 		int totalhit = 0;
 		int totalsample = 0;
 		int save = 0;
@@ -37,9 +48,9 @@ void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> Featu
 		double minGini = 1;
 		for (int img = 0; img < img_cnt; img++)
 		{
-			if (ImageFeature[img].fv > 0)
+			if (ImageFeature[(fid % 1000) * img_cnt + img].fv > 0)
 			{
-				totalhit += ImageFeature[img].hit;
+				totalhit += ImageFeature[(fid % 1000) * img_cnt + img].hit;
 				totalsample++;
 			}
 		}
@@ -47,20 +58,20 @@ void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> Featu
 		{
 			double EN = 0;
 			double EP = 0;
-			if (ImageFeature[img].fv > 0)
+			if (ImageFeature[(fid % 1000) * img_cnt + img].fv > 0)
 			{
-				int th = ImageFeature[img].fv;
+				int th = ImageFeature[(fid % 1000) * img_cnt + img].fv;
 				int errorNeg = 0;
 				int errorPos = 0;
 				for (int idx = 0; idx < img_cnt; idx++)
 				{
-					if (ImageFeature[idx].fv > 0)
+					if (ImageFeature[(fid % 1000) * img_cnt + idx].fv > 0)
 					{
-						if (ImageFeature[idx].fv < th &&
-							ImageFeature[idx].hit == 1)
+						if (ImageFeature[(fid % 1000) * img_cnt + idx].fv < th &&
+							ImageFeature[(fid % 1000) * img_cnt + idx].hit == 1)
 							errorPos++;
-						else if (ImageFeature[idx].fv >= th &&
-								 ImageFeature[idx].hit == 0)
+						else if (ImageFeature[(fid % 1000) * img_cnt + idx].fv >= th &&
+								 ImageFeature[(fid % 1000) * img_cnt + idx].hit == 0)
 							errorNeg++;
 					}
 				}
@@ -81,15 +92,16 @@ void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> Featu
 
 	FeatureImageList.clear();
 	FeatureImageList.seekg(0, ios::beg);
+	cout << endl << "Finding Minus Threshold : ";
 
 	for (int fid = 0; fid < FeatureLen; fid++)
 	{
-		ImageFeature.clear();
-		for (int img = 0; img < img_cnt; img++)
-		{
-			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-			ImageFeature.push_back(Feature_tmp);
-		}
+		if(fid % 100000 == 0 || fid == FeatureLen - 1) cout << fid << " ";
+
+//		FeatureImageList.read((char*)& ImageFeature[0], sizeof(FeatureValue) * img_cnt);
+		if ((fid % 1000 == 0) && ((FeatureLen - fid) / 1000 > 0)) FeatureImageList.read((char*)& ImageFeature[0], sizeof(FeatureValue) * img_cnt * 1000);
+		else if ((fid % 1000 == 0) && ((FeatureLen - fid) / 1000 == 0)) FeatureImageList.read((char*)& ImageFeature[0], sizeof(FeatureValue) * img_cnt * (FeatureLen % 1000));
+
 		int totalhit = 0;
 		int totalsample = 0;
 		int save = 0;
@@ -97,9 +109,9 @@ void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> Featu
 		double minGini = 1;		
 		for (int img = 0; img < img_cnt; img++)
 		{
-			if (ImageFeature[img].fv <= 0)
+			if (ImageFeature[(fid % 1000) * img_cnt + img].fv <= 0)
 			{
-				totalhit += ImageFeature[img].hit;
+				totalhit += ImageFeature[(fid % 1000) * img_cnt + img].hit;
 				totalsample++;
 			}
 		}
@@ -108,20 +120,20 @@ void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> Featu
 		{
 			double EN = 0;
 			double EP = 0;
-			if (ImageFeature[img].fv <= 0)
+			if (ImageFeature[(fid % 1000) * img_cnt + img].fv <= 0)
 			{
-				int th = ImageFeature[img].fv;
+				int th = ImageFeature[(fid % 1000) * img_cnt + img].fv;
 				int errorNeg = 0;
 				int errorPos = 0;
 				for (int idx = 0; idx < img_cnt; idx++)
 				{
-					if (ImageFeature[idx].fv <= 0)
+					if (ImageFeature[(fid % 1000) * img_cnt + idx].fv <= 0)
 					{
-						if (ImageFeature[idx].fv > th &&
-							ImageFeature[idx].hit == 1)
+						if (ImageFeature[(fid % 1000) * img_cnt + idx].fv > th &&
+							ImageFeature[(fid % 1000) * img_cnt + idx].hit == 1)
 							errorPos++;
-						else if (ImageFeature[idx].fv <= th &&
-							ImageFeature[idx].hit == 0)
+						else if (ImageFeature[(fid % 1000) * img_cnt + idx].fv <= th &&
+							ImageFeature[(fid % 1000) * img_cnt + idx].hit == 0)
 							errorNeg++;
 					}
 				}
@@ -140,6 +152,7 @@ void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> Featu
 		thn.push_back(save);
 	}
 	FeatureImageList.close();
+	cout << endl;
 
 	FeatureThreshold vtmp;
 	for (int fid = 0; fid < FeatureLen; fid++)
@@ -152,21 +165,42 @@ void BuildFeatureThreshold(string FeatureImageFilename, vector <TableList> Featu
 	}
 }
 
-void BuildThresholdHit(string FeatureImageFilename, vector <int>& ThresholdHit, vector <FeatureThreshold> ThresholdTable, int img_cnt)
+void BuildThresholdHit(string FeatureImageFilename, string ThresholdHitFilename, vector <FeatureThreshold> ThresholdTable, int img_cnt)
 {
+	cout << endl << "BuildThresholdHit......" << endl;
+
 	ifstream FeatureImageList(FeatureImageFilename.c_str(), std::ifstream::binary);
-	FeatureValue Feature_tmp;
-	for (int fid = 0; fid < ThresholdTable.size(); fid++)
+	ofstream ThresholdHit(ThresholdHitFilename.c_str(), std::ofstream::binary);
+	FeatureValue* Feature_tmp = new FeatureValue[img_cnt * 1000];
+	int* Hit_tmp = new int[img_cnt * 1000];
+	int FeatureLen = ThresholdTable.size();
+	int tt=0;
+
+	for (int fid = 0; fid < FeatureLen; fid++)
 	{
+		if ((fid % 1000 == 0) && ((FeatureLen - fid) / 1000 > 0)) FeatureImageList.read((char*)& Feature_tmp[0], sizeof(FeatureValue) * img_cnt * 1000);
+		else if ((fid % 1000 == 0) && ((FeatureLen - fid) / 1000 == 0)) FeatureImageList.read((char*)& Feature_tmp[0], sizeof(FeatureValue) * img_cnt * (FeatureLen % 1000));
+
 		for (int img = 0; img < img_cnt; img++)
 		{
-			FeatureImageList.read((char*)& Feature_tmp, sizeof(FeatureValue));
-			if ((Feature_tmp.fv < ThresholdTable[fid].thp && Feature_tmp.fv > ThresholdTable[fid].thn) ||
-				(Feature_tmp.fv >= 0 && ThresholdTable[fid].thp == 0) || (Feature_tmp.fv <= 0 && ThresholdTable[fid].thn == 0))
-				ThresholdHit.push_back(0);
+			if ((Feature_tmp[(fid % 1000) * img_cnt + img].fv < ThresholdTable[fid].thp && Feature_tmp[(fid % 1000) * img_cnt + img].fv > ThresholdTable[fid].thn) ||
+				(Feature_tmp[(fid % 1000) * img_cnt + img].fv >= 0 && ThresholdTable[fid].thp == 0) || (Feature_tmp[(fid % 1000) * img_cnt + img].fv <= 0 && ThresholdTable[fid].thn == 0))
+				Hit_tmp[(fid % 1000) * img_cnt + img] = 0;
 			else
-				ThresholdHit.push_back(1);
+				Hit_tmp[(fid % 1000) * img_cnt + img] = 1;
+		}
+		if (((fid + 1) % 1000 == 0) && ((fid + 1) / 1000 > 0))
+		{
+			ThresholdHit.write((char*)& Hit_tmp[0], sizeof(int) * img_cnt * 1000);
+			tt++;
 		}
 	}
+	if (FeatureLen % 1000 > 0)
+	{
+		ThresholdHit.write((char*)& Hit_tmp[0], sizeof(int) * img_cnt * (FeatureLen % 1000));
+		tt++;
+	}
+
 	FeatureImageList.close();
+	ThresholdHit.close();
 }

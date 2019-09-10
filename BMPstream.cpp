@@ -9,16 +9,17 @@
 #include <algorithm>
 #include <iomanip>      // std::setw
 #include <chrono>
+#include <iterator>
 #include "features.h"
 
 using namespace std;
 #define DEBUG_FEATURE
 
-char* ReadBMP256Size(string filename, int* width, int* height, int* offset)
+vector<char> ReadBMP256Size(string filename, int* width, int* height, int* offset)
 {
-	ifstream bmp256(filename.c_str(), std::ifstream::binary);
+	ifstream bmp256(filename.c_str(), std::ios::in | ::ifstream::binary);
 
-	if (bmp256)
+	if (bmp256.is_open())
 	{
 		char buffer[54];
 		bmp256.read(buffer, 54);
@@ -26,7 +27,7 @@ char* ReadBMP256Size(string filename, int* width, int* height, int* offset)
 		{
 			cout << "This is not a BMP file!" << endl;
 			bmp256.close();
-			return 0;
+			return;
 		}
 
 		*width = *(int*)& buffer[18];
@@ -38,9 +39,14 @@ char* ReadBMP256Size(string filename, int* width, int* height, int* offset)
 		*offset += 54;
 
 	}
-	char* header = new char[*offset];
-	bmp256.seekg(0, bmp256.beg);
-	bmp256.read(header, *offset);
+	vector<char> header;
+	header.reserve(*offset);	//Constant time with reserve
+	copy(istream_iterator<char>(bmp256), istream_iterator<char>(), back_inserter(header));
+	// // char* tmp = new char[*offset];
+	// // bmp256.seekg(0, bmp256.beg);
+	// // bmp256.read(tmp, *offset);
+	// for(int i = 0; i < *offset; i++) header.push_back(tmp[i]);
+	// delete[] tmp;
 	bmp256.close();
 	return header;
 }
