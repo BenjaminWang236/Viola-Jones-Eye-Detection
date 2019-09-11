@@ -1,13 +1,11 @@
 
 output/all_features.txt
 ImageFeature.bin
-FeatureImage.bin
 AllFeatureImage.bin
 FeatureImage.bin
 FeatureImage.binAll
 FeatureImage0_9.bin
 FeatureImage10_19.bin
-FeatureImage.bin
 ImageFeature10.bin
 ImageFeature11.bin
 ImageFeature12.bin
@@ -19,3 +17,4 @@ ImageFeature17.bin
 ImageFeature18.bin
 ImageFeature19.bin
 Viola-Jones-Eye-Detection_Sep9.zip
+FeatureImage.bin
