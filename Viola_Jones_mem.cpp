@@ -6,22 +6,38 @@
 #include <sstream>
 #include <cmath>
 #include <algorithm>    
+#include <chrono>
 //#include <array> 
 //#include <iomanip>      // std::setw
 
 //#include <Magick++.h>
 
 using namespace std;
+using namespace std::chrono;
 //using namespace Magick;
 #define DEBUG_IMGFEATURE
 
-string WorkFolder = "/CPP/Viola_Jones/";
+string WorkFolder = "/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-string TrainFolder = "trainimg/";
-string OutputFolder = "trained/";
+string TrainFolder = "trainimg3/";
+// string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
+string format_duration(long dur) {
+	microseconds milsec(dur);
+	auto ms = duration_cast<milliseconds>(milsec);		milsec -= duration_cast<microseconds>(ms);
+	auto secs = duration_cast<seconds>(ms);				ms -= duration_cast<milliseconds>(secs);
+	auto mins = duration_cast<minutes>(secs);			secs -= duration_cast<seconds>(mins);
+	auto hour = duration_cast<hours>(mins);				mins -= duration_cast<minutes>(hour);
+
+	stringstream ss;
+	// ss << hour.count() << " hours " << mins.count() << " minutes " << secs.count() << " seconds " <<
+	// 		ms.count() << " milliseconds " << milsec.count() << " microseconds";
+	ss << hour.count() << "h " << mins.count() << "m " << secs.count() << "s " <<
+			ms.count() << "ms " << milsec.count() << "\xE6s";
+	return ss.str();
+}
 
 
 struct TableList {
@@ -263,14 +279,14 @@ void BuildFeatureLoc(vector <TableList>& FeatureLoc, vector <TableList> LeftMinM
 			{
 				for (int xe = xemin; xe <= xemax; xe++)
 				{
-/*					for (int ysdiv = 0; ysdiv < yblock; ysdiv++)
+					for (int ysdiv = 0; ysdiv < yblock; ysdiv++)
 					{
 						for (int xsdiv = 0; xsdiv < xblock; xsdiv++)
 						{
 							for (int yediv = 0; yediv < yblock; yediv++)
 							{
 								for (int xediv = 0; xediv < xblock; xediv++)
-								{*/
+								{
 									Table_tmp.id = id;
 									Table_tmp.xs = xs;
 									Table_tmp.ys = ys;
@@ -284,10 +300,10 @@ void BuildFeatureLoc(vector <TableList>& FeatureLoc, vector <TableList> LeftMinM
 									
 									FeatureLoc.push_back(Table_tmp);
 									id++;
-								/*}
+								}
 							}
 						} 
-					}*/
+					}
 				}
 			}
 		}
@@ -868,8 +884,68 @@ void updateWeights(double** weights, vector <int> ThresholdHit, vector <int> Fea
 	}
 }
 
+/*
+Filter the all features in FeatureImageAll hits 1/0 (P/N) so that P/total# > 30% 
+	and N/total# > 30% remain only before passing to building thresholds
+*/
+void FilterFeatures(string WorkDrive, FeatureValue** FeatureImageAll, vector <TableList> &FeatureLoc, int img_cnt) 
+{
+	string statFileName = WorkDrive + WorkFolder + "FeatureStat.txt";
+	ofstream FeatureStats(statFileName.c_str());
+	FeatureStats << "FeatureIndex Pos Neg" << endl;
+	string goodStatFileName = WorkDrive + WorkFolder + "FeatureGood.txt";
+	ofstream goodStats(goodStatFileName.c_str());
+	goodStats << "FeatureIndex Pos Neg" << endl;
+	vector <int> NewFeatureImageAllIndex;
+	vector <TableList> NewFeatureLoc;
+	// Note: FeatureValues (fv) are different for each type BUT
+	// feature's hit/miss is only based on FeatureLocation THUS
+	// all features at same location share same hit/miss!!!
+	for (int i = 0; i < FeatureLoc.size() * 4; i += 4)
+	{
+		// @At this feature location...
+		int pos = 0, neg = 0;
+		for (int j = 0; j < img_cnt; j++)
+		{
+			if (FeatureImageAll[i][j].hit == 1)	pos++;
+			else neg++;
+		}
+		FeatureStats << i << " " << (double)pos/img_cnt << " " << (double)neg/img_cnt << endl;
+		if ((double)pos/img_cnt >= 0.3 && (double)neg/img_cnt >= 0.3)
+		{
+			goodStats << i << " " << pos << " " << neg << endl;
+			NewFeatureImageAllIndex.push_back(i);
+		}	
+	}
+	goodStats.close();
+	FeatureStats.close();
+	FeatureValue** NewFeatureImageAll = new FeatureValue* [NewFeatureImageAllIndex.size() * 4];
+	for (int i = 0; i < NewFeatureImageAllIndex.size() * 4; i++) NewFeatureImageAll[i] = new FeatureValue [img_cnt];
+	int newIdx = 0;
+	for (int i = 0; i < NewFeatureImageAllIndex.size(); i++)
+	{
+		int oldIdx = NewFeatureImageAllIndex[i];
+		NewFeatureLoc.push_back(FeatureLoc[oldIdx / 4]);
+		for (int type = 0; type < 4; type++)
+		{
+			for (int j = 0; j < img_cnt; j++)
+			{
+				NewFeatureImageAll[newIdx][j] = FeatureImageAll[oldIdx+type][j];
+			}
+			newIdx++;
+		}
+	}
+	FeatureImageAll = NewFeatureImageAll;
+	cout << "Old FeatureLoc size: " << FeatureLoc.size() << endl;
+	FeatureLoc.clear();
+	FeatureLoc = NewFeatureLoc;
+	cout << "New FeatureLoc size: " << FeatureLoc.size() << endl;
+}
+
 int main(int argc, char** argv)
 {
+	auto start = high_resolution_clock::now();
+
 	string WorkDrive = "C:";
 
 	int img_start = 20, img_end = 29;
@@ -915,8 +991,6 @@ int main(int argc, char** argv)
 
 	FeatureValue** FeatureImageAll = new FeatureValue* [FeatureLoc.size() * 4];
 	for (int i = 0; i < FeatureLoc.size() * 4; i++) FeatureImageAll[i] = new FeatureValue [img_cnt];
-//	FeatureValue** FeatureImageAll = (FeatureValue * *)malloc(sizeof(FeatureValue) * FeatureLoc.size() * 4);
-//	for (int i = 0; i < FeatureLoc.size() * 4; i++) FeatureImageAll[i] = (FeatureValue*)malloc(sizeof(FeatureValue) * img_cnt);
 
 	cout << "Calculate image : ";
 
@@ -979,6 +1053,10 @@ int main(int argc, char** argv)
 	Normal.close();
 	Integral.close();
 #endif
+
+	cout << "Filtering Features (Pre-Processing)......." << endl;
+	FilterFeatures(WorkDrive, FeatureImageAll, FeatureLoc, img_cnt);
+
 
 	cout << "Finding Threshold......." << endl;
 
@@ -1045,6 +1123,11 @@ int main(int argc, char** argv)
 	for (int i = 0; i < FeatureLen; i++) delete[] weights[i]; delete[] weights;
 
 	ThresholdTable.clear(); ThresholdHit.clear();
+
+	auto end = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(end-start);
+    long conv = duration.count();
+    cout << "\n--- " << format_duration(conv) << " ---" << endl;
 
 	return 0;
 

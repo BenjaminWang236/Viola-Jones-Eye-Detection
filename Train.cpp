@@ -15,19 +15,6 @@ using namespace std;
 using namespace std::chrono;
 #define DEBUG_FEATURE
 
-string format_duration(long dur) {
-	microseconds milsec(dur);
-	auto ms = duration_cast<milliseconds>(milsec);		milsec -= duration_cast<microseconds>(ms);
-	auto secs = duration_cast<seconds>(ms);				ms -= duration_cast<milliseconds>(secs);
-	auto mins = duration_cast<minutes>(secs);			secs -= duration_cast<seconds>(mins);
-	auto hour = duration_cast<hours>(mins);				mins -= duration_cast<minutes>(hour);
-
-	stringstream ss;
-	ss << hour.count() << " hours " << mins.count() << " minutes " << secs.count() << " seconds " <<
-			ms.count() << " milliseconds " << milsec.count() << " microseconds";
-	return ss.str();
-}
-
 TrainOut train(std::ofstream& TableOut, string WeightNormalFilename, string ThresholdHitFilename,
 	string FeatureImageFilename, vector <FeatureThreshold> ThresholdTable, vector <int> MinIndex, int img_cnt)
 {
