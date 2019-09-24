@@ -7,6 +7,7 @@
 #include <cmath>
 #include <algorithm>    
 #include <chrono>
+// #include <opencv2/opencv.hpp>
 //#include <array> 
 //#include <iomanip>      // std::setw
 
@@ -764,8 +765,10 @@ void BuildThresholdHit(FeatureValue** FeatureImageAll, vector <int>& ThresholdHi
 		for (int img = 0; img < img_cnt; img++)
 		{
 			FeatureHit.push_back(FeatureImageAll[fid][img].hit);
-			if ((FeatureImageAll[fid][img].fv < ThresholdTable[fid].thp && FeatureImageAll[fid][img].fv > ThresholdTable[fid].thn) ||
-				(FeatureImageAll[fid][img].fv >= 0 && ThresholdTable[fid].thp == 0) || (FeatureImageAll[fid][img].fv <= 0 && ThresholdTable[fid].thn == 0))
+			// if ((FeatureImageAll[fid][img].fv < ThresholdTable[fid].thp && FeatureImageAll[fid][img].fv > ThresholdTable[fid].thn) ||
+			// 	(FeatureImageAll[fid][img].fv >= 0 && ThresholdTable[fid].thp == 0) || (FeatureImageAll[fid][img].fv <= 0 && ThresholdTable[fid].thn == 0))
+			if ((FeatureImageAll[fid][img].fv < ThresholdTable[fid].thp && FeatureImageAll[fid][img].fv > ThresholdTable[fid].thn) || 
+				(ThresholdTable[fid].thp == 0 && ThresholdTable[fid].thn == 0))
 				ThresholdHit.push_back(0);
 			else
 				ThresholdHit.push_back(1);

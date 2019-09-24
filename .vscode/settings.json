@@ -49,5 +49,6 @@
         "typeinfo": "cpp",
         "random": "cpp"
     },
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cmake.configureOnOpen": true
 }
