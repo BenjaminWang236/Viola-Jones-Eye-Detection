@@ -17,10 +17,16 @@ using namespace std::chrono;
 //using namespace Magick;
 #define DEBUG_IMGFEATURE
 
+/*
+img_0.bmp etc for testing, trainimg_0.bmp etc for training.
+/Desktop/CPP/Viola_Jones/ for Linux
+/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/ for Windows
+*/
+
 string WorkFolder = "/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
 string SourceEyeTableFilename = "eye_point_data.txt";
 
-string TrainFolder = "trainimg3/";
+string TrainFolder = "trainimg/";
 // string OutputFolder = "trained/";
 string ImgPrefix = "trainimg_";
 
@@ -885,11 +891,12 @@ void updateWeights(double** weights, vector <int> ThresholdHit, vector <int> Fea
 }
 
 /*
-Filter the all features in FeatureImageAll hits 1/0 (P/N) so that P/total# > 30% 
-	and N/total# > 30% remain only before passing to building thresholds
+Filter the all features in FeatureImageAll hits 1/0 (P/N) so that P/total# >= percentage 
+	and N/total# >= percentage remain only before passing to building thresholds
 */
-void FilterFeatures(string WorkDrive, FeatureValue** FeatureImageAll, vector <TableList> &FeatureLoc, int img_cnt) 
+void FilterFeatures(string WorkDrive, FeatureValue** FeatureImageAll, vector <TableList> &FeatureLoc, int img_cnt, int percentage) 
 {
+	double cutoff = percentage/100.0;
 	string statFileName = WorkDrive + WorkFolder + "FeatureStat.txt";
 	ofstream FeatureStats(statFileName.c_str());
 	FeatureStats << "FeatureIndex Pos Neg" << endl;
@@ -911,7 +918,7 @@ void FilterFeatures(string WorkDrive, FeatureValue** FeatureImageAll, vector <Ta
 			else neg++;
 		}
 		FeatureStats << i << " " << (double)pos/img_cnt << " " << (double)neg/img_cnt << endl;
-		if ((double)pos/img_cnt >= 0.3 && (double)neg/img_cnt >= 0.3)
+		if ((double)pos/img_cnt >= cutoff && (double)neg/img_cnt >= cutoff)
 		{
 			goodStats << i << " " << pos << " " << neg << endl;
 			NewFeatureImageAllIndex.push_back(i);
@@ -1053,9 +1060,9 @@ int main(int argc, char** argv)
 	Normal.close();
 	Integral.close();
 #endif
-
-	cout << "Filtering Features (Pre-Processing)......." << endl;
-	FilterFeatures(WorkDrive, FeatureImageAll, FeatureLoc, img_cnt);
+	int percentage = 30;
+	cout << "Filtering Features @" << percentage << "% (Pre-Processing)......." << endl;
+	FilterFeatures(WorkDrive, FeatureImageAll, FeatureLoc, img_cnt, percentage);
 
 
 	cout << "Finding Threshold......." << endl;

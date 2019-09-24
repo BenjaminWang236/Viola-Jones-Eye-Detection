@@ -25,7 +25,7 @@ img_0.bmp etc for testing, trainimg_0.bmp etc for training.
 */
 
 string WorkFolder = "/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
-string ImageFolder = "total/";
+string ImageFolder = "trainimg/";
 string ImgOutFolder = "detected/";
 
 
@@ -286,13 +286,14 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 	TableList box;
 	vector <TableList> final_box;
 	vector <int> skip;
-	int passedAlpha = 0;
-	for (int i = 0; i < FeatureTable.size(); i++)
+	int passedAlpha = 0, numFeatures = FeatureTable.size();
+	for (int i = 0; i < numFeatures; i++)
 	{
-		if (FeatureTable[i].box.id % 4 == 0)		fv = Type0(FeatureTable[i].box, integral); 
-		else if (FeatureTable[i].box.id % 4 == 1)	fv = Type1(FeatureTable[i].box, integral);
-		else if (FeatureTable[i].box.id % 4 == 2)	fv = Type2(FeatureTable[i].box, integral);
-		else										fv = Type3(FeatureTable[i].box, integral);
+		int FeatureType = FeatureTable[i].box.id % 4;
+		if (FeatureType == 0)		fv = Type0(FeatureTable[i].box, integral); 
+		else if (FeatureType == 1)	fv = Type1(FeatureTable[i].box, integral);
+		else if (FeatureType == 2)	fv = Type2(FeatureTable[i].box, integral);
+		else						fv = Type3(FeatureTable[i].box, integral);
 
 		// Only push_back if feature passes if-conditional (threshold) statements
 		if (!((fv < FeatureTable[i].thp && fv > FeatureTable[i].thn) ||
@@ -304,7 +305,7 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 			else Right.push_back(FeatureTable[i]);
 			if (TableOut.is_open())
 			{
-				TableOut << FeatureTable[i].box.id << "	" << FeatureTable[i].box.id % 4
+				TableOut << FeatureTable[i].box.id << "	" << FeatureType
 					<< "	" << FeatureTable[i].box.xs
 					<< "	" << FeatureTable[i].box.ys
 					<< "	" << FeatureTable[i].box.xe
@@ -314,7 +315,6 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 					<< "	" << FeatureTable[i].alpha << endl;
 			}
 		}
-		
 		// vector<int> lookFor;
 		// lookFor.reserve(3);
 		// if (FeatureTable[i].box.id % 4 == 0) 
@@ -425,7 +425,7 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 	// 	}
 	}
 
-	if ((double)passedAlpha >= (double)(0.5 * totalAlpha))
+	// if ((double)passedAlpha >= (double)(0.5 * totalAlpha))
 	{
 		if (Left.size() == 0) box.id = 0;
 		else
@@ -519,7 +519,7 @@ int main(int argc, char** argv)
 		img_start = atoi(argv[2]); img_end = atoi(argv[3]); img_cnt = img_end - img_start + 1;
 	}
 	
-	string bmpsource = WorkDrive + WorkFolder + ImageFolder + "img_0.bmp";
+	string bmpsource = WorkDrive + WorkFolder + ImageFolder + "trainimg_0.bmp";
 
 	vector <char> header;
 	ReadBMP256Size(bmpsource, &imgsizeW, &imgsizeH, &offset, header);
@@ -542,7 +542,7 @@ int main(int argc, char** argv)
 		std::cout << k << " ";
 		stringstream ss;
 		ss << k;
-		string bmpsource = WorkDrive + WorkFolder + ImageFolder + "img_" + ss.str() + ".bmp";
+		string bmpsource = WorkDrive + WorkFolder + ImageFolder + "trainimg_" + ss.str() + ".bmp";
 		string bmpoutput = WorkDrive + WorkFolder + ImgOutFolder + "detect_" + ss.str() + ".bmp";
 
 		int avg = ReadBMP256(bmpsource, imgsizeW, imgsizeH, offset, img);
