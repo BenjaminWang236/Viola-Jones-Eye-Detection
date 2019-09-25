@@ -259,7 +259,7 @@ void GetTrainTable(string filename, vector <FeatureList>& FeatureTable)
 	string line;
 	int index;
 	FeatureList Table_tmp;
-	int i = 0;
+	int i = 0, cnt = 0;
 	if (TrainTable.is_open())
 	{
 		getline(TrainTable, line);
@@ -267,20 +267,23 @@ void GetTrainTable(string filename, vector <FeatureList>& FeatureTable)
 		{
 			TrainTable >> Table_tmp.box.id >> index >> Table_tmp.box.xs >> Table_tmp.box.ys
 				>> Table_tmp.box.xe >> Table_tmp.box.ye >> Table_tmp.thp >> Table_tmp.thn >> Table_tmp.alpha;
-
-			if (Table_tmp.thp != 0 && Table_tmp.thn != 0)
+			// !(Table_tmp.thp == 0 && Table_tmp.thn == 0)
+			if (Table_tmp.thp != 0 || Table_tmp.thn != 0)
 			{
 				FeatureTable.push_back(Table_tmp);
 				i++;
 			}
+			cnt++;
 		}
 	}
+	cout << "Out of " << cnt << " from TrainTable " << i << " were inserted into FeatureTable" << endl;
 	TrainTable.close();
 }
 
-int sumAlphas(vector <FeatureList> FeatureTable)
+float sumAlphas(vector <FeatureList> FeatureTable)
 {
-	int n = FeatureTable.size(), total = 0;
+	int n = FeatureTable.size();
+	float total = 0.0;
 	for (int i = 0; i < n; i++)	total += FeatureTable[i].alpha;
 	return total;
 }
@@ -290,18 +293,20 @@ bool ysSmall(FeatureList i, FeatureList j) { return (i.box.ys < j.box.ys); }
 bool xeLarge(FeatureList i, FeatureList j) { return (i.box.xe > j.box.xe); }
 bool yeLarge(FeatureList i, FeatureList j) { return (i.box.ye > j.box.ye); }
 
-vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTable, int** integral, int imgsizeW, int totalAlpha)
+vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTable, int** integral, int imgsizeW, float halfAlpha)
 {
 	int fv;
 	int type;
 	FeatureList min_it;
 	vector <FeatureList> Left, Right;
 	TableList box;
-	vector <TableList> final_box;
+	vector <TableList> final_box, empty;
 	vector <int> skip;
-	int passedAlpha = 0, numFeatures = FeatureTable.size();
+	// float passedAlpha = 0.0;
+	int numFeatures = FeatureTable.size();
 	for (int i = 0; i < numFeatures; i++)
 	{
+		// if (passedAlpha >= halfAlpha)	break;
 		int FeatureType = FeatureTable[i].box.id % 4;
 		if (FeatureType == 0)		fv = Type0(FeatureTable[i].box, integral); 
 		else if (FeatureType == 1)	fv = Type1(FeatureTable[i].box, integral);
@@ -313,7 +318,7 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 			(fv >= 0 && FeatureTable[i].thp == 0) ||
 			(fv <= 0 && FeatureTable[i].thn == 0)))
 		{
-			passedAlpha += FeatureTable[i].alpha;
+			// passedAlpha += FeatureTable[i].alpha;
 			if (FeatureTable[i].box.xs < (3 + imgsizeW / 4) && FeatureTable[i].box.xe < (6 + imgsizeW / 2)) Left.push_back(FeatureTable[i]);
 			else Right.push_back(FeatureTable[i]);
 			if (TableOut.is_open())
@@ -462,6 +467,12 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 		}
 		final_box.push_back(box);
 	}
+
+	// if (passedAlpha < halfAlpha)
+	// {
+	// 	final_box[0].id = 0;
+	// 	final_box[1].id = 0;
+	// }
 	
 	return final_box;
 }
@@ -555,7 +566,8 @@ int main(int argc, char** argv)
 	string TableOutfilename = WorkDrive + WorkFolder + "TableOut.txt";
 	ofstream TableOut(TableOutfilename.c_str());
 
-	int totalAlpha = sumAlphas(FeatureTable);
+	float totalAlpha = sumAlphas(FeatureTable);
+	float halfAlpha = 0.5 * totalAlpha;
 
 	for (int k = 0; k < img_cnt; k++)
 	{
@@ -569,7 +581,8 @@ int main(int argc, char** argv)
 		normalize(imgsizeW, imgsizeH, img, nml, avg, 8); //keep 8 bits of floating point
 		integralAll(nml, integral, imgsizeW, imgsizeH);
 
-		vector <TableList> final_box = DetectEye(TableOut, FeatureTable, integral, imgsizeW, totalAlpha);
+		vector <TableList> final_box = DetectEye(TableOut, FeatureTable, integral, imgsizeW, halfAlpha);
+		// vector <TableList> final_box = DetectEye(TableOut, FeatureTable, integral, imgsizeW, 0.0);
 
 		makeBox(final_box[0], img); makeBox(final_box[1], img);
 		WriteBMP256(bmpoutput, imgsizeW, imgsizeH, offset, img, header);
