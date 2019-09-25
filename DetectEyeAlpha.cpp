@@ -25,7 +25,7 @@ img_0.bmp etc for testing, trainimg_0.bmp etc for training.
 */
 
 string WorkFolder = "/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/";
-string ImageFolder = "trainimg/";
+string ImageFolder = "trainimg_0/";
 string ImgOutFolder = "detected/";
 
 string format_duration(long dur) {
@@ -268,7 +268,7 @@ void GetTrainTable(string filename, vector <FeatureList>& FeatureTable)
 			TrainTable >> Table_tmp.box.id >> index >> Table_tmp.box.xs >> Table_tmp.box.ys
 				>> Table_tmp.box.xe >> Table_tmp.box.ye >> Table_tmp.thp >> Table_tmp.thn >> Table_tmp.alpha;
 
-			if (Table_tmp.thp != 0 || Table_tmp.thn != 0)
+			if (Table_tmp.thp != 0 && Table_tmp.thn != 0)
 			{
 				FeatureTable.push_back(Table_tmp);
 				i++;
@@ -519,7 +519,7 @@ int main(int argc, char** argv)
 	int img_start = 20, img_end = 29;
 	int img_cnt = img_end - img_start + 1;
 	
-	int imgsizeW, imgsizeH, offset;
+	int imgsizeW, imgsizeH, offset = 0;
 
 	if (argc != 4)
 	{
