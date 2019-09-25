@@ -510,13 +510,20 @@ int main(int argc, char** argv)
 
 	if (argc != 4)
 	{
-		std::cout << "WorkDrive Start End";
+		std::cout << "WorkDrive Start End" << endl;
 		return 0;
 	}
 	else
 	{
-		WorkDrive = argv[1];
-		img_start = atoi(argv[2]); img_end = atoi(argv[3]); img_cnt = img_end - img_start + 1;
+		try
+		{
+			WorkDrive = argv[1];
+			img_start = atoi(argv[2]); img_end = atoi(argv[3]); img_cnt = img_end - img_start + 1;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << endl;
+		}
 	}
 	
 	string bmpsource = WorkDrive + WorkFolder + ImageFolder + "trainimg_0.bmp";

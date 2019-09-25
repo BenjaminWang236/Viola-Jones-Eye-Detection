@@ -1,4 +1,3 @@
-
 import json
 import os
 import os.path
@@ -20,7 +19,7 @@ start = datetime.now()
 #img = cv2.imread('C:/PythonApplication1/PythonApplication1/img_1.bmp')
 
 # path = 'C:/CPP/ViolaJones/'
-path = 'D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/'
+path = 'C:/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/'
 
 
 path_i = path + 'trainimg/'
@@ -52,7 +51,7 @@ for file_idx in range(0,img_cnt,1):
     img = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
 
     #face_cascade = cv2.CascadeClassifier('C:/PythonApplication1/PythonApplication1/haarcascade_frontalface_default.xml')
-    eye_cascade = cv2.CascadeClassifier('D:/Ben Wang/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/haarcascade_eye.xml')
+    eye_cascade = cv2.CascadeClassifier(path + 'haarcascade_eye.xml')
 
     eyes = eye_cascade.detectMultiScale(img, 1.01, 1)
 

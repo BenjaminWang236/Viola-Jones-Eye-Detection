@@ -964,7 +964,7 @@ int main(int argc, char** argv)
 
 	if (argc != 4)
 	{
-		cout << "WorkDrive Start End";
+		cout << "WorkDrive Start End" << endl;
 		return 0;
 	}
 	else
