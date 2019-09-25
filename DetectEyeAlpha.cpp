@@ -303,6 +303,7 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 	vector <TableList> final_box, empty;
 	vector <int> skip;
 	// float passedAlpha = 0.0;
+	bool cascadeFailed = false;
 	int numFeatures = FeatureTable.size();
 	for (int i = 0; i < numFeatures; i++)
 	{
@@ -333,6 +334,12 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 					<< "	" << FeatureTable[i].alpha << endl;
 			}
 		}
+		// else
+		// {
+		// 	cascadeFailed = true;
+		// 	break;
+		// }
+		
 		// vector<int> lookFor;
 		// lookFor.reserve(3);
 		// if (FeatureTable[i].box.id % 4 == 0) 
@@ -467,7 +474,8 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 		}
 		final_box.push_back(box);
 	}
-
+	
+	// if (cascadeFailed)
 	// if (passedAlpha < halfAlpha)
 	// {
 	// 	final_box[0].id = 0;
