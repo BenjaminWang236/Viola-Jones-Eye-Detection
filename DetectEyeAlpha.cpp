@@ -336,6 +336,9 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 		}
 		// else
 		// {
+		// 	// Since this is already sorted by largest to smallest alpha,
+		// 	// this is effectively a cascade already; Just need to quit
+		// 	// early for failing at a step.
 		// 	cascadeFailed = true;
 		// 	break;
 		// }
@@ -474,7 +477,7 @@ vector <TableList> DetectEye(ofstream& TableOut, vector <FeatureList> FeatureTab
 		}
 		final_box.push_back(box);
 	}
-	
+
 	// if (cascadeFailed)
 	// if (passedAlpha < halfAlpha)
 	// {
