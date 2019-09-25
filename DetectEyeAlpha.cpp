@@ -579,6 +579,7 @@ int main(int argc, char** argv)
 
 	float totalAlpha = sumAlphas(FeatureTable);
 	float halfAlpha = 0.5 * totalAlpha;
+	cout << "Half-Alpha is " << halfAlpha << endl;
 
 	for (int k = 0; k < img_cnt; k++)
 	{
