@@ -15,10 +15,11 @@ im = cv2.imread(path + 'trainimg_0.bmp')
 # h = hog.compute(im)
 
 (H, hogImage) = feature.hog(im, orientations=9, pixels_per_cell=(8, 8),
-    cells_per_block=(1, 1), transform_sqrt=True, block_norm="L1", 
+    cells_per_block=(2, 2), transform_sqrt=True, block_norm="L1", 
     visualize=True, feature_vector=False)
 Shape = H.shape
 print(Shape)
+print(H.ravel().shape)
 
 # for k in range(Shape[4]):
 #     fname = path + 'vec_bin' + str(k) + '.txt'
@@ -36,9 +37,9 @@ print(Shape)
 
 # H_rav = H.ravel()
 # np.savetxt(path + 'hog_test.txt', H_rav)
-# hogImage = exposure.rescale_intensity(hogImage, out_range=(0, 255))
-# hogImage = hogImage.astype("uint8")
-# cv2.imwrite(path + "hog_0.bmp", hogImage)
+hogImage = exposure.rescale_intensity(hogImage, out_range=(0, 255))
+hogImage = hogImage.astype("uint8")
+cv2.imwrite(path + "hog_0.bmp", hogImage)
 # """
 
 # print(timeit.timeit(code, number=100)/100)
