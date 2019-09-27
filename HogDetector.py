@@ -1,6 +1,4 @@
-# import timeit
-
-# code = """
+import logging
 import cv2
 import numpy as np
 import imutils
@@ -11,19 +9,71 @@ from skimage import exposure
 path = 'C:/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/hog_testing/'
 # hog = cv2.HOGDescriptor()
 im = cv2.imread(path + 'trainimg_0.bmp')
+imgShape = im.shape
+print('Image Shape: {}'.format(imgShape))
+# print(im[0][0][:])
 # im = cv2.resize(im, (8, 8))
 # h = hog.compute(im)
-
-(H, hogImage) = feature.hog(im, orientations=9, pixels_per_cell=(8, 8),
-    cells_per_block=(2, 2), transform_sqrt=True, block_norm="L1", 
+cell_dim = (8, 8)
+block_dim = (2, 2)
+orientations = 9
+precision = 15
+(H, hogImage) = feature.hog(im, orientations=orientations, 
+    pixels_per_cell=cell_dim, cells_per_block=block_dim, 
+    transform_sqrt=True, block_norm="L1", 
     visualize=True, feature_vector=False)
 Shape = H.shape
-print(Shape)
-print(H.ravel().shape)
+print('HOG vectors\'s shape: {}'.format(Shape))    # (3, 3, 2, 2, 9)
+print('Total vectors: {}'.format(H.ravel().shape[0]))
+cell_vectors = np.zeros([int(imgShape[0]/cell_dim[0]), int(imgShape[1]/cell_dim[1]), orientations])
+vector_shape = cell_vectors.shape
+print('Concatenated Vector\'s shape: {}'.format(cell_vectors.shape))
+
+# 'CONCATENATING' VECTORS TO CORRESPONDING CELL
+for a in range(Shape[0]):
+    for b in range(Shape[1]):   # For each block of cells
+        for c in range(Shape[2]):
+            for d in range(Shape[3]):   # For each cell in block
+                for e in range(Shape[4]):   # For each vector/histogram bin of cell
+                    cell_vectors[a+c][b+d][e] += H[a][b][c][d][e]
+
+# WRITE TO FILE (Human-readable)
+data = np.zeros((vector_shape[2], vector_shape[0], vector_shape[1]))
+string = '{:.' + str(precision) + 'f}\t'
+with open(path+'hog_data.txt', 'w+') as f:
+    f.write('# Vector Shape: {}\n'.format(vector_shape))
+    for k in range(vector_shape[2]):
+        f.write('\n# Vector/Histogram Bin {0} (Angles {1} - {2})\n'.format(k, 20*k, 20*(k+1)))
+        for i in range(vector_shape[0]):
+            for j in range(vector_shape[1]):
+                # data[k][i][j] = cell_vectors[i][j][k]
+                data[k][i][j] = np.around(cell_vectors[i][j][k], precision)
+                # Meaningful Precision up to about 60
+                f.write(string.format((cell_vectors[i][j][k])))
+            f.write('\n')
+# data = np.around(data, precision)   # This is slower than rounding at each vector
+
+# READ FROM FILE (Human-readable)
+new_data = np.loadtxt(path+'hog_data.txt').reshape((vector_shape[2], vector_shape[0], vector_shape[1]))
+# new_data = np.around(new_data, precision)
+# assert np.all(new_data == cell_vectors)
+try:
+    assert np.all(new_data == data)
+    print("TRUE: Data read back is equal to original data")
+except AssertionError as error:
+    logging.error(" Data read back is not equal to original data")
+    diff = np.zeros_like(new_data)
+    for k in range(vector_shape[2]):
+        for i in range(vector_shape[0]):
+            for j in range(vector_shape[1]):
+                diff[k][i][j] = data[k][i][j] - new_data[k][i][j]
+    print(diff)
+
+    
 
 # for k in range(Shape[4]):
 #     fname = path + 'vec_bin' + str(k) + '.txt'
-#     with open(fname, "w+") as outfile:
+#     with open(fname, "a+") as outfile:
 #         for i in range(Shape[0]):
 #             for j in range(Shape[1]):
 #                 outfile.write(str(H[i][j][0][0][k]) + '\n')
@@ -40,7 +90,4 @@ print(H.ravel().shape)
 hogImage = exposure.rescale_intensity(hogImage, out_range=(0, 255))
 hogImage = hogImage.astype("uint8")
 cv2.imwrite(path + "hog_0.bmp", hogImage)
-# """
-
-# print(timeit.timeit(code, number=100)/100)
 
