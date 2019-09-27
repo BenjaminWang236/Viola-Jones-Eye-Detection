@@ -50,28 +50,27 @@ with open(path+'hog_data.txt', 'w+') as f:
         f.write('\n# Vector/Histogram Bin {0} (Angles {1} - {2})\n'.format(k, 20*k, 20*(k+1)))
         for i in range(vector_shape[0]):
             for j in range(vector_shape[1]):
-                # data[k][i][j] = cell_vectors[i][j][k]
-                data[k][i][j] = np.around(cell_vectors[i][j][k], precision)
                 # Meaningful Precision up to about 60
+                # data[k][i][j] = np.around(cell_vectors[i][j][k], precision)
                 f.write(string.format((cell_vectors[i][j][k])))
             f.write('\n')
-data = np.around(data, precision)   # This is slower than rounding at each vector
+# data = np.around(data, precision)   # This is slower than rounding at each vector
 
-# READ FROM FILE (Human-readable)
-new_data = np.loadtxt(path+'hog_data.txt').reshape((vector_shape[2], vector_shape[0], vector_shape[1]))
-# new_data = np.around(new_data, precision)
-# assert np.all(new_data == cell_vectors)
-try:
-    assert np.all(new_data == data)
-    print("TRUE: Data read back is equal to original data")
-except AssertionError as error:
-    logging.error(" Data read back is not equal to original data")
-    diff = np.zeros_like(new_data)
-    for k in range(vector_shape[2]):
-        for i in range(vector_shape[0]):
-            for j in range(vector_shape[1]):
-                diff[k][i][j] = data[k][i][j] - new_data[k][i][j]
-    print(diff)
+# # READ FROM FILE (Human-readable)
+# new_data = np.loadtxt(path+'hog_data.txt').reshape((vector_shape[2], vector_shape[0], vector_shape[1]))
+# # new_data = np.around(new_data, precision)
+# # assert np.all(new_data == cell_vectors)
+# try:
+#     assert np.all(new_data == data)
+#     print("TRUE: Data read back is equal to original data")
+# except AssertionError as error:
+#     logging.error(" Data read back is not equal to original data")
+#     diff = np.zeros_like(new_data)
+#     for k in range(vector_shape[2]):
+#         for i in range(vector_shape[0]):
+#             for j in range(vector_shape[1]):
+#                 diff[k][i][j] = data[k][i][j] - new_data[k][i][j]
+#     print(diff)
 
     
 
