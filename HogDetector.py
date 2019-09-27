@@ -26,18 +26,22 @@ Shape = H.shape
 print('HOG vectors\'s shape: {}'.format(Shape))    # (3, 3, 2, 2, 9)
 print('Total vectors: {}'.format(H.ravel().shape[0]))
 cell_vectors = np.zeros([int(imgShape[0]/cell_dim[0]), int(imgShape[1]/cell_dim[1]), orientations])
+cell_count = np.zeros_like(cell_vectors)
 vector_shape = cell_vectors.shape
 print('Concatenated Vector\'s shape: {}'.format(cell_vectors.shape))
 
-# 'CONCATENATING' VECTORS TO CORRESPONDING CELL
+# SUM VECTORS TO CORRESPONDING CELL & COUNT TO BE AVERAGED LATER
 for a in range(Shape[0]):
     for b in range(Shape[1]):   # For each block of cells
         for c in range(Shape[2]):
             for d in range(Shape[3]):   # For each cell in block
                 for e in range(Shape[4]):   # For each vector/histogram bin of cell
                     cell_vectors[a+c][b+d][e] += H[a][b][c][d][e]
+                    cell_count[a+c][b+d][e] += 1
+# Average the vectors that contribute more than once
+cell_vectors = np.divide(cell_vectors, cell_count, out=np.zeros_like(cell_vectors), where=cell_count != 0)
 
-# WRITE TO FILE (Human-readable)
+# WRITE TO FILE & RE-FORMAT (Human-readable)
 data = np.zeros((vector_shape[2], vector_shape[0], vector_shape[1]))
 string = '{:.' + str(precision) + 'f}\t'
 with open(path+'hog_data.txt', 'w+') as f:
@@ -51,7 +55,7 @@ with open(path+'hog_data.txt', 'w+') as f:
                 # Meaningful Precision up to about 60
                 f.write(string.format((cell_vectors[i][j][k])))
             f.write('\n')
-# data = np.around(data, precision)   # This is slower than rounding at each vector
+data = np.around(data, precision)   # This is slower than rounding at each vector
 
 # READ FROM FILE (Human-readable)
 new_data = np.loadtxt(path+'hog_data.txt').reshape((vector_shape[2], vector_shape[0], vector_shape[1]))
