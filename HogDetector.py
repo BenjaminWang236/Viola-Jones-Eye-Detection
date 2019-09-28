@@ -8,11 +8,11 @@ from skimage import exposure
 
 path = 'C:/Users/infin/OneDrive/NeuronBasic/Viola-Jones-Eye-Detection/hog_testing/'
 # hog = cv2.HOGDescriptor()
-im = cv2.imread(path + 'trainimg_0.bmp')
+im = cv2.imread(path + 'trainimg_0_80x80.bmp')
 imgShape = im.shape
 print('Image Shape: {}'.format(imgShape))
 # print(im[0][0][:])
-# im = cv2.resize(im, (8, 8))
+im = cv2.resize(im, (40, 40))
 # h = hog.compute(im)
 cell_dim = (8, 8)
 block_dim = (2, 2)
