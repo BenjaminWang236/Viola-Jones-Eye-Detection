@@ -1,6 +1,6 @@
 {
     "svg.preview.background": "black",
-    "python.pythonPath": "C:\\Users\\infin\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.pythonPath": "/home/benjamin/anaconda3/bin/python",
     "files.associations": {
         "python.h": "c",
         "iostream": "cpp",
