@@ -1,0 +1,31 @@
+You're given a game board that has m x n squares on it, represented by an m x n array. 
+Write a method - countPaths that takes in m and n and returns the number of possible paths 
+from the top left corner to the bottom right corner. Only down and right directions of 
+movement are permitted.
+
+Note:
+Your method should output the result in a reasonable amount of time for large values of m and n. 
+If you're thinking of using DFS, consider the tree depth and branching factor for m and n > 15!
+
+m = number of rows, n = number of columns
+
+Example:  
+countPaths(m = 2, n = 2) => 2
+
+as on the following 2x2 Board, the two paths are A->C->D and A->B->D
+
+A B
+C D
+
+Input			Expected Result
+countPaths(12,6)	4368
+countPaths(5,3)		15
+countPaths(7,15)	38760
+countPaths(3,5)		15
+countPaths(15,16)	77558760
+countPaths(1,1)		1
+countPaths(18,17)	1166803110
+countPaths(10,12)	167960
+countPaths(2,2)		2
+countPaths(4,1)		1
+countPaths(8,10)	11440
