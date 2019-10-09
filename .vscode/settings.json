@@ -76,5 +76,7 @@
         "valarray": "cpp"
     },
     "git.ignoreLimitWarning": true,
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
 }
