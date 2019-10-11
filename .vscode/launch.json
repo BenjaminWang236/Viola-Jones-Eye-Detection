@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - Trie",
+            "request": "launch",
+            "mainClass": "Trie",
+            "projectName": "Viola-Jones-Eye-Detection_195e95d6"
+        },
+        {
             "name": "g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
@@ -15,9 +22,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            //"miDebuggerPath": "C:\\MinGW64\\mingw32\\bin\\gdb.exe",
             "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
-            //"miDebuggerPath": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
