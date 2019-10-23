@@ -583,7 +583,14 @@ void integralAll(int** image, int** integral, int width, int height)
 
 int HogType0(TableList box, int **integral)
 {
-	//TODO
+	/*
+	For the Eye feature, it's max-hog at bin 0 for one eye, 0 or close to
+	for the middle nose section, then max-hog at bin 0 for the other eye
+	
+	Considering using the values of eye not at bin 0 as well but at an 
+	percentage-decreased value. (ie. -30% for bin 1, etc)
+	*/
+
 	return 0;
 }
 
@@ -692,7 +699,7 @@ int Type0(TableList box, int **integral)
 }
 
 void AllImageFeature(vector<TableList> FeatureLoc, int **img, int **integral,
-					 FeatureValue **FeatureImageAll, int k, int img_cnt, 
+					 FeatureValue **FeatureImageAll, int k, int img_cnt,
 					 vector<TableList> LeftTable, vector<TableList> RightTable)
 {
 	FeatureValue vtmp;
@@ -736,8 +743,8 @@ void AllImageFeature(vector<TableList> FeatureLoc, int **img, int **integral,
 	}
 }
 
-void AllImagesHogFeatures(vector<TableList> FeatureLoc, int **img, int **integral, 
-						  FeatureValue **FeatureImageAll, int k, int img_cnt, 
+void AllImagesHogFeatures(vector<TableList> FeatureLoc, int **img, int **integral,
+						  FeatureValue **FeatureImageAll, int k, int img_cnt,
 						  vector<TableList> LeftTable, vector<TableList> RightTable)
 {
 	return FeatureImageAll;
